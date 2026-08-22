@@ -27,7 +27,13 @@ per distinct impact location).
 
 Explicitly out of scope for this submission, recorded for later:
 
-- autonomous scheduled monitoring of sources (this build is query-driven)
+- autonomous scheduled monitoring of sources (this build is query-driven). A
+  monitoring crawler would additionally need to handle **late retrospective
+  reporting**: summary and investigative pieces published weeks after an event
+  often carry the most accurate figures, but they fall outside the relevance
+  window a single query-driven run uses. Such a crawler must be able to reopen
+  an already-written incident when better-sourced reporting appears, rather than
+  treating the first pass as final.
 - downloading or deduplicating photograph files. Photo URLs and captions *are*
   recorded (`incident_media`); no image bytes are ever fetched or stored.
 - the interactive map frontend itself (the schema is map-ready; the map is not built)
