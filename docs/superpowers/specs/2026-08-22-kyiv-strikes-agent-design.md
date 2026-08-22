@@ -33,6 +33,20 @@ Explicitly out of scope for this submission, recorded for later:
 - the interactive map frontend itself (the schema is map-ready; the map is not built)
 - Telegram and social-media sources
 - cities other than Kyiv
+- **place-context enrichment — what the struck location was and why it mattered.**
+  Designed but deferred. A `describe_location_context` tool would query three
+  free unauthenticated sources for *facts* about a point: (a) the OSM object
+  itself (building type, name, storeys, year, amenity — the only source that
+  covers ordinary addresses); (b) notable objects within a radius, which for a
+  strike often matters more than the struck building itself (a school 80 m away);
+  (c) the Wikipedia extract, but only where OSM already carries a wikipedia or
+  wikidata tag. The agent would turn those facts into two or three sentences with
+  per-fact attribution. The hard constraint, and the reason this is not a
+  quick add: an LLM asked "why did this place matter" will confabulate fluently,
+  and an invented fact about a destroyed building reads as testimony. The tool
+  must therefore return structured facts and an explicit "nothing found", never
+  prose. Searching news for the location's own history was considered and
+  rejected as a second search loop that would not fit the defence budget.
 - **damage severity, in any form.** Three options were considered and all are
   deferred: (a) a derived `severity` column computed by rule from `damage`,
   `killed`, and `structure_type` — cheap and deterministic, but not needed until
