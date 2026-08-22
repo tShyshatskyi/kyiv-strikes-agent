@@ -314,8 +314,12 @@ being caught.
 {"ok": true,  "data": {"matches": []}}
 ```
 
-Codes: `OUT_OF_AREA`, `NO_MATCH`, `UPSTREAM_UNAVAILABLE` (retriable),
-`RATE_LIMITED` (retriable), `SCHEMA_VIOLATION`, `DUPLICATE_REJECTED`.
+Error codes: `OUT_OF_AREA`, `UPSTREAM_UNAVAILABLE` (retriable), `RATE_LIMITED`
+(retriable), `SCHEMA_VIOLATION`, `DUPLICATE_REJECTED`.
+
+"No geocoding match" is deliberately **not** an error code: it is a successful
+empty result, `{"ok": true, "data": {"matches": []}}`. That distinction is the
+requirement being demonstrated, so it must not be blurred by a `NO_MATCH` error.
 
 ## 9. Fixtures and offline mode
 
