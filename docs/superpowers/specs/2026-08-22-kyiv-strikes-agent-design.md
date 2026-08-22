@@ -33,7 +33,16 @@ Explicitly out of scope for this submission, recorded for later:
 - the interactive map frontend itself (the schema is map-ready; the map is not built)
 - Telegram and social-media sources
 - cities other than Kyiv
-- ML classification of damage type
+- **damage severity, in any form.** Three options were considered and all are
+  deferred: (a) a derived `severity` column computed by rule from `damage`,
+  `killed`, and `structure_type` — cheap and deterministic, but not needed until
+  a map exists to colour; (b) vision-LLM grading of photo URLs against a written
+  rubric — would have to live in the agent, not the server, to preserve server
+  determinism; (c) a trained classifier on xBD/xView2 satellite imagery — blocked
+  by domain gap (overhead satellite vs. ground-level night photos), absence of a
+  labelled Ukrainian dataset, and the need for sub-metre commercial imagery that
+  requires paid authentication. The `damage` and `structure_type` enums already
+  captured from article text carry the information this project needs.
 
 ## 3. Architecture
 
