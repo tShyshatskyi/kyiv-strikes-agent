@@ -1,0 +1,607 @@
+- generic [active] [ref=f31e1]:
+  - region "Ми цінуємо вашу конфіденційність" [ref=f31e2]:
+    - generic [ref=f31e3]:
+      - button "Закрити" [ref=f31e4] [cursor=pointer]
+      - generic [ref=f31e5]:
+        - heading "Ми цінуємо вашу конфіденційність" [level=2] [ref=f31e6]
+        - generic [ref=f31e7]:
+          - paragraph [ref=f31e9]: Ми використовуємо файли cookie, щоб покращити ваш досвід перегляду, показувати персоналізовану рекламу чи вміст і аналізувати наш трафік. Натискаючи «Прийняти всі», ви даєте згоду на використання файлів cookie.
+          - generic [ref=f31e10]:
+            - button "Налаштувати" [ref=f31e11] [cursor=pointer]
+            - button "Відхилити" [ref=f31e12] [cursor=pointer]
+            - button "Прийняти всі" [ref=f31e13] [cursor=pointer]
+  - generic [ref=f31e15]:
+    - heading "hromadske — Останні новини дня, всі надзвичайні новини в Україні читайтe на Громадському" [level=1] [ref=f31e16]
+    - generic [ref=f31e17]:
+      - button "Вгору":
+        - paragraph: Вгору
+      - banner [ref=f31e18]:
+        - generic [ref=f31e20]:
+          - link [ref=f31e21] [cursor=pointer]:
+            - /url: https://hromadske.ua/
+            - img "Hromadske" [ref=f31e23]
+          - button "Відкрити меню" [ref=f31e24] [cursor=pointer]
+          - generic [ref=f31e30]:
+            - link "Підтримати" [ref=f31e31] [cursor=pointer]:
+              - /url: https://cutt.ly/WrYNRdq4
+            - generic [ref=f31e32]:
+              - generic [ref=f31e33]:
+                - paragraph [ref=f31e34]: UK
+                - list:
+                  - listitem:
+                    - link "EN":
+                      - /url: https://hromadske.ua/en
+                  - listitem:
+                    - link "RU":
+                      - /url: https://hromadske.ua/ru
+              - button "Змінити тему" [ref=f31e35] [cursor=pointer]
+            - list [ref=f31e37]:
+              - listitem [ref=f31e38]:
+                - link "Новини" [ref=f31e39] [cursor=pointer]:
+                  - /url: https://hromadske.ua/news
+              - listitem [ref=f31e40]:
+                - link "Тексти" [ref=f31e41] [cursor=pointer]:
+                  - /url: https://hromadske.ua/texts
+              - listitem [ref=f31e42]:
+                - link "Думки" [ref=f31e43] [cursor=pointer]:
+                  - /url: https://hromadske.ua/thoughts
+              - listitem [ref=f31e44]:
+                - link "Відео" [ref=f31e45] [cursor=pointer]:
+                  - /url: https://www.youtube.com/user/HromadskeTV
+              - listitem [ref=f31e46]:
+                - link "Подкасти" [ref=f31e47] [cursor=pointer]:
+                  - /url: https://hromadske.ua/podcasts
+              - listitem [ref=f31e48]:
+                - link "Спецпроєкти" [ref=f31e49] [cursor=pointer]:
+                  - /url: https://hromadske.ua/genre/spetsproekt
+              - listitem [ref=f31e50]:
+                - link "Продакшн" [ref=f31e51] [cursor=pointer]:
+                  - /url: https://hromadske.ua/production
+              - listitem [ref=f31e52]:
+                - link "Крамниця" [ref=f31e53] [cursor=pointer]:
+                  - /url: https://store.hromadske.ua/
+            - generic:
+              - generic:
+                - textbox "Що ви шукаєте?"
+            - button "Пошук" [ref=f31e54] [cursor=pointer]
+    - main [ref=f31e55]:
+      - generic [ref=f31e56]:
+        - generic [ref=f31e57]:
+          - article [ref=f31e60]:
+            - 'img "«Побачила на OLX оголошення про продаж “України” і вирішила: поїду на кінець планети, але заберу»: легендарному велосипеду — 65 років" [ref=f31e71]'
+            - generic [ref=f31e72]:
+              - paragraph [ref=f31e73]: Суспільство
+              - link [ref=f31e74] [cursor=pointer]:
+                - /url: https://hromadske.ua/suspilstvo/268539-pobachyla-na-olx-oholoshennia-pro-prodaz-ukrayiny-i-vyrishyla-poyidu-na-kinets-planety-ale-zaberu-lehendarnomu-velosypedu-65-rokiv
+                - 'heading "«Побачила на OLX оголошення про продаж “України” і вирішила: поїду на кінець планети, але заберу»: легендарному велосипеду — 65 років" [level=3] [ref=f31e75]'
+              - generic [ref=f31e76]:
+                - paragraph [ref=f31e77]: Наталія Мазіна –
+                - time [ref=f31e78]: 22 серпня 2026 07:00
+          - complementary [ref=f31e80]:
+            - paragraph [ref=f31e81]: Останні новини
+            - list [ref=f31e82]:
+              - listitem [ref=f31e83]:
+                - article [ref=f31e84]:
+                  - generic [ref=f31e85]:
+                    - link [ref=f31e86] [cursor=pointer]:
+                      - /url: https://hromadske.ua/viyna/269798-tse-mistse-zlochynu-a-ne-dekoratsiia-rosiia-vypustyla-propahandystskyy-film-pro-dramteatr-u-mariupoli
+                      - heading "«Це місце злочину, а не декорація». росія випустила пропагандистський фільм про драмтеатр у Маріуполі" [level=3] [ref=f31e87]
+                    - time [ref=f31e88]: 22 серпня 2026 22:38
+              - listitem [ref=f31e89]:
+                - article [ref=f31e90]:
+                  - generic [ref=f31e91]:
+                    - link [ref=f31e92] [cursor=pointer]:
+                      - /url: https://hromadske.ua/viyna/269797-udar-po-tts-u-kryvomu-rozi-dyrektoru-odnoho-z-supermarketiv-oholosyly-pidozru-cherez-robotu-pid-chas-tryvohy
+                      - 'heading "Удар по ТЦ у Кривому Розі: директору одного із супермаркетів оголосили підозру через роботу під час тривоги" [level=3] [ref=f31e93]'
+                    - time [ref=f31e94]: 22 серпня 2026 22:05
+              - listitem [ref=f31e95]:
+                - article [ref=f31e96]:
+                  - generic [ref=f31e97]:
+                    - paragraph [ref=f31e98]: "! Важливо"
+                    - link [ref=f31e99] [cursor=pointer]:
+                      - /url: https://hromadske.ua/suspilstvo/269796-udary-po-naftobazakh-ta-ozon-u-rf-vizyt-kita-kelloha-do-kyyeva-ta-rakety-perekhopliuvachi-vid-frantsiyi-holovne-za-22-serpnia
+                      - heading "Удари по нафтобазах та Ozon у рф, візит Кіта Келлога до Києва та ракети-перехоплювачі від Франції — головне за 22 серпня" [level=3] [ref=f31e100]
+                    - time [ref=f31e101]: 22 серпня 2026 22:00
+              - listitem [ref=f31e102]:
+                - article [ref=f31e103]:
+                  - generic [ref=f31e104]:
+                    - link [ref=f31e105] [cursor=pointer]:
+                      - /url: https://hromadske.ua/europa/269795-v-uhorshchyni-cherez-pidvyshchennia-rivnia-vody-dunaiu-vidnovliat-robotu-aes
+                      - heading "В Угорщині через підвищення рівня води Дунаю відновлять роботу АЕС" [level=3] [ref=f31e106]
+                    - time [ref=f31e107]: 22 серпня 2026 21:10
+              - listitem [ref=f31e108]:
+                - article [ref=f31e109]:
+                  - generic [ref=f31e110]:
+                    - link [ref=f31e111] [cursor=pointer]:
+                      - /url: https://hromadske.ua/sport/269794-z-neterpinniam-chekayemo-u-londoni-shakhtar-hratyme-domashni-matchi-lihy-chempioniv-na-stadioni-chelsi
+                      - heading "«З нетерпінням чекаємо в Лондоні». «Шахтар» гратиме домашні матчі Ліги чемпіонів на стадіоні «Челсі»" [level=3] [ref=f31e112]
+                    - time [ref=f31e113]: 22 серпня 2026 20:38
+              - listitem [ref=f31e114]:
+                - article [ref=f31e115]:
+                  - generic [ref=f31e116]:
+                    - paragraph [ref=f31e117]: "! Важливо"
+                    - link [ref=f31e118] [cursor=pointer]:
+                      - /url: https://hromadske.ua/viyna/269793-sbs-urazyly-shche-27-enerhoobyektiv-ta-36-suden-tinyovoho-flotu-rf
+                      - heading "СБС уразили ще 27 енергооб'єктів та 36 суден «тіньового флоту» рф" [level=3] [ref=f31e119]
+                    - time [ref=f31e120]: 22 серпня 2026 20:00
+              - listitem [ref=f31e121]:
+                - article [ref=f31e122]:
+                  - generic [ref=f31e123]:
+                    - link [ref=f31e124] [cursor=pointer]:
+                      - /url: https://hromadske.ua/ukrayina/269792-pohirshylosia-samopochuttia-u-ttsk-lvova-sprostuvaly-informatsiiu-pro-smert-cholovika-iakoho-nibyto-vykynuly-z-mikroavtobusa
+                      - heading "«Погіршилося самопочуття». У ТЦК Львова спростували інформацію про смерть чоловіка, якого нібито «викинули з мікроавтобуса»" [level=3] [ref=f31e125]
+                    - time [ref=f31e126]: 22 серпня 2026 19:20
+              - listitem [ref=f31e127]:
+                - article [ref=f31e128]:
+                  - generic [ref=f31e129]:
+                    - link [ref=f31e130] [cursor=pointer]:
+                      - /url: https://hromadske.ua/europa/269791-v-irlandiyi-pidlitky-tikaly-vid-politsiiantiv-na-vykradeniy-avtivtsi-zarady-video-dlia-sotsmerez-usi-piatero-zahynuly-v-avtokatastrofi
+                      - heading "В Ірландії підлітки тікали від поліціянтів на викраденій автівці заради відео для соцмереж — усі п'ятеро загинули в автокатастрофі" [level=3] [ref=f31e131]
+                    - time [ref=f31e132]: 22 серпня 2026 18:56
+              - listitem [ref=f31e133]:
+                - article [ref=f31e134]:
+                  - generic [ref=f31e135]:
+                    - link [ref=f31e136] [cursor=pointer]:
+                      - /url: https://hromadske.ua/kino/269790-u-latviyi-do-richnytsi-nezaleznosti-ukrayiny-proydut-dni-ukrayinskoho-kino-iaki-filmy-pokazut
+                      - heading "У Латвії до річниці незалежності України відбудуться «Дні українського кіно». Які фільми покажуть?" [level=3] [ref=f31e137]
+                    - time [ref=f31e138]: 22 серпня 2026 18:52
+              - listitem [ref=f31e139]:
+                - article [ref=f31e140]:
+                  - generic [ref=f31e141]:
+                    - link [ref=f31e142] [cursor=pointer]:
+                      - /url: https://hromadske.ua/ukrayina/269789-u-telemarafoni-yedyni-novyny-mozut-stvoryty-okremu-hodynu-veteranskoyi-polityky-koretskyy
+                      - heading "У телемарафоні «Єдині новини» можуть створити окрему «годину» ветеранської політики — Корецький" [level=3] [ref=f31e143]
+                    - time [ref=f31e144]: 22 серпня 2026 18:25
+            - link "Всі новини" [ref=f31e146] [cursor=pointer]:
+              - /url: https://hromadske.ua/news
+          - generic [ref=f31e147]:
+            - article [ref=f31e148]:
+              - img "«Три кнопки — і готово». Як за шість років «Дія» змінила взаємодію українців із державою" [ref=f31e151]
+              - generic [ref=f31e152]:
+                - paragraph [ref=f31e153]: Суспільство
+                - link [ref=f31e154] [cursor=pointer]:
+                  - /url: https://hromadske.ua/suspilstvo/269719-try-knopky-i-hotovo-iak-za-shist-rokiv-diia-zminyla-vzayemodiiu-ukrayintsiv-iz-derzavoiu
+                  - heading "«Три кнопки — і готово». Як за шість років «Дія» змінила взаємодію українців із державою" [level=3] [ref=f31e155]
+                - time [ref=f31e157]: 22 серпня 2026 10:48
+            - article [ref=f31e158]:
+              - img "З Могилянки — у хартійський штурмовий полк «Р.У.Г». Як Фемка врятувала побратимів, перемогла стереотипи і чому найкращі друзі — 50-річні чоловіки" [ref=f31e161]
+              - generic [ref=f31e162]:
+                - paragraph [ref=f31e163]: Військові
+                - link [ref=f31e164] [cursor=pointer]:
+                  - /url: https://hromadske.ua/viyskovi/269369-z-mohylianky-u-khartiyskyy-shturmovyy-polk-ruh-iak-femka-vriatuvala-pobratymiv-peremohla-stereotypy-i-chomu-naykrashchi-druzi-50-richni-choloviky
+                  - heading "З Могилянки — у хартійський штурмовий полк «Р.У.Г». Як Фемка врятувала побратимів, перемогла стереотипи і чому найкращі друзі — 50-річні чоловіки" [level=3] [ref=f31e165]
+                - generic [ref=f31e166]:
+                  - paragraph [ref=f31e167]: Дмитро Кузубов –
+                  - time [ref=f31e168]: 19 серпня 2026 08:47
+            - article [ref=f31e169]:
+              - img "Поїхав до Москви, аби не зрадити Україну. Історія маріупольця Михайла Пуришева, який намагається врятувати сина із рук ФСБ" [ref=f31e172]
+              - generic [ref=f31e173]:
+                - paragraph [ref=f31e174]: Суспільство
+                - link [ref=f31e175] [cursor=pointer]:
+                  - /url: https://hromadske.ua/suspilstvo/269556-fsb-shantazuvalo-zyttiam-syna-vin-zaproponuvav-svoye-istoriia-mariupoltsia-shcho-dobrovilno-poyikhav-u-zaruchnyky-do-moskvy
+                  - heading "Поїхав до Москви, аби не зрадити Україну. Історія маріупольця Михайла Пуришева, який намагається врятувати сина із рук ФСБ" [level=3] [ref=f31e176]
+                - generic [ref=f31e177]:
+                  - paragraph [ref=f31e178]: Ірина Сітнікова –
+                  - time [ref=f31e179]: 18 серпня 2026 18:00
+            - article [ref=f31e180]:
+              - img "Прах українського військового «Поштою росії». Хто і за скільки переправляє останки загиблих на тимчасово окуповану територію" [ref=f31e183]
+              - generic [ref=f31e184]:
+                - paragraph [ref=f31e185]: Суспільство
+                - link [ref=f31e186] [cursor=pointer]:
+                  - /url: https://hromadske.ua/viyskovi/269307-prakh-ukrayinskoho-viyskovoho-poshtoiu-rosiyi-khto-i-za-skilky-perepravliaye-ostanky-zahyblykh-na-tymchasovo-okupovanu-terytoriiu
+                  - heading "Прах українського військового «Поштою росії». Хто і за скільки переправляє останки загиблих на тимчасово окуповану територію" [level=3] [ref=f31e187]
+                - generic [ref=f31e188]:
+                  - paragraph [ref=f31e189]: Майя Орел –
+                  - time [ref=f31e190]: 18 серпня 2026 12:30
+        - generic [ref=f31e191]:
+          - generic [ref=f31e192]:
+            - heading "Війна" [level=2] [ref=f31e193]
+            - link "До розділу" [ref=f31e194] [cursor=pointer]:
+              - /url: https://hromadske.ua/viyna
+          - generic [ref=f31e195]:
+            - article [ref=f31e196]:
+              - img "Не виховував, а гроші за загиблого сина взяв. Чому законодавство толерує біологічних батьків військовослужбовців" [ref=f31e201]
+              - generic [ref=f31e202]:
+                - paragraph [ref=f31e203]: Військові
+                - link [ref=f31e204] [cursor=pointer]:
+                  - /url: https://hromadske.ua/viyskovi/268957-ne-vykhovuvav-a-hroshi-za-zahybloho-syna-vziav-chomu-zakonodavstvo-toleruye-biolohichnykh-batkiv-viyskovosluzbovtsiv
+                  - heading "Не виховував, а гроші за загиблого сина взяв. Чому законодавство толерує біологічних батьків військовослужбовців" [level=3] [ref=f31e205]
+                - generic [ref=f31e206]:
+                  - paragraph [ref=f31e207]: Майя Орел –
+                  - time [ref=f31e208]: 11 серпня 2026 07:00
+            - article [ref=f31e209]:
+              - img "З кувалдою проти завалів. Як ся має Славутич під боком у Білорусі" [ref=f31e212]
+              - generic [ref=f31e213]:
+                - paragraph [ref=f31e214]: Суспільство
+                - link [ref=f31e215] [cursor=pointer]:
+                  - /url: https://hromadske.ua/suspilstvo/268372-z-kuvaldoiu-proty-zavaliv-iak-sia-maye-slavutych-pid-bokom-u-bilorusi
+                  - heading "З кувалдою проти завалів. Як ся має Славутич під боком у Білорусі" [level=3] [ref=f31e216]
+                - generic [ref=f31e217]:
+                  - paragraph [ref=f31e218]: Майя Орел –
+                  - time [ref=f31e219]: 10 серпня 2026 08:03
+            - article [ref=f31e220]:
+              - img "Приїхала на обмін на дев'ятому місяці вагітності — мама трьох дітей, дружина військового й керівниця осередку Коордштабу" [ref=f31e225]
+              - generic [ref=f31e226]:
+                - paragraph [ref=f31e227]: Суспільство
+                - link [ref=f31e228] [cursor=pointer]:
+                  - /url: https://hromadske.ua/suspilstvo/268854-1-domovytys-z-vorohom-viddavaty-liudey-tse-tak-samo-iak-domovytys-zakinchyty-viynu-2-shliakh-rodyn-inodi-navit-vazchyy-niz-u-khloptsiv-u-poloni-mama-tryokh-ditey-druzyna-viyskovoho-y-kerivnytsia-koordshtabu
+                  - heading "Приїхала на обмін на дев'ятому місяці вагітності — мама трьох дітей, дружина військового й керівниця осередку Коордштабу" [level=3] [ref=f31e229]
+                - generic [ref=f31e230]:
+                  - paragraph [ref=f31e231]: Оксана Іваницька –
+                  - time [ref=f31e232]: 06 серпня 2026 08:00
+            - article [ref=f31e233]:
+              - img "Загиблі, внаслідок масованої атаки росіян на Броварський район, 5 серпня 2026 року" [ref=f31e236]
+              - generic [ref=f31e237]:
+                - paragraph [ref=f31e238]: Війна
+                - link [ref=f31e239] [cursor=pointer]:
+                  - /url: https://hromadske.ua/viyna/268924-udar-buv-nastilky-sylnym-shcho-zletily-shkarpetky-shcho-stalosia-u-kvitnevomu-de-bilia-koliy-zahynuly-liudy
+                  - heading "«Удар був настільки сильним, що злетіли шкарпетки», — що сталося у Квітневому, де біля колій загинули люди" [level=3] [ref=f31e240]
+                - generic [ref=f31e241]:
+                  - paragraph [ref=f31e242]: Дарина Полішевська –
+                  - time [ref=f31e243]: 05 серпня 2026 19:26
+        - generic [ref=f31e244]:
+          - generic [ref=f31e245]:
+            - heading "Суспільство" [level=2] [ref=f31e246]
+            - link "До розділу" [ref=f31e247] [cursor=pointer]:
+              - /url: https://hromadske.ua/suspilstvo
+          - generic [ref=f31e248]:
+            - article [ref=f31e249]:
+              - img "«Якщо ми не відіб'ємося, на цій території не буде українців». Віталій Портников про роботу в Москві, помилки політичних еліт і головні загрози для України" [ref=f31e254]
+              - generic [ref=f31e255]:
+                - paragraph [ref=f31e256]: Суспільство
+                - link [ref=f31e257] [cursor=pointer]:
+                  - /url: https://hromadske.ua/suspilstvo/268511-1-vy-dyvitsia-skilky-my-zrobyly-vitaliy-portnikov-pro-sebe-ukrayintsiv-i-ukrayinu-2-iakshcho-my-ne-vidibyemosia-na-tsiy-terytoriyi-ne-bude-ukrayintsiv-vitaliy-portnikov-pro-sebe-ukrayintsiv-i-ukrayinu
+                  - heading "«Якщо ми не відіб'ємося, на цій території не буде українців». Віталій Портников про роботу в Москві, помилки політичних еліт і головні загрози для України" [level=3] [ref=f31e258]
+                - generic [ref=f31e259]:
+                  - paragraph [ref=f31e260]: Майя Орел –
+                  - time [ref=f31e261]: 17 серпня 2026 07:00
+            - article [ref=f31e262]:
+              - 'img "5 тисяч гривень — і ви на заповідній території, проїзд на яку заборонено. Хто переможе: джипери чи екологи" [ref=f31e265]'
+              - generic [ref=f31e266]:
+                - paragraph [ref=f31e267]: Суспільство
+                - link [ref=f31e268] [cursor=pointer]:
+                  - /url: https://hromadske.ua/suspilstvo/269318-5-tysiach-hryven-i-vy-na-zapovidniy-terytoriyi-proyizd-na-iaku-zaboroneno-khto-peremoze-dzypery-chy-ekolohy
+                  - 'heading "5 тисяч гривень — і ви на заповідній території, проїзд на яку заборонено. Хто переможе: джипери чи екологи" [level=3] [ref=f31e269]'
+                - generic [ref=f31e270]:
+                  - paragraph [ref=f31e271]: Марія Юркян –
+                  - time [ref=f31e272]: 15 серпня 2026 07:00
+            - article [ref=f31e273]:
+              - img "«Ганьба! Документи — сюди!». Як кияни боролися за столітні дуби на Теремках" [ref=f31e278]
+              - generic [ref=f31e279]:
+                - paragraph [ref=f31e280]: Суспільство
+                - link [ref=f31e281] [cursor=pointer]:
+                  - /url: https://hromadske.ua/suspilstvo/269249-hanba-dokumenty-siudy-iak-stolitni-duby-rozsvaryly-zyteliv-teremkiv-i-stolychnu-vladu
+                  - heading "«Ганьба! Документи — сюди!». Як кияни боролися за столітні дуби на Теремках" [level=3] [ref=f31e282]
+                - generic [ref=f31e283]:
+                  - paragraph [ref=f31e284]: Ірина Сітнікова –
+                  - time [ref=f31e285]: 12 серпня 2026 12:29
+            - article [ref=f31e286]:
+              - img "Де ракети? Коли в України буде своя балістика та де шукати запаси до Patriot" [ref=f31e289]
+              - generic [ref=f31e290]:
+                - paragraph [ref=f31e291]: Війна
+                - link [ref=f31e292] [cursor=pointer]:
+                  - /url: https://hromadske.ua/viyna/268908-de-rakety-koly-v-ukrayiny-bude-svoia-balistyka-ta-de-shukaty-zapasy-do-patriot
+                  - heading "Де ракети? Коли в України буде своя балістика та де шукати запаси до Patriot" [level=3] [ref=f31e293]
+                - generic [ref=f31e294]:
+                  - paragraph [ref=f31e295]: Ірина Сітнікова –
+                  - time [ref=f31e296]: 05 серпня 2026 15:20
+        - generic [ref=f31e297]:
+          - generic [ref=f31e298]:
+            - heading "Думки" [level=2] [ref=f31e299]
+            - link "До розділу" [ref=f31e300] [cursor=pointer]:
+              - /url: https://hromadske.ua/thoughts
+          - generic [ref=f31e301]:
+            - figure [ref=f31e302]:
+              - img "Ігор Пошивайло" [ref=f31e304]
+              - generic [ref=f31e305]:
+                - paragraph [ref=f31e306]: Ігор Пошивайло
+                - paragraph [ref=f31e308]: Директор Національного музею Революції Гідності
+                - link [ref=f31e309] [cursor=pointer]:
+                  - /url: https://hromadske.ua/suspilstvo/269354-35-rokiv-povernuty-y-zafiksuvaty-te-choho-zavtra-moze-ne-buty
+                  - heading "35 років. Повернути й зафіксувати те, чого завтра може не бути" [level=3] [ref=f31e310]
+                - time [ref=f31e311]: 21 серпня 2026 11:05
+            - figure [ref=f31e312]:
+              - img "Олександр Вегержинський" [ref=f31e314]
+              - generic [ref=f31e315]:
+                - paragraph [ref=f31e316]: Олександр Вегержинський
+                - paragraph [ref=f31e318]: Дослідник Незалежної антикорупційної комісії (НАКО)
+                - link [ref=f31e319] [cursor=pointer]:
+                  - /url: https://hromadske.ua/polityka/269669-shcho-zalyshylos-za-lashtunkamy-zminy-ministra-oborony-abo-iak-zyve-aparat-vidomstva
+                  - heading "Що залишилось за лаштунками зміни міністра оборони, або Як живе апарат відомства" [level=3] [ref=f31e320]
+                - time [ref=f31e321]: 20 серпня 2026 15:51
+            - figure [ref=f31e322]:
+              - img "Олександра Матвійчук" [ref=f31e324]
+              - generic [ref=f31e325]:
+                - paragraph [ref=f31e326]: Олександра Матвійчук
+                - paragraph [ref=f31e328]: Правозахисниця, голова Центру громадянських свобод, членкиня правління hromadske
+                - link [ref=f31e329] [cursor=pointer]:
+                  - /url: https://hromadske.ua/suspilstvo/269143-razom-my-okean-i-razom-my-zmozemo
+                  - heading "Разом ми — океан, і разом ми зможемо!" [level=3] [ref=f31e330]
+                - time [ref=f31e331]: 20 серпня 2026 14:21
+        - generic [ref=f31e332]:
+          - generic [ref=f31e333]:
+            - heading "Політика" [level=2] [ref=f31e334]
+            - link "До розділу" [ref=f31e335] [cursor=pointer]:
+              - /url: https://hromadske.ua/polityka
+          - generic [ref=f31e336]:
+            - article [ref=f31e337]:
+              - img "«В угорців ніколи не було проблем щодо українців» — інтерв’ю з послом України в Угорщині" [ref=f31e342]
+              - generic [ref=f31e343]:
+                - paragraph [ref=f31e344]: Політика
+                - link [ref=f31e345] [cursor=pointer]:
+                  - /url: https://hromadske.ua/polityka/268972-v-uhortsiv-nikoly-ne-bulo-problem-shchodo-ukrayintsiv-interviu-z-poslom-ukrayiny-v-uhorshchyni
+                  - heading "«В угорців ніколи не було проблем щодо українців» — інтерв’ю з послом України в Угорщині" [level=3] [ref=f31e346]
+                - generic [ref=f31e347]:
+                  - paragraph [ref=f31e348]: Роксолана Лісовська –
+                  - time [ref=f31e349]: 07 серпня 2026 12:00
+            - article [ref=f31e350]:
+              - img "Як Сирського на Драпатого міняли" [ref=f31e353]
+              - generic [ref=f31e354]:
+                - paragraph [ref=f31e355]: Війна
+                - link [ref=f31e356] [cursor=pointer]:
+                  - /url: https://hromadske.ua/viyskovi/268113-iak-syrskoho-na-drapatoho-minialy
+                  - heading "Як Сирського на Драпатого міняли" [level=3] [ref=f31e357]
+                - generic [ref=f31e358]:
+                  - paragraph [ref=f31e359]: Діана Буцко
+                  - paragraph [ref=f31e360]: Оксана Іваницька –
+                  - time [ref=f31e361]: 23 липня 2026 12:21
+        - generic [ref=f31e362]:
+          - generic [ref=f31e363]:
+            - heading "Світ" [level=2] [ref=f31e364]
+            - link "До розділу" [ref=f31e365] [cursor=pointer]:
+              - /url: https://hromadske.ua/svit
+          - generic [ref=f31e366]:
+            - article [ref=f31e367]:
+              - img "«Жінка може померти від хвороби, бо їй не дозволяють лікуватись у чоловіка-лікаря». Як живуть жінки в Афганістані після 5 років правління «Талібану»" [ref=f31e372]
+              - generic [ref=f31e373]:
+                - paragraph [ref=f31e374]: Світ
+                - link [ref=f31e375] [cursor=pointer]:
+                  - /url: https://hromadske.ua/svit/269247-zinka-moze-pomerty-vid-khvoroby-bo-yiy-ne-dozvoliaiut-likuvatys-u-cholovika-likaria-iak-zyvut-zinky-v-afhanistani-pislia-5-rokiv-pravlinnia-talibanu
+                  - heading "«Жінка може померти від хвороби, бо їй не дозволяють лікуватись у чоловіка-лікаря». Як живуть жінки в Афганістані після 5 років правління «Талібану»" [level=3] [ref=f31e376]
+                - generic [ref=f31e377]:
+                  - paragraph [ref=f31e378]: Роксолана Лісовська –
+                  - time [ref=f31e379]: 14 серпня 2026 07:00
+            - article [ref=f31e380]:
+              - img "Нам уже зараз потрібні філіппінські медики. Пані посол України на Філіппінах про український інтерес в Південно-Східній Азії" [ref=f31e383]
+              - generic [ref=f31e384]:
+                - paragraph [ref=f31e385]: Геополітика
+                - link [ref=f31e386] [cursor=pointer]:
+                  - /url: https://hromadske.ua/heopolityka/269205-nam-uze-zaraz-potribni-filippinski-medyky-pani-posol-ukrayiny-na-filippinakh-pro-ukrayinskyy-interes-v-pivdenno-skhidniy-aziyi
+                  - heading "Нам уже зараз потрібні філіппінські медики. Пані посол України на Філіппінах про український інтерес в Південно-Східній Азії" [level=3] [ref=f31e387]
+                - generic [ref=f31e388]:
+                  - paragraph [ref=f31e389]: Майя Орел –
+                  - time [ref=f31e390]: 12 серпня 2026 07:00
+        - generic [ref=f31e391]:
+          - generic [ref=f31e392]:
+            - heading "Економіка" [level=2] [ref=f31e393]
+            - link "До розділу" [ref=f31e394] [cursor=pointer]:
+              - /url: https://hromadske.ua/ekonomika
+          - generic [ref=f31e395]:
+            - article [ref=f31e396]:
+              - img "Іскра, що змінює життя" [ref=f31e401]
+              - generic [ref=f31e402]:
+                - paragraph [ref=f31e403]: Бізнес
+                - link [ref=f31e404] [cursor=pointer]:
+                  - /url: https://hromadske.ua/biznes/268485-iskra-shcho-zminiuye-zyttia
+                  - heading "Іскра, що змінює життя" [level=3] [ref=f31e405]
+                - time [ref=f31e407]: 31 липня 2026 10:50
+            - article [ref=f31e408]:
+              - img "«Це мій шлях». Історії трьох жінок, які подолали стереотипи й знайшли себе в гуманітарному розмінуванні" [ref=f31e411]
+              - generic [ref=f31e412]:
+                - paragraph [ref=f31e413]: Суспільство
+                - link [ref=f31e414] [cursor=pointer]:
+                  - /url: https://hromadske.ua/suspilstvo/266434-tse-miy-shliakh-istoriyi-tryokh-zinok-iaki-podolaly-stereotypy-y-znayshly-sebe-v-humanitarnomu-rozminuvanni
+                  - heading "«Це мій шлях». Історії трьох жінок, які подолали стереотипи й знайшли себе в гуманітарному розмінуванні" [level=3] [ref=f31e415]
+                - time [ref=f31e417]: 29 червня 2026 18:07
+        - generic [ref=f31e418]:
+          - generic [ref=f31e419]:
+            - heading "Спецпроєкти" [level=2] [ref=f31e420]
+            - link "До розділу" [ref=f31e421] [cursor=pointer]:
+              - /url: https://hromadske.ua/genre/spetsproekt
+          - generic [ref=f31e422]:
+            - article [ref=f31e423]:
+              - img "Онлайн-гра «Що лежить у твоєму кошику?» допомагає розпізнати прояви домашнього насильства — контроль, приниження та заборони, які люди можуть сприймати як «складний характер», ревнощі чи турботу, особливо під час повномасштабної війни." [ref=f31e426]
+              - generic [ref=f31e427]:
+                - link [ref=f31e428] [cursor=pointer]:
+                  - /url: https://hromadske.ua/specials/269489-onlayn-hra-shcho-lezyt-u-tvoyemu-koshyku
+                  - heading "Онлайн-гра «Що лежить у твоєму кошику?»" [level=3] [ref=f31e429]
+                - time [ref=f31e431]: 17 серпня 2026 12:30
+            - article [ref=f31e432]:
+              - 'img "Історії з Uklon: Чому дорожчає поїздка, на що впливає рейтинг і що не варто возити в салоні: раунд-ток “Байдак розрулить”" [ref=f31e435]'
+              - generic [ref=f31e436]:
+                - link [ref=f31e437] [cursor=pointer]:
+                  - /url: https://hromadske.ua/specials/266928-istoriyi-z-uklon-chomu-dorozchaye-poyizdka-na-shcho-vplyvaye-reytynh-i-shcho-ne-varto-vozyty-v-saloni-raund-tok-baydak-rozrulyt
+                  - 'heading "Історії з Uklon: Чому дорожчає поїздка, на що впливає рейтинг і що не варто возити в салоні: раунд-ток “Байдак розрулить”" [level=3] [ref=f31e438]'
+                - time [ref=f31e440]: 05 липня 2026 12:13
+            - article [ref=f31e441]:
+              - img "Не дати собі згаснути" [ref=f31e444]
+              - generic [ref=f31e445]:
+                - link [ref=f31e446] [cursor=pointer]:
+                  - /url: https://hromadske.ua/specials/266808-ne-daty-sobi-zhasnuty-iak-veterany-ta-viyskovi-vtrymuiut-sviy-biznes-pid-chas-viyny
+                  - 'heading "Не дати собі згаснути: як ветерани та військові втримують свій бізнес під час війни" [level=3] [ref=f31e447]'
+                - time [ref=f31e449]: 01 липня 2026 13:38
+        - generic [ref=f31e451]:
+          - generic [ref=f31e452]:
+            - heading "Відео" [level=2] [ref=f31e454]
+            - link "Переглянути все" [ref=f31e455] [cursor=pointer]:
+              - /url: https://www.youtube.com/@hromadske_ua
+          - generic [ref=f31e456]:
+            - generic [ref=f31e457]:
+              - iframe [ref=f31e459]
+              - article [ref=f31e461]:
+                - generic [ref=f31e462]:
+                  - link [ref=f31e463] [cursor=pointer]:
+                    - /url: https://www.youtube.com/watch?v=mb2ISGS8ksk
+                    - heading "Віталій Портников про 35 років незалежності, Кучму, Зеленського й українську ідентичність" [level=3] [ref=f31e464]
+                  - time [ref=f31e466]: 17 серпня 2026 18:00
+            - list [ref=f31e467]:
+              - listitem [ref=f31e468]:
+                - button [ref=f31e469] [cursor=pointer]:
+                  - generic [ref=f31e470]:
+                    - paragraph [ref=f31e471]: Віталій Портников про 35 років незалежності, Кучму, Зеленського й українську ідентичність
+                    - time [ref=f31e472]: 17 серпня 2026 18:00
+              - listitem [ref=f31e473]:
+                - button [ref=f31e474] [cursor=pointer]:
+                  - generic [ref=f31e475]:
+                    - paragraph [ref=f31e476]: "Оператори HIMARS: «Скільки половили російських шикувань!» / hromadske"
+                    - time [ref=f31e477]: 11 серпня 2026 18:00
+              - listitem [ref=f31e478]:
+                - button [ref=f31e479] [cursor=pointer]:
+                  - generic [ref=f31e480]:
+                    - paragraph [ref=f31e481]: «Це їхня помста за те, що ми б’ємо по складах». Наслідки обстрілу Київщини
+                    - time [ref=f31e482]: 05 серпня 2026 18:00
+              - listitem [ref=f31e483]:
+                - button [ref=f31e484] [cursor=pointer]:
+                  - generic [ref=f31e485]:
+                    - paragraph [ref=f31e486]: «Ми з ним не дуже», — тесть чиновника Мінекономіки про зятя, який живе в його будинку в Козині
+                    - time [ref=f31e487]: 05 серпня 2026 12:00
+              - listitem [ref=f31e488]:
+                - button [ref=f31e489] [cursor=pointer]:
+                  - generic [ref=f31e490]:
+                    - paragraph [ref=f31e491]: "«Мене поставили перед фактом: або війна, або тюрма». Військові, засуджені за СЗЧ / hromadske"
+                    - time [ref=f31e492]: 22 липня 2026 18:00
+              - listitem [ref=f31e493]:
+                - button [ref=f31e494] [cursor=pointer]:
+                  - generic [ref=f31e495]:
+                    - paragraph [ref=f31e496]: «Прибирати його — це безглуздо». Сотні людей вийшли на площу в Києві проти звільнення Федорова
+                    - time [ref=f31e497]: 16 липня 2026 18:00
+        - generic [ref=f31e498]:
+          - generic [ref=f31e499]:
+            - heading "Партнерські матеріали" [level=2] [ref=f31e500]
+            - link "До розділу" [ref=f31e501] [cursor=pointer]:
+              - /url: https://hromadske.ua/tags/promo
+          - generic [ref=f31e502]:
+            - article [ref=f31e503]:
+              - img "«Це мій шлях». Історії трьох жінок, які подолали стереотипи й знайшли себе в гуманітарному розмінуванні" [ref=f31e506]
+              - generic [ref=f31e507]:
+                - paragraph [ref=f31e508]: Суспільство
+                - link [ref=f31e509] [cursor=pointer]:
+                  - /url: https://hromadske.ua/suspilstvo/266434-tse-miy-shliakh-istoriyi-tryokh-zinok-iaki-podolaly-stereotypy-y-znayshly-sebe-v-humanitarnomu-rozminuvanni
+                  - heading "«Це мій шлях». Історії трьох жінок, які подолали стереотипи й знайшли себе в гуманітарному розмінуванні" [level=3] [ref=f31e510]
+                - time [ref=f31e512]: 29 червня 2026 18:07
+            - article [ref=f31e513]:
+              - 'img "Татова сила: історії військових, які вчаться жити наново після поранень" [ref=f31e516]'
+              - generic [ref=f31e517]:
+                - paragraph [ref=f31e518]: Суспільство
+                - link [ref=f31e519] [cursor=pointer]:
+                  - /url: https://hromadske.ua/suspilstvo/266336-tatova-syla-istoriyi-viyskovykh-iaki-vchatsia-zyty-nanovo-pislia-poranen
+                  - 'heading "Татова сила: історії військових, які вчаться жити наново після поранень" [level=3] [ref=f31e520]'
+                - time [ref=f31e522]: 22 червня 2026 20:04
+            - article [ref=f31e523]:
+              - img "«Стерильність, послідовність, відповідальність». Як прифронтовий Харків зберігає доступ до якісної питної води" [ref=f31e526]
+              - generic [ref=f31e527]:
+                - paragraph [ref=f31e528]: Суспільство
+                - link [ref=f31e529] [cursor=pointer]:
+                  - /url: https://hromadske.ua/suspilstvo/264739-sterylnist-poslidovnist-vidpovidalnist-iak-pryfrontovyy-kharkiv-zberihaye-dostup-do-iakisnoyi-pytnoyi-vody
+                  - heading "«Стерильність, послідовність, відповідальність». Як прифронтовий Харків зберігає доступ до якісної питної води" [level=3] [ref=f31e530]
+                - time [ref=f31e532]: 17 червня 2026 12:06
+        - generic [ref=f31e533]:
+          - generic [ref=f31e534]:
+            - heading "Лайфстайл" [level=2] [ref=f31e535]
+            - link "До розділу" [ref=f31e536] [cursor=pointer]:
+              - /url: https://hromadske.ua/lifestyle
+          - generic [ref=f31e537]:
+            - article [ref=f31e538]:
+              - img "Чи потрібен пісні вірш? Даніела Заюшкіна та Артем Чех про сучасні пісні, вірші класиків та «творчість» ШІ" [ref=f31e543]
+              - generic [ref=f31e544]:
+                - paragraph [ref=f31e545]: Лайфстайл
+                - link [ref=f31e546] [cursor=pointer]:
+                  - /url: https://hromadske.ua/lifestyle/269311-chy-potriben-pisni-virsh-daniela-zaiushkina-ta-artem-chekh-pro-suchasni-pisni-virshi-klasykiv-ta-tvorchist-shi
+                  - heading "Чи потрібен пісні вірш? Даніела Заюшкіна та Артем Чех про сучасні пісні, вірші класиків та «творчість» ШІ" [level=3] [ref=f31e547]
+                - generic [ref=f31e548]:
+                  - paragraph [ref=f31e549]: Альберт Цукренко –
+                  - time [ref=f31e550]: 16 серпня 2026 07:00
+            - article [ref=f31e551]:
+              - img "«Ми — у стані тотального за*обу». Сергій Жадан про самоцензуру, лідерів думок, фанатів, творчі кризи, Брехта та загрозу ШІ" [ref=f31e554]
+              - generic [ref=f31e555]:
+                - paragraph [ref=f31e556]: Музика
+                - link [ref=f31e557] [cursor=pointer]:
+                  - /url: https://hromadske.ua/muzyka/269015-my-u-stani-totalnoho-zaobu-serhiy-zadan-pro-samotsenzuru-lideriv-dumok-fanativ-tvorchi-kryzy-brekhta-ta-zahrozu-shi
+                  - heading "«Ми — у стані тотального за*обу». Сергій Жадан про самоцензуру, лідерів думок, фанатів, творчі кризи, Брехта та загрозу ШІ" [level=3] [ref=f31e558]
+                - generic [ref=f31e559]:
+                  - paragraph [ref=f31e560]: Альберт Цукренко –
+                  - time [ref=f31e561]: 09 серпня 2026 09:55
+    - contentinfo [ref=f31e562]:
+      - generic [ref=f31e563]:
+        - generic [ref=f31e564]:
+          - link "Підтримати" [ref=f31e565] [cursor=pointer]:
+            - /url: https://cutt.ly/UrYNREGf
+          - generic [ref=f31e566]:
+            - paragraph [ref=f31e567]: Підтримай hromadske.
+            - paragraph [ref=f31e568]: Ми працюємо для тебе та завдяки тобі. Будь нашим другом
+          - list [ref=f31e569]:
+            - listitem [ref=f31e570]:
+              - link "Про hromadske" [ref=f31e571] [cursor=pointer]:
+                - /url: https://hromadske.ua/about
+            - listitem [ref=f31e572]:
+              - link "Команда" [ref=f31e573] [cursor=pointer]:
+                - /url: https://hromadske.ua/team
+            - listitem [ref=f31e574]:
+              - link "Контакти" [ref=f31e575] [cursor=pointer]:
+                - /url: https://hromadske.ua/about/contacts
+            - listitem [ref=f31e576]:
+              - link "Структура власності" [ref=f31e577] [cursor=pointer]:
+                - /url: https://hromadske.ua/ownership
+            - listitem [ref=f31e578]:
+              - link "Реклама" [ref=f31e579] [cursor=pointer]:
+                - /url: https://hromadske.ua/advertising
+            - listitem [ref=f31e580]:
+              - link "Продакшн" [ref=f31e581] [cursor=pointer]:
+                - /url: https://hromadske.ua/production
+            - listitem [ref=f31e582]:
+              - link "Вакансії" [ref=f31e583] [cursor=pointer]:
+                - /url: https://hromadske.ua/opportunities
+            - listitem [ref=f31e584]:
+              - link "Тендери" [ref=f31e585] [cursor=pointer]:
+                - /url: https://hromadske.ua/tenders
+            - listitem [ref=f31e586]:
+              - link "Крамниця" [ref=f31e587] [cursor=pointer]:
+                - /url: https://store.hromadske.ua/?_gl=1*1uxgc37*_ga*ODE4MTQ5MzUuMTcwOTA0NTUyNg..*_ga_FFQQ6F8PRK*MTcxMjgzMzc2OC4xNDMuMS4xNzEyODMzNzgzLjQ1LjAuMA..*_ga_QRXBZKG0YN*MTcxMjgzMzc2OC4xNDQuMS4xNzEyODMzNzgzLjQ1LjAuMA..
+            - listitem [ref=f31e588]:
+              - link "Фінансові звіти" [ref=f31e589] [cursor=pointer]:
+                - /url: https://hromadske.ua/finreports
+            - listitem [ref=f31e590]:
+              - link "Наші політики" [ref=f31e591] [cursor=pointer]:
+                - /url: https://hromadske.ua/privacy_policy
+            - listitem [ref=f31e592]:
+              - link "Карта сайту" [ref=f31e593] [cursor=pointer]:
+                - /url: https://hromadske.ua/archive
+          - list [ref=f31e594]:
+            - listitem [ref=f31e595]:
+              - link "Дивитися у facebook" [ref=f31e596] [cursor=pointer]:
+                - /url: https://www.facebook.com/hromadskeua
+            - listitem [ref=f31e597]:
+              - link "Дивитися у instagram" [ref=f31e598] [cursor=pointer]:
+                - /url: https://www.instagram.com/hromadske.ua/
+            - listitem [ref=f31e599]:
+              - link "Дивитися у telegram" [ref=f31e600] [cursor=pointer]:
+                - /url: https://t.me/hromadske_ua
+            - listitem [ref=f31e601]:
+              - link "Дивитися у youtube" [ref=f31e602] [cursor=pointer]:
+                - /url: https://www.youtube.com/@hromadske_ua
+            - listitem [ref=f31e603]:
+              - link "Дивитися у twitter" [ref=f31e604] [cursor=pointer]:
+                - /url: https://twitter.com/Hromadskeua
+            - listitem [ref=f31e605]:
+              - link "Дивитися у tiktok" [ref=f31e606] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@hromadske.ua
+            - listitem [ref=f31e607]:
+              - link "Дивитися у threads" [ref=f31e608] [cursor=pointer]:
+                - /url: https://www.threads.com/@hromadske.ua
+          - generic [ref=f31e609]:
+            - link [ref=f31e610] [cursor=pointer]:
+              - /url: https://hromadske.ua/
+              - img "hromadske" [ref=f31e611]
+            - generic [ref=f31e612]:
+              - paragraph [ref=f31e613]: "Всі права захищені:"
+              - paragraph [ref=f31e614]: © Громадське Телебачення, 2013-2026.
+        - generic [ref=f31e616]:
+          - link "ideil" [ref=f31e617] [cursor=pointer]:
+            - /url: https://ideil.com
+            - paragraph [ref=f31e618]:
+              - generic [ref=f31e619]: ideil
+          - link "Design elt" [ref=f31e620] [cursor=pointer]:
+            - /url: https://elt.agency
+            - paragraph [ref=f31e621]: Design
+            - paragraph [ref=f31e622]:
+              - generic [ref=f31e623]: elt

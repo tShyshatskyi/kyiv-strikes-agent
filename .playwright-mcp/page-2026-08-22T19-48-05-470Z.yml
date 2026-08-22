@@ -1,0 +1,256 @@
+- generic [active] [ref=f5e1]:
+  - banner [ref=f5e2]:
+    - generic [ref=f5e4]:
+      - generic [ref=f5e5]:
+        - generic [ref=f5e6]: Контраст
+        - img "contrast" [ref=f5e8] [cursor=pointer]
+      - generic [ref=f5e9]:
+        - generic [ref=f5e10]: Шрифт
+        - generic [ref=f5e11] [cursor=pointer]
+        - generic [ref=f5e14] [cursor=pointer]
+        - generic [ref=f5e17] [cursor=pointer]
+      - generic [ref=f5e20]: Сховати налаштування
+    - generic [ref=f5e21]:
+      - link [ref=f5e23] [cursor=pointer]:
+        - /url: /
+        - img "logo" [ref=f5e25]
+      - generic [ref=f5e27]:
+        - generic [ref=f5e28]:
+          - generic [ref=f5e29] [cursor=pointer]
+          - generic [ref=f5e34]:
+            - link "Укр" [ref=f5e35] [cursor=pointer]:
+              - /url: https://gp.gov.ua/en
+            - link "Eng" [ref=f5e37] [cursor=pointer]:
+              - /url: https://gp.gov.ua/en
+          - generic [ref=f5e38]:
+            - link [ref=f5e39] [cursor=pointer]:
+              - /url: https://mobile.twitter.com/gp_ukraine
+            - link [ref=f5e42] [cursor=pointer]:
+              - /url: https://www.facebook.com/pgo.gov.ua/
+            - link [ref=f5e47] [cursor=pointer]:
+              - /url: https://www.youtube.com/channel/UCd84qGJiBJCaHKenN0zKeWw/videos
+            - link [ref=f5e51] [cursor=pointer]:
+              - /url: https://t.me/pgo_gov_ua
+          - link [ref=f5e55] [cursor=pointer]:
+            - /url: https://www.gp.gov.ua/admin/login
+        - list [ref=f5e60]:
+          - listitem [ref=f5e61]:
+            - link "Про прокуратуру" [ref=f5e62] [cursor=pointer]:
+              - /url: " javascript: void(0) "
+          - listitem [ref=f5e63]:
+            - link "Діяльність" [ref=f5e64] [cursor=pointer]:
+              - /url: " javascript: void(0) "
+          - listitem [ref=f5e65]:
+            - link "Громадянам" [ref=f5e66] [cursor=pointer]:
+              - /url: " javascript: void(0) "
+          - listitem [ref=f5e67]:
+            - link "Працівникам прокуратури" [ref=f5e68] [cursor=pointer]:
+              - /url: " javascript: void(0) "
+          - listitem [ref=f5e69]:
+            - link "Новини" [ref=f5e70] [cursor=pointer]:
+              - /url: " javascript: void(0) "
+          - listitem [ref=f5e71]:
+            - link "Повістки про виклик" [ref=f5e72] [cursor=pointer]:
+              - /url: " https://www.gp.gov.ua/ua/categories/povistki-pro-viklik-ta-vidomosti-pro-zdijsnennya-specialnogo-dosudovogo-rozsliduvannya "
+          - listitem [ref=f5e73]:
+            - link "Контакти" [ref=f5e74] [cursor=pointer]:
+              - /url: " https://www.gp.gov.ua/ua/posts/kontakti-2 "
+      - link [ref=f5e76] [cursor=pointer]:
+        - /url: /ua/posts/sajti-oblasnih-prokuratur
+  - generic [ref=f5e99]:
+    - generic [ref=f5e100] [cursor=pointer]
+    - generic [ref=f5e102] [cursor=pointer]
+    - generic [ref=f5e106]:
+      - link "Учаснику схеми заволодіння 60 млн грн на ремонтах доріг Вінниччини повідомлено нові підозри Учаснику схеми заволодіння 60 млн грн на ремонтах доріг Вінниччини повідомлено нові підозри" [ref=f5e110] [cursor=pointer]:
+        - /url: https://gp.gov.ua/ua/posts/ucasniku-sxemi-zavolodinnya-60-mln-grn-na-remontax-dorig-vinniccini-povidomleno-novi-pidozri
+        - img "Учаснику схеми заволодіння 60 млн грн на ремонтах доріг Вінниччини повідомлено нові підозри" [ref=f5e112]
+        - generic [ref=f5e113]: Учаснику схеми заволодіння 60 млн грн на ремонтах доріг Вінниччини повідомлено нові підозри
+      - link [ref=f5e118] [cursor=pointer]:
+        - /url: https://gp.gov.ua/ua/posts/ocolila-radu-suddiv-lnr-ta-pracyuje-na-okupantiv-pidozryujetsya-kolisnya-ukrayinska-suddya
+        - generic [ref=f5e121]: "Очолила «раду суддів лнр» та працює на окупантів: підозрюється колишня українська суддя"
+      - link [ref=f5e126] [cursor=pointer]:
+        - /url: https://gp.gov.ua/ua/posts/zatrimano-viiskovosluzbovcya-nacionalnoyi-gvardiyi-ukrayini-yakii-viyavivsya-agentom-viiskovoyi-rozvidki-krayini-okupanta
+        - generic [ref=f5e129]: Затримано військовослужбовця Національної гвардії України, який виявився агентом військової розвідки країни-окупанта
+      - link [ref=f5e134] [cursor=pointer]:
+        - /url: https://gp.gov.ua/ua/posts/u-kijevi-colovika-obvinuvacuyut-u-seksualnomu-nasilstvi-nad-pyatma-pleminnikami-vikom-vid-2-x-do-8-rokiv
+        - generic [ref=f5e137]: У Києві чоловіка обвинувачують у сексуальному насильстві над п'ятьма племінниками віком від 2-х до 8 років
+      - link [ref=f5e142] [cursor=pointer]:
+        - /url: https://gp.gov.ua/ua/posts/za-vpliv-na-pogodzennya-rekonstrukciyi-pereyizdu-vimagali-500-tis-grn-zatrimali-posadovcya-ampu-ta-predstavnicyu-kompaniyi
+        - generic [ref=f5e145]: "За вплив на погодження реконструкції переїзду вимагали 500 тис. грн: затримали посадовця АМПУ та представницю компанії"
+      - link [ref=f5e150] [cursor=pointer]:
+        - /url: https://gp.gov.ua/ua/posts/potribni-visnovki-vlk-za-grosi-ta-milionni-aktivi-suditimut-golovu-viiskovo-likarskoyi-komisiyi
+        - generic [ref=f5e153]: "\"Потрібні\" висновки ВЛК за гроші та мільйонні активи: судитимуть голову військово-лікарської комісії"
+  - generic [ref=f5e155]:
+    - generic [ref=f5e156]:
+      - generic [ref=f5e157]:
+        - generic [ref=f5e158] [cursor=pointer]: Головне
+        - generic [ref=f5e159] [cursor=pointer]: Регіони
+      - generic [ref=f5e160]:
+        - generic [ref=f5e161]:
+          - generic [ref=f5e162]:
+            - link [ref=f5e163] [cursor=pointer]:
+              - /url: https://gp.gov.ua/ua/posts/tri-udari-nozem-viiskovomu-tck-ta-pogroza-vbivstvom-policeiskomu-25-ricnomu-lvivyaninu-povidomleno-pro-pidozru
+              - 'img "Три удари ножем військовому ТЦК та погроза вбивством поліцейському: 25-річному львів’янину повідомлено про підозру" [ref=f5e164]'
+            - generic [ref=f5e165]:
+              - 'link "Три удари ножем військовому ТЦК та погроза вбивством поліцейському: 25-річному львів’янину повідомлено про підозру" [ref=f5e167] [cursor=pointer]':
+                - /url: https://gp.gov.ua/ua/posts/tri-udari-nozem-viiskovomu-tck-ta-pogroza-vbivstvom-policeiskomu-25-ricnomu-lvivyaninu-povidomleno-pro-pidozru
+              - link "22.08.2026" [ref=f5e168] [cursor=pointer]:
+                - /url: "#"
+          - generic [ref=f5e169]:
+            - link [ref=f5e170] [cursor=pointer]:
+              - /url: https://gp.gov.ua/ua/posts/viiskovi-rf-vdarili-po-torgovelnomu-centru-u-krivomu-rozi-dvoje-zagiblix-52-poranenix-prokurori-fiksuyut-naslidki
+              - 'img "Військові рф вдарили по торговельному центру у Кривому Розі: двоє загиблих, 52 поранених — прокурори фіксують наслідки" [ref=f5e171]'
+            - generic [ref=f5e172]:
+              - 'link "Військові рф вдарили по торговельному центру у Кривому Розі: двоє загиблих, 52 поранених — прокурори фіксують наслідки" [ref=f5e174] [cursor=pointer]':
+                - /url: https://gp.gov.ua/ua/posts/viiskovi-rf-vdarili-po-torgovelnomu-centru-u-krivomu-rozi-dvoje-zagiblix-52-poranenix-prokurori-fiksuyut-naslidki
+              - link "21.08.2026" [ref=f5e175] [cursor=pointer]:
+                - /url: "#"
+          - generic [ref=f5e176]:
+            - link [ref=f5e177] [cursor=pointer]:
+              - /url: https://gp.gov.ua/ua/posts/ucasniku-sxemi-zavolodinnya-60-mln-grn-na-remontax-dorig-vinniccini-povidomleno-novi-pidozri
+              - img "Учаснику схеми заволодіння 60 млн грн на ремонтах доріг Вінниччини повідомлено нові підозри" [ref=f5e178]
+            - generic [ref=f5e179]:
+              - link "Учаснику схеми заволодіння 60 млн грн на ремонтах доріг Вінниччини повідомлено нові підозри" [ref=f5e181] [cursor=pointer]:
+                - /url: https://gp.gov.ua/ua/posts/ucasniku-sxemi-zavolodinnya-60-mln-grn-na-remontax-dorig-vinniccini-povidomleno-novi-pidozri
+              - link "21.08.2026" [ref=f5e182] [cursor=pointer]:
+                - /url: "#"
+          - generic [ref=f5e183]:
+            - link [ref=f5e184] [cursor=pointer]:
+              - /url: https://gp.gov.ua/ua/posts/postacali-obladnannya-do-rf-cerez-inozemnogo-poserednika-sprava-v-sudi
+              - 'img "Постачали обладнання до рф через іноземного посередника: справа в суді" [ref=f5e185]'
+            - generic [ref=f5e186]:
+              - 'link "Постачали обладнання до рф через іноземного посередника: справа в суді" [ref=f5e188] [cursor=pointer]':
+                - /url: https://gp.gov.ua/ua/posts/postacali-obladnannya-do-rf-cerez-inozemnogo-poserednika-sprava-v-sudi
+              - link "21.08.2026" [ref=f5e189] [cursor=pointer]:
+                - /url: "#"
+        - link "Всі новини" [ref=f5e190] [cursor=pointer]:
+          - /url: https://gp.gov.ua/ua/categories/novini
+    - generic [ref=f5e192]:
+      - generic [ref=f5e193]: Відео
+      - generic [ref=f5e195]:
+        - generic [ref=f5e196]:
+          - link [ref=f5e198] [cursor=pointer]:
+            - /url: https://gp.gov.ua/ua/videos/strativ-postrilom-u-golovu-povidomleno-pro-pidozru-sturmoviku-rf-yakii-vbiv-polonenogo-komandira-pidrozdilu-sil-oboroni-na-pokrovskomu-napryamku
+            - img "Стратив пострілом у голову - повідомлено про підозру штурмовику рф, який вбив полоненого командира підрозділу Сил оборони на Покровському напрямку" [ref=f5e199]
+          - link [ref=f5e201] [cursor=pointer]:
+            - /url: https://gp.gov.ua/ua/videos/94-saxraiski-kol-centri-pripinili-robotu-v-mezax-masstabnoyi-specoperaciyi
+            - img "94 шахрайські кол-центри припинили роботу в межах масштабної спецоперації" [ref=f5e202]
+        - link "Всі відео" [ref=f5e203] [cursor=pointer]:
+          - /url: https://gp.gov.ua/ua/videos
+  - generic [ref=f5e204]:
+    - generic [ref=f5e205]:
+      - img "img" [ref=f5e206]
+      - text: Передано на потреби ЗСУ для перемоги над агресором
+    - generic [ref=f5e207]:
+      - generic [ref=f5e208]:
+        - generic [ref=f5e209]: 7,39 млрд гривень
+        - generic [ref=f5e210]:
+          - img "img" [ref=f5e211]
+          - generic [ref=f5e212]: Коштів і цінностей
+      - generic [ref=f5e213]:
+        - generic [ref=f5e214]: 1239 одиниць
+        - generic [ref=f5e215]:
+          - img "img" [ref=f5e216]
+          - generic [ref=f5e217]: Транспортних засобів
+      - generic [ref=f5e218]:
+        - generic [ref=f5e219]: 13 тис тонн
+        - generic [ref=f5e220]:
+          - img "img" [ref=f5e221]
+          - generic [ref=f5e222]: Пального
+  - generic [ref=f5e223]:
+    - img "УКР" [ref=f5e229]
+    - generic [ref=f5e231]:
+      - link [ref=f5e233] [cursor=pointer]:
+        - /url: https://war.gp.gov.ua/
+      - link [ref=f5e236] [cursor=pointer]:
+        - /url: https://warcrimes.gov.ua/
+    - generic [ref=f5e238]:
+      - link "Підозрювані магістральної справи" [ref=f5e239] [cursor=pointer]:
+        - /url: https://gp.gov.ua/detectable
+      - link "санкції" [ref=f5e241] [cursor=pointer]:
+        - /url: https://www.gp.gov.ua/ua/posts/sankciyi
+  - generic [ref=f5e244]:
+    - link "Бачення, місія, цінності діяльності прокуратури" [ref=f5e246] [cursor=pointer]:
+      - /url: https://gp.gov.ua/ua/posts/bacennya-misiya-cinnosti-diyalnosti-prokuraturi
+    - link "Результати кримінальних проваджень щодо збанкрутілих банків" [ref=f5e251] [cursor=pointer]:
+      - /url: https://gp.gov.ua/ua/posts/rezultati-kriminalnix-provadzen-shhodo-zbankrutilix-bankiv-2
+    - link "Стратегія з реалізації повноважень органів прокуратури у сфері кримінального переслідування за міжнародні злочини на 2026–2028 роки" [ref=f5e256] [cursor=pointer]:
+      - /url: https://gp.gov.ua/ua/posts/strategicnii-plan-shhodo-realizaciyi-povnovazen-organiv-prokuraturi-u-sferi-kriminalnogo-peresliduvannya-za-vcinennya-miznarodnix-zlociniv-na-2023-2025-roki
+    - link "ВСЕУКРАЇНСЬКА КОНФЕРЕНЦІЯ ПРОКУРОРІВ 2026" [ref=f5e261] [cursor=pointer]:
+      - /url: https://gp.gov.ua/ua/posts/vseukrayinska-konferenciya-prokuroriv-2026
+  - generic [ref=f5e266]:
+    - link [ref=f5e268] [cursor=pointer]:
+      - /url: https://stoptysk.gp.gov.ua
+    - link [ref=f5e271] [cursor=pointer]:
+      - /url: https://www.gp.gov.ua/ua/forms/povidomiti-pro-korupciyu-v-organah-prokuraturi
+  - generic [ref=f5e274]:
+    - link "Тренінговий центр прокурорів України" [ref=f5e276] [cursor=pointer]:
+      - /url: https://ptcu.gp.gov.ua/uk/
+    - link "Кваліфікаційно-дисциплінарна комісія прокурорів" [ref=f5e281] [cursor=pointer]:
+      - /url: https://kdkp.gov.ua/
+    - link "Спеціалізована антикорупційна прокуратура" [ref=f5e286] [cursor=pointer]:
+      - /url: https://www.facebook.com/sap.gov.ua/
+  - generic [ref=f5e291]:
+    - generic [ref=f5e292]:
+      - generic [ref=f5e295]:
+        - generic [ref=f5e296]: Прокуратура
+        - generic [ref=f5e297]:
+          - link "Керівництво" [ref=f5e298] [cursor=pointer]:
+            - /url: https://gp.gov.ua/ua/posts/kerivnictvo
+          - link "Про Офіс" [ref=f5e299] [cursor=pointer]:
+            - /url: https://gp.gov.ua/ua/posts/pro-ofis
+          - link "Робота в прокуратурі" [ref=f5e300] [cursor=pointer]:
+            - /url: https://www.gp.gov.ua/ua/posts/robota-v-prokuraturi
+          - link "Статистика" [ref=f5e301] [cursor=pointer]:
+            - /url: https://gp.gov.ua/ua/posts/statistika
+          - link "Контакти" [ref=f5e302] [cursor=pointer]:
+            - /url: https://www.gp.gov.ua/ua/posts/kontakti-2
+          - link "Тренінговий центр прокурорів Украіни" [ref=f5e303] [cursor=pointer]:
+            - /url: https://ptcu.gp.gov.ua/uk/
+      - generic [ref=f5e305]:
+        - generic [ref=f5e306]:
+          - generic [ref=f5e307]: Пресцентр
+          - generic [ref=f5e308]:
+            - link "Головні" [ref=f5e309] [cursor=pointer]:
+              - /url: https://gp.gov.ua/ua/categories/novini
+            - link "Відео" [ref=f5e310] [cursor=pointer]:
+              - /url: https://www.gp.gov.ua/ua/videos
+            - link "Фото" [ref=f5e311] [cursor=pointer]:
+              - /url: https://gp.gov.ua/ua/categories/foto
+            - link "Регіональні" [ref=f5e312] [cursor=pointer]:
+              - /url: https://gp.gov.ua/ua/categories/regionalni
+            - link "Контакти для медіа" [ref=f5e313] [cursor=pointer]:
+              - /url: /ua/posts/kontakti-dlya-zmi
+        - generic [ref=f5e314]:
+          - generic [ref=f5e315]: Звернутися
+          - generic [ref=f5e316]:
+            - link "Повідомити" [ref=f5e317] [cursor=pointer]:
+              - /url: ""
+            - link "Доступ до публічної інформації" [ref=f5e318] [cursor=pointer]:
+              - /url: https://www.gp.gov.ua/ua/posts/dostup-do-publichnoyi-informaciyi
+            - link "Звернення громадян" [ref=f5e319] [cursor=pointer]:
+              - /url: https://www.gp.gov.ua/ua/posts/zvernennya-gromadyan
+      - generic [ref=f5e322]:
+        - generic [ref=f5e323]: Законодавство
+        - link "Нормативні документи прокуратури" [ref=f5e325] [cursor=pointer]:
+          - /url: https://gp.gov.ua/ua/posts/normativni-dokumenti-prokuraturi
+      - generic [ref=f5e328]:
+        - generic [ref=f5e329]: Працівникам прокуратури
+        - generic [ref=f5e330]:
+          - link "Вхід до ЄРДР" [ref=f5e331] [cursor=pointer]:
+            - /url: https://erdr.gp.gov.ua/erdr/erdr.web.system.LoginPage.cls
+          - link "Загальна інформація" [ref=f5e332] [cursor=pointer]:
+            - /url: ""
+    - generic [ref=f5e333]:
+      - img "logo" [ref=f5e335]
+      - link "Публічні закупівлі" [ref=f5e337] [cursor=pointer]:
+        - /url: https://prozorro.gov.ua/uk/search/tender?buyer=00034051
+      - generic [ref=f5e338]:
+        - link [ref=f5e339] [cursor=pointer]:
+          - /url: https://mobile.twitter.com/gp_ukraine
+        - link [ref=f5e342] [cursor=pointer]:
+          - /url: https://www.facebook.com/pgo.gov.ua/
+        - link [ref=f5e346] [cursor=pointer]:
+          - /url: https://www.youtube.com/channel/UCd84qGJiBJCaHKenN0zKeWw/videos
+        - link [ref=f5e350] [cursor=pointer]:
+          - /url: https://t.me/pgo_gov_ua

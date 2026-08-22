@@ -8,15 +8,8 @@
 # independence_group is the reconciliation key. Two articles sharing a group
 # count as ONE source no matter how many outlets republished them.
 
+# Verified reachable by scripts/probe_playwright.py on 2026-08-22.
 sources:
-  - domain: dsns.gov.ua
-    tier: 1
-    independence_group: dsns
-    name: Державна служба з надзвичайних ситуацій
-  - domain: kyivcity.gov.ua
-    tier: 1
-    independence_group: kmva
-    name: Київська міська державна адміністрація
   - domain: npu.gov.ua
     tier: 1
     independence_group: police
@@ -25,6 +18,27 @@ sources:
     tier: 1
     independence_group: prosecutor
     name: Офіс Генерального прокурора
+  - domain: mvs.gov.ua
+    tier: 1
+    independence_group: mvs
+    name: Міністерство внутрішніх справ
+
+  # Tier 1 but NOT directly reachable: both sit behind a bot-protection wall
+  # that returns HTTP 403 and a "Триває перевірка безпеки" interstitial to a
+  # headless browser. Circumventing that is out of scope and out of bounds, so
+  # they are kept here for tier lookup and independence grouping — a newsroom
+  # citing them is still grouped under them — but the agent never navigates to
+  # them itself.
+  - domain: dsns.gov.ua
+    tier: 1
+    independence_group: dsns
+    name: Державна служба з надзвичайних ситуацій
+    directly_reachable: false
+  - domain: kyivcity.gov.ua
+    tier: 1
+    independence_group: kmva
+    name: Київська міська державна адміністрація
+    directly_reachable: false
 
   - domain: suspilne.media
     tier: 2

@@ -1,0 +1,350 @@
+- generic [ref=e2]:
+  - link "Перейти до основного вмісту" [ref=e3] [cursor=pointer]:
+    - /url: "#layout-content"
+  - banner [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e6]:
+        - generic [ref=e7]: Портал в режимі тестування та наповнення
+        - generic [ref=e9]:
+          - button "gov.ua Державні сайти України" [ref=e11] [cursor=pointer]:
+            - generic [ref=e13]:
+              - generic [ref=e14]: gov.ua
+              - generic [ref=e15]: Державні сайти України
+          - link "Національна поліція України Офіційний вебпортал" [ref=e17] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e19]:
+              - heading "Національна поліція України" [level=1] [ref=e20]
+              - generic [ref=e21]: Офіційний вебпортал
+          - list [ref=e23]:
+            - listitem
+        - generic [ref=e24]:
+          - navigation "Головне меню" [ref=e25]:
+            - generic [ref=e26]:
+              - button "Про поліцію" [ref=e27] [cursor=pointer]
+              - button "Діяльність" [ref=e28] [cursor=pointer]
+              - button "Громадянам" [ref=e29] [cursor=pointer]
+              - button "Контакти" [ref=e30] [cursor=pointer]
+              - button "Воєнні злочини рф" [ref=e31] [cursor=pointer]
+              - button "Назавжди в строю" [ref=e32] [cursor=pointer]
+              - button "Документи" [ref=e33] [cursor=pointer]
+              - button "Вакансії" [ref=e34] [cursor=pointer]
+              - button "Зниклі безвісти та ДНК" [ref=e35] [cursor=pointer]
+            - button "Показати більше пунктів меню" [ref=e36] [cursor=pointer]
+          - generic [ref=e37]:
+            - generic [ref=e39]:
+              - link "Сторінка у Facebook (відкриває нове вікно)" [ref=e40] [cursor=pointer]:
+                - /url: https://www.facebook.com/UA.National.Police
+              - link "Сторінка у Twitter (відкриває нове вікно)" [ref=e41] [cursor=pointer]:
+                - /url: https://twitter.com/NPU_GOV_UA
+              - link "Сторінка у instagram (відкриває нове вікно)" [ref=e42] [cursor=pointer]:
+                - /url: https://www.instagram.com/national.police.ua/
+              - link "Сторінка у Youtube (відкриває нове вікно)" [ref=e43] [cursor=pointer]:
+                - /url: https://www.youtube.com/c/nationalpoliceofukraine
+              - link "Сторінка у telegram (відкриває нове вікно)" [ref=e44] [cursor=pointer]:
+                - /url: https://t.me/UA_National_Police
+            - button "Пошук" [ref=e45] [cursor=pointer]
+  - main [ref=e48]:
+    - main [ref=e50]:
+      - generic [ref=e52]:
+        - heading "Головні повідомлення" [level=2] [ref=e53]
+        - generic [ref=e54]:
+          - generic [ref=e57]:
+            - generic [ref=e58]: 22 серпня 2026, 12:30
+            - link "Поліцейські Львівщини повідомили про підозру нападнику, який убив військовослужбовця ТЦК та погрожував поліцейському" [ref=e59] [cursor=pointer]:
+              - /url: /news/politseiski-lvivshchyny-povidomyly-pro-pidozru-napadnyku-iakyi-ubyv-viiskovosluzhbovtsia-ttsk-ta-pohrozhuvav-politseiskomu
+          - generic [ref=e61]:
+            - generic [ref=e63]:
+              - link [ref=e64] [cursor=pointer]:
+                - /url: /news/vprodovzh-usiiei-nochi-na-mistsi-rosiiskoi-ataky-po-torhivelnomu-tsentru-u-kryvomu-rozi-pratsiuvaly-vsi-sluzhby-politsii
+                - heading "Впродовж усієї ночі на місці російської атаки по торгівельному центру у Кривому Розі працювали всі служби поліції" [level=3] [ref=e65]
+              - generic [ref=e66]: 22 серпня 2026, 11:08
+            - generic [ref=e69]:
+              - link [ref=e70] [cursor=pointer]:
+                - /url: /news/maksym-tsutskiridze-zhytomyr-zaznav-tsynichnoi-ataky-rosiiskykh-viisk-voroh-zavdav-udariv-bezpilotnykamy-typu-banderol
+                - 'heading "Максим Цуцкірідзе: Житомир зазнав цинічної атаки російських військ - ворог завдав ударів безпілотниками типу «Бандероль»" [level=3] [ref=e71]'
+              - generic [ref=e72]: 19 серпня 2026, 18:00
+      - generic [ref=e76]:
+        - heading "Новини, анонси та медіагалереї" [level=2] [ref=e77]
+        - tablist [ref=e78]:
+          - tab "Новини" [selected] [ref=e79] [cursor=pointer]
+          - tab "Новини областей" [ref=e80] [cursor=pointer]
+          - tab "Майнові злочини" [ref=e81] [cursor=pointer]
+          - tab "Інформація" [ref=e82] [cursor=pointer]
+        - generic [ref=e83]:
+          - tabpanel [ref=e86]:
+            - generic [ref=e88]:
+              - button "Усі теми" [ref=e89] [cursor=pointer]
+              - button "Відфільтрувати новини за темою Безпека дорожнього руху" [ref=e90] [cursor=pointer]: Безпека дорожнього руху
+              - button "Відфільтрувати новини за темою Білий янгол" [ref=e91] [cursor=pointer]: Білий янгол
+              - button "Відфільтрувати новини за темою Ветеранам" [ref=e92] [cursor=pointer]: Ветеранам
+              - button "Відфільтрувати новини за темою Діти" [ref=e93] [cursor=pointer]: Діти
+              - button "Іще теми" [ref=e95] [cursor=pointer]
+            - generic [ref=e96]:
+              - tabpanel [ref=e97]:
+                - generic [ref=e99]:
+                  - generic [ref=e102]:
+                    - generic [ref=e103]: 22 серпня 2026, 18:44
+                    - 'link "Щира подяка за мужність і відданість Україні: буковинські поліцейські вшанували пам''ять полеглого колеги-захисника Юрія Берли" [ref=e104] [cursor=pointer]':
+                      - /url: /news/shchyra-podiaka-za-muzhnist-i-viddanist-ukraini-bukovynski-politseiski-vshanuvaly-pamiat-polehloho-kolehy-zakhysnyka-iuriia-berly
+                  - generic [ref=e107]:
+                    - generic [ref=e108]: 22 серпня 2026, 16:45
+                    - 'link "Всеукраїнський Форум інклюзивності: буковинські поліцейські взяли участь в дискусії стосовно покращення життя людей з інвалідністю" [ref=e109] [cursor=pointer]':
+                      - /url: /news/vseukrainskyi-forum-inkliuzyvnosti-bukovynski-politseiski-vzialy-uchast-v-dyskusii-stosovno-pokrashchennia-zhyttia-liudei-z-invalidnistiu
+                  - generic [ref=e111]:
+                    - img "22 серпня ворог здійснив атаку на Полтавський та Миргородський райони" [ref=e112]
+                    - generic [ref=e113]:
+                      - generic [ref=e114]: 22 серпня 2026, 16:37
+                      - link "Поліція та СБУ документують наслідки ворожого обстрілу Полтавщини" [ref=e115] [cursor=pointer]:
+                        - /url: /news/politsiia-ta-sbu-dokumentuiut-naslidky-vorozhoho-obstrilu-poltavshchyny
+                  - generic [ref=e118]:
+                    - generic [ref=e119]: 22 серпня 2026, 16:25
+                    - 'link "Назавжди в строю: рік тому загинули поліцейські Прикарпаття Ігор Мартинюк та Олександр Солов’янчик" [ref=e120] [cursor=pointer]':
+                      - /url: /news/nazavzhdy-v-stroiu-rik-tomu-zahynuly-politseiski-prykarpattia-ihor-martyniuk-ta-oleksandr-solovianchyk
+                  - generic [ref=e123]:
+                    - generic [ref=e124]: 22 серпня 2026, 16:20
+                    - 'link "Поліція Києва у скорботі: у боях за Україну загинув боєць стрілецького полку Дмитро Підгаєць" [ref=e125] [cursor=pointer]':
+                      - /url: /news/politsiia-kyieva-u-skorboti-u-boiakh-za-ukrainu-zahynuv-boiets-striletskoho-polku-dmytro-pidhaiets
+                  - generic [ref=e128]:
+                    - generic [ref=e129]: 22 серпня 2026, 15:15
+                    - link "У результаті масованої атаки на селища Кушугум і Балабине загинули троє людей, ще 15 отримали поранення - поліцейські документують наслідки воєнного злочину" [ref=e130] [cursor=pointer]:
+                      - /url: /news/u-rezultati-masovanoi-ataky-na-selyshcha-kushuhum-i-balabyne-zahynuly-troie-liudei-shche-15-otrymaly-poranennia-politseiski-dokumentuiut-naslidky-voiennoho-zlochynu
+              - link "Усі новини" [ref=e134] [cursor=pointer]:
+                - /url: /timeline?&type=posts&category_id=2
+          - generic [ref=e138]:
+            - generic:
+              - link "Twitter Національної поліції України":
+                - /url: ""
+      - generic [ref=e139]:
+        - generic [ref=e140]:
+          - button "Попередній слайд" [ref=e141] [cursor=pointer]
+          - generic [ref=e143]:
+            - link "Лють 2 з 2" [ref=e145] [cursor=pointer]:
+              - /url: https://www.npu.gov.ua/liut-shukaie-voiniv
+              - img "Лють" [ref=e146]
+              - generic [ref=e147]: 2 з 2
+            - link "1 з 2" [ref=e149] [cursor=pointer]:
+              - /url: https://npu.gov.ua/doluchaisia-do-biitsiv-striletskoho-kord
+            - link "Лють 2 з 2" [ref=e152] [cursor=pointer]:
+              - /url: https://www.npu.gov.ua/liut-shukaie-voiniv
+              - img "Лють" [ref=e153]
+              - generic [ref=e154]: 2 з 2
+            - link "1 з 2" [ref=e156] [cursor=pointer]:
+              - /url: https://npu.gov.ua/doluchaisia-do-biitsiv-striletskoho-kord
+          - button "Наступний слайд" [ref=e158] [cursor=pointer]
+        - generic [ref=e159]: Лють
+      - generic [ref=e160]:
+        - heading "Послуги та сервіси" [level=2] [ref=e163]
+        - generic [ref=e166]:
+          - link "Протидія домашньому насильству" [ref=e168] [cursor=pointer]:
+            - /url: /gromadyanam/chasti-zapiti/protidiya-domashnomu-nasilstvu
+          - link "Гаряча лінія 1547" [ref=e172] [cursor=pointer]:
+            - /url: https://1547.ukc.gov.ua/
+          - link "Запобігання та протидія корупції" [ref=e176] [cursor=pointer]:
+            - /url: /pro-policiyu/zapobigannya-i-protidiya-korupciyi
+          - link "Послуги патрульної поліції" [ref=e180] [cursor=pointer]:
+            - /url: http://patrol.police.gov.ua/services/
+      - generic [ref=e185]:
+        - heading "Територіальні та міжрегіональні підрозділи" [level=2] [ref=e186]
+        - generic:
+          - generic:
+            - paragraph
+        - generic [ref=e188]:
+          - tablist [ref=e189]:
+            - tab "Територіальні" [selected] [ref=e190] [cursor=pointer]
+            - tab "Міжрегіональні" [ref=e191] [cursor=pointer]
+          - tabpanel [ref=e194]:
+            - generic [ref=e197]:
+              - link "Вінницька область" [ref=e199] [cursor=pointer]:
+                - /url: https://vn.npu.gov.ua/
+              - link "Волинська область" [ref=e201] [cursor=pointer]:
+                - /url: https://vl.npu.gov.ua/
+              - link "Дніпропетровська область" [ref=e203] [cursor=pointer]:
+                - /url: https://dp.npu.gov.ua/
+              - link "Донецька область" [ref=e205] [cursor=pointer]:
+                - /url: https://dn.npu.gov.ua/
+              - link "Житомирська область" [ref=e207] [cursor=pointer]:
+                - /url: https://zt.npu.gov.ua/
+              - link "Закарпатська область" [ref=e209] [cursor=pointer]:
+                - /url: https://zk.npu.gov.ua/
+              - link "Запорізька область" [ref=e211] [cursor=pointer]:
+                - /url: https://zp.npu.gov.ua/
+              - link "Івано-Франківська область" [ref=e213] [cursor=pointer]:
+                - /url: https://if.npu.gov.ua/
+              - link "Київська область" [ref=e215] [cursor=pointer]:
+                - /url: https://kv.npu.gov.ua/
+              - link "Кіровоградська область" [ref=e217] [cursor=pointer]:
+                - /url: https://kg.npu.gov.ua/
+              - link "Луганська область" [ref=e219] [cursor=pointer]:
+                - /url: https://lg.npu.gov.ua/
+              - link "Львівська область" [ref=e221] [cursor=pointer]:
+                - /url: https://lv.npu.gov.ua/
+              - link "Миколаївська область" [ref=e223] [cursor=pointer]:
+                - /url: https://mk.npu.gov.ua/
+              - link "Одеська область" [ref=e225] [cursor=pointer]:
+                - /url: https://od.npu.gov.ua/
+              - link "Полтавська область" [ref=e227] [cursor=pointer]:
+                - /url: https://pl.npu.gov.ua/
+              - link "Рівненська область" [ref=e229] [cursor=pointer]:
+                - /url: https://rv.npu.gov.ua/
+              - link "Сумська область" [ref=e231] [cursor=pointer]:
+                - /url: https://su.npu.gov.ua/
+              - link "Тернопільська область" [ref=e233] [cursor=pointer]:
+                - /url: https://tp.npu.gov.ua/
+              - link "Харківська область" [ref=e235] [cursor=pointer]:
+                - /url: https://hk.npu.gov.ua/
+              - link "Херсонська область" [ref=e237] [cursor=pointer]:
+                - /url: https://hr.npu.gov.ua/
+              - link "Хмельницька область" [ref=e239] [cursor=pointer]:
+                - /url: https://hm.npu.gov.ua/
+              - link "Черкаська область" [ref=e241] [cursor=pointer]:
+                - /url: https://ch.npu.gov.ua/
+              - link "Чернівецька область" [ref=e243] [cursor=pointer]:
+                - /url: https://cv.npu.gov.ua/
+              - link "Чернігівська область" [ref=e245] [cursor=pointer]:
+                - /url: https://cn.npu.gov.ua/
+              - link "місто Київ" [ref=e247] [cursor=pointer]:
+                - /url: https://kyiv.npu.gov.ua/
+              - link "АР Крим та м. Севастополь" [ref=e249] [cursor=pointer]:
+                - /url: https://cr.npu.gov.ua/
+      - generic [ref=e251]:
+        - heading "Робота та навчання в поліції" [level=2] [ref=e254]
+        - generic [ref=e257]:
+          - generic [ref=e258]:
+            - heading "Центральний орган управління" [level=3] [ref=e259]
+            - generic [ref=e260]: Відкриті вакансії для керівників, заступників керівників та головних спеціалістів
+            - link "Перейти до вакансій" [ref=e261] [cursor=pointer]:
+              - /url: /vakansiyi/vakansiyi-v-tsentralnomu-orhani-upravlinnya
+          - generic [ref=e262]:
+            - heading "Патрульна поліція" [level=3] [ref=e263]
+            - generic [ref=e264]: Відкриті вакансії на посаду інспектора патрульної поліції у різних містах України
+            - link "Перейти до вакансій" [ref=e265] [cursor=pointer]:
+              - /url: https://my.patrolpolice.gov.ua/
+          - generic [ref=e266]:
+            - heading "Відділи в міжрегіональних та територіальних підрозділах" [level=3] [ref=e267]
+            - generic [ref=e268]: Вакансії на посаду поліцейського, оперуповноваженого, інспектора та інших професій у відділках поліції
+            - link "Перейти до вакансій" [ref=e269] [cursor=pointer]:
+              - /url: https://nabir.np.gov.ua/
+          - generic [ref=e270]:
+            - heading "Навчання у вишах системи МВС" [level=3] [ref=e271]
+            - generic [ref=e272]: Подати документи на навчання до вузів системи МВС
+            - link "Перейти до вакансій" [ref=e273] [cursor=pointer]:
+              - /url: https://osvita.np.gov.ua/
+      - generic [ref=e275]:
+        - heading "Часті запити" [level=2] [ref=e278]
+        - generic [ref=e281]:
+          - generic [ref=e283]:
+            - link "Корисна інформація та поради" [ref=e284] [cursor=pointer]:
+              - /url: /gromadyanam/chasti-zapiti/korisna-informaciya-ta-poradi
+            - link "Відкриті дані" [ref=e285] [cursor=pointer]:
+              - /url: /diyalnist/vidkriti-dani
+            - link "Уповноважений Верховної Ради України з прав людини" [ref=e286] [cursor=pointer]:
+              - /url: https://npu.gov.ua/gromadyanam/chasti-zapiti/upovnovazhenyi-verkhovnoi-rady-ukrainy-z-prav-liudyny
+            - link "Оскарження дій" [ref=e287] [cursor=pointer]:
+              - /url: /gromadyanam/chasti-zapiti/oskarzhennya-dij
+            - link "Поради вимушеним переселенцям" [ref=e288] [cursor=pointer]:
+              - /url: /gromadyanam/chasti-zapiti/poradi-vimushenim-pereselencyam
+            - link "Центри реінтеграції та адаптації наркозалежних осіб" [ref=e289] [cursor=pointer]:
+              - /url: /gromadyanam/chasti-zapiti/centri-reintegraciyi-ta-adaptaciyi-narkozalezhnih-osib
+            - link "Спеціальні майданчики для зберігання тимчасово затриманих транспортних засобів" [ref=e290] [cursor=pointer]:
+              - /url: /gromadyanam/chasti-zapiti/specialni-majdanchiki-dlya-zberigannya-timchasovo-zatrimanih-transportnih-zasobiv
+            - link "Шифр бюджетних установ, що належать до сфери управління Нацполіції та перелік послуг" [ref=e291] [cursor=pointer]:
+              - /url: /gromadyanam/chasti-zapiti/shifr-byudzhetnih-ustanov-shcho-nalezhat-do-sferi-upravlinnya-npu-ta-perelik-poslug
+            - link "Пам’ятка заявнику при зверненні до поліції із заявою або повідомлення" [ref=e292] [cursor=pointer]:
+              - /url: /gromadyanam/chasti-zapiti/pamyatka-zayavniku-pri-zvernenni-do-policiyi-iz-zayavoyu-abo-povidomlennyami
+            - link "Проведення перевірки на зайняття державної посади" [ref=e293] [cursor=pointer]:
+              - /url: /gromadyanam/chasti-zapiti/provedennya-perevirki-na-zajnyattya-derzhavnoyi-posadi
+          - generic [ref=e295]:
+            - heading "Оперативні контакти" [level=3] [ref=e296]
+            - generic [ref=e297]:
+              - generic [ref=e298]: Безкоштовна телефонна «гаряча лінія» Національної поліції України
+              - link "0-800-50-02-02" [ref=e299] [cursor=pointer]:
+                - /url: tel:0-800-50-02-02
+            - generic [ref=e300]:
+              - generic [ref=e301]: Екстренний номер
+              - link "102" [ref=e302] [cursor=pointer]:
+                - /url: tel:102
+            - generic [ref=e303]:
+              - generic [ref=e304]: Урядова «Гаряча лінія»
+              - link "1545" [ref=e305] [cursor=pointer]:
+                - /url: tel:1545
+            - generic [ref=e306]:
+              - generic [ref=e307]: Для запитів на публічну інформацію та адвокатських запитів
+              - link "+380 (44) 256-15-89, +380 (44) 254-96-09, +380 (44) 254-92-80" [ref=e308] [cursor=pointer]:
+                - /url: tel:+380 (44) 256-15-89, +380 (44) 254-96-09, +380 (44) 254-92-80
+            - generic [ref=e309]:
+              - generic [ref=e310]: Служба діловодства Національної поліції України
+              - link "+380 (44) 256-13-99, +380 (44) 365-21-22" [ref=e311] [cursor=pointer]:
+                - /url: tel:+380 (44) 256-13-99, +380 (44) 365-21-22
+      - generic [ref=e314]:
+        - heading "Корисні посилання" [level=2] [ref=e316]
+        - generic [ref=e317]:
+          - link "Національне агенство з питань запобігання корупції" [ref=e320] [cursor=pointer]:
+            - /url: https://nazk.gov.ua/uk/
+          - link "Уповноважений Верховної Ради України з прав людини" [ref=e323] [cursor=pointer]:
+            - /url: https://ombudsman.gov.ua
+          - link "Безоплатна правнича допомога" [ref=e326] [cursor=pointer]:
+            - /url: https://legalaid.gov.ua/kliyentam/pro-bezoplatnu-pravovu-dopomogu-bpd/
+          - link "Євроінтеграційний портал" [ref=e329] [cursor=pointer]:
+            - /url: https://eu-ua.kmu.gov.ua/
+          - link "Єдиний державний портал адміністративних послуг" [ref=e332] [cursor=pointer]:
+            - /url: https://my.gov.ua/
+          - link "Консультативна місія Європейського Союзу в Україні" [ref=e335] [cursor=pointer]:
+            - /url: https://www.euam-ukraine.eu/ua/
+          - link "Урядова кампанія EUКраїна" [ref=e338] [cursor=pointer]:
+            - /url: https://mvs.gov.ua/uk/ministry/projekti-mvs/jevropeiska-integraciya-ukrayini/uryadova-kampaniya-eukrayina-1
+          - link "Україна - НАТО" [ref=e341] [cursor=pointer]:
+            - /url: https://ukraine-nato.mfa.gov.ua/
+          - link "Координаційний штаб з питань поводження з військовополоненими" [ref=e344] [cursor=pointer]:
+            - /url: https://koordshtab.gov.ua/
+  - contentinfo [ref=e345]:
+    - generic [ref=e346]:
+      - button [ref=e348] [cursor=pointer]:
+        - heading "Мапа порталу" [level=2] [ref=e349]
+      - generic [ref=e353]:
+        - generic [ref=e354]: Національна поліція України
+        - generic [ref=e355]: Україна, 01601, місто Київ, вул. Богомольця Академіка, будинок 10
+      - generic [ref=e357]:
+        - generic [ref=e358]: Телефон
+        - link "+380 (44) 254-93-33" [ref=e360] [cursor=pointer]:
+          - /url: tel:+380 (44) 254-93-33
+      - generic [ref=e362]:
+        - generic [ref=e363]: Електронна пошта
+        - link "info@police.gov.ua" [ref=e365] [cursor=pointer]:
+          - /url: mailto:info@police.gov.ua
+    - generic [ref=e367]:
+      - generic [ref=e368]:
+        - generic [ref=e369]: Національна поліція України
+        - generic [ref=e372]:
+          - generic [ref=e373]:
+            - link "Сторінка у Facebook (відкриває нове вікно)" [ref=e374] [cursor=pointer]:
+              - /url: https://www.facebook.com/UA.National.Police
+            - link "Сторінка у Twitter (відкриває нове вікно)" [ref=e375] [cursor=pointer]:
+              - /url: https://twitter.com/NPU_GOV_UA
+            - link "Сторінка у instagram (відкриває нове вікно)" [ref=e376] [cursor=pointer]:
+              - /url: https://www.instagram.com/national.police.ua/
+            - link "Сторінка у Youtube (відкриває нове вікно)" [ref=e377] [cursor=pointer]:
+              - /url: https://www.youtube.com/c/nationalpoliceofukraine
+            - link "Сторінка у telegram (відкриває нове вікно)" [ref=e378] [cursor=pointer]:
+              - /url: https://t.me/UA_National_Police
+          - list [ref=e379]:
+            - listitem
+      - generic [ref=e383]:
+        - text: Портал працює в тестовому режимі
+        - link "info@police.gov.ua" [ref=e384] [cursor=pointer]:
+          - /url: mailto:info@police.gov.ua
+      - generic [ref=e385]:
+        - generic [ref=e388]:
+          - text: Весь контент доступний за ліцензією
+          - link "Creative Commons Attribution 4.0 International license" [ref=e389] [cursor=pointer]:
+            - /url: https://creativecommons.org/licenses/by/4.0/deed.uk
+          - text: ", якщо не зазначено інше"
+        - link [ref=e391] [cursor=pointer]:
+          - /url: "https://dasu.gov.ua/ua/plugins/userPages/3688 "
+          - img "Повідомити про порушення з коштами ЄС" [ref=e392]
+      - generic [ref=e393]:
+        - generic [ref=e394]: © Власність Національної поліції України 2026
+        - generic [ref=e400]:
+          - link "Компанія «KitSoft»" [ref=e401] [cursor=pointer]:
+            - /url: https://kitsoft.ua/
+          - generic [ref=e402]: — розробник порталу
+  - button "Кнопка переходу на початок сторінки" [ref=e403] [cursor=pointer]

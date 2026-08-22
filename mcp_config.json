@@ -1,0 +1,22 @@
+{
+  "_comment": "Playwright MCP is pinned, not tracked at @latest, so the demo is reproducible. Confirm this version matches the one announced for the course before the defence.",
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@0.0.79", "--headless", "--isolated"],
+      "transport": "stdio"
+    },
+    "kyiv-strikes": {
+      "command": "python",
+      "args": ["-m", "mcp_server"],
+      "transport": "stdio",
+      "env": {
+        "PYTHONUTF8": "1",
+        "PYTHONPATH": "${REPO_ROOT}",
+        "KSM_OFFLINE": "${KSM_OFFLINE}",
+        "KSM_DB_PATH": "${KSM_DB_PATH}",
+        "NOMINATIM_CONTACT": "${NOMINATIM_CONTACT}"
+      }
+    }
+  }
+}

@@ -162,3 +162,25 @@ def test_window_must_be_positive():
     with pytest.raises(ValueError):
         assess_sources([src("suspilne.media", SUSP)], REGISTRY, EVENT_DATE,
                        relevance_window_days=0)
+
+
+# --- what the probe found: some official sources cannot be fetched ----------
+
+def test_bot_walled_officials_are_kept_for_grouping_but_not_for_fetching():
+    """ДСНС and КМВА answer a headless browser with HTTP 403 and a security
+    interstitial. We do not try to get around that. They stay in the registry
+    so an outlet citing them is still grouped under them, but the agent never
+    navigates to them."""
+    from mcp_server.credibility import reachable_domains
+    assert "dsns.gov.ua" in REGISTRY.entries
+    assert REGISTRY.entries["dsns.gov.ua"].tier == 1
+    assert REGISTRY.entries["dsns.gov.ua"].directly_reachable is False
+    assert "dsns.gov.ua" not in reachable_domains(REGISTRY)
+    assert "npu.gov.ua" in reachable_domains(REGISTRY)
+
+
+def test_a_relay_of_an_unreachable_official_still_carries_its_voice():
+    sources = [src("suspilne.media", SUSP, cited=["dsns.gov.ua"])]
+    r = by_url(assess_sources(sources, REGISTRY, EVENT_DATE))[SUSP]
+    assert r["independence_group"] == "dsns"
+    assert r["usable_as_corroborator"] is True

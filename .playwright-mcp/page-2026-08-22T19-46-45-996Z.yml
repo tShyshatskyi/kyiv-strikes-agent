@@ -1,0 +1,22 @@
+- generic [active] [ref=f3e1]:
+  - main [ref=f3e2]:
+    - generic [ref=f3e3]:
+      - generic [ref=f3e4]:
+        - img "Значок для kyivcity.gov.ua" [ref=f3e5]
+        - heading "kyivcity.gov.ua" [level=1] [ref=f3e6]
+      - heading "Триває перевірка безпеки" [level=2] [ref=f3e7]
+      - paragraph [ref=f3e8]: На цьому вебсайті використовується сервіс безпеки для захисту від зловмисних ботів. Ця сторінка відображається, поки вебсайт перевіряє, що ви не бот.
+  - contentinfo [ref=f3e15]:
+    - generic [ref=f3e17]:
+      - generic [ref=f3e19]:
+        - text: "Ray ID:"
+        - code [ref=f3e20]: a2f46260fd60b39a
+      - generic [ref=f3e21]:
+        - generic [ref=f3e22]:
+          - text: Продуктивність і безпека від
+          - link "Cloudflare, відкривається в новій вкладці" [ref=f3e23] [cursor=pointer]:
+            - /url: https://www.cloudflare.com?utm_source=challenge&utm_campaign=l
+            - text: Cloudflare
+        - link "Конфіденційність, відкривається в новій вкладці" [ref=f3e25] [cursor=pointer]:
+          - /url: https://www.cloudflare.com/privacypolicy/
+          - text: Конфіденційність

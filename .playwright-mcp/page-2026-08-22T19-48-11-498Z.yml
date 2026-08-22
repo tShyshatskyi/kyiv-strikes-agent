@@ -1,0 +1,35 @@
+- generic [active] [ref=f8e1]:
+  - generic [ref=f8e2]:
+    - generic [ref=f8e3]:
+      - img "Captcha Page" [ref=f8e5]
+      - generic [ref=f8e6]:
+        - heading "We apologize for the inconvenience..." [level=1] [ref=f8e7]
+        - paragraph [ref=f8e8]: ...but your activity and behavior on this site made us think that you are a bot.
+        - paragraph [ref=f8e9]: "Note: A number of things could be going on here."
+        - list [ref=f8e10]:
+          - listitem [ref=f8e11]: If you are attempting to access this site using an anonymous Private/Proxy network, please disable that and try accessing site again.
+          - listitem [ref=f8e12]: Due to previously detected malicious behavior which originated from the network you're using, please request unblock to site.
+    - generic [ref=f8e13]:
+      - text: "Incident ID: 25eb9341-bqw7-4b67-9df2-59c5f5fcf3c0"
+      - generic [ref=f8e15]:
+        - paragraph [ref=f8e18]: Please solve this CAPTCHA to request unblock to the website
+        - generic [ref=f8e20]:
+          - iframe [ref=f8e22]:
+            - generic [ref=f10e2] [cursor=pointer]:
+              - checkbox "«Я людина». Виберіть, щоб запустити випробування або обійти його, якщо у вас є файл cookie доступності." [ref=f10e7]
+              - generic [ref=f10e8]: Я людина
+              - generic [ref=f10e12]:
+                - generic "hCaptcha" [ref=f10e13]:
+                  - button "Логотип hCaptcha, відкриває нове вікно з додатковою інформацією" [ref=f10e14]
+                - generic [ref=f10e78]:
+                  - link "Політика конфіденційності hCaptcha, відкривається в новій вкладці" [ref=f10e79]:
+                    - /url: https://hcaptcha.com/privacy?ref=validate.perfdrive.com&utm_campaign=ae73173b-7003-44e0-bc87-654d0dab8b75&utm_medium=checkbox&hl=uk
+                    - text: Конфіденційність
+                  - text: "-"
+                  - link "Умови надання послуг hCaptcha, відкривається в новій вкладці" [ref=f10e80]:
+                    - /url: https://hcaptcha.com/terms?ref=validate.perfdrive.com&utm_campaign=ae73173b-7003-44e0-bc87-654d0dab8b75&utm_medium=checkbox&hl=uk
+                    - text: Умови
+                - generic:
+                  - img "Brand"
+          - button "Submit" [ref=f8e24] [cursor=pointer]
+  - paragraph [ref=f8e27]: You reached this page when trying to access https://www.kmu.gov.ua/ from 91.196.149.249 on August 22 2026, 19:47:54 UTC

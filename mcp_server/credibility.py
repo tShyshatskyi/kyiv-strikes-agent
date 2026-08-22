@@ -30,12 +30,20 @@ class SourceEntry:
     tier: int
     independence_group: str
     name: str
+    # False for sources behind a bot wall: still used for tier lookup and for
+    # grouping outlets that cite them, but never navigated to directly.
+    directly_reachable: bool = True
 
 
 @dataclass(frozen=True)
 class Registry:
     entries: dict
     excluded_domains: frozenset
+
+
+def reachable_domains(registry: "Registry") -> list[str]:
+    """Domains the agent may actually navigate to."""
+    return [d for d, e in registry.entries.items() if e.directly_reachable]
 
 
 def load_registry(path: str | Path) -> Registry:
@@ -46,6 +54,7 @@ def load_registry(path: str | Path) -> Registry:
             tier=int(item["tier"]),
             independence_group=item["independence_group"],
             name=item.get("name", item["domain"]),
+            directly_reachable=item.get("directly_reachable", True),
         )
         for item in raw.get("sources", [])
     }

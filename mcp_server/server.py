@@ -41,9 +41,9 @@ mcp = FastMCP("kyiv-strikes-mcp")
 
 _districts = load_districts(DATA / "kyiv_districts.geojson")
 _registry = load_registry(DATA / "source_registry.yaml")
-_conn = connect(os.environ.get("KSM_DB_PATH", "incidents.sqlite"))
+_conn = connect(os.environ.get("KSM_DB_PATH") or "incidents.sqlite")
 _geocoder = NominatimClient(
-    contact=os.environ.get("NOMINATIM_CONTACT", "unset@example.com"),
+    contact=os.environ.get("NOMINATIM_CONTACT") or "unset@example.com",
     offline=os.environ.get("KSM_OFFLINE", "0") == "1",
     fixtures_dir=FIXTURES,
 )
