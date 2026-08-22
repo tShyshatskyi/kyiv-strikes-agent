@@ -69,6 +69,20 @@ def _has_value(claim: IncidentClaim, field: str) -> bool:
     return value not in (None, "", [], ())
 
 
+def _tier_of_group(group: str, registry: Registry) -> int | None:
+    """The tier of the body a voice belongs to.
+
+    An outlet's own tier says how much editorial weight it carries. When it is
+    relaying somebody else, the weight that matters is the tier of whoever it is
+    relaying: Суспільне printing a ДСНС statement is an official fact reaching us
+    through a newsroom, not a newsroom's own claim. Without this distinction the
+    top verification level would be unreachable, because the official sites
+    themselves are not fetchable.
+    """
+    tiers = [e.tier for e in registry.entries.values() if e.independence_group == group]
+    return min(tiers) if tiers else None
+
+
 def _relayed_group(source: SourceRef, entry: SourceEntry, registry: Registry) -> str | None:
     """The group this article is relaying, or None if it speaks for itself."""
     cited = {
@@ -129,7 +143,8 @@ def assess_sources(
 
         if source.domain in registry.excluded_domains:
             results.append({
-                "url": url, "tier": None, "independence_group": None,
+                "url": url, "tier": None, "voice_tier": None,
+                "independence_group": None,
                 "usable_as_corroborator": False, "adds": [],
                 "reason": f"Domain {source.domain} is on the excluded list.",
             })
@@ -138,7 +153,8 @@ def assess_sources(
         entry = registry.entries.get(source.domain)
         if entry is None:
             results.append({
-                "url": url, "tier": None, "independence_group": None,
+                "url": url, "tier": None, "voice_tier": None,
+                "independence_group": None,
                 "usable_as_corroborator": False, "adds": [],
                 "reason": f"Domain {source.domain} is not in the source registry.",
             })
@@ -147,6 +163,7 @@ def assess_sources(
         if not (event_date <= published <= event_date + window):
             results.append({
                 "url": url, "tier": entry.tier,
+                "voice_tier": entry.tier,
                 "independence_group": entry.independence_group,
                 "usable_as_corroborator": False, "adds": [],
                 "reason": (
@@ -184,7 +201,9 @@ def assess_sources(
             reason = f"Tier {entry.tier} original reporting."
 
         results.append({
-            "url": url, "tier": entry.tier, "independence_group": group,
+            "url": url, "tier": entry.tier,
+            "voice_tier": _tier_of_group(group, registry),
+            "independence_group": group,
             "usable_as_corroborator": usable, "adds": adds, "reason": reason,
         })
 

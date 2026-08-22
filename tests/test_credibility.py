@@ -184,3 +184,20 @@ def test_a_relay_of_an_unreachable_official_still_carries_its_voice():
     r = by_url(assess_sources(sources, REGISTRY, EVENT_DATE))[SUSP]
     assert r["independence_group"] == "dsns"
     assert r["usable_as_corroborator"] is True
+
+
+def test_a_newsroom_relaying_an_official_statement_carries_an_official_voice():
+    """The official sites are unfetchable, so official facts reach us through
+    newsrooms. The voice is still official even though the masthead is tier 2."""
+    r = by_url(assess_sources(
+        [src("suspilne.media", SUSP, cited=["dsns.gov.ua"])],
+        REGISTRY, EVENT_DATE))[SUSP]
+    assert r["tier"] == 2           # the outlet
+    assert r["voice_tier"] == 1     # whose fact it is
+    assert r["independence_group"] == "dsns"
+
+
+def test_a_newsroom_speaking_for_itself_has_its_own_tier_as_its_voice():
+    r = by_url(assess_sources([src("suspilne.media", SUSP)], REGISTRY, EVENT_DATE))[SUSP]
+    assert r["tier"] == 2
+    assert r["voice_tier"] == 2

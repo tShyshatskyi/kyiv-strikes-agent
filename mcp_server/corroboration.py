@@ -132,7 +132,12 @@ def _reconcile_categorical(field: str, pairs) -> tuple[dict, str | None] | None:
 def corroborate(claims: list[IncidentClaim], assessments: list[dict]) -> dict:
     pairs = _usable_pairs(claims, assessments)
     groups = {assessment["independence_group"] for _, assessment in pairs}
-    has_official = any(assessment.get("tier") == 1 for _, assessment in pairs)
+    # The voice speaking, not the masthead printing it: a newsroom relaying an
+    # official statement delivers an official fact.
+    has_official = any(
+        (assessment.get("voice_tier") or assessment.get("tier")) == 1
+        for _, assessment in pairs
+    )
 
     fields: dict[str, dict] = {}
     review_notes: list[str] = []
@@ -180,6 +185,7 @@ def corroborate(claims: list[IncidentClaim], assessments: list[dict]) -> dict:
 
     return {
         "fields": fields,
+        "has_conflict": bool(conflicting),
         "verification_level": level,
         "missing_for_next_level": missing,
         "usable_groups": sorted(groups),
