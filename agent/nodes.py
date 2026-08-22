@@ -316,10 +316,14 @@ def llm_extractor():
             "articles; the MCP server does not. Put it in .env (see .env.example)."
         )
 
+    # The endpoint is configurable so the same code runs against OpenRouter, a
+    # Gemini OpenAI-compatible endpoint, or a local Ollama, with no code change.
+    # Whichever is used gets documented in the README rather than hard-coded.
     model = ChatOpenAI(
         model=os.environ.get("OPENROUTER_MODEL", "anthropic/claude-sonnet-4.5"),
         api_key=key,
-        base_url="https://openrouter.ai/api/v1",
+        base_url=os.environ.get("OPENROUTER_BASE_URL",
+                                "https://openrouter.ai/api/v1"),
         temperature=0,
     ).with_structured_output(IncidentClaim)
 

@@ -425,6 +425,29 @@ string come from the environment; `.env.example` documents them.
 | 9. realistic failure | scenario A |
 | variation + invalid input + value tracing | different date; out-of-area address; killed count traced DB → `incident_claims.quote` → article |
 
+## 12a. Open decision: where the model comes from
+
+Unresolved as of 2026-08-22; the instructor was asked for course OpenRouter
+access and is expected to answer 2026-08-23. The agent needs a model to read
+articles; the MCP server needs none and runs without any of this.
+
+The endpoint, key, and model name are three environment variables, so this
+decision changes configuration only — no code. Three viable options:
+
+| Option | Cost | Work | Structured output |
+|---|---|---|---|
+| OpenRouter, course key | none | none | native |
+| Google AI Studio (Gemini) | free tier | none | native |
+| Claude Agent SDK | covered by an existing Claude subscription | ~30 lines for one node | must be parsed and validated, with a retry |
+
+The assignment explicitly sanctions all three: it provides OpenRouter, names
+Gemini and Anthropic credentials as acceptable alternative model paths, and asks
+only that the configuration be documented. Whatever is chosen goes in the README.
+
+Driving the Claude Code CLI as a subprocess was considered and rejected: the
+official SDK exists for this, and scripting the CLI as a general-purpose text
+API is a grey area in its terms.
+
 ## 13. Known limitations
 
 - Extraction quality depends on the agent prompt; the server can reject invalid
