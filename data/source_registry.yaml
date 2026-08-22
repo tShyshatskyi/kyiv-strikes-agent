@@ -1,0 +1,66 @@
+# Hand-curated source registry. Tier assignments are editorial judgements and are
+# documented as such in the design rationale.
+#
+# tier 1 = official / primary (the body that owns the facts)
+# tier 2 = established newsroom producing original reporting
+# tier 3 = aggregator / republisher — usable only via its primary-source link
+#
+# independence_group is the reconciliation key. Two articles sharing a group
+# count as ONE source no matter how many outlets republished them.
+
+sources:
+  - domain: dsns.gov.ua
+    tier: 1
+    independence_group: dsns
+    name: Державна служба з надзвичайних ситуацій
+  - domain: kyivcity.gov.ua
+    tier: 1
+    independence_group: kmva
+    name: Київська міська державна адміністрація
+  - domain: npu.gov.ua
+    tier: 1
+    independence_group: police
+    name: Національна поліція України
+  - domain: gp.gov.ua
+    tier: 1
+    independence_group: prosecutor
+    name: Офіс Генерального прокурора
+
+  - domain: suspilne.media
+    tier: 2
+    independence_group: suspilne
+    name: Суспільне Новини
+  - domain: pravda.com.ua
+    tier: 2
+    independence_group: pravda
+    name: Українська правда
+  - domain: hromadske.ua
+    tier: 2
+    independence_group: hromadske
+    name: hromadske
+  - domain: reuters.com
+    tier: 2
+    independence_group: reuters
+    name: Reuters
+  - domain: apnews.com
+    tier: 2
+    independence_group: ap
+    name: Associated Press
+  - domain: bbc.com
+    tier: 2
+    independence_group: bbc
+    name: BBC News Україна
+
+  - domain: unian.ua
+    tier: 3
+    independence_group: unian
+    name: УНІАН
+  - domain: obozrevatel.com
+    tier: 3
+    independence_group: obozrevatel
+    name: Обозреватель
+
+# Domains that must never be used as evidence.
+excluded_domains:
+  - t.me
+  - telegra.ph
