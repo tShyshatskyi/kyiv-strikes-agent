@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.sqlite
+*.sqlite-journal
+.pytest_cache/
+node_modules/
+mcp_config.json.bak
