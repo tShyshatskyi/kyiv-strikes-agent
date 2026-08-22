@@ -1,0 +1,101 @@
+[
+  {
+    "place_id": 190459201,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "relation",
+    "osm_id": 189398,
+    "lat": "50.4496391",
+    "lon": "30.4597959",
+    "category": "building",
+    "type": "university",
+    "place_rank": 30,
+    "importance": 8.258716716253937e-05,
+    "addresstype": "building",
+    "name": "Корпус №1",
+    "display_name": "Корпус №1, 37, Берестейський проспект, Шулявка, Солом’янський район, Київ, 03055, Україна",
+    "address": {
+      "building": "Корпус №1",
+      "house_number": "37",
+      "road": "Берестейський проспект",
+      "suburb": "Шулявка",
+      "city_district": "Солом’янський район",
+      "city": "Київ",
+      "ISO3166-2-lvl4": "UA-30",
+      "postcode": "03055",
+      "country": "Україна",
+      "country_code": "ua"
+    },
+    "boundingbox": [
+      "50.4489480",
+      "50.4503409",
+      "30.4591069",
+      "30.4630618"
+    ]
+  },
+  {
+    "place_id": 190456860,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 225543110,
+    "lat": "50.4487056",
+    "lon": "30.4623997",
+    "category": "amenity",
+    "type": "university",
+    "place_rank": 30,
+    "importance": 8.258716716253937e-05,
+    "addresstype": "amenity",
+    "name": "Міжнародний університет фінансів",
+    "display_name": "Міжнародний університет фінансів, 37, Берестейський проспект, Шулявка, Солом’янський район, Київ, 03055, Україна",
+    "address": {
+      "amenity": "Міжнародний університет фінансів",
+      "house_number": "37",
+      "road": "Берестейський проспект",
+      "suburb": "Шулявка",
+      "city_district": "Солом’янський район",
+      "city": "Київ",
+      "ISO3166-2-lvl4": "UA-30",
+      "postcode": "03055",
+      "country": "Україна",
+      "country_code": "ua"
+    },
+    "boundingbox": [
+      "50.4484822",
+      "50.4490881",
+      "30.4620515",
+      "30.4628347"
+    ]
+  },
+  {
+    "place_id": 190531137,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 256565775,
+    "lat": "50.4486880",
+    "lon": "30.4605075",
+    "category": "tourism",
+    "type": "museum",
+    "place_rank": 30,
+    "importance": 0.3826968451717165,
+    "addresstype": "tourism",
+    "name": "Державний політехнічний музей",
+    "display_name": "Державний політехнічний музей, 37 к6, Берестейський проспект, Шулявка, Солом’янський район, Київ, 03056, Україна",
+    "address": {
+      "tourism": "Державний політехнічний музей",
+      "house_number": "37 к6",
+      "road": "Берестейський проспект",
+      "suburb": "Шулявка",
+      "city_district": "Солом’янський район",
+      "city": "Київ",
+      "ISO3166-2-lvl4": "UA-30",
+      "postcode": "03056",
+      "country": "Україна",
+      "country_code": "ua"
+    },
+    "boundingbox": [
+      "50.4486380",
+      "50.4487380",
+      "30.4604575",
+      "30.4605575"
+    ]
+  }
+]

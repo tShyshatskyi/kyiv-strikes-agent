@@ -1,0 +1,73 @@
+[
+  {
+    "place_id": 61784755,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 160122230,
+    "lat": "46.4833754",
+    "lon": "30.7447501",
+    "category": "building",
+    "type": "apartments",
+    "place_rank": 30,
+    "importance": 7.56244754710768e-05,
+    "addresstype": "building",
+    "name": "",
+    "display_name": "1, Дерибасівська вулиця, Центр, Приморський район, Одеса, Одеська міська громада, Одеський район, Одеська область, 65026, Україна",
+    "address": {
+      "house_number": "1",
+      "road": "Дерибасівська вулиця",
+      "suburb": "Центр",
+      "city_district": "Приморський район",
+      "city": "Одеса",
+      "municipality": "Одеська міська громада",
+      "district": "Одеський район",
+      "state": "Одеська область",
+      "ISO3166-2-lvl4": "UA-51",
+      "postcode": "65026",
+      "country": "Україна",
+      "country_code": "ua"
+    },
+    "boundingbox": [
+      "46.4832229",
+      "46.4835361",
+      "30.7444821",
+      "30.7449314"
+    ]
+  },
+  {
+    "place_id": 61521412,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 7927978326,
+    "lat": "46.4831463",
+    "lon": "30.7448504",
+    "category": "leisure",
+    "type": "fitness_centre",
+    "place_rank": 30,
+    "importance": 7.56244754710768e-05,
+    "addresstype": "leisure",
+    "name": "Бліц-Фіт",
+    "display_name": "Бліц-Фіт, 1, Дерибасівська вулиця, Центр, Приморський район, Одеса, Одеська міська громада, Одеський район, Одеська область, 65026, Україна",
+    "address": {
+      "leisure": "Бліц-Фіт",
+      "house_number": "1",
+      "road": "Дерибасівська вулиця",
+      "suburb": "Центр",
+      "city_district": "Приморський район",
+      "city": "Одеса",
+      "municipality": "Одеська міська громада",
+      "district": "Одеський район",
+      "state": "Одеська область",
+      "ISO3166-2-lvl4": "UA-51",
+      "postcode": "65026",
+      "country": "Україна",
+      "country_code": "ua"
+    },
+    "boundingbox": [
+      "46.4830963",
+      "46.4831963",
+      "30.7448004",
+      "30.7449004"
+    ]
+  }
+]

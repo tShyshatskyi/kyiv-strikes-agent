@@ -1,0 +1,35 @@
+[
+  {
+    "place_id": 191048998,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 32725917,
+    "lat": "50.4265827",
+    "lon": "30.4641512",
+    "category": "building",
+    "type": "commercial",
+    "place_rank": 30,
+    "importance": 8.258716716253937e-05,
+    "addresstype": "building",
+    "name": "",
+    "display_name": "4, вулиця Освіти, Авіаційне селище, Олександрівська Слобідка, Солом’янський район, Київ, 03037, Україна",
+    "address": {
+      "house_number": "4",
+      "road": "вулиця Освіти",
+      "neighbourhood": "Авіаційне селище",
+      "suburb": "Олександрівська Слобідка",
+      "city_district": "Солом’янський район",
+      "city": "Київ",
+      "ISO3166-2-lvl4": "UA-30",
+      "postcode": "03037",
+      "country": "Україна",
+      "country_code": "ua"
+    },
+    "boundingbox": [
+      "50.4261722",
+      "50.4269889",
+      "30.4637823",
+      "30.4648054"
+    ]
+  }
+]
