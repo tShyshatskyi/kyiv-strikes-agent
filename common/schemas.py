@@ -54,6 +54,42 @@ class IncidentClaim(BaseModel):
     quote: str = Field(min_length=10, max_length=1000)
 
 
+class SourceAssessment(BaseModel):
+    """One article's credibility verdict, as produced by assess_source_credibility."""
+
+    url: HttpUrl
+    tier: int | None = Field(default=None, ge=1, le=3)
+    voice_tier: int | None = Field(default=None, ge=1, le=3)
+    independence_group: str | None = None
+    usable_as_corroborator: bool
+    adds: list[str] = Field(default_factory=list)
+    reason: str = ""
+
+
+class IncidentRecord(BaseModel):
+    """A reconciled incident, ready to be written to the registry.
+
+    Constrained rather than a free-form dict on purpose: this is the payload of
+    the only tool with persistent side effects, so the shape of what gets
+    written is part of the contract.
+    """
+
+    occurred_at: datetime
+    lat: float = Field(ge=50.20, le=50.60, description="Latitude, inside Kyiv.")
+    lon: float = Field(ge=30.15, le=30.85, description="Longitude, inside Kyiv.")
+    district: KyivDistrict
+    claimed_district: KyivDistrict | None = None
+    address_text: str | None = Field(default=None, max_length=200)
+    structure_type: StructureType
+    killed: int | None = Field(default=None, ge=0, le=1000)
+    injured: int | None = Field(default=None, ge=0, le=5000)
+    damage: list[DamageKind] = Field(default_factory=list)
+    verification_level: VerificationLevel
+    geocode_confidence: float = Field(ge=0.0, le=1.0)
+    needs_review: bool = False
+    review_reason: str | None = None
+
+
 class SourceRef(BaseModel):
     """A candidate article as handed to the credibility assessor."""
 

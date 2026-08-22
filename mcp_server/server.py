@@ -24,7 +24,14 @@ from typing import Annotated
 from mcp.server.fastmcp import FastMCP
 from pydantic import Field, ValidationError
 
-from common.schemas import IncidentClaim, SourceRef, err, ok
+from common.schemas import (
+    IncidentClaim,
+    IncidentRecord,
+    SourceAssessment,
+    SourceRef,
+    err,
+    ok,
+)
 from mcp_server.corroboration import corroborate
 from mcp_server.credibility import assess_sources, load_registry
 from mcp_server.db import connect
@@ -170,7 +177,7 @@ def corroborate_incident_claims(
         Field(description="One structured claim set per article."),
     ],
     assessments: Annotated[
-        list[dict],
+        list[SourceAssessment],
         Field(description="The output of assess_source_credibility for those "
                           "same articles."),
     ],
@@ -188,22 +195,24 @@ def corroborate_incident_claims(
     that list: it tells you what to search for next. Side effects: none.
     """
     parsed = [IncidentClaim.model_validate(c) for c in claims]
-    return ok(corroborate(parsed, assessments))
+    verdicts = [json.loads(a.model_dump_json()) for a in assessments]
+    return ok(corroborate(parsed, verdicts))
 
 
 @mcp.tool()
 @envelope
 def upsert_incident(
     incident: Annotated[
-        dict,
-        Field(description="The reconciled incident: occurred_at, lat, lon, "
-                          "district, claimed_district, address_text, "
-                          "structure_type, killed, injured, damage, "
-                          "verification_level, geocode_confidence, needs_review, "
-                          "review_reason."),
+        IncidentRecord,
+        Field(description="The reconciled incident to write. Coordinates must "
+                          "fall inside Kyiv and the district must be one of the "
+                          "ten real ones."),
     ],
     claims: Annotated[list[IncidentClaim], Field(description="Supporting claims.")],
-    assessments: Annotated[list[dict], Field(description="Their credibility verdicts.")],
+    assessments: Annotated[
+        list[SourceAssessment],
+        Field(description="Their credibility verdicts, from assess_source_credibility."),
+    ],
     reconciliation: Annotated[dict, Field(description="Output of corroborate_incident_claims.")],
 ) -> dict:
     """Write a verified incident to the registry, merging rather than duplicating.
@@ -220,7 +229,9 @@ def upsert_incident(
     off on it.
     """
     parsed = [IncidentClaim.model_validate(c) for c in claims]
-    result = store_upsert(_conn, incident, parsed, assessments, reconciliation)
+    verdicts = [json.loads(a.model_dump_json()) for a in assessments]
+    record = json.loads(incident.model_dump_json())
+    result = store_upsert(_conn, record, parsed, verdicts, reconciliation)
     if result["action"] == "rejected_lower_confidence":
         return err(
             "DUPLICATE_REJECTED",
