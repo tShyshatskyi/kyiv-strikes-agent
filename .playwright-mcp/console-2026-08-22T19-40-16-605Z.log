@@ -1,7 +1,0 @@
-[     887ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://www.pravda.com.ua/:0
-[    1339ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ https://notsymembrana.eu-adx-admixer.rtb-stack.com/prebid?client=c4527281-5aa5-4c8e-bc53-a80bb3f99470&endpoint=308&ssp=41:0
-[    1672ms] [WARNING] [GPT] PubAdsService.enableSingleRequest is deprecated, use googletag.setConfig({singleRequest: ...}) instead.
-https://goo.gle/gpt-message#170 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202608180101/pubads_impl.js:18
-[    1681ms] [WARNING] [GPT] Slot.setTargeting is deprecated, use Slot.setConfig({targeting: ...}) instead.
-https://goo.gle/gpt-message#171 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202608180101/pubads_impl.js:18
-[    3825ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0

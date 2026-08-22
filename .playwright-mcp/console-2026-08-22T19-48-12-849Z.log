@@ -1,9 +1,0 @@
-[   20318ms] [ERROR] Failed to load resource: the server responded with a status of 522 () @ https://mvs.gov.ua/css/compiled/public/default/index.css?id=a17916b9b5ebf93d3595a771becb5d7f:0
-[   21013ms] [LOG] TDL on load @ https://mvs.gov.ua/:1918
-[   21328ms] Uncaught ReferenceError: $ is not defined
-    at <anonymous> (https://api.tdl.com.ua/widget-ua/widgest_core_main.min.js:0:15681)
-    at _0x5cb640 (https://api.tdl.com.ua/widget-ua/widgest_core_main.min.js:0:15644)
-    at <anonymous> (https://api.tdl.com.ua/widget-ua/widgest_core_main.min.js:0:15823)
-    at setPosition (https://api.tdl.com.ua/widget-ua/widgest_core_main.min.js:0:15803)
-    at script.onload (https://mvs.gov.ua/:1932:19)
-[   21949ms] [WARNING] The powerPreference option is currently ignored when calling requestAdapter() on Windows. See https://crbug.com/369219127 @ :0
