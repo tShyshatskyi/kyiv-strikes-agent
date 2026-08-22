@@ -161,14 +161,37 @@ Turns a free-text Ukrainian location description into validated coordinates.
   2. queries Nominatim with a viewbox bounded to Kyiv, rate-limited to 1 req/s,
      with a `User-Agent` carrying contact details per the Nominatim usage policy
   3. runs point-in-polygon against `kyiv_districts.geojson`
-- Output: `lat`, `lon`, `district` (geometric, authoritative), `confidence`,
-  `district_conflict` (true when `claimed_district` disagrees with geometry),
-  `candidates` when the match is ambiguous.
+- Output: `lat`, `lon`, `district` (geometric working value), `claimed_district`
+  (what the article asserted, preserved), `confidence`, `district_conflict`,
+  `candidates`, `needs_review`, `review_reason`, `resolved_by`.
 
 Results are cached in SQLite, so a repeated demo run issues no API traffic at all.
 
-`district_conflict` is a first-class output, not an error: it is a signal that
-routes the agent back to look for a source that resolves the disagreement.
+**Ambiguity resolution.** When the top two matches are close in importance, the
+tool does not silently pick one. It first attempts two cheap deterministic
+disambiguations:
+
+1. *District filter* — keep only candidates falling inside a district that some
+   article actually names. One survivor resolves the ambiguity
+   (`resolved_by: "district_context"`).
+2. *Landmark filter* — Nominatim returns neighbourhood names in `display_name`
+   ("Шулявка", "Авіаційне селище"). If exactly one candidate's neighbourhood
+   token appears in the article quotes, that candidate wins
+   (`resolved_by: "landmark_context"`).
+
+If neither resolves it, all candidates are returned with `needs_review: true`.
+
+**Human in the loop.** `district_conflict` and unresolved ambiguity are not
+errors and do not silently resolve themselves. The geometric district is kept as
+the working value because a map needs a point, but the record is written with
+`needs_review = 1` and a plain-language `review_reason`, and the article's own
+claim is preserved beside it. Such a record is *recorded, not trusted*: it is
+excluded from the verified GeoJSON export until a person clears it via
+`python -m agent.review`.
+
+This is a deliberate product decision, not caution for its own sake: in this
+domain a confidently misplaced point is a false claim about where a strike
+landed, which is worse than an acknowledged gap.
 
 ### 5.3 `corroborate_incident_claims` — the feedback engine
 
@@ -260,6 +283,10 @@ CREATE TABLE incidents (
   verification_level TEXT NOT NULL CHECK (verification_level IN
       ('unverified','single_source','corroborated','well_documented')),
   geocode_confidence REAL NOT NULL,
+  claimed_district TEXT,           -- what the article said, kept beside geometry
+  needs_review INTEGER NOT NULL DEFAULT 0,
+  review_reason TEXT,              -- plain language, written for a human reader
+  reviewed_by TEXT, reviewed_at TEXT,
   created_at TEXT NOT NULL, updated_at TEXT NOT NULL
 );
 CREATE INDEX idx_incidents_time ON incidents(occurred_at);
