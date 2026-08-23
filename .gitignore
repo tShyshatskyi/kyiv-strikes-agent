@@ -9,3 +9,7 @@ venv/
 node_modules/
 mcp_config.json.bak
 .playwright-mcp/
+
+# PyCharm: keep run configurations, ignore local state
+.idea/workspace.xml
+.idea/shelf/
