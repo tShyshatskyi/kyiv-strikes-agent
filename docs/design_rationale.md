@@ -52,8 +52,8 @@ one place that decides a record may not be silently downgraded.
 
 ## Why LLM extraction is not one of them
 
-The obvious fifth tool — hand the server an article, get back structured data —
-is deliberately absent. Its contract would be `str -> dict`, which says nothing
+The one obvious tool that is deliberately absent — hand the server an article,
+get back structured data. Its contract would be `str -> dict`, which says nothing
 about strikes on Kyiv and would be identical in any project; the assignment
 names this pattern as insufficient, and it is right to.
 

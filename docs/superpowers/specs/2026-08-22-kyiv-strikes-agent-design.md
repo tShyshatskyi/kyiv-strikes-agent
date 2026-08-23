@@ -151,7 +151,7 @@ entered, no forms submitted that cause side effects.
 
 ## 5. Part B — custom MCP server `kyiv-strikes-mcp`
 
-Four substantive tools. None is a search or retrieval tool, so the
+Five substantive tools. None is a search or retrieval tool, so the
 "at least two beyond retrieval" requirement is met with margin.
 
 ### 5.1 `assess_source_credibility`

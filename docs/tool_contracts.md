@@ -297,6 +297,72 @@ is not an error: it is `verification_level: "unverified"`.
 
 ---
 
+## 5. `upsert_attack`
+
+| | |
+|---|---|
+| **Name** | `upsert_attack` |
+| **Purpose** | Record one night of shelling — the city-wide casualty figures and what was launched — and check those figures against the impacts recorded under it. |
+
+**Model-facing description** (exact):
+
+> Record one night of shelling, and check it against the impacts under it.
+>
+> City-wide casualty figures belong to the attack, not to any address: put "five killed in Kyiv" on each of three impact rows and any sum over districts or over a month returns fifteen. This tool is where they live.
+>
+> It reconciles the city-wide figures across sources itself, using the same rules as for an impact site — a later higher toll supersedes rather than contradicts, and disagreement at the same time is a real conflict.
+>
+> Its distinct job, which no per-impact tool can do, is the cross-level check: the deaths attributed to individual addresses are summed and compared with the city-wide total. If the addresses add up to more than the city reported, a city-wide number was probably mistaken for a local one, and the attack is flagged for a person rather than quietly stored.
+>
+> Reports of one night arrive across the following day, so anything within 12 hours of an existing attack merges into it.
+>
+> SIDE EFFECTS: writes to the attacks, attack_claims, and sources tables.
+
+**Input schema**
+
+| Field | Type | Required |
+|---|---|---|
+| `claims` | array of `AttackClaim` | yes |
+| `assessments` | array of `SourceAssessment` | yes |
+
+`AttackClaim`: `source_url`, `published_at`, `occurred_at?`,
+`citywide_killed?` (0–5000), `citywide_injured?` (0–20000), `weapons[]`
+(each: `kind` — one of shahed / cruise_missile / ballistic_missile /
+guided_bomb / other — plus `launched?` and `intercepted?`, 0–5000),
+`districts_affected[]`, `quote` (10–1000 characters, required).
+
+**Output schema**
+
+| Field | Type | Meaning |
+|---|---|---|
+| `attack_id` | integer | the night |
+| `action` | enum | `created`, `merged` |
+| `citywide_killed` | integer or null | the reconciled city-wide toll |
+| `site_total_killed` | integer | deaths attributed to individual addresses, summed |
+| `needs_review` | bool | the two levels disagree, or a source conflict was found |
+| `review_reason` | string or null | plain language |
+| `reconciliation` | object | per-field values and statuses, as for an impact |
+
+**Error conditions** — `SCHEMA_VIOLATION` when `claims` is empty, or when a
+claim fails validation (a `quote` under 10 characters, a weapon kind outside the
+enum, a negative count).
+
+**Side effects** — writes `attacks`, `attack_claims`, `sources`. Never touches
+`incidents`; it only reads them for the consistency check.
+
+**Example**
+
+```json
+// out, after three addresses were recorded under a night the city said killed five
+{"ok": true, "data": {
+  "attack_id": 1, "action": "merged",
+  "citywide_killed": 5, "site_total_killed": 8,
+  "needs_review": true,
+  "review_reason": "The deaths attributed to individual addresses add up to 8, but the city-wide figure for this attack is 5. Either a city-wide number was mistakenly read as belonging to one address, or the city-wide total is out of date. A person needs to check."}}
+```
+
+---
+
 ## The existing server: Playwright MCP
 
 Pinned to `@playwright/mcp@0.0.79`, started over stdio by `mcp_config.json`.
