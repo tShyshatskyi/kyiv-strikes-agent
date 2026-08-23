@@ -33,6 +33,21 @@ def say(message: str) -> None:
 
 PROMPT = (Path(__file__).parent / "prompts" / "extract.md").read_text(encoding="utf-8")
 
+# How much of an article the model is shown. News pages carry navigation and
+# related-article blocks; the reporting itself is near the top.
+ARTICLE_CHARS = 20000
+
+
+def build_prompt(url: str, event_date: str, text: str) -> str:
+    """Fill the extraction prompt.
+
+    Its own function so a test can check it against the real prompt file. A
+    placeholder renamed in the file but not here cost a whole live run: the
+    prompt asked for {event_date}, the call still passed published_at, and the
+    agent died on a KeyError after fetching eight articles.
+    """
+    return PROMPT.format(url=url, event_date=event_date, text=text[:ARTICLE_CHARS])
+
 _UA_MONTHS = {
     "січня": 1, "лютого": 2, "березня": 3, "квітня": 4, "травня": 5, "червня": 6,
     "липня": 7, "серпня": 8, "вересня": 9, "жовтня": 10, "листопада": 11,
@@ -688,7 +703,7 @@ def llm_extractor():
     if not key:
         raise RuntimeError(
             "OPENROUTER_API_KEY is not set. The agent needs a model to read "
-            "articles; the MCP server does not. Put it in .env (see .env)."
+            "articles; the MCP server does not. Put it in .env (see .env.example)."
         )
 
     # The endpoint is configurable so the same code runs against OpenRouter, a
@@ -700,12 +715,16 @@ def llm_extractor():
         base_url=os.environ.get("OPENROUTER_BASE_URL",
                                 "https://openrouter.ai/api/v1"),
         temperature=0,
+        # One article once ran to 64,000 output tokens before failing. An
+        # extraction of a handful of fields has no business being long, and an
+        # unbounded answer is an unbounded bill.
+        max_tokens=4000,
     ).with_structured_output(ArticleExtraction)
 
     failures: list[str] = []
 
-    def extract(url: str, published_at: str, text: str) -> ArticleExtraction:
-        prompt = PROMPT.format(url=url, published_at=published_at, text=text[:20000])
+    def extract(url: str, event_date: str, text: str) -> ArticleExtraction:
+        prompt = build_prompt(url, event_date, text)
         try:
             result = model.invoke(prompt)
         except Exception as exc:

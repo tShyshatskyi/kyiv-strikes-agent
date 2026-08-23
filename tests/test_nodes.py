@@ -280,3 +280,33 @@ def test_the_round_budget_still_wins():
     state = _site("superseded")
     state["round"] = MAX_ROUNDS
     assert should_continue(state) == "persist"
+
+
+# --- the prompt and the call that fills it must agree -----------------------
+
+def test_the_prompt_is_filled_with_exactly_what_it_asks_for():
+    """A placeholder renamed in extract.md but not in the code killed a live run
+    after it had already fetched eight articles. The stub extractor the other
+    tests use never touches the real prompt, so nothing caught it."""
+    import re as _re
+    from agent.nodes import PROMPT, build_prompt
+
+    placeholders = set(_re.findall(r"\{(\w+)\}", PROMPT))
+    assert placeholders == {"url", "event_date", "text"}, (
+        f"extract.md asks for {placeholders}; build_prompt supplies "
+        "url, event_date and text"
+    )
+
+    filled = build_prompt("https://example.com/a", "2026-06-17", "текст статті")
+    assert "{" not in filled.replace("{q}", "")
+    assert "2026-06-17" in filled
+    assert "https://example.com/a" in filled
+    assert "текст статті" in filled
+
+
+def test_the_article_is_truncated_before_it_reaches_the_model():
+    from agent.nodes import ARTICLE_CHARS, build_prompt
+    # A character the prompt itself does not contain, so the count is the
+    # article and nothing else.
+    filled = build_prompt("https://example.com/a", "2026-06-17", "Ω" * 60000)
+    assert filled.count("Ω") == ARTICLE_CHARS
