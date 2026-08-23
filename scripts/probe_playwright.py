@@ -10,9 +10,14 @@ import asyncio
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+REPO = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO))
 
+import agent  # noqa: F401,E402  — silences third-party warnings on import
 from agent.mcp_clients import MCPConnectionError, open_tools  # noqa: E402
+from mcp_server.credibility import load_registry  # noqa: E402
+
+REGISTRY = load_registry(REPO / "data" / "source_registry.yaml")
 
 TARGETS = [
     ("dsns.gov.ua", "https://dsns.gov.ua/"),
@@ -38,27 +43,44 @@ async def probe(tools: dict) -> int:
         print("Expected browser_navigate and browser_snapshot. Adjust for this version.")
         return 1
 
-    failures = 0
+    surprises, walled, working = [], [], 0
     for domain, url in TARGETS:
+        entry = REGISTRY.entries.get(domain)
+        known_walled = entry is not None and not entry.directly_reachable
+
         try:
             await navigate.ainvoke({"url": url})
             page = str(await snapshot.ainvoke({}))
+            thin = len(page) < USABLE_MIN_CHARS
+            size = f"{len(page):>9,} chars"
         except Exception as exc:
-            failures += 1
-            print(f"FAIL {domain:20s} {type(exc).__name__}: {str(exc)[:80]}")
-            continue
+            thin, size = True, f"{type(exc).__name__}: {str(exc)[:50]}"
 
-        if len(page) < USABLE_MIN_CHARS:
-            failures += 1
-            print(f"THIN {domain:20s} {len(page):>9,} chars — blocked or JS-gated?")
+        if not thin:
+            working += 1
+            print(f"OK         {domain:20s} {size}")
+        elif known_walled:
+            walled.append(domain)
+            print(f"WALLED     {domain:20s} {size}   known, never fetched")
         else:
-            print(f"OK   {domain:20s} {len(page):>9,} chars")
+            surprises.append(domain)
+            print(f"UNEXPECTED {domain:20s} {size}")
 
     print()
-    print(f"{len(TARGETS) - failures}/{len(TARGETS)} sources usable.")
-    if failures:
-        print("Drop or replace unusable sources in data/source_registry.yaml and")
-        print("record which and why in docs/design_rationale.md.")
+    print(f"{working} of {len(TARGETS)} fetchable; {len(walled)} known to be "
+          "walled off and not used for fetching.")
+
+    if surprises:
+        print()
+        print("Something changed. These were expected to work and did not:")
+        for domain in surprises:
+            print(f"  - {domain}")
+        print("Open the site by hand. If it now blocks automated access, set")
+        print("directly_reachable: false in data/source_registry.yaml and record")
+        print("why in docs/design_rationale.md.")
+        return 1
+
+    print("Nothing unexpected. Safe to run the agent.")
     return 0
 
 
