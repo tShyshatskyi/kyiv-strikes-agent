@@ -17,7 +17,9 @@ from urllib.parse import quote_plus
 from common.schemas import ArticleExtraction, IncidentClaim
 
 MAX_ROUNDS = 3
-MAX_ARTICLES_PER_OUTLET = 4
+# Six rather than four: a feed is ordered by recency, not by relevance to the
+# night in question, so the article about it may be several items down.
+MAX_ARTICLES_PER_OUTLET = 6
 
 # A run takes minutes, most of it waiting on news sites and the model. Silence
 # for that long is indistinguishable from a hang, so say what is happening.
@@ -73,8 +75,15 @@ DISCOVERY = {
     },
     "suspilne": {
         "domain": "suspilne.media",
-        "url": "https://suspilne.media/kyiv/",
-        "kind": "feed",          # the outlet's Kyiv section
+        # The shelling tag inside the Kyiv section, not the section itself.
+        # The section lists 93 articles of which 11 are about a strike, and the
+        # top of it is whatever happened today — reconstruction reports, a
+        # visiting actor, the state of the wounded. The tag lists 10 of which 7
+        # are strikes, and they name places: "пожежа в Голосіївському районі",
+        # "влучання в бізнес-центр". Reading four from the section reached
+        # nothing about the night asked for.
+        "url": "https://suspilne.media/kyiv/tag/obstrili/",
+        "kind": "feed",
     },
     # Pravda is deliberately absent. Everything that would let us reach back a
     # few days — rubrics, pagination, tags, the archive, the search — answers

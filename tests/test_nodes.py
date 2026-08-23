@@ -140,7 +140,8 @@ def test_a_real_search_endpoint_carries_the_query():
 def test_a_section_feed_ignores_the_query_by_design():
     """Suspilne has no usable search, so its Kyiv section is read instead. The
     query cannot narrow it; the headline filter does that job afterwards."""
-    assert build_search_url("suspilne", "будь-що") == "https://suspilne.media/kyiv/"
+    assert build_search_url("suspilne", "будь-що") == (
+        "https://suspilne.media/kyiv/tag/obstrili/")
 
 
 # --- deciding which headline is worth a model call --------------------------
