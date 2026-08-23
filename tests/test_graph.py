@@ -25,9 +25,9 @@ SUSP = "https://suspilne.media/kyiv/1111111-udar/"
 PRAV = "https://www.pravda.com.ua/news/2026/06/17/7412345/"
 
 SEARCH_PAGE = f"""
-- link "Удар по Києву" [ref=e2]:
+- link "Масований удар по Києву: є загиблі та поранені" [ref=e2]:
   - /url: {SUSP}
-- link "Наслідки удару" [ref=e3]:
+- link "Наслідки нічного удару по Києву: зруйновано будинок" [ref=e3]:
   - /url: {PRAV}
 """
 
@@ -112,14 +112,14 @@ def scripted_extractor(by_url: dict):
 
 
 def search_pages(page: str) -> dict:
-    from agent.nodes import SEARCH_PAGES, build_search_url
+    from agent.nodes import DISCOVERY, build_search_url
     return {build_search_url(g, "удар по Києву 17 червня 2026"): page
-            for g in SEARCH_PAGES}
+            for g in DISCOVERY}
 
 
 # --- the happy path ---------------------------------------------------------
 
-async def test_two_independent_voices_finish_in_one_round(tmp_path):
+async def test_the_agent_stops_as_soon_as_two_voices_agree(tmp_path):
     browser = FakeBrowser(
         search_pages(SEARCH_PAGE) | {SUSP: "article one", PRAV: "article two"}
     )
@@ -132,7 +132,10 @@ async def test_two_independent_voices_finish_in_one_round(tmp_path):
         graph = build_graph(tools | browser.tools(), extractor)
         final = await graph.ainvoke({"query": "удар по Києву 17 червня 2026"})
 
-    assert final["round"] == 1
+    # One outlet per round, so two voices take two rounds — and the third
+    # round is not spent, because the evidence is already good enough.
+    assert final["round"] == 2
+    assert final["round"] < 3
     assert final["reconciliation"]["verification_level"] == "corroborated"
     assert final["result"]["action"] == "written"
     assert [site["action"] for site in final["result"]["sites"]] == ["created"]
@@ -166,7 +169,7 @@ async def test_the_written_record_carries_the_reconciled_value(tmp_path):
 async def test_a_single_voice_makes_the_agent_search_again(tmp_path):
     """Only one article exists, and it never becomes two. The agent should try
     other outlets, exhaust its budget, and still record what it has."""
-    browser = FakeBrowser(search_pages(f'- link "x":\n  - /url: {SUSP}\n')
+    browser = FakeBrowser(search_pages(f'- link "Удар по Києву: зруйновано житловий будинок":\n  - /url: {SUSP}\n')
                           | {SUSP: "article one"})
     extractor = scripted_extractor({SUSP: [claim_for(SUSP)]})
 
@@ -181,7 +184,7 @@ async def test_a_single_voice_makes_the_agent_search_again(tmp_path):
 
 
 async def test_the_agent_looks_at_outlets_it_has_not_tried_yet(tmp_path):
-    browser = FakeBrowser(search_pages(f'- link "x":\n  - /url: {SUSP}\n')
+    browser = FakeBrowser(search_pages(f'- link "Удар по Києву: зруйновано житловий будинок":\n  - /url: {SUSP}\n')
                           | {SUSP: "article one"})
     extractor = scripted_extractor({SUSP: [claim_for(SUSP)]})
 

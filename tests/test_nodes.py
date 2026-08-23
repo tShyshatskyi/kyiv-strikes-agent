@@ -2,6 +2,7 @@ import pytest
 
 from agent.nodes import (
     MAX_ROUNDS,
+    article_candidates,
     article_links,
     build_search_url,
     extract_date,
@@ -9,6 +10,7 @@ from agent.nodes import (
     parse_request,
     should_continue,
     unwrap,
+    worth_opening,
 )
 
 
@@ -119,10 +121,56 @@ def test_when_everything_has_been_tried_the_list_is_empty():
     assert targets == []
 
 
-def test_search_urls_are_built_with_an_encoded_query():
-    url = build_search_url("suspilne", "удар по Києву")
-    assert url.startswith("https://suspilne.media/search/?query=")
+def test_a_real_search_endpoint_carries_the_query():
+    url = build_search_url("hromadske", "удар по Києву")
+    assert url.startswith("https://hromadske.ua/search?q=")
     assert " " not in url
+
+
+def test_a_section_feed_ignores_the_query_by_design():
+    """Suspilne has no usable search, so its Kyiv section is read instead. The
+    query cannot narrow it; the headline filter does that job afterwards."""
+    assert build_search_url("suspilne", "будь-що") == "https://suspilne.media/kyiv/"
+
+
+# --- deciding which headline is worth a model call --------------------------
+
+@pytest.mark.parametrize("title", [
+    "Масований удар по Києву: пошкоджено житловий будинок",
+    "У Києві палає бізнес-центр унаслідок падіння уламків дрона",
+    "У столиці внаслідок обстрілу загинули троє людей",
+])
+def test_a_strike_on_kyiv_is_worth_opening(title):
+    assert worth_opening(title) is True
+
+
+@pytest.mark.parametrize("title", [
+    "День державного прапора України: у столиці підняли прапор",
+    "Зеленський підписав указ про памятник Мазепі в Києві",
+    "Росіяни вдарили по передмістю Харкова: є загиблі та поранені",
+])
+def test_everything_else_is_not(title):
+    assert worth_opening(title) is False
+
+
+def test_the_oblast_is_not_the_city():
+    """A strike on Boryspil is a strike, and it is not in Kyiv. Geocoding would
+    reject it anyway; this saves the model call."""
+    assert worth_opening(
+        "РФ атакувала балістикою Бориспільський район: двоє загиблих") is False
+
+
+def test_headline_and_url_are_read_together():
+    page = '''
+- link "Масований удар по Києву: пошкоджено житловий будинок" [ref=e2]:
+  - /url: https://suspilne.media/kyiv/1385126-masovanij-udar/
+- link "Історичні будинки Києва" [ref=e3]:
+  - /url: https://suspilne.media/kyiv/tag/istoricni-budivli/
+'''
+    pairs = article_candidates(page, "suspilne.media")
+    assert len(pairs) == 1
+    assert pairs[0][0].startswith("Масований удар")
+    assert pairs[0][1].endswith("1385126-masovanij-udar/")
 
 
 # --- reading a page snapshot ------------------------------------------------

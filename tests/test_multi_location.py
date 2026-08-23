@@ -25,9 +25,9 @@ SUSP = "https://suspilne.media/kyiv/1111111-udar/"
 PRAV = "https://www.pravda.com.ua/news/2026/06/17/7412345/"
 
 SEARCH_PAGE = f"""
-- link "Удар по Києву" [ref=e2]:
+- link "Масований удар по Києву: є загиблі та поранені" [ref=e2]:
   - /url: {SUSP}
-- link "Наслідки удару" [ref=e3]:
+- link "Наслідки нічного удару по Києву: зруйновано будинок" [ref=e3]:
   - /url: {PRAV}
 """
 
@@ -107,9 +107,9 @@ def scripted(by_url: dict):
 
 
 def search_pages(page: str) -> dict:
-    from agent.nodes import SEARCH_PAGES, build_search_url
+    from agent.nodes import DISCOVERY, build_search_url
     return {build_search_url(g, "удар по Києву 17 червня 2026"): page
-            for g in SEARCH_PAGES}
+            for g in DISCOVERY}
 
 
 async def run(db: Path, extraction_by_url: dict):

@@ -15,6 +15,7 @@ from urllib.parse import quote_plus
 from common.schemas import ArticleExtraction, IncidentClaim
 
 MAX_ROUNDS = 3
+MAX_ARTICLES_PER_OUTLET = 4
 
 PROMPT = (Path(__file__).parent / "prompts" / "extract.md").read_text(encoding="utf-8")
 
@@ -24,15 +25,53 @@ _UA_MONTHS = {
     "грудня": 12,
 }
 
-# Search entry points, confirmed working by scripts/probe_playwright.py.
-# The official bodies are absent on purpose: their sites answer a headless
-# browser with a bot-protection wall, so official facts reach us through
-# newsrooms that cite them. See data/source_registry.yaml.
-SEARCH_PAGES = {
-    "suspilne": "https://suspilne.media/search/?query={q}",
-    "pravda": "https://www.pravda.com.ua/search/?query={q}",
-    "hromadske": "https://hromadske.ua/?s={q}",
+# How to find articles at each outlet, established by scripts/probe_search.py
+# against the live sites rather than guessed.
+#
+# Only hromadske answers a plain search URL. Suspilne's /search/ returns 404 and
+# its real search is a JavaScript overlay that ignores a scripted click; Pravda,
+# nv.ua, rbc.ua and others answer a search URL with HTTP 403. Search engines are
+# walled off even harder. What every one of them does serve is a section feed —
+# so for those outlets we read the feed and pick articles by their headline.
+#
+# Article pages themselves fetch fine everywhere. It is only the finding that is
+# hard, which is why discovery differs per outlet while reading does not.
+DISCOVERY = {
+    "hromadske": {
+        "domain": "hromadske.ua",
+        "url": "https://hromadske.ua/search?q={q}",
+        "kind": "search",
+    },
+    "suspilne": {
+        "domain": "suspilne.media",
+        "url": "https://suspilne.media/kyiv/",
+        "kind": "feed",          # the outlet's Kyiv section
+    },
+    "pravda": {
+        "domain": "pravda.com.ua",
+        "url": "https://www.pravda.com.ua/news/",
+        "kind": "feed",
+    },
 }
+
+# A headline worth opening names both a place in Kyiv and something happening
+# to it. Filtering here rather than after extraction saves a model call per
+# irrelevant article, and there are a lot of irrelevant articles in a feed.
+KYIV_IN_TITLE = re.compile(r"київ|києв|києм|столиц|киев", re.I)
+STRIKE_IN_TITLE = re.compile(
+    r"удар|обстріл|атак|влучан|уламк|ракет|дрон|шахед|бпла|вибух|"
+    r"загин|поранен|зруйнов|пошкодж|пожеж|приліт",
+    re.I,
+)
+
+# Kyiv oblast is not Kyiv. These name places outside the city that a Kyiv-ish
+# headline can otherwise look like, and geocoding would reject them anyway —
+# this just avoids paying for the model call first.
+OBLAST_ONLY = re.compile(
+    r"бориспіл|бровар|ірпін|буча|вишгород|фастів|біла церква|обухів|"
+    r"вишнев|област",
+    re.I,
+)
 
 
 # --- pure routing -----------------------------------------------------------
@@ -101,20 +140,21 @@ def should_continue(state: dict) -> str:
 
 
 def next_targets(state: dict) -> list[str]:
-    """Which search pages to try next, given what we already have.
+    """Which outlets to try next, given what we already have.
 
-    Groups that already spoke are skipped: repeating them cannot raise the
-    verification level, because they would collapse into the same voice.
+    Outlets that already spoke are skipped: going back to one cannot raise the
+    verification level, because its articles collapse into the same voice.
     """
     reconciliation = state.get("reconciliation") or {}
     used = set(reconciliation.get("usable_groups", []))
     already = set(state.get("searched", []))
-    remaining = [g for g in SEARCH_PAGES if g not in used and g not in already]
-    return remaining or [g for g in SEARCH_PAGES if g not in already]
+    remaining = [g for g in DISCOVERY if g not in used and g not in already]
+    return remaining or [g for g in DISCOVERY if g not in already]
 
 
 def build_search_url(group: str, query: str) -> str:
-    return SEARCH_PAGES[group].format(q=quote_plus(query))
+    """The page to open for this outlet. A feed ignores the query by design."""
+    return DISCOVERY[group]["url"].format(q=quote_plus(query))
 
 
 def unwrap(raw) -> dict:
@@ -130,6 +170,35 @@ def as_text(raw) -> str:
     if isinstance(raw, list) and raw and isinstance(raw[0], dict):
         return raw[0].get("text", "")
     return str(raw)
+
+
+def article_candidates(page_text: str, domain: str) -> list[tuple[str, str]]:
+    """Pull (headline, url) pairs for one domain out of a page snapshot.
+
+    Headlines matter because several outlets number their articles instead of
+    naming them: a Pravda url says /news/2026/08/23/8049976/ and nothing more,
+    so the only way to tell a strike report from a football result before
+    opening it is the link text.
+    """
+    pairs = re.findall(r'link "([^"]{15,200})"[^\n]*\n\s*- /url: (\S+)', page_text)
+    seen, out = set(), []
+    for title, url in pairs:
+        if domain not in url or url in seen:
+            continue
+        if re.search(r"/(tag|tags|category|search|author|event)/", url):
+            continue
+        if not re.search(r"/\d{4,}|/\d{4}/\d{2}|-\d{4,}", url):
+            continue
+        seen.add(url)
+        out.append((title.strip(), url))
+    return out
+
+
+def worth_opening(title: str) -> bool:
+    """Does this headline promise a strike on Kyiv itself?"""
+    if OBLAST_ONLY.search(title) and not KYIV_IN_TITLE.search(title):
+        return False
+    return bool(KYIV_IN_TITLE.search(title) and STRIKE_IN_TITLE.search(title))
 
 
 def article_links(page_text: str, domain: str, limit: int = 4) -> list[str]:
@@ -187,17 +256,24 @@ def make_nodes(tools: dict, extractor):
             notes.append(f"Round {state['round'] + 1}: trying {', '.join(targets)}.")
 
         for group in targets[:2]:
-            domain = {"suspilne": "suspilne.media", "pravda": "pravda.com.ua",
-                      "hromadske": "hromadske.ua"}[group]
+            outlet = DISCOVERY[group]
+            domain = outlet["domain"]
             searched.append(group)
             try:
                 await navigate.ainvoke({"url": build_search_url(group, state["query"])})
                 page = as_text(await snapshot.ainvoke({}))
             except Exception as exc:
-                unreachable.append(f"{group} search: {type(exc).__name__}: {exc}")
+                unreachable.append(f"{group}: {type(exc).__name__}: {exc}")
                 continue
 
-            for url in article_links(page, domain):
+            candidates = article_candidates(page, domain)
+            chosen = [(t, u) for t, u in candidates if worth_opening(t)]
+            notes.append(
+                f"{group}: {len(candidates)} articles listed, "
+                f"{len(chosen)} headlines look like a strike on Kyiv"
+            )
+
+            for title, url in chosen[:MAX_ARTICLES_PER_OUTLET]:
                 if any(a["url"] == url for a in articles):
                     continue
                 try:
@@ -206,7 +282,8 @@ def make_nodes(tools: dict, extractor):
                 except Exception as exc:
                     unreachable.append(f"{url}: {type(exc).__name__}: {exc}")
                     continue
-                articles.append({"url": url, "domain": domain, "text": body})
+                articles.append({"url": url, "domain": domain,
+                                 "title": title, "text": body})
 
         return {**state, "round": state["round"] + 1, "articles": articles,
                 "unreachable": unreachable, "searched": searched, "notes": notes}
