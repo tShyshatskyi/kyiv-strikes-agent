@@ -422,7 +422,7 @@ def llm_extractor():
     if not key:
         raise RuntimeError(
             "OPENROUTER_API_KEY is not set. The agent needs a model to read "
-            "articles; the MCP server does not. Put it in .env (see .env.example)."
+            "articles; the MCP server does not. Put it in .env (see .env)."
         )
 
     # The endpoint is configurable so the same code runs against OpenRouter, a

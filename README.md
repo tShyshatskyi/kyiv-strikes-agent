@@ -41,7 +41,7 @@ is therefore deterministic, needs no model credentials, and starts on its own.
 
 ```bash
 python -m pip install -r requirements.txt
-cp .env.example .env      # then fill it in
+cp .env .env      # then fill it in
 ```
 
 ## Configuration

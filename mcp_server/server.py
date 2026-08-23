@@ -16,7 +16,9 @@ looking" from "something is wrong, stop".
 
 import functools
 import json
+import logging
 import os
+import warnings
 from datetime import date
 from pathlib import Path
 from typing import Annotated
@@ -46,6 +48,12 @@ from mcp_server.nominatim import NominatimClient, RateLimited, UpstreamUnavailab
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 FIXTURES = ROOT / "fixtures" / "nominatim"
+
+# The server logs every request at INFO, which buries the agent's own output
+# when both share a terminal. Quiet by default, turned up with KSM_LOG_LEVEL.
+logging.basicConfig(level=os.environ.get("KSM_LOG_LEVEL", "WARNING"))
+logging.getLogger("mcp").setLevel(os.environ.get("KSM_LOG_LEVEL", "WARNING"))
+warnings.filterwarnings("ignore", message=".*IncompleteFieldDefinition.*")
 
 mcp = FastMCP("kyiv-strikes-mcp")
 
