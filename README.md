@@ -5,9 +5,14 @@ geolocated, provenance-tracked incident records.
 
 Given *"удар по Києву 17 червня 2026"* it searches whitelisted Ukrainian
 newsrooms through a real browser, extracts what each article claims, works out
-how many genuinely independent sources are behind those claims, geolocates the
-address and checks it against real district boundaries, reconciles the numbers,
-and writes one row per impact — with the sentence that supports every value.
+how many genuinely independent sources are behind those claims, geolocates every
+address it finds and checks each against real district boundaries, reconciles
+the numbers, and writes the night as one record with one row per impact site —
+each carrying the sentence that supports every value.
+
+City-wide casualty figures are stored once, on the night. Per-address figures
+are stored on the address, and only when an article says so. Mixing the two
+would turn "five killed in Kyiv" into fifteen the moment three sites were hit.
 
 Anything it cannot settle on evidence is written but held back for a person.
 
@@ -76,13 +81,14 @@ Review what the agent could not settle, and sign off on it:
 ```bash
 python -m agent.review
 python -m agent.review ok 3 --by taras
+python -m agent.review ok 1 --by taras --kind attack
 python -m agent.review export > incidents.geojson
 ```
 
 ## Checking things work
 
 ```bash
-python -m pytest -q                     # 142 tests
+python -m pytest -q                     # 161 tests
 python scripts/probe_playwright.py      # are the news sites reachable today?
 python scripts/demo_failures.py         # the three failure scenarios
 ```

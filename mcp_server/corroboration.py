@@ -129,6 +129,78 @@ def _reconcile_categorical(field: str, pairs) -> tuple[dict, str | None] | None:
     )
 
 
+ATTACK_COUNT_FIELDS = ("citywide_killed", "citywide_injured")
+
+
+def corroborate_attack(claims, assessments: list[dict]) -> dict:
+    """Reconcile the city-wide figures several articles give for one attack.
+
+    Same rules as for an impact site, because they are the same rules: a
+    city-wide death toll is also completed over days, so a later higher figure
+    supersedes rather than contradicts, and two sources disagreeing at the same
+    time is a real contradiction.
+
+    Weapon tallies are taken from the most recent usable report rather than
+    reconciled field by field: the air force revises "launched / intercepted" as
+    a set, and merging two partial sets would invent a combination nobody
+    published.
+    """
+    pairs = _usable_pairs(claims, assessments)
+    groups = {assessment["independence_group"] for _, assessment in pairs}
+    has_official = any(
+        (assessment.get("voice_tier") or assessment.get("tier")) == 1
+        for _, assessment in pairs
+    )
+
+    fields: dict[str, dict] = {}
+    review_notes: list[str] = []
+    for field in ATTACK_COUNT_FIELDS:
+        reconciled = _reconcile_count(field, pairs)
+        if reconciled:
+            fields[field], note = reconciled
+            if note:
+                review_notes.append(note)
+
+    weapons = []
+    if pairs:
+        latest = max(pairs, key=lambda pair: pair[0].published_at)[0]
+        weapons = [w.model_dump() for w in getattr(latest, "weapons", [])]
+
+    if not groups:
+        level = "unverified"
+    elif len(groups) == 1:
+        level = "single_source"
+    elif has_official:
+        level = "well_documented"
+    else:
+        level = "corroborated"
+
+    conflicting = [name for name, f in fields.items() if f["status"] == "conflicting"]
+    missing: list[str] = []
+    if level == "unverified":
+        missing.append("Any source that passes the credibility check.")
+    elif level == "single_source":
+        missing.append(
+            "Independent confirmation from a source outside group(s): "
+            + ", ".join(sorted(groups)) + "."
+        )
+    if conflicting:
+        missing.append(
+            "A source that settles the disagreement over: " + ", ".join(conflicting) + "."
+        )
+
+    return {
+        "fields": fields,
+        "weapons": weapons,
+        "has_conflict": bool(conflicting),
+        "verification_level": level,
+        "missing_for_next_level": missing,
+        "usable_groups": sorted(groups),
+        "needs_review": bool(review_notes),
+        "review_reason": " ".join(review_notes) if review_notes else None,
+    }
+
+
 def corroborate(claims: list[IncidentClaim], assessments: list[dict]) -> dict:
     pairs = _usable_pairs(claims, assessments)
     groups = {assessment["independence_group"] for _, assessment in pairs}

@@ -40,7 +40,13 @@ behave over time. This is the sort of reasoning a model does badly and
 inconsistently, and where the cost of a quiet mistake is high. It also produces
 `missing_for_next_level`, which is the input to the graph's only decision.
 
-**`upsert_incident`** owns all persistence. Keeping every write behind one tool
+**`upsert_attack`** holds the night: city-wide casualties and what was
+launched. It exists as a separate tool, rather than a parameter on the impact
+writer, because it does something no per-impact tool can: it sums the deaths
+attributed to individual addresses and compares them with the city-wide total.
+That check only means anything from above both levels.
+
+**`upsert_incident`** owns per-impact persistence. Keeping every write behind one tool
 means there is exactly one place where side effects happen, one dedup rule, and
 one place that decides a record may not be silently downgraded.
 
@@ -81,6 +87,25 @@ agent and a pipeline. Three different tool results steer it:
 The budget is three rounds. Spending it does not fail the run: a thinly reported
 strike is written with its weak evidence stated, which is more useful than
 nothing and more honest than a confident record.
+
+## Why the attack is a separate record
+
+The instinct is to put "five killed in Kyiv" on the incident row, because that
+is where the strike is. It is wrong, and quietly so.
+
+Say three addresses were hit on a night that killed five. Put the city-wide
+figure on each row and the database says fifteen. Nothing errors; the number
+simply becomes false the moment anyone filters by district, or charts a month.
+The fact is true once, so it is stored once, and impacts point at it.
+
+The split also buys the cross-level check described above, and it matches how
+the reporting is actually written: the air force publishes what was launched and
+intercepted for the night, the police publish city totals, and only local
+reporting ties a death to a building.
+
+The cost is real: extraction now has to decide which level a number belongs to,
+and it will sometimes not know. The rule for that case is to record neither,
+because a missing figure can be filled in later and an invented one cannot.
 
 ## Decisions that went the other way, and why
 

@@ -1,0 +1,165 @@
+[
+  {
+    "place_id": 191493365,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 30392356,
+    "lat": "50.5044095",
+    "lon": "30.4991564",
+    "category": "building",
+    "type": "apartments",
+    "place_rank": 30,
+    "importance": 8.258716716253937e-05,
+    "addresstype": "building",
+    "name": "",
+    "display_name": "12, Оболонський проспект, Оболонь, Оболонський район, Київ, 04205, Україна",
+    "address": {
+      "house_number": "12",
+      "road": "Оболонський проспект",
+      "suburb": "Оболонь",
+      "borough": "Оболонський район",
+      "city": "Київ",
+      "ISO3166-2-lvl4": "UA-30",
+      "postcode": "04205",
+      "country": "Україна",
+      "country_code": "ua"
+    },
+    "boundingbox": [
+      "50.5038156",
+      "50.5049654",
+      "30.4990642",
+      "30.4992551"
+    ]
+  },
+  {
+    "place_id": 190751938,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 11215233925,
+    "lat": "50.5046245",
+    "lon": "30.4991747",
+    "category": "shop",
+    "type": "alcohol",
+    "place_rank": 30,
+    "importance": 8.258716716253937e-05,
+    "addresstype": "shop",
+    "name": "Good Beer",
+    "display_name": "Good Beer, 12, Оболонський проспект, Оболонь, Оболонський район, Київ, 04205, Україна",
+    "address": {
+      "shop": "Good Beer",
+      "house_number": "12",
+      "road": "Оболонський проспект",
+      "suburb": "Оболонь",
+      "borough": "Оболонський район",
+      "city": "Київ",
+      "ISO3166-2-lvl4": "UA-30",
+      "postcode": "04205",
+      "country": "Україна",
+      "country_code": "ua"
+    },
+    "boundingbox": [
+      "50.5045745",
+      "50.5046745",
+      "30.4991247",
+      "30.4992247"
+    ]
+  },
+  {
+    "place_id": 191347479,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 6264129727,
+    "lat": "50.5045336",
+    "lon": "30.4991730",
+    "category": "amenity",
+    "type": "pharmacy",
+    "place_rank": 30,
+    "importance": 8.258716716253937e-05,
+    "addresstype": "amenity",
+    "name": "Бажаємо здоровʼя",
+    "display_name": "Бажаємо здоровʼя, 12, Оболонський проспект, Оболонь, Оболонський район, Київ, 04205, Україна",
+    "address": {
+      "amenity": "Бажаємо здоровʼя",
+      "house_number": "12",
+      "road": "Оболонський проспект",
+      "suburb": "Оболонь",
+      "borough": "Оболонський район",
+      "city": "Київ",
+      "ISO3166-2-lvl4": "UA-30",
+      "postcode": "04205",
+      "country": "Україна",
+      "country_code": "ua"
+    },
+    "boundingbox": [
+      "50.5044836",
+      "50.5045836",
+      "30.4991230",
+      "30.4992230"
+    ]
+  },
+  {
+    "place_id": 191422479,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 6264134663,
+    "lat": "50.5039137",
+    "lon": "30.4991625",
+    "category": "shop",
+    "type": "optician",
+    "place_rank": 30,
+    "importance": 8.258716716253937e-05,
+    "addresstype": "shop",
+    "name": "",
+    "display_name": "12, Оболонський проспект, Оболонь, Оболонський район, Київ, 04205, Україна",
+    "address": {
+      "house_number": "12",
+      "road": "Оболонський проспект",
+      "suburb": "Оболонь",
+      "borough": "Оболонський район",
+      "city": "Київ",
+      "ISO3166-2-lvl4": "UA-30",
+      "postcode": "04205",
+      "country": "Україна",
+      "country_code": "ua"
+    },
+    "boundingbox": [
+      "50.5038637",
+      "50.5039637",
+      "30.4991125",
+      "30.4992125"
+    ]
+  },
+  {
+    "place_id": 191460246,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 11372992762,
+    "lat": "50.5048491",
+    "lon": "30.4991042",
+    "category": "shop",
+    "type": "party",
+    "place_rank": 30,
+    "importance": 8.258716716253937e-05,
+    "addresstype": "shop",
+    "name": "Mir Sharov",
+    "display_name": "Mir Sharov, 12, Оболонський проспект, Оболонь, Оболонський район, Київ, 02000, Україна",
+    "address": {
+      "shop": "Mir Sharov",
+      "house_number": "12",
+      "road": "Оболонський проспект",
+      "suburb": "Оболонь",
+      "borough": "Оболонський район",
+      "city": "Київ",
+      "ISO3166-2-lvl4": "UA-30",
+      "postcode": "02000",
+      "country": "Україна",
+      "country_code": "ua"
+    },
+    "boundingbox": [
+      "50.5047991",
+      "50.5048991",
+      "30.4990542",
+      "30.4991542"
+    ]
+  }
+]

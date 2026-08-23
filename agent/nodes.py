@@ -12,7 +12,7 @@ from datetime import date
 from pathlib import Path
 from urllib.parse import quote_plus
 
-from common.schemas import IncidentClaim
+from common.schemas import ArticleExtraction, IncidentClaim
 
 MAX_ROUNDS = 3
 
@@ -151,6 +151,21 @@ def article_links(page_text: str, domain: str, limit: int = 4) -> list[str]:
     return keep
 
 
+def group_by_location(claims: list) -> dict[str, list]:
+    """Group claims by the place they describe.
+
+    One night hits several addresses, and each address is reported by several
+    outlets. Grouping on the normalized address is what turns "eleven claims"
+    into "three impact sites, each with its own evidence".
+    """
+    from mcp_server.geo import normalize_address
+
+    grouped: dict[str, list] = {}
+    for claim in claims:
+        grouped.setdefault(normalize_address(claim.location_text), []).append(claim)
+    return grouped
+
+
 # --- nodes ------------------------------------------------------------------
 
 def make_nodes(tools: dict, extractor):
@@ -198,24 +213,40 @@ def make_nodes(tools: dict, extractor):
 
     async def extract_claims(state: dict) -> dict:
         claims = list(state["claims"])
-        known = {str(c.source_url) for c in claims}
+        attack_claims = list(state.get("attack_claims", []))
+        read = set(state.get("read_urls", []))
+
         for article in state["articles"]:
-            if article["url"] in known:
+            if article["url"] in read:
                 continue
-            claims.extend(extractor(article["url"], state["event_date"],
-                                    article["text"]))
-        return {**state, "claims": claims}
+            read.add(article["url"])
+            extracted = extractor(article["url"], state["event_date"],
+                                  article["text"])
+            if isinstance(extracted, ArticleExtraction):
+                claims.extend(extracted.incidents)
+                if extracted.attack is not None:
+                    attack_claims.append(extracted.attack)
+            else:                       # a plain list of incident claims
+                claims.extend(extracted)
+
+        return {**state, "claims": claims, "attack_claims": attack_claims,
+                "read_urls": sorted(read)}
 
     async def assess(state: dict) -> dict:
-        if not state["claims"]:
+        every_claim = state["claims"] + state.get("attack_claims", [])
+        if not every_claim:
             return {**state, "assessments": []}
-        sources = [
-            {"url": str(c.source_url),
-             "domain": str(c.source_url).split("/")[2].removeprefix("www."),
-             "published_at": c.published_at.isoformat(),
-             "cited_sources": getattr(c, "cited_sources", []) or []}
-            for c in state["claims"]
-        ]
+        seen, sources = set(), []
+        for c in every_claim:
+            url = str(c.source_url)
+            if url in seen:
+                continue
+            seen.add(url)
+            sources.append(
+                {"url": url,
+                 "domain": url.split("/")[2].removeprefix("www."),
+                 "published_at": c.published_at.isoformat(),
+                 "cited_sources": getattr(c, "cited_sources", []) or []})
         body = unwrap(await tools["assess_source_credibility"].ainvoke(
             {"sources": sources, "event_date": state["event_date"]}
         ))
@@ -225,74 +256,150 @@ def make_nodes(tools: dict, extractor):
         return {**state, "assessments": body["data"]["assessments"]}
 
     async def locate(state: dict) -> dict:
-        if not state["claims"]:
-            return {**state, "location": None}
-        first = state["claims"][0]
-        body = unwrap(await tools["resolve_strike_location"].ainvoke({
-            "location_text": first.location_text,
-            "claimed_district": first.claimed_district,
-            "context_districts": [c.claimed_district for c in state["claims"]
-                                  if c.claimed_district],
-            "context_text": " ".join(c.quote for c in state["claims"]),
-        }))
-        if not body["ok"]:
-            return {**state, "location": None,
-                    "notes": state["notes"] + [
-                        f"geocoding failed ({body['error']['code']}): "
-                        f"{body['error']['message']}"]}
-        return {**state, "location": body["data"]}
+        """Geocode every distinct place the reporting describes, not just one."""
+        grouped = group_by_location(state["claims"])
+        if not grouped:
+            return {**state, "sites": [], "location": None}
+
+        context_districts = [c.claimed_district for c in state["claims"]
+                             if c.claimed_district]
+        context_text = " ".join(c.quote for c in state["claims"])
+
+        sites, notes = [], list(state["notes"])
+        for key, claims in grouped.items():
+            first = claims[0]
+            body = unwrap(await tools["resolve_strike_location"].ainvoke({
+                "location_text": first.location_text,
+                "claimed_district": first.claimed_district,
+                "context_districts": context_districts,
+                "context_text": context_text,
+            }))
+            if not body["ok"]:
+                notes.append(f"{first.location_text}: geocoding failed "
+                             f"({body['error']['code']})")
+                continue
+            sites.append({"key": key, "claims": claims, "location": body["data"]})
+
+        # The routing check needs one location: surface a disagreeing site if
+        # there is one, since that is what would send the agent back.
+        headline = next((s["location"] for s in sites
+                         if s["location"].get("district_conflict")),
+                        sites[0]["location"] if sites else None)
+        return {**state, "sites": sites, "notes": notes, "location": headline}
 
     async def reconcile(state: dict) -> dict:
+        empty = {"fields": {}, "verification_level": "unverified",
+                 "missing_for_next_level": ["Any usable source at all."],
+                 "usable_groups": [], "needs_review": False,
+                 "review_reason": None, "has_conflict": False}
         if not state["claims"]:
-            return {**state, "reconciliation": {
-                "fields": {}, "verification_level": "unverified",
-                "missing_for_next_level": ["Any usable source at all."],
-                "usable_groups": [], "needs_review": False, "review_reason": None}}
-        body = unwrap(await tools["corroborate_incident_claims"].ainvoke({
-            "claims": [json.loads(c.model_dump_json()) for c in state["claims"]],
+            return {**state, "reconciliation": empty, "sites": state.get("sites", [])}
+
+        sites = []
+        for site in state.get("sites", []):
+            body = unwrap(await tools["corroborate_incident_claims"].ainvoke({
+                "claims": [json.loads(c.model_dump_json()) for c in site["claims"]],
+                "assessments": state["assessments"],
+            }))
+            sites.append(site | {"reconciliation": body["data"]})
+
+        # The run as a whole is only as good as its weakest site: if any one of
+        # them is thin or contradictory, there is still work worth doing.
+        order = {"unverified": 0, "single_source": 1, "corroborated": 2,
+                 "well_documented": 3}
+        weakest = min((s["reconciliation"] for s in sites),
+                      key=lambda r: order[r["verification_level"]], default=empty)
+        return {**state, "sites": sites, "reconciliation": weakest}
+
+    async def write_attack(state: dict) -> dict:
+        """Write the night-level record first, so impacts can point at it."""
+        claims = state.get("attack_claims") or []
+        if not claims:
+            return {**state, "attack": None, "attack_id": None}
+        body = unwrap(await tools["upsert_attack"].ainvoke({
+            "claims": [json.loads(c.model_dump_json()) for c in claims],
             "assessments": state["assessments"],
         }))
-        return {**state, "reconciliation": body["data"]}
+        if not body["ok"]:
+            return {**state, "attack": None, "attack_id": None,
+                    "notes": state["notes"] + [
+                        f"attack record failed: {body['error']['code']}"]}
+        return {**state, "attack": body["data"],
+                "attack_id": body["data"]["attack_id"]}
 
     async def persist(state: dict) -> dict:
-        location = state.get("location")
-        if not location or location.get("lat") is None:
-            return {**state, "result": {
+        all_sites = state.get("sites", [])
+        sites = [s for s in all_sites if s["location"].get("lat") is not None]
+
+        # A place we know was hit but cannot put on a map is reported, not
+        # dropped in silence.
+        unplaced = [s["claims"][0].location_text for s in all_sites
+                    if s["location"].get("lat") is None]
+        notes = list(state["notes"]) + [
+            f"could not be placed on the map: {address}" for address in unplaced]
+
+        if not sites:
+            return {**state, "notes": notes, "result": {
                 "action": "skipped",
                 "reason": "no usable location, so there is nothing to put on a map"}}
 
-        reconciliation = state["reconciliation"]
-        fields = reconciliation["fields"]
-        first = state["claims"][0]
+        written = []
+        for site in sites:
+            location = site["location"]
+            reconciliation = site.get("reconciliation") or state["reconciliation"]
+            fields = reconciliation["fields"]
+            first = site["claims"][0]
 
-        needs_review = bool(location.get("needs_review")) or bool(
-            reconciliation.get("needs_review"))
-        reasons = [r for r in (location.get("review_reason"),
-                               reconciliation.get("review_reason")) if r]
+            reasons = [r for r in (location.get("review_reason"),
+                                   reconciliation.get("review_reason")) if r]
+            incident = {
+                "attack_id": state.get("attack_id"),
+                "occurred_at": (first.occurred_at or first.published_at).isoformat(),
+                "lat": location["lat"], "lon": location["lon"],
+                "district": location["district"],
+                "claimed_district": location.get("claimed_district"),
+                "address_text": first.location_text,
+                "structure_type": fields.get("structure_type", {}).get(
+                    "value", first.structure_type),
+                # Per-address casualties only. A city-wide figure lives on the
+                # attack; repeating it here would multiply it by the site count.
+                "killed": fields.get("killed", {}).get("value"),
+                "injured": fields.get("injured", {}).get("value"),
+                "damage": first.damage,
+                "verification_level": reconciliation["verification_level"],
+                "geocode_confidence": location["confidence"],
+                "needs_review": bool(location.get("needs_review"))
+                                or bool(reconciliation.get("needs_review")),
+                "review_reason": " ".join(reasons) if reasons else None,
+            }
+            body = unwrap(await tools["upsert_incident"].ainvoke({
+                "incident": incident,
+                "claims": [json.loads(c.model_dump_json()) for c in site["claims"]],
+                "assessments": state["assessments"],
+                "reconciliation": reconciliation,
+            }))
+            written.append(body.get("data") or body.get("error"))
 
-        incident = {
-            "occurred_at": (first.occurred_at or first.published_at).isoformat(),
-            "lat": location["lat"], "lon": location["lon"],
-            "district": location["district"],
-            "claimed_district": location.get("claimed_district"),
-            "address_text": first.location_text,
-            "structure_type": fields.get("structure_type", {}).get(
-                "value", first.structure_type),
-            "killed": fields.get("killed", {}).get("value"),
-            "injured": fields.get("injured", {}).get("value"),
-            "damage": first.damage,
-            "verification_level": reconciliation["verification_level"],
-            "geocode_confidence": location["confidence"],
-            "needs_review": needs_review,
-            "review_reason": " ".join(reasons) if reasons else None,
-        }
-        body = unwrap(await tools["upsert_incident"].ainvoke({
-            "incident": incident,
-            "claims": [json.loads(c.model_dump_json()) for c in state["claims"]],
+        return {**state, "notes": notes,
+                "result": {"action": "written", "sites": written,
+                           "unplaced": unplaced}}
+
+    async def check_totals(state: dict) -> dict:
+        """Re-run the attack tool now that impacts exist.
+
+        The cross-level check — do the per-address deaths add up to more than
+        the city reported — can only run once there are impacts to sum.
+        """
+        if not state.get("attack_claims"):
+            return state
+        body = unwrap(await tools["upsert_attack"].ainvoke({
+            "claims": [json.loads(c.model_dump_json())
+                       for c in state["attack_claims"]],
             "assessments": state["assessments"],
-            "reconciliation": reconciliation,
         }))
-        return {**state, "result": body.get("data") or body.get("error")}
+        if not body["ok"]:
+            return state
+        return {**state, "attack": body["data"]}
 
     return {
         "parse_request": parse_request,
@@ -301,7 +408,9 @@ def make_nodes(tools: dict, extractor):
         "assess": assess,
         "locate": locate,
         "reconcile": reconcile,
+        "write_attack": write_attack,
         "persist": persist,
+        "check_totals": check_totals,
     }
 
 
@@ -325,14 +434,16 @@ def llm_extractor():
         base_url=os.environ.get("OPENROUTER_BASE_URL",
                                 "https://openrouter.ai/api/v1"),
         temperature=0,
-    ).with_structured_output(IncidentClaim)
+    ).with_structured_output(ArticleExtraction)
 
-    def extract(url: str, published_at: str, text: str) -> list[IncidentClaim]:
+    def extract(url: str, published_at: str, text: str) -> ArticleExtraction:
         prompt = PROMPT.format(url=url, published_at=published_at, text=text[:20000])
         try:
-            claim = model.invoke(prompt)
+            result = model.invoke(prompt)
         except Exception:
-            return []
-        return [claim] if claim else []
+            # A model that fails to produce the schema yields nothing rather
+            # than a guess. The run continues on whatever the other articles gave.
+            return ArticleExtraction()
+        return result or ArticleExtraction()
 
     return extract

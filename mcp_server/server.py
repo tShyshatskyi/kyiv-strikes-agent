@@ -25,6 +25,7 @@ from mcp.server.fastmcp import FastMCP
 from pydantic import Field, ValidationError
 
 from common.schemas import (
+    AttackClaim,
     IncidentClaim,
     IncidentRecord,
     SourceAssessment,
@@ -32,7 +33,9 @@ from common.schemas import (
     err,
     ok,
 )
-from mcp_server.corroboration import corroborate
+from mcp_server.attacks_store import attack_summary
+from mcp_server.attacks_store import upsert_attack as store_upsert_attack
+from mcp_server.corroboration import corroborate, corroborate_attack
 from mcp_server.credibility import assess_sources, load_registry
 from mcp_server.db import connect
 from mcp_server.geo import load_districts
@@ -167,6 +170,61 @@ def resolve_strike_location(
         context_districts=context_districts, context_text=context_text,
     )
     return ok(data)
+
+
+@mcp.tool()
+@envelope
+def upsert_attack(
+    claims: Annotated[
+        list[AttackClaim],
+        Field(description="What each article said about the attack as a whole: "
+                          "city-wide casualties, and what was launched."),
+    ],
+    assessments: Annotated[
+        list[SourceAssessment],
+        Field(description="Their credibility verdicts, from "
+                          "assess_source_credibility."),
+    ],
+) -> dict:
+    """Record one night of shelling, and check it against the impacts under it.
+
+    City-wide casualty figures belong to the attack, not to any address: put
+    "five killed in Kyiv" on each of three impact rows and any sum over
+    districts or over a month returns fifteen. This tool is where they live.
+
+    It reconciles the city-wide figures across sources itself, using the same
+    rules as for an impact site — a later higher toll supersedes rather than
+    contradicts, and disagreement at the same time is a real conflict.
+
+    Its distinct job, which no per-impact tool can do, is the cross-level check:
+    the deaths attributed to individual addresses are summed and compared with
+    the city-wide total. If the addresses add up to more than the city reported,
+    a city-wide number was probably mistaken for a local one, and the attack is
+    flagged for a person rather than quietly stored.
+
+    Reports of one night arrive across the following day, so anything within 12
+    hours of an existing attack merges into it.
+
+    SIDE EFFECTS: writes to the attacks, attack_claims, and sources tables.
+    """
+    if not claims:
+        return err("SCHEMA_VIOLATION", "At least one attack claim is required.")
+
+    verdicts = [json.loads(a.model_dump_json()) for a in assessments]
+    reconciliation = corroborate_attack(claims, verdicts)
+
+    first = claims[0]
+    record = {
+        "occurred_at": (first.occurred_at or first.published_at).isoformat(),
+        "citywide_killed": reconciliation["fields"].get("citywide_killed", {}).get("value"),
+        "citywide_injured": reconciliation["fields"].get("citywide_injured", {}).get("value"),
+        "weapons": reconciliation["weapons"],
+        "verification_level": reconciliation["verification_level"],
+        "needs_review": reconciliation["needs_review"],
+        "review_reason": reconciliation["review_reason"],
+    }
+    written = store_upsert_attack(_conn, record, claims, verdicts, reconciliation)
+    return ok(written | {"reconciliation": reconciliation})
 
 
 @mcp.tool()

@@ -32,7 +32,7 @@ LEVEL_ORDER = {
 }
 
 MERGEABLE_FIELDS = ("killed", "injured", "structure_type", "address_text",
-                    "claimed_district")
+                    "claimed_district", "attack_id")
 
 
 def _parse_ts(value: str) -> datetime:
@@ -77,9 +77,17 @@ def _upsert_source(conn: sqlite3.Connection, claim: IncidentClaim,
     return conn.execute("SELECT id FROM sources WHERE url = ?", (url,)).fetchone()["id"]
 
 
-def _write_provenance(conn: sqlite3.Connection, incident_id: int,
-                      claims: list[IncidentClaim], assessments: list[dict],
-                      reconciliation: dict) -> None:
+def _write_provenance(conn: sqlite3.Connection, parent_id: int,
+                      claims, assessments: list[dict],
+                      reconciliation: dict,
+                      table: str = "incident_claims") -> None:
+    """Store, per (record, source, field), the sentence that supports the value.
+
+    Works for both levels: incident_claims links to an incident, attack_claims
+    to an attack. The shape is identical because the question is identical —
+    where did this number come from.
+    """
+    parent_column = "incident_id" if table == "incident_claims" else "attack_id"
     by_url = {a["url"]: a for a in assessments}
     for claim in claims:
         source_id = _upsert_source(conn, claim, by_url.get(str(claim.source_url)))
@@ -89,22 +97,23 @@ def _write_provenance(conn: sqlite3.Connection, incident_id: int,
             if value is None:
                 continue
             conn.execute(
-                """INSERT INTO incident_claims
-                       (incident_id, source_id, field, value, quote, status, extracted_at)
+                f"""INSERT INTO {table}
+                       ({parent_column}, source_id, field, value, quote, status,
+                        extracted_at)
                    VALUES (?, ?, ?, ?, ?, ?, ?)
-                   ON CONFLICT(incident_id, source_id, field) DO UPDATE SET
+                   ON CONFLICT({parent_column}, source_id, field) DO UPDATE SET
                        value = excluded.value,
                        quote = excluded.quote,
                        status = excluded.status""",
-                (incident_id, source_id, field, str(value), claim.quote,
+                (parent_id, source_id, field, str(value), claim.quote,
                  reconciled["status"], _now()),
             )
 
-        for media_url in claim.media_urls:
+        for media_url in getattr(claim, "media_urls", []):
             conn.execute(
                 """INSERT OR IGNORE INTO incident_media (incident_id, source_id, url)
                    VALUES (?, ?, ?)""",
-                (incident_id, source_id, str(media_url)),
+                (parent_id, source_id, str(media_url)),
             )
 
 
@@ -117,12 +126,13 @@ def upsert_incident(conn: sqlite3.Connection, incident: dict,
     if existing is None:
         cursor = conn.execute(
             """INSERT INTO incidents
-                   (occurred_at, lat, lon, district, claimed_district, address_text,
-                    structure_type, killed, injured, damage, verification_level,
-                    geocode_confidence, needs_review, review_reason,
-                    created_at, updated_at)
-               VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
-            (incident["occurred_at"], incident["lat"], incident["lon"],
+                   (attack_id, occurred_at, lat, lon, district, claimed_district,
+                    address_text, structure_type, killed, injured, damage,
+                    verification_level, geocode_confidence, needs_review,
+                    review_reason, created_at, updated_at)
+               VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+            (incident.get("attack_id"),
+             incident["occurred_at"], incident["lat"], incident["lon"],
              incident["district"], incident.get("claimed_district"),
              incident.get("address_text"), incident["structure_type"],
              incident.get("killed"), incident.get("injured"),
@@ -174,26 +184,37 @@ def upsert_incident(conn: sqlite3.Connection, incident: dict,
 
 
 def pending_review(conn: sqlite3.Connection) -> list[dict]:
-    """Incidents awaiting a human decision, oldest first."""
-    rows = conn.execute(
-        """SELECT id, occurred_at, district, claimed_district, address_text,
-                  killed, injured, verification_level, geocode_confidence,
-                  review_reason
-             FROM incidents WHERE needs_review = 1 ORDER BY occurred_at"""
-    ).fetchall()
-    return [dict(row) for row in rows]
+    """Everything awaiting a human decision, at either level, oldest first."""
+    items = [
+        dict(row) | {"kind": "attack"}
+        for row in conn.execute(
+            """SELECT id, occurred_at, citywide_killed, citywide_injured,
+                      verification_level, review_reason
+                 FROM attacks WHERE needs_review = 1""")
+    ]
+    items += [
+        dict(row) | {"kind": "incident"}
+        for row in conn.execute(
+            """SELECT id, attack_id, occurred_at, district, claimed_district,
+                      address_text, killed, injured, verification_level,
+                      geocode_confidence, review_reason
+                 FROM incidents WHERE needs_review = 1""")
+    ]
+    return sorted(items, key=lambda item: (item["occurred_at"], item["kind"]))
 
 
-def clear_review(conn: sqlite3.Connection, incident_id: int, reviewed_by: str) -> None:
-    """Record that a person has checked this incident and stands behind it."""
+def clear_review(conn: sqlite3.Connection, record_id: int, reviewed_by: str,
+                 kind: str = "incident") -> None:
+    """Record that a person has checked this and stands behind it."""
+    table = "attacks" if kind == "attack" else "incidents"
     cursor = conn.execute(
-        """UPDATE incidents
-              SET needs_review = 0, reviewed_by = ?, reviewed_at = ?, updated_at = ?
-            WHERE id = ?""",
-        (reviewed_by, _now(), _now(), incident_id),
+        f"""UPDATE {table}
+               SET needs_review = 0, reviewed_by = ?, reviewed_at = ?, updated_at = ?
+             WHERE id = ?""",
+        (reviewed_by, _now(), _now(), record_id),
     )
     if cursor.rowcount == 0:
-        raise KeyError(f"No incident with id {incident_id}.")
+        raise KeyError(f"No {kind} with id {record_id}.")
     conn.commit()
 
 

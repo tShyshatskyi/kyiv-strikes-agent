@@ -47,11 +47,64 @@ class IncidentClaim(BaseModel):
     location_text: str = Field(min_length=3, max_length=200)
     claimed_district: KyivDistrict | None = None
     structure_type: StructureType
+    # Casualties AT THIS ADDRESS, and only when the article attributes them
+    # here. A city-wide total belongs on the AttackClaim; when an article does
+    # not say which it means, both stay null rather than being guessed.
     killed: int | None = Field(default=None, ge=0, le=1000)
     injured: int | None = Field(default=None, ge=0, le=5000)
     damage: list[DamageKind] = Field(default_factory=list)
     media_urls: list[HttpUrl] = Field(default_factory=list)
     quote: str = Field(min_length=10, max_length=1000)
+
+
+WeaponKind = Literal[
+    "shahed", "cruise_missile", "ballistic_missile", "guided_bomb", "other"
+]
+
+
+class WeaponTally(BaseModel):
+    """How many of one kind of weapon were launched and how many were downed."""
+
+    kind: WeaponKind
+    launched: int | None = Field(default=None, ge=0, le=5000)
+    intercepted: int | None = Field(default=None, ge=0, le=5000)
+
+
+class AttackClaim(BaseModel):
+    """What one article says about the attack as a whole, not about one address.
+
+    Casualty figures in Ukrainian reporting are usually city-wide: "у Києві
+    загинули пʼятеро". Storing that on each impact site would multiply it — three
+    sites would sum to fifteen deaths. It belongs to the night, once.
+    """
+
+    source_url: HttpUrl
+    published_at: datetime
+    occurred_at: datetime | None = None
+    citywide_killed: int | None = Field(default=None, ge=0, le=5000)
+    citywide_injured: int | None = Field(default=None, ge=0, le=20000)
+    weapons: list[WeaponTally] = Field(default_factory=list)
+    districts_affected: list[KyivDistrict] = Field(default_factory=list)
+    quote: str = Field(min_length=10, max_length=1000)
+
+
+class ArticleExtraction(BaseModel):
+    """Everything one article yields: the attack it describes, and each impact."""
+
+    attack: AttackClaim | None = None
+    incidents: list[IncidentClaim] = Field(default_factory=list)
+
+
+class AttackRecord(BaseModel):
+    """A reconciled attack, ready to be written."""
+
+    occurred_at: datetime
+    citywide_killed: int | None = Field(default=None, ge=0, le=5000)
+    citywide_injured: int | None = Field(default=None, ge=0, le=20000)
+    weapons: list[WeaponTally] = Field(default_factory=list)
+    verification_level: VerificationLevel
+    needs_review: bool = False
+    review_reason: str | None = None
 
 
 class SourceAssessment(BaseModel):
@@ -88,6 +141,7 @@ class IncidentRecord(BaseModel):
     geocode_confidence: float = Field(ge=0.0, le=1.0)
     needs_review: bool = False
     review_reason: str | None = None
+    attack_id: int | None = Field(default=None, description="The attack this impact belongs to.")
 
 
 class SourceRef(BaseModel):

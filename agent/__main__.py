@@ -32,50 +32,77 @@ def _root_cause(exc: BaseException) -> BaseException:
 
 
 def report(final: dict) -> None:
-    reconciliation = final.get("reconciliation") or {}
-    location = final.get("location") or {}
+    attack = final.get("attack") or {}
     result = final.get("result") or {}
+    sites = final.get("sites", [])
 
-    print("\n" + "=" * 62)
+    print("\n" + "=" * 68)
     print(f"Question      : {final['query']}")
     print(f"Event date    : {final.get('event_date')}")
     print(f"Search rounds : {final.get('round')}  "
           f"(outlets tried: {', '.join(final.get('searched', [])) or 'none'})")
-    print(f"Articles read : {len(final.get('articles', []))}")
-    print(f"Claims        : {len(final.get('claims', []))}")
+    print(f"Articles read : {len(final.get('articles', []))}   "
+          f"claims: {len(final.get('claims', []))} impact, "
+          f"{len(final.get('attack_claims', []))} attack-level")
 
-    if location.get("lat") is not None:
-        print(f"Location      : {location['district']}  "
+    if attack:
+        print("\n--- the night as a whole " + "-" * 42)
+        print(f"  city-wide     : {attack.get('citywide_killed')} killed, "
+              f"{(attack.get('reconciliation') or {}).get('fields', {}).get('citywide_injured', {}).get('value')} injured")
+        weapons = (attack.get("reconciliation") or {}).get("weapons", [])
+        for weapon in weapons:
+            print(f"  {weapon['kind']:16s} launched {weapon.get('launched')}, "
+                  f"intercepted {weapon.get('intercepted')}")
+        print(f"  evidence      : "
+              f"{(attack.get('reconciliation') or {}).get('verification_level')}")
+        print(f"  attributed to addresses: {attack.get('site_total_killed')} killed")
+        if attack.get("needs_review"):
+            print(f"  NEEDS REVIEW  : {attack.get('review_reason')}")
+
+    print(f"\n--- impact sites ({len(sites)}) " + "-" * 46)
+    for site in sites:
+        location = site["location"]
+        reconciliation = site.get("reconciliation") or {}
+        fields = reconciliation.get("fields", {})
+        address = site["claims"][0].location_text
+        if location.get("lat") is None:
+            print(f"  {address}\n      could not be placed on the map")
+            continue
+        print(f"  {address}")
+        print(f"      {location['district']}  "
               f"({location['lat']:.5f}, {location['lon']:.5f})  "
               f"confidence {location['confidence']}")
-    else:
-        print("Location      : not resolved")
+        here = fields.get("killed", {}).get("value")
+        print(f"      at this address: "
+              f"{here if here is not None else 'not stated'} killed   "
+              f"evidence: {reconciliation.get('verification_level', '—')}")
+        if location.get("needs_review") or reconciliation.get("needs_review"):
+            reason = location.get("review_reason") or reconciliation.get("review_reason")
+            print(f"      NEEDS REVIEW: {reason}")
 
-    print(f"Evidence      : {reconciliation.get('verification_level', '—')}"
-          f"   voices: {', '.join(reconciliation.get('usable_groups', [])) or 'none'}")
-
-    for field, value in (reconciliation.get("fields") or {}).items():
-        print(f"  {field:16s} {value['value']}   [{value['status']}]")
-
-    if reconciliation.get("missing_for_next_level"):
-        print("Still missing :")
-        for item in reconciliation["missing_for_next_level"]:
+    if final.get("reconciliation", {}).get("missing_for_next_level"):
+        print("\nStill missing :")
+        for item in final["reconciliation"]["missing_for_next_level"]:
             print(f"  - {item}")
 
     if final.get("unreachable"):
-        print("Unreachable   :")
+        print("\nUnreachable   :")
         for item in final["unreachable"]:
             print(f"  - {item}")
 
     for note in final.get("notes", []):
         print(f"Note          : {note}")
 
-    print(f"Write         : {json.dumps(result, ensure_ascii=False)}")
+    print(f"\nWrite         : {json.dumps(result, ensure_ascii=False)[:300]}")
 
-    if result.get("needs_review"):
-        print("\n>>> This incident needs a human decision before it is trusted.")
+    flagged = bool(attack.get("needs_review")) or any(
+        s["location"].get("needs_review")
+        or (s.get("reconciliation") or {}).get("needs_review")
+        for s in sites)
+    if flagged:
+        print("\n>>> Some of this needs a human decision before it is trusted.")
         print(">>> Run:  python -m agent.review")
-    print("=" * 62)
+    print("=" * 68)
 
 
 async def main() -> int:

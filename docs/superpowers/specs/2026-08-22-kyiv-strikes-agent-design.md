@@ -20,8 +20,22 @@ The agent takes one incident query and produces reconciled, geolocated,
 provenance-tracked incident rows in a database whose shape is directly usable by
 an interactive map later.
 
-**Scope of one run:** one strike event, producing one or more incident rows (one
-per distinct impact location).
+**Scope of one run:** one night's attack, producing one attack row and one
+incident row per distinct impact location.
+
+**Two levels, kept apart.** Ukrainian reporting gives casualty figures for the
+city, not for an address: "у Києві загинули пʼятеро". Storing that on each
+impact would multiply it — three sites hit would sum to fifteen deaths, and any
+filter by district or by month would return a number nobody ever reported. So
+city-wide figures, and the tally of what was launched and intercepted, live on
+the **attack**; per-address casualties live on the **impact**, and only when an
+article ties them to that address. Where an article does not make clear which it
+means, neither is recorded.
+
+That split makes one check possible that neither level could do alone: the
+deaths attributed to individual addresses cannot add up to more than the city
+reported. When they do, a city-wide number was probably read as a local one, and
+the attack is flagged for a person.
 
 ## 2. Non-goals
 

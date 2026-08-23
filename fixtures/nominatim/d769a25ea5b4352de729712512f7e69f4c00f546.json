@@ -1,0 +1,35 @@
+[
+  {
+    "place_id": 191593616,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "relation",
+    "osm_id": 17995870,
+    "lat": "50.4907476",
+    "lon": "30.5939269",
+    "category": "building",
+    "type": "school",
+    "place_rank": 30,
+    "importance": 8.258716716253937e-05,
+    "addresstype": "building",
+    "name": "",
+    "display_name": "3, вулиця Миколи Кибальчича, 3-й мікрорайон Воскресенського масиву, Воскресенка, Дніпровський район, Київ, 02139, Україна",
+    "address": {
+      "house_number": "3",
+      "road": "вулиця Миколи Кибальчича",
+      "neighbourhood": "3-й мікрорайон Воскресенського масиву",
+      "suburb": "Воскресенка",
+      "city_district": "Дніпровський район",
+      "city": "Київ",
+      "ISO3166-2-lvl4": "UA-30",
+      "postcode": "02139",
+      "country": "Україна",
+      "country_code": "ua"
+    },
+    "boundingbox": [
+      "50.4905320",
+      "50.4909617",
+      "30.5936502",
+      "30.5945817"
+    ]
+  }
+]

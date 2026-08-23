@@ -19,6 +19,11 @@ class AgentState(TypedDict, total=False):
     searched: list[str]
     articles: list[dict]
     claims: list[Any]
+    attack_claims: list[Any]
+    read_urls: list[str]
+    sites: list[dict]
+    attack_id: int | None
+    attack: Any
     assessments: list[dict]
     location: dict | None
     reconciliation: dict | None
@@ -45,8 +50,12 @@ def build_graph(tools: dict, extractor):
     graph.add_conditional_edges(
         "reconcile",
         should_continue,
-        {"discover_sources": "discover_sources", "persist": "persist"},
+        {"discover_sources": "discover_sources", "persist": "write_attack"},
     )
-    graph.add_edge("persist", END)
+    # The attack row is written first so impacts can point at it; the totals
+    # check runs last, because it needs those impacts to sum.
+    graph.add_edge("write_attack", "persist")
+    graph.add_edge("persist", "check_totals")
+    graph.add_edge("check_totals", END)
 
     return graph.compile()

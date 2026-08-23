@@ -134,7 +134,8 @@ async def test_two_independent_voices_finish_in_one_round(tmp_path):
 
     assert final["round"] == 1
     assert final["reconciliation"]["verification_level"] == "corroborated"
-    assert final["result"]["action"] == "created"
+    assert final["result"]["action"] == "written"
+    assert [site["action"] for site in final["result"]["sites"]] == ["created"]
 
 
 async def test_the_written_record_carries_the_reconciled_value(tmp_path):
@@ -175,7 +176,7 @@ async def test_a_single_voice_makes_the_agent_search_again(tmp_path):
 
     assert final["round"] == 3, "should have used its whole search budget"
     assert final["reconciliation"]["verification_level"] == "single_source"
-    assert final["result"]["action"] == "created"
+    assert [site["action"] for site in final["result"]["sites"]] == ["created"]
     assert final["searched"].count("suspilne") == 1
 
 
@@ -210,7 +211,7 @@ async def test_an_unreachable_article_is_recorded_and_the_run_continues(tmp_path
         final = await graph.ainvoke({"query": "удар по Києву 17 червня 2026"})
 
     assert any(PRAV in note for note in final["unreachable"])
-    assert final["result"]["action"] == "created"
+    assert [site["action"] for site in final["result"]["sites"]] == ["created"]
     # Losing the second voice costs evidence, and the record says so.
     assert final["reconciliation"]["verification_level"] == "single_source"
 

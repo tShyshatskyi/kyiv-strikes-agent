@@ -15,8 +15,30 @@ CREATE TABLE IF NOT EXISTS sources (
   fetched_at TEXT NOT NULL
 );
 
+-- One night of shelling. City-wide figures live here and nowhere else: put
+-- "5 killed in Kyiv" on each of three impact rows and any sum over districts,
+-- or over a month, returns three times the real number.
+CREATE TABLE IF NOT EXISTS attacks (
+  id INTEGER PRIMARY KEY,
+  occurred_at TEXT NOT NULL,
+  citywide_killed INTEGER,
+  citywide_injured INTEGER,
+  weapons TEXT NOT NULL DEFAULT '[]',
+  verification_level TEXT NOT NULL CHECK (verification_level IN
+      ('unverified','single_source','corroborated','well_documented')),
+  needs_review INTEGER NOT NULL DEFAULT 0,
+  review_reason TEXT,
+  reviewed_by TEXT,
+  reviewed_at TEXT,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_attacks_time ON attacks(occurred_at);
+CREATE INDEX IF NOT EXISTS idx_attacks_review ON attacks(needs_review);
+
 CREATE TABLE IF NOT EXISTS incidents (
   id INTEGER PRIMARY KEY,
+  attack_id INTEGER REFERENCES attacks(id),
   occurred_at TEXT NOT NULL,
   lat REAL NOT NULL,
   lon REAL NOT NULL,
@@ -52,6 +74,20 @@ CREATE TABLE IF NOT EXISTS incident_claims (
       ('corroborated','single_source','conflicting','superseded')),
   extracted_at TEXT NOT NULL,
   UNIQUE(incident_id, source_id, field)
+);
+
+-- Same shape as incident_claims, for the attack level.
+CREATE TABLE IF NOT EXISTS attack_claims (
+  id INTEGER PRIMARY KEY,
+  attack_id INTEGER NOT NULL REFERENCES attacks(id),
+  source_id INTEGER NOT NULL REFERENCES sources(id),
+  field TEXT NOT NULL,
+  value TEXT NOT NULL,
+  quote TEXT NOT NULL,
+  status TEXT NOT NULL CHECK (status IN
+      ('corroborated','single_source','conflicting','superseded')),
+  extracted_at TEXT NOT NULL,
+  UNIQUE(attack_id, source_id, field)
 );
 
 CREATE TABLE IF NOT EXISTS incident_media (
