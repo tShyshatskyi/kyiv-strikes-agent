@@ -22,13 +22,13 @@ from mcp_server.db import connect
 REPO = Path(__file__).resolve().parent.parent
 
 SUSP = "https://suspilne.media/kyiv/1111111-udar/"
-PRAV = "https://www.pravda.com.ua/news/2026/06/17/7412345/"
+HROM = "https://hromadske.ua/suspilstvo/269686-masovanyi-udar-po-kyyevu/"
 
 SEARCH_PAGE = f"""
 - link "Масований удар по Києву: є загиблі та поранені" [ref=e2]:
   - /url: {SUSP}
 - link "Наслідки нічного удару по Києву: зруйновано будинок" [ref=e3]:
-  - /url: {PRAV}
+  - /url: {HROM}
 """
 
 # Three real Kyiv addresses in three different districts.
@@ -114,7 +114,7 @@ def search_pages(page: str) -> dict:
 
 async def run(db: Path, extraction_by_url: dict):
     browser = FakeBrowser(search_pages(SEARCH_PAGE)
-                          | {SUSP: "article one", PRAV: "article two"})
+                          | {SUSP: "article one", HROM: "article two"})
     async with custom_tools(db) as tools:
         graph = build_graph(tools | browser.tools(), scripted(extraction_by_url))
         return await graph.ainvoke({"query": "удар по Києву 17 червня 2026"})
@@ -128,9 +128,9 @@ async def test_every_distinct_address_becomes_its_own_site(tmp_path):
         SUSP: ArticleExtraction(
             attack=attack_claim(SUSP),
             incidents=[incident_claim(SUSP, a, d) for a, d in SITES]),
-        PRAV: ArticleExtraction(
-            attack=attack_claim(PRAV, published="2026-06-17T09:40:00Z"),
-            incidents=[incident_claim(PRAV, a, d, published="2026-06-17T09:40:00Z")
+        HROM: ArticleExtraction(
+            attack=attack_claim(HROM, published="2026-06-17T09:40:00Z"),
+            incidents=[incident_claim(HROM, a, d, published="2026-06-17T09:40:00Z")
                        for a, d in SITES]),
     }
     final = await run(tmp_path / "m.sqlite", extraction)
@@ -146,9 +146,9 @@ async def test_the_same_address_written_two_ways_is_one_site(tmp_path):
         SUSP: ArticleExtraction(
             attack=attack_claim(SUSP),
             incidents=[incident_claim(SUSP, "вул. Освіти, 4, Київ", "Солом'янський")]),
-        PRAV: ArticleExtraction(
-            attack=attack_claim(PRAV, published="2026-06-17T09:40:00Z"),
-            incidents=[incident_claim(PRAV, "ВУЛ.  ОСВІТИ 4, Київ", "Солом'янський",
+        HROM: ArticleExtraction(
+            attack=attack_claim(HROM, published="2026-06-17T09:40:00Z"),
+            incidents=[incident_claim(HROM, "ВУЛ.  ОСВІТИ 4, Київ", "Солом'янський",
                                       published="2026-06-17T09:40:00Z")]),
     }
     final = await run(tmp_path / "m.sqlite", extraction)
@@ -164,9 +164,9 @@ async def test_the_citywide_toll_is_stored_once_not_once_per_site(tmp_path):
         SUSP: ArticleExtraction(
             attack=attack_claim(SUSP, killed=5),
             incidents=[incident_claim(SUSP, a, d) for a, d in SITES]),
-        PRAV: ArticleExtraction(
-            attack=attack_claim(PRAV, killed=5, published="2026-06-17T09:40:00Z"),
-            incidents=[incident_claim(PRAV, a, d, published="2026-06-17T09:40:00Z")
+        HROM: ArticleExtraction(
+            attack=attack_claim(HROM, killed=5, published="2026-06-17T09:40:00Z"),
+            incidents=[incident_claim(HROM, a, d, published="2026-06-17T09:40:00Z")
                        for a, d in SITES]),
     }
     await run(db, extraction)

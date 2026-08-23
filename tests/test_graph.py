@@ -22,13 +22,13 @@ from common.schemas import IncidentClaim
 REPO = Path(__file__).resolve().parent.parent
 
 SUSP = "https://suspilne.media/kyiv/1111111-udar/"
-PRAV = "https://www.pravda.com.ua/news/2026/06/17/7412345/"
+HROM = "https://hromadske.ua/suspilstvo/269686-masovanyi-udar-po-kyyevu/"
 
 SEARCH_PAGE = f"""
 - link "Масований удар по Києву: є загиблі та поранені" [ref=e2]:
   - /url: {SUSP}
 - link "Наслідки нічного удару по Києву: зруйновано будинок" [ref=e3]:
-  - /url: {PRAV}
+  - /url: {HROM}
 """
 
 
@@ -121,21 +121,20 @@ def search_pages(page: str) -> dict:
 
 async def test_the_agent_stops_as_soon_as_two_voices_agree(tmp_path):
     browser = FakeBrowser(
-        search_pages(SEARCH_PAGE) | {SUSP: "article one", PRAV: "article two"}
+        search_pages(SEARCH_PAGE) | {SUSP: "article one", HROM: "article two"}
     )
     extractor = scripted_extractor({
         SUSP: [claim_for(SUSP)],
-        PRAV: [claim_for(PRAV, published="2026-06-17T09:40:00Z")],
+        HROM: [claim_for(HROM, published="2026-06-17T09:40:00Z")],
     })
 
     async with custom_tools(tmp_path / "g.sqlite") as tools:
         graph = build_graph(tools | browser.tools(), extractor)
         final = await graph.ainvoke({"query": "удар по Києву 17 червня 2026"})
 
-    # One outlet per round, so two voices take two rounds — and the third
-    # round is not spent, because the evidence is already good enough.
-    assert final["round"] == 2
-    assert final["round"] < 3
+    # Both outlets are read in the first round, so two voices cost one round
+    # and the remaining budget is not spent.
+    assert final["round"] == 1
     assert final["reconciliation"]["verification_level"] == "corroborated"
     assert final["result"]["action"] == "written"
     assert [site["action"] for site in final["result"]["sites"]] == ["created"]
@@ -143,11 +142,11 @@ async def test_the_agent_stops_as_soon_as_two_voices_agree(tmp_path):
 
 async def test_the_written_record_carries_the_reconciled_value(tmp_path):
     browser = FakeBrowser(
-        search_pages(SEARCH_PAGE) | {SUSP: "one", PRAV: "two"}
+        search_pages(SEARCH_PAGE) | {SUSP: "one", HROM: "two"}
     )
     extractor = scripted_extractor({
         SUSP: [claim_for(SUSP, killed=3)],
-        PRAV: [claim_for(PRAV, killed=5, published="2026-06-17T20:00:00Z")],
+        HROM: [claim_for(HROM, killed=5, published="2026-06-17T20:00:00Z")],
     })
 
     db = tmp_path / "g.sqlite"
@@ -177,7 +176,9 @@ async def test_a_single_voice_makes_the_agent_search_again(tmp_path):
         graph = build_graph(tools | browser.tools(), extractor)
         final = await graph.ainvoke({"query": "удар по Києву 17 червня 2026"})
 
-    assert final["round"] == 3, "should have used its whole search budget"
+    # Both outlets are tried in the first round; there is nowhere left to look,
+    # so a second round would only re-fetch the same pages.
+    assert final["round"] == 1, "should have tried every outlet"
     assert final["reconciliation"]["verification_level"] == "single_source"
     assert [site["action"] for site in final["result"]["sites"]] == ["created"]
     assert final["searched"].count("suspilne") == 1
@@ -192,7 +193,7 @@ async def test_the_agent_looks_at_outlets_it_has_not_tried_yet(tmp_path):
         graph = build_graph(tools | browser.tools(), extractor)
         final = await graph.ainvoke({"query": "удар по Києву 17 червня 2026"})
 
-    assert set(final["searched"]) == {"suspilne", "pravda", "hromadske"}
+    assert set(final["searched"]) == {"suspilne", "hromadske"}
 
 
 # --- failure ----------------------------------------------------------------
@@ -201,19 +202,19 @@ async def test_an_unreachable_article_is_recorded_and_the_run_continues(tmp_path
     """Failure scenario A: one source 404s. The run must finish on the rest and
     say plainly which source was lost."""
     browser = FakeBrowser(
-        search_pages(SEARCH_PAGE) | {SUSP: "article one", PRAV: "article two"},
-        fail={PRAV},
+        search_pages(SEARCH_PAGE) | {SUSP: "article one", HROM: "article two"},
+        fail={HROM},
     )
     extractor = scripted_extractor({
         SUSP: [claim_for(SUSP)],
-        PRAV: [claim_for(PRAV)],
+        HROM: [claim_for(HROM)],
     })
 
     async with custom_tools(tmp_path / "g.sqlite") as tools:
         graph = build_graph(tools | browser.tools(), extractor)
         final = await graph.ainvoke({"query": "удар по Києву 17 червня 2026"})
 
-    assert any(PRAV in note for note in final["unreachable"])
+    assert any(HROM in note for note in final["unreachable"])
     assert [site["action"] for site in final["result"]["sites"]] == ["created"]
     # Losing the second voice costs evidence, and the record says so.
     assert final["reconciliation"]["verification_level"] == "single_source"
@@ -221,11 +222,11 @@ async def test_an_unreachable_article_is_recorded_and_the_run_continues(tmp_path
 
 async def test_a_district_disagreement_reaches_the_review_queue(tmp_path):
     browser = FakeBrowser(
-        search_pages(SEARCH_PAGE) | {SUSP: "one", PRAV: "two"}
+        search_pages(SEARCH_PAGE) | {SUSP: "one", HROM: "two"}
     )
     extractor = scripted_extractor({
         SUSP: [claim_for(SUSP, district="Оболонський")],
-        PRAV: [claim_for(PRAV, district="Оболонський",
+        HROM: [claim_for(HROM, district="Оболонський",
                          published="2026-06-17T09:40:00Z")],
     })
 

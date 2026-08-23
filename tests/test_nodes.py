@@ -105,20 +105,30 @@ def test_an_incident_nobody_else_reported_is_still_recorded():
 def test_the_next_round_avoids_voices_that_already_spoke():
     targets = next_targets({"searched": [], "reconciliation": {"usable_groups": ["suspilne"]}})
     assert "suspilne" not in targets
-    assert "pravda" in targets
+    assert "hromadske" in targets
 
 
 def test_a_source_already_searched_is_not_searched_again():
-    targets = next_targets({"searched": ["pravda"], "reconciliation": {"usable_groups": []}})
-    assert "pravda" not in targets
+    targets = next_targets({"searched": ["hromadske"],
+                            "reconciliation": {"usable_groups": []}})
+    assert "hromadske" not in targets
 
 
 def test_when_everything_has_been_tried_the_list_is_empty():
     targets = next_targets({
-        "searched": ["suspilne", "pravda", "hromadske"],
+        "searched": ["suspilne", "hromadske"],
         "reconciliation": {"usable_groups": []},
     })
     assert targets == []
+
+
+def test_a_date_is_stripped_before_a_site_search():
+    """No headline contains "20 серпня 2026". The first live run asked
+    hromadske for the whole question and got nothing back."""
+    from agent.nodes import search_terms
+    assert search_terms("масований удар по Києву 20 серпня 2026") == "масований удар по Києву"
+    assert search_terms("удар по Києву 2026-08-20") == "удар по Києву"
+    assert search_terms("обстріл Києва") == "обстріл Києва"
 
 
 def test_a_real_search_endpoint_carries_the_query():

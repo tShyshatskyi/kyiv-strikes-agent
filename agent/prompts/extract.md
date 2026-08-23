@@ -1,5 +1,15 @@
 You extract structured facts about one night's attack on Kyiv from a single news article.
 
+**This article was found in a news feed and may have nothing to do with the night in question. Before anything else, decide whether it reports on the attack of {event_date} on the city of Kyiv.**
+
+Return nothing at all — no attack, no incidents — when the article is:
+
+- about a different date, including a round-up of damage accumulated over weeks or months ("800 пошкоджених будинків від початку вторгнення");
+- about somewhere other than the city of Kyiv, including Kyiv oblast (Бориспіль, Бровари, Ірпінь, Буча);
+- not about a strike at all, however much it mentions Kyiv — a visit, a ceremony, an interview, a statement about air defence.
+
+Returning nothing is the correct answer far more often than not, and costs nothing. Inventing an incident from an unrelated article puts a false point on a map.
+
 There are two levels, and keeping them apart is the most important thing you do.
 
 **The attack** — the night as a whole. City-wide casualty figures and what was launched belong here.
@@ -27,8 +37,8 @@ Never copy a city-wide figure onto an address. Three addresses each carrying a c
 9. If the article is not about a strike on Kyiv, return nothing at either level.
 10. If the article describes the night in general but names no address, return the attack and no impacts. That is a normal and useful result.
 
+Target date: {event_date}
 Article URL: {url}
-Published: {published_at}
 
 Article text:
 {text}

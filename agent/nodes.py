@@ -61,11 +61,13 @@ DISCOVERY = {
         "url": "https://suspilne.media/kyiv/",
         "kind": "feed",          # the outlet's Kyiv section
     },
-    "pravda": {
-        "domain": "pravda.com.ua",
-        "url": "https://www.pravda.com.ua/news/",
-        "kind": "feed",
-    },
+    # Pravda is deliberately absent. Everything that would let us reach back a
+    # few days — rubrics, pagination, tags, the archive, the search — answers
+    # 403 to a headless browser. The one page it does serve, /news/, is the last
+    # forty items across all topics, which on any given afternoon is that
+    # afternoon. It stays in source_registry.yaml because its articles read
+    # fine and its voice still counts when another outlet cites it; it simply
+    # cannot be used to find anything.
 }
 
 # A headline worth opening names both a place in Kyiv and something happening
@@ -105,6 +107,22 @@ def extract_date(query: str) -> str:
         f"No date found in {query!r}. Include one, for example "
         "'удар по Києву 17 червня 2026' or '2026-06-17'."
     )
+
+
+_DATE_WORDS = re.compile(
+    r"\b\d{4}-\d{2}-\d{2}\b|\b\d{1,2}\s+[а-яіїєґ]+\s+\d{4}\b|\b\d{4}\b",
+    re.I,
+)
+
+
+def search_terms(query: str) -> str:
+    """The query with the date taken out.
+
+    A site search matches text, and no headline contains "20 серпня 2026". The
+    first live run asked hromadske for the whole question and got nothing back;
+    asking for "масований удар по Києву" returns the right articles.
+    """
+    return re.sub(r"\s+", " ", _DATE_WORDS.sub("", query)).strip()
 
 
 def parse_request(state: dict) -> dict:
@@ -155,6 +173,10 @@ def should_continue(state: dict) -> str:
     if location.get("district_conflict"):
         return "discover_sources"
 
+    # Nowhere left to look. Another round would re-fetch the same pages.
+    if not next_targets(state) and not state.get("unopened"):
+        return "persist"
+
     level = reconciliation.get("verification_level", "unverified")
     if level in ("unverified", "single_source"):
         return "discover_sources"
@@ -190,7 +212,7 @@ def next_targets(state: dict) -> list[str]:
 
 def build_search_url(group: str, query: str) -> str:
     """The page to open for this outlet. A feed ignores the query by design."""
-    return DISCOVERY[group]["url"].format(q=quote_plus(query))
+    return DISCOVERY[group]["url"].format(q=quote_plus(search_terms(query)))
 
 
 def unwrap(raw) -> dict:
@@ -215,18 +237,66 @@ def article_candidates(page_text: str, domain: str) -> list[tuple[str, str]]:
     naming them: a Pravda url says /news/2026/08/23/8049976/ and nothing more,
     so the only way to tell a strike report from a football result before
     opening it is the link text.
+
+    The two outlets write that link two different ways, and an earlier version
+    that handled only one of them silently found nothing at hromadske:
+
+        Suspilne     link "Заголовок ...":
+                       - /url: https://suspilne.media/kyiv/1385126-...
+
+        hromadske    link [ref=e86]:
+                       - /url: https://hromadske.ua/suspilstvo/269796-...
+                       - heading "Заголовок ..."
+
+    So the headline is looked for on the url's own line first, then on the
+    lines just after it, then on the lines just before.
     """
-    pairs = re.findall(r'link "([^"]{15,200})"[^\n]*\n\s*- /url: (\S+)', page_text)
+    lines = page_text.splitlines()
+    heading_re = re.compile(r'heading "([^"]{15,200})"')
+    link_re = re.compile(r'link "([^"]{15,200})"')
+    boundary_re = re.compile(r"- (?:link|/url:)")
     seen, out = set(), []
-    for title, url in pairs:
+
+    for i, line in enumerate(lines):
+        match = re.search(r"- /url:\s*(\S+)", line)
+        if not match:
+            continue
+        url = match.group(1)
+
         if domain not in url or url in seen:
             continue
         if re.search(r"/(tag|tags|category|search|author|event)/", url):
             continue
         if not re.search(r"/\d{4,}|/\d{4}/\d{2}|-\d{4,}", url):
             continue
+
+        title = None
+
+        # On the url's own line, or just before it: the outlet put the headline
+        # in the link text.
+        for candidate in (lines[i], *reversed(lines[max(0, i - 3):i])):
+            found = link_re.search(candidate)
+            if found:
+                title = found.group(1).strip()
+                break
+
+        # Otherwise just after it, as this link's own heading. The scan stops at
+        # the next link or url, or it would happily label one article with the
+        # headline of the one below it.
+        if not title:
+            for candidate in lines[i + 1:i + 5]:
+                if boundary_re.search(candidate):
+                    break
+                found = heading_re.search(candidate)
+                if found:
+                    title = found.group(1).strip()
+                    break
+
+        if not title:
+            continue
+
         seen.add(url)
-        out.append((title.strip(), url))
+        out.append((title, url))
     return out
 
 
@@ -377,12 +447,23 @@ def make_nodes(tools: dict, extractor):
             say(f"  asking the model to read: {article.get('title', article['url'])[:60]}")
             extracted = extractor(article["url"], state["event_date"],
                                   article["text"])
+
+            # Which article a claim came from is a fact about the fetch, not a
+            # judgement about the text, so it is not the model's to get wrong.
+            # A mistyped source_url silently detaches a claim from its
+            # credibility assessment and the claim ends up counting for nothing.
+            def anchor(claim):
+                return claim.model_copy(update={"source_url": article["url"]})
+
             if isinstance(extracted, ArticleExtraction):
-                claims.extend(extracted.incidents)
+                found = len(extracted.incidents) + (1 if extracted.attack else 0)
+                say(f"    -> {found or 'nothing relevant'}"
+                    + (" claim(s)" if found else ""))
+                claims.extend(anchor(c) for c in extracted.incidents)
                 if extracted.attack is not None:
-                    attack_claims.append(extracted.attack)
+                    attack_claims.append(anchor(extracted.attack))
             else:                       # a plain list of incident claims
-                claims.extend(extracted)
+                claims.extend(anchor(c) for c in extracted)
 
         notes = list(state["notes"])
         for failure in getattr(extractor, "failures", [])[len(state.get(
@@ -506,6 +587,25 @@ def make_nodes(tools: dict, extractor):
                 "action": "skipped",
                 "reason": "no usable location, so there is nothing to put on a map"}}
 
+        # A site whose every source failed the credibility check is not an
+        # uncertain record, it is an unsupported one. The first live run wrote
+        # three addresses lifted from an article published six days before the
+        # attack; they belong nowhere near the registry.
+        unsupported = [s for s in sites
+                       if (s.get("reconciliation") or {}).get(
+                           "verification_level") == "unverified"]
+        sites = [s for s in sites if s not in unsupported]
+        for site in unsupported:
+            address = site["claims"][0].location_text
+            notes.append(f"not recorded, no usable source: {address}")
+            say(f"  dropping (no usable source): {address[:60]}")
+
+        if not sites:
+            return {**state, "notes": notes, "result": {
+                "action": "skipped",
+                "reason": "nothing was supported by a source that passed the "
+                          "credibility check"}}
+
         say(f"writing {len(sites)} impact site(s)")
         written = []
         for site in sites:
@@ -546,7 +646,9 @@ def make_nodes(tools: dict, extractor):
 
         return {**state, "notes": notes,
                 "result": {"action": "written", "sites": written,
-                           "unplaced": unplaced}}
+                           "unplaced": unplaced,
+                           "unsupported": [s["claims"][0].location_text
+                                           for s in unsupported]}}
 
     async def check_totals(state: dict) -> dict:
         """Re-run the attack tool now that impacts exist.
