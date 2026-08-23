@@ -200,6 +200,22 @@ source supports is not an uncertain record, it is an unsupported one, and it is
 no longer written at all. The extraction prompt now also names the target date
 and says, in as many words, that returning nothing is usually the right answer.
 
+**Two nights were being reconciled as one, and that produced the worst wrong
+answer this project has made.** A run for 20 August pulled in an article about
+a smaller attack on the 22nd. Both are attacks on Kyiv; both were published
+within the relevance window; the model extracted both correctly. Then the
+reconciliation rule did exactly what it was designed to do — a later figure
+supersedes an earlier one — and replaced "15 killed" with "1 killed". Nothing
+errored. The record was flagged for review only because the count went *down*,
+which was luck: had the second night been the bigger one, it would have been
+recorded confidently and wrongly.
+
+The rule was never wrong. Its scope was. Superseding is a statement about one
+event learning more about itself, and applying it across two events invents a
+fact that nobody reported. Claims are now checked against the night in question
+before they can be reconciled with it, with a day either side because a strike
+runs through midnight and the morning reports belong to the night before.
+
 **Silence reads as a hang.** A run takes minutes; it now says what it is doing.
 
 ## Known limitations

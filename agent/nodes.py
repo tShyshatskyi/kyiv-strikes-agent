@@ -140,6 +140,31 @@ def search_terms(query: str) -> str:
     return re.sub(r"\s+", " ", _DATE_WORDS.sub("", query)).strip()
 
 
+# A strike runs through the night and its reports carry either the evening or
+# the following morning, so a claim may legitimately sit a day either side of
+# the date asked for. Beyond that it is a different event.
+NIGHT_TOLERANCE_DAYS = 1
+
+
+def belongs_to_the_night(claim, event_date: str) -> bool:
+    """Is this claim about the attack we asked about, or a different one?
+
+    The single most dangerous failure this project has produced came from
+    skipping this check. A run for 20 August pulled in an article about a
+    smaller attack on the 22nd, and because the rules say a later figure
+    supersedes an earlier one, "15 killed" was quietly replaced by "1 killed".
+    The rule is right — inside one event. Across two events it invents a fact.
+
+    A claim with no occurred_at falls back to when it was published, which for
+    a strike report is the same night or the morning after.
+    """
+    from datetime import date as _date, timedelta
+
+    target = _date.fromisoformat(event_date)
+    when = getattr(claim, "occurred_at", None) or claim.published_at
+    return abs((when.date() - target).days) <= NIGHT_TOLERANCE_DAYS
+
+
 def parse_request(state: dict) -> dict:
     """Normalize the question and initialize the loop."""
     return {
@@ -168,8 +193,12 @@ def figures_still_moving(state: dict) -> bool:
         fields = (site.get("reconciliation") or {}).get("fields", {})
         if any(f.get("status") == "superseded" for f in fields.values()):
             return True
-    fields = (state.get("reconciliation") or {}).get("fields", {})
-    return any(f.get("status") == "superseded" for f in fields.values())
+    for source in (state.get("reconciliation"), (state.get("attack") or {}).get(
+            "reconciliation")):
+        fields = (source or {}).get("fields", {})
+        if any(f.get("status") == "superseded" for f in fields.values()):
+            return True
+    return False
 
 
 def should_continue(state: dict) -> str:
@@ -454,6 +483,7 @@ def make_nodes(tools: dict, extractor):
         claims = list(state["claims"])
         attack_claims = list(state.get("attack_claims", []))
         read = set(state.get("read_urls", []))
+        notes = list(state["notes"])
 
         for article in state["articles"]:
             if article["url"] in read:
@@ -468,19 +498,45 @@ def make_nodes(tools: dict, extractor):
             # A mistyped source_url silently detaches a claim from its
             # credibility assessment and the claim ends up counting for nothing.
             def anchor(claim):
-                return claim.model_copy(update={"source_url": article["url"]})
+                # Revalidated rather than copied in: model_copy skips
+                # validation, and the url would go in as a plain string where
+                # the schema declares a URL, which pydantic then complains
+                # about on every serialization.
+                return type(claim).model_validate(
+                    claim.model_dump() | {"source_url": article["url"]})
 
             if isinstance(extracted, ArticleExtraction):
-                found = len(extracted.incidents) + (1 if extracted.attack else 0)
-                say(f"    -> {found or 'nothing relevant'}"
-                    + (" claim(s)" if found else ""))
-                claims.extend(anchor(c) for c in extracted.incidents)
-                if extracted.attack is not None:
-                    attack_claims.append(anchor(extracted.attack))
-            else:                       # a plain list of incident claims
-                claims.extend(anchor(c) for c in extracted)
+                found = list(extracted.incidents)
+                attack = extracted.attack
 
-        notes = list(state["notes"])
+                # Reject anything about a different night before it can be
+                # reconciled with this one.
+                wrong_night = [c for c in found
+                               if not belongs_to_the_night(c, state["event_date"])]
+                found = [c for c in found if c not in wrong_night]
+                if attack is not None and not belongs_to_the_night(
+                        attack, state["event_date"]):
+                    wrong_night.append(attack)
+                    attack = None
+
+                total = len(found) + (1 if attack else 0)
+                message = f"    -> {total} claim(s)" if total else "    -> nothing relevant"
+                if wrong_night:
+                    message += f", {len(wrong_night)} about another night"
+                    notes.append(
+                        f"ignored {len(wrong_night)} claim(s) from "
+                        f"{article['url']}: they describe a different night"
+                    )
+                say(message)
+
+                claims.extend(anchor(c) for c in found)
+                if attack is not None:
+                    attack_claims.append(anchor(attack))
+            else:                       # a plain list of incident claims
+                kept = [c for c in extracted
+                        if belongs_to_the_night(c, state["event_date"])]
+                claims.extend(anchor(c) for c in kept)
+
         for failure in getattr(extractor, "failures", [])[len(state.get(
                 "extraction_failures", [])):]:
             notes.append(f"could not read: {failure}")

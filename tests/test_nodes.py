@@ -310,3 +310,56 @@ def test_the_article_is_truncated_before_it_reaches_the_model():
     # article and nothing else.
     filled = build_prompt("https://example.com/a", "2026-06-17", "Ω" * 60000)
     assert filled.count("Ω") == ARTICLE_CHARS
+
+
+# --- one night, not two -----------------------------------------------------
+
+def _attack(occurred=None, published="2026-08-22T12:00:00Z", killed=1):
+    from common.schemas import AttackClaim
+    return AttackClaim(
+        source_url="https://suspilne.media/kyiv/1", published_at=published,
+        occurred_at=occurred, citywide_killed=killed,
+        quote="Унаслідок вибухів у місті загинула одна людина.",
+    )
+
+
+@pytest.mark.parametrize("occurred,why", [
+    ("2026-08-20T02:00:00Z", "the night itself"),
+    ("2026-08-20T23:30:00Z", "late the same evening"),
+    ("2026-08-21T05:00:00Z", "the morning after, still the same attack"),
+    ("2026-08-19T23:00:00Z", "just before midnight, the attack began then"),
+])
+def test_a_claim_about_that_night_is_kept(occurred, why):
+    from agent.nodes import belongs_to_the_night
+    assert belongs_to_the_night(_attack(occurred), "2026-08-20") is True, why
+
+
+@pytest.mark.parametrize("occurred", ["2026-08-22T04:00:00Z", "2026-08-15T02:00:00Z"])
+def test_a_claim_about_a_different_night_is_rejected(occurred):
+    """This is the check whose absence produced the worst wrong answer this
+    project has made. A run for 20 August picked up an article about a smaller
+    attack on the 22nd; because a later figure supersedes an earlier one,
+    "15 killed" was quietly replaced by "1 killed"."""
+    from agent.nodes import belongs_to_the_night
+    assert belongs_to_the_night(_attack(occurred), "2026-08-20") is False
+
+
+def test_without_a_time_of_the_event_publication_stands_in_for_it():
+    from agent.nodes import belongs_to_the_night
+    assert belongs_to_the_night(
+        _attack(occurred=None, published="2026-08-20T23:00:00Z"), "2026-08-20") is True
+    assert belongs_to_the_night(
+        _attack(occurred=None, published="2026-08-24T09:00:00Z"), "2026-08-20") is False
+
+
+def test_a_moving_figure_at_the_attack_level_also_counts():
+    """The city-wide toll is the one most likely to still be moving, and an
+    earlier version only looked at the per-site figures."""
+    from agent.nodes import figures_still_moving
+    state = {
+        "sites": [],
+        "reconciliation": {"fields": {}},
+        "attack": {"reconciliation": {
+            "fields": {"citywide_killed": {"status": "superseded"}}}},
+    }
+    assert figures_still_moving(state) is True
