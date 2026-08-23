@@ -16,6 +16,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from agent.config import load_env  # noqa: E402
 from mcp_server.db import connect  # noqa: E402
 from mcp_server.incidents_store import (  # noqa: E402
     clear_review,
@@ -74,6 +75,7 @@ def _export(conn, include_unreviewed: bool) -> int:
 def main() -> int:
     parser = argparse.ArgumentParser(prog="python -m agent.review",
                                      description=__doc__)
+    load_env()
     parser.add_argument("--db", default=os.environ.get("KSM_DB_PATH", "incidents.sqlite"))
     sub = parser.add_subparsers(dest="command")
 
@@ -88,6 +90,7 @@ def main() -> int:
     export.add_argument("--include-unreviewed", action="store_true",
                         help="include incidents that still carry unresolved doubt")
 
+    load_env()
     args = parser.parse_args()
     conn = connect(args.db)
 

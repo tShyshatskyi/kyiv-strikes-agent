@@ -13,6 +13,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from agent.config import load_env  # noqa: E402
 from agent.graph import build_graph  # noqa: E402
 from agent.mcp_clients import MCPConnectionError, open_tools  # noqa: E402
 from agent.nodes import llm_extractor  # noqa: E402
@@ -109,6 +110,10 @@ async def main() -> int:
     if len(sys.argv) < 2:
         print(__doc__)
         return 2
+
+    from agent.config import describe
+    load_env()
+    print(f"Configuration    : {describe()}")
 
     try:
         extractor = llm_extractor()
