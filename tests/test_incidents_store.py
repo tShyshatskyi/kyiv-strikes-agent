@@ -211,3 +211,23 @@ def test_a_cleared_incident_enters_the_verified_export(conn):
     result = write(conn, incident(needs_review=True, reason="District disagrees."))
     clear_review(conn, result["incident_id"], reviewed_by="taras")
     assert len(to_geojson(conn)["features"]) == 1
+
+
+def test_a_database_from_an_older_version_says_what_to_do(tmp_path):
+    """A leftover file with the old schema must fail loudly at open time, not
+    cryptically on the first insert."""
+    import sqlite3
+    stale = tmp_path / "stale.sqlite"
+    old = sqlite3.connect(str(stale))
+    old.execute("""CREATE TABLE incidents (
+        id INTEGER PRIMARY KEY, occurred_at TEXT, lat REAL, lon REAL,
+        district TEXT, structure_type TEXT, damage TEXT,
+        verification_level TEXT, geocode_confidence REAL,
+        created_at TEXT, updated_at TEXT)""")
+    old.commit()
+    old.close()
+
+    with pytest.raises(RuntimeError) as exc:
+        connect(stale)
+    assert "attack_id" in str(exc.value)
+    assert "Delete the file" in str(exc.value)

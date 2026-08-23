@@ -107,11 +107,34 @@ CREATE TABLE IF NOT EXISTS geocode_cache (
 """
 
 
+# Columns added after the first version of the schema. CREATE TABLE IF NOT
+# EXISTS will not add them to a database that already exists, so a file left
+# over from an earlier run would fail on the first insert with a confusing
+# message. Check for them and say what to do instead.
+REQUIRED_INCIDENT_COLUMNS = ("attack_id", "claimed_district", "needs_review",
+                             "review_reason")
+
+
+def _check_schema(conn: sqlite3.Connection, path: str | Path) -> None:
+    columns = {row["name"] for row in conn.execute("PRAGMA table_info(incidents)")}
+    if not columns:
+        return                      # brand new database, nothing to check
+    missing = [c for c in REQUIRED_INCIDENT_COLUMNS if c not in columns]
+    if missing:
+        raise RuntimeError(
+            f"The database at {path} was created by an older version of this "
+            f"project and is missing: {', '.join(missing)}.\n"
+            "Nothing in it is irreplaceable — every record can be rebuilt by "
+            "running the agent again. Delete the file and start over."
+        )
+
+
 def connect(path: str | Path) -> sqlite3.Connection:
     """Open the incident database, creating the schema if needed."""
     conn = sqlite3.connect(str(path))
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA foreign_keys = ON")
+    _check_schema(conn, path)
     conn.executescript(SCHEMA)
     conn.commit()
     return conn
