@@ -8,6 +8,8 @@ agent. The async nodes below them do the talking to MCP.
 import json
 import os
 import re
+import sys
+import time
 from datetime import date
 from pathlib import Path
 from urllib.parse import quote_plus
@@ -16,6 +18,18 @@ from common.schemas import ArticleExtraction, IncidentClaim
 
 MAX_ROUNDS = 3
 MAX_ARTICLES_PER_OUTLET = 4
+
+# A run takes minutes, most of it waiting on news sites and the model. Silence
+# for that long is indistinguishable from a hang, so say what is happening.
+# KSM_QUIET=1 turns it off for tests and scripted use.
+_QUIET = os.environ.get("KSM_QUIET") == "1"
+_STARTED = time.monotonic()
+
+
+def say(message: str) -> None:
+    if not _QUIET:
+        elapsed = time.monotonic() - _STARTED
+        print(f"  [{elapsed:5.0f}s] {message}", file=sys.stderr, flush=True)
 
 PROMPT = (Path(__file__).parent / "prompts" / "extract.md").read_text(encoding="utf-8")
 
@@ -105,7 +119,24 @@ def parse_request(state: dict) -> dict:
         "unreachable": [],
         "notes": [],
         "searched": [],
+        "unopened": [],
     }
+
+
+def figures_still_moving(state: dict) -> bool:
+    """Was a casualty count still changing at the newest report we read?
+
+    `superseded` means the number moved between the articles we have. If it was
+    still moving at the last one, the next article we did not open may well move
+    it again, and we would be recording a figure that was already out of date
+    when we wrote it.
+    """
+    for site in state.get("sites", []):
+        fields = (site.get("reconciliation") or {}).get("fields", {})
+        if any(f.get("status") == "superseded" for f in fields.values()):
+            return True
+    fields = (state.get("reconciliation") or {}).get("fields", {})
+    return any(f.get("status") == "superseded" for f in fields.values())
 
 
 def should_continue(state: dict) -> str:
@@ -126,6 +157,11 @@ def should_continue(state: dict) -> str:
 
     level = reconciliation.get("verification_level", "unverified")
     if level in ("unverified", "single_source"):
+        return "discover_sources"
+
+    # Enough voices, but the numbers had not settled by the last article we
+    # read, and there are relevant articles we skipped. Read them.
+    if figures_still_moving(state) and state.get("unopened"):
         return "discover_sources"
 
     # "corroborated" is a stopping point, even though missing_for_next_level
@@ -251,7 +287,37 @@ def make_nodes(tools: dict, extractor):
         searched = list(state["searched"])
         notes = list(state["notes"])
 
+        unopened = list(state.get("unopened", []))
+
+        # Leftovers first. If the numbers were still moving, the article that
+        # settles them is far more likely to be one we already found and
+        # skipped than one at an outlet we have not looked at yet.
+        if unopened and figures_still_moving(state):
+            say(f"round {state['round'] + 1}: numbers were still moving — "
+                f"reading {min(len(unopened), MAX_ARTICLES_PER_OUTLET)} article(s) "
+                "we skipped earlier")
+            notes.append(
+                f"Round {state['round'] + 1}: casualty figures were still "
+                f"changing, so read {min(len(unopened), MAX_ARTICLES_PER_OUTLET)} "
+                "more of the articles found earlier."
+            )
+            for title, url, domain in unopened[:MAX_ARTICLES_PER_OUTLET]:
+                try:
+                    await navigate.ainvoke({"url": url})
+                    body = as_text(await snapshot.ainvoke({}))
+                except Exception as exc:
+                    unreachable.append(f"{url}: {type(exc).__name__}: {exc}")
+                    continue
+                say(f"    read: {title[:64]}")
+                articles.append({"url": url, "domain": domain,
+                                 "title": title, "text": body})
+            unopened = unopened[MAX_ARTICLES_PER_OUTLET:]
+            return {**state, "round": state["round"] + 1, "articles": articles,
+                    "unreachable": unreachable, "searched": searched,
+                    "notes": notes, "unopened": unopened}
+
         targets = next_targets(state)
+        say(f"round {state['round'] + 1}: looking at {', '.join(targets[:2]) or 'nothing left'}")
         if state["round"] > 0:
             notes.append(f"Round {state['round'] + 1}: trying {', '.join(targets)}.")
 
@@ -268,6 +334,7 @@ def make_nodes(tools: dict, extractor):
 
             candidates = article_candidates(page, domain)
             chosen = [(t, u) for t, u in candidates if worth_opening(t)]
+            say(f"  {group}: {len(candidates)} listed, {len(chosen)} look relevant")
             notes.append(
                 f"{group}: {len(candidates)} articles listed, "
                 f"{len(chosen)} headlines look like a strike on Kyiv"
@@ -282,11 +349,21 @@ def make_nodes(tools: dict, extractor):
                 except Exception as exc:
                     unreachable.append(f"{url}: {type(exc).__name__}: {exc}")
                     continue
+                say(f"    read: {title[:64]}")
                 articles.append({"url": url, "domain": domain,
                                  "title": title, "text": body})
 
+            # Everything relevant we chose not to open. Kept, not discarded:
+            # if the figures turn out to still be moving, this is where the
+            # article that settles them most likely is.
+            for title, url in chosen[MAX_ARTICLES_PER_OUTLET:]:
+                if not any(a["url"] == url for a in articles) and \
+                        not any(u[1] == url for u in unopened):
+                    unopened.append((title, url, domain))
+
         return {**state, "round": state["round"] + 1, "articles": articles,
-                "unreachable": unreachable, "searched": searched, "notes": notes}
+                "unreachable": unreachable, "searched": searched,
+                "notes": notes, "unopened": unopened}
 
     async def extract_claims(state: dict) -> dict:
         claims = list(state["claims"])
@@ -297,6 +374,7 @@ def make_nodes(tools: dict, extractor):
             if article["url"] in read:
                 continue
             read.add(article["url"])
+            say(f"  asking the model to read: {article.get('title', article['url'])[:60]}")
             extracted = extractor(article["url"], state["event_date"],
                                   article["text"])
             if isinstance(extracted, ArticleExtraction):
@@ -348,6 +426,7 @@ def make_nodes(tools: dict, extractor):
                              if c.claimed_district]
         context_text = " ".join(c.quote for c in state["claims"])
 
+        say(f"geocoding {len(grouped)} distinct place(s)")
         sites, notes = [], list(state["notes"])
         for key, claims in grouped.items():
             first = claims[0]
@@ -378,6 +457,7 @@ def make_nodes(tools: dict, extractor):
         if not state["claims"]:
             return {**state, "reconciliation": empty, "sites": state.get("sites", [])}
 
+        say("reconciling what the sources say")
         sites = []
         for site in state.get("sites", []):
             body = unwrap(await tools["corroborate_incident_claims"].ainvoke({
@@ -426,6 +506,7 @@ def make_nodes(tools: dict, extractor):
                 "action": "skipped",
                 "reason": "no usable location, so there is nothing to put on a map"}}
 
+        say(f"writing {len(sites)} impact site(s)")
         written = []
         for site in sites:
             location = site["location"]

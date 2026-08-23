@@ -42,9 +42,21 @@ def report(final: dict) -> None:
     print(f"Event date    : {final.get('event_date')}")
     print(f"Search rounds : {final.get('round')}  "
           f"(outlets tried: {', '.join(final.get('searched', [])) or 'none'})")
-    print(f"Articles read : {len(final.get('articles', []))}   "
+    read = final.get("articles", [])
+    unopened = final.get("unopened", [])
+    coverage = f"{len(read)} read"
+    if unopened:
+        coverage += f", {len(unopened)} relevant but not opened"
+    print(f"Articles      : {coverage}   "
           f"claims: {len(final.get('claims', []))} impact, "
           f"{len(final.get('attack_claims', []))} attack-level")
+
+    latest = max((c.published_at for c in final.get("claims", [])), default=None)
+    if latest:
+        print(f"Newest report : {latest:%Y-%m-%d %H:%M}")
+    if unopened:
+        print("                Later reporting may carry higher figures; the "
+              "skipped articles are listed in the notes.")
 
     if attack:
         print("\n--- the night as a whole " + "-" * 42)

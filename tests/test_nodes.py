@@ -220,3 +220,53 @@ def test_an_envelope_is_read_from_a_plain_string():
 def test_an_envelope_is_read_from_mcp_content_blocks():
     blocks = [{"type": "text", "text": '{"ok": false, "error": {"code": "OUT_OF_AREA"}}'}]
     assert unwrap(blocks)["error"]["code"] == "OUT_OF_AREA"
+
+
+# --- is what we read actually the latest? -----------------------------------
+
+def _site(status, level="corroborated"):
+    return {
+        "round": 0,
+        "sites": [{"reconciliation": {"verification_level": level,
+                                      "fields": {"killed": {"status": status}},
+                                      "missing_for_next_level": [],
+                                      "usable_groups": ["a", "b"],
+                                      "has_conflict": False}}],
+        "reconciliation": {"verification_level": level,
+                           "fields": {"killed": {"status": status}},
+                           "missing_for_next_level": [], "usable_groups": ["a", "b"],
+                           "has_conflict": False},
+        "location": {"district_conflict": False},
+        "unopened": [("Ще одна стаття про удар по Києву", "https://x/1", "x")],
+    }
+
+
+def test_a_figure_still_moving_sends_the_agent_back_for_more():
+    """The count changed between the articles we read. The next one we skipped
+    may well change it again, and writing a stale figure is the failure mode
+    this whole design exists to avoid."""
+    from agent.nodes import figures_still_moving
+    state = _site("superseded")
+    assert figures_still_moving(state) is True
+    assert should_continue(state) == "discover_sources"
+
+
+def test_a_settled_figure_does_not():
+    from agent.nodes import figures_still_moving
+    state = _site("corroborated")
+    assert figures_still_moving(state) is False
+    assert should_continue(state) == "persist"
+
+
+def test_nothing_left_to_read_means_nothing_left_to_do():
+    """Still moving, but every relevant article has been read. Going round
+    again would fetch the same pages."""
+    state = _site("superseded")
+    state["unopened"] = []
+    assert should_continue(state) == "persist"
+
+
+def test_the_round_budget_still_wins():
+    state = _site("superseded")
+    state["round"] = MAX_ROUNDS
+    assert should_continue(state) == "persist"

@@ -23,6 +23,7 @@ class AgentState(TypedDict, total=False):
     read_urls: list[str]
     extraction_failures: list[str]
     sites: list[dict]
+    unopened: list[tuple]
     attack_id: int | None
     attack: Any
     assessments: list[dict]
