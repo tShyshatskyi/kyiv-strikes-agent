@@ -11,12 +11,15 @@ in brackets is the requirement from the assignment.
 
 - [ ] `.env` filled in and a model actually answering
 - [ ] `npx playwright install chromium` done
-- [ ] `python -m pytest -q` green — 142 tests
-- [ ] `python scripts/probe_playwright.py` run **today**: news sites change, and
-      a source that worked last week may be walled today
+- [ ] `python -m pytest -q` green — 181 tests
+- [ ] `python scripts/probe_playwright.py` and `python scripts/probe_search.py`
+      run **today**: news sites change, and a source that worked last week may
+      be walled today. The probes tell a known wall apart from a new failure.
 - [ ] a known-removed article URL ready for the failure scenario
-- [ ] `fixtures/articles/` served on `python -m http.server 8899` as a fallback
-      if the network fails mid-recording
+- [ ] optional insurance against the network dying mid-recording: save a few
+      article pages into `fixtures/articles/` beforehand and serve them with
+      `python -m http.server 8899`. Nominatim already has recorded fixtures and
+      needs no network at all when `KSM_OFFLINE=1`.
 - [ ] two terminals open, side by side, both showing the repository root
 
 ---
@@ -34,7 +37,7 @@ in brackets is the requirement from the assignment.
 
 - [ ] **Terminal 2**: `python -m agent "удар по Києву 17 червня 2026"` `[2]`
 
-  The first two lines print both tool lists: 24 Playwright tools, 4 custom
+  The first two lines print both tool lists: 24 Playwright tools, 5 custom
   ones. That is discovery of both connections, and evidence that at least three
   custom tools are exposed. `[7]`
 
@@ -45,7 +48,14 @@ in brackets is the requirement from the assignment.
 
 ## 2. Playwright MCP inside the flow — 2–3 min
 
-- [ ] Show `browser_navigate` opening a search page and then an article. `[3]`
+- [ ] Show `browser_navigate` opening hromadske's search, then Suspilne's Kyiv
+      section, then the articles themselves. `[3]`
+
+- [ ] Say why the two outlets are reached differently: only hromadske answers a
+      search URL. Suspilne returns 404 on /search/ and hides its real search in
+      a JavaScript overlay; Pravda, nv.ua and rbc.ua answer 403; search engines
+      are walled off hardest of all. Article pages fetch fine everywhere — it is
+      only the finding that is hard. `scripts/probe_search.py` shows this live.
 
 - [ ] Explain its contract from `docs/tool_contracts.md`: one required `url`,
       an empty success result, and — the interesting part — a page behind a bot
@@ -159,8 +169,17 @@ For a recorded defence all three are mandatory; live, expect to be asked.
   place outside Kyiv. The Kyiv viewbox biases ranking but deliberately does not
   bound the search, precisely so that the district check can actually reject
   something.
-- **Which tool has side effects?** Only `upsert_incident`. It writes four
-  tables.
+- **Which tool has side effects?** Two of the five write: `upsert_incident`
+  (incidents, incident_claims, incident_media, sources) and `upsert_attack`
+  (attacks, attack_claims, sources). The other three are pure.
+- **Why is `upsert_attack` a separate tool and not a flag?** Because it does
+  something no per-impact tool can: it sums the deaths attributed to individual
+  addresses and compares them with the city-wide total. That check only means
+  anything from above both levels.
+- **How does the agent know it has the latest figures?** It does not know, but
+  it can tell when they were still moving: a `superseded` count means the number
+  changed between the articles read. If it was still changing at the newest one
+  and relevant articles were found but not opened, another round reads those.
 - **Why are ДСНС and КМВА in the registry if you never fetch them?** For tiering
   and grouping. An outlet citing them is grouped under them, so their voice
   still counts even though their site cannot be read.

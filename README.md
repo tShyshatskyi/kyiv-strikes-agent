@@ -3,8 +3,10 @@
 An agent that turns one question about a strike on Kyiv into verified,
 geolocated, provenance-tracked incident records.
 
-Given *"удар по Києву 17 червня 2026"* it searches whitelisted Ukrainian
-newsrooms through a real browser, extracts what each article claims, works out
+Given *"удар по Києву 17 червня 2026"* it looks through two Ukrainian
+newsrooms in a real browser — hromadske by its search, Suspilne through its
+Kyiv section — picks the headlines that promise a strike on the city, extracts
+what each article claims, works out
 how many genuinely independent sources are behind those claims, geolocates every
 address it finds and checks each against real district boundaries, reconciles
 the numbers, and writes the night as one record with one row per impact site —
@@ -88,9 +90,11 @@ python -m agent.review export > incidents.geojson
 ## Checking things work
 
 ```bash
-python -m pytest -q                     # 161 tests
+python -m pytest -q                     # 181 tests
 python scripts/probe_playwright.py      # are the news sites reachable today?
+python scripts/probe_search.py          # does each outlet's search still work?
 python scripts/demo_failures.py         # the three failure scenarios
+python scripts/debug_extraction.py      # what the model does with one real article
 ```
 
 ## Regenerating the data

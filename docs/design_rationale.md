@@ -164,6 +164,44 @@ a tier-2 outlet delivering a tier-1 fact. Without separating `tier` from
 `voice_tier`, `well_documented` would have been unreachable in practice —
 a verification level that could never be earned.
 
+## What the first live runs changed
+
+Everything above was written before the agent had ever run against the real
+web. Two runs rewrote the discovery half of it.
+
+**The search URLs were guessed, and mostly wrong.** The first run read eight
+articles and extracted nothing from any of them, because the articles were
+about Kryvyi Rih, a Norwegian drone deal and Flag Day. Suspilne answers
+`/search/` with 404 and keeps its real search in a JavaScript overlay that
+ignores a scripted click; Pravda, nv.ua and rbc.ua answer a search URL with 403;
+every search engine is walled off harder still. Only hromadske serves a real
+search over a plain URL. What the others do serve is a section feed, so
+discovery is now per outlet, and candidates are chosen by headline rather than
+by url — Pravda numbers its articles instead of naming them, so the url says
+nothing about what is in them.
+
+**A headline filter needs to know the difference between Kyiv and Kyiv oblast.**
+A strike on Boryspil is a strike, and geocoding would reject it, but only after
+a model call had been paid for.
+
+**The parser knew one markup shape out of two.** Suspilne puts the headline in
+the link text, hromadske puts it in a heading on the next line. Handling only
+the first made hromadske look like it returned nothing for every query,
+including a bare "Київ" — a wrong conclusion twice over, because the first
+version of the relevance check also failed to recognise "kyyevu" and "kiyevi"
+as Kyiv.
+
+**An article can be about the right city and the wrong week.** The second run
+recorded three addresses lifted from a piece published six days *before* the
+attack, summarising damage accumulated since the invasion began. The
+credibility window correctly refused to count it, which is how those records
+came out marked `unverified` — but they were still written. A record no usable
+source supports is not an uncertain record, it is an unsupported one, and it is
+no longer written at all. The extraction prompt now also names the target date
+and says, in as many words, that returning nothing is usually the right answer.
+
+**Silence reads as a hang.** A run takes minutes; it now says what it is doing.
+
 ## Known limitations
 
 - Extraction quality depends on the agent's prompt. The server can reject an
@@ -180,3 +218,11 @@ a verification level that could never be earned.
   excluded by default. It is a parameter, not a constant, and can be widened.
 - Reaching `well_documented` depends on an article happening to cite an official
   body, since the official sites cannot be searched directly.
+- Discovery rests on two outlets. Pravda and the rest are readable but not
+  searchable, so an event only they covered would be missed entirely.
+- Suspilne's Kyiv section is not date-filtered, so relevance to the night in
+  question is decided by the headline and then by the model. Both can be wrong,
+  which is why an unsupported record is dropped rather than stored.
+- A model that returns a district without a house number produces a
+  street-level point at low confidence. It is recorded and flagged, but it is
+  not map-precise.
