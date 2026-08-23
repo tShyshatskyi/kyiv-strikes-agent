@@ -21,6 +21,7 @@ class AgentState(TypedDict, total=False):
     claims: list[Any]
     attack_claims: list[Any]
     read_urls: list[str]
+    extraction_failures: list[str]
     sites: list[dict]
     attack_id: int | None
     attack: Any

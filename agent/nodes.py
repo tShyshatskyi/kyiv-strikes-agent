@@ -229,8 +229,14 @@ def make_nodes(tools: dict, extractor):
             else:                       # a plain list of incident claims
                 claims.extend(extracted)
 
+        notes = list(state["notes"])
+        for failure in getattr(extractor, "failures", [])[len(state.get(
+                "extraction_failures", [])):]:
+            notes.append(f"could not read: {failure}")
+
         return {**state, "claims": claims, "attack_claims": attack_claims,
-                "read_urls": sorted(read)}
+                "read_urls": sorted(read), "notes": notes,
+                "extraction_failures": list(getattr(extractor, "failures", []))}
 
     async def assess(state: dict) -> dict:
         every_claim = state["claims"] + state.get("attack_claims", [])
@@ -436,14 +442,19 @@ def llm_extractor():
         temperature=0,
     ).with_structured_output(ArticleExtraction)
 
+    failures: list[str] = []
+
     def extract(url: str, published_at: str, text: str) -> ArticleExtraction:
         prompt = PROMPT.format(url=url, published_at=published_at, text=text[:20000])
         try:
             result = model.invoke(prompt)
-        except Exception:
-            # A model that fails to produce the schema yields nothing rather
-            # than a guess. The run continues on whatever the other articles gave.
+        except Exception as exc:
+            # One unreadable article must not end a run, but a swallowed error
+            # is how you end up staring at "0 claims" with no idea why. Keep it
+            # and let the report say so.
+            failures.append(f"{url}: {type(exc).__name__}: {str(exc)[:200]}")
             return ArticleExtraction()
         return result or ArticleExtraction()
 
+    extract.failures = failures
     return extract
