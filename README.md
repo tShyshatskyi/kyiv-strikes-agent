@@ -124,5 +124,6 @@ consequence is documented in `data/source_registry.yaml`.
 
 - [`docs/tool_contracts.md`](docs/tool_contracts.md) — full contract for every custom tool, and the Playwright tool used
 - [`docs/design_rationale.md`](docs/design_rationale.md) — why each boundary sits where it does, and what it cost
-- [`docs/defence_checklist.md`](docs/defence_checklist.md) — the demonstration script
+- [`docs/defence_checklist.md`](docs/defence_checklist.md) — what has to be shown, mapped to the nine required points
+- [`docs/defence_script.md`](docs/defence_script.md) — the recorded defence, minute by minute, with the words to say
 - [`docs/superpowers/specs/`](docs/superpowers/specs/) — the design spec
