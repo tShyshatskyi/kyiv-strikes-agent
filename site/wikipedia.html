@@ -26,21 +26,29 @@
 <script src="common.js"></script>
 <script>
 mountHeader('wiki'); mountFooter();
-const R = window.REGISTRY, S = R.sites, $ = s => document.querySelector(s);
+const R = window.REGISTRY, $ = s => document.querySelector(s);
 const W = R.wiki, sm = W.summary;
-$('#wiki-lede').innerHTML = `Wikipedia retells the same news, so it cannot confirm a place on its own. It is still a useful outside check on whole nights. ` +
-  `Editors of ${W.articles.length} articles in English and Ukrainian recorded attacks on Kyiv on ${sm.nights} nights in this period. ` +
-  `The registry has places for ${sm.nights - sm.missing - (sm.pending || 0)} of them${sm.pending ? ` (${sm.pending} more nights are still being processed)` : ''}; on ${sm.differs} ${pl(sm.differs, 'night', 'nights')} the death toll differs.`;
-$('#wiki-src').innerHTML = `Read on ${W.taken} from: ` + W.articles.map(a => `<a href="https://${a.lang}.wikipedia.org/w/index.php?oldid=${a.revid}" target="_blank" rel="noopener">${esc(a.title)}</a>`).join('; ') + '.';
-const byDay = group(S, s => s.day), city = Object.fromEntries(R.days.map(d => [d.day, d.city || {}]));
-$('#wiki').innerHTML = Object.entries(W.nights).sort((a, b) => b[0].localeCompare(a[0])).map(([d, n]) => {
-  const ours = byDay[d] || [], k = city[d]?.killed;
-  const verdict = {agrees: 'Agrees', differs: 'Toll differs', missing: 'Not in the registry', pending: 'Not processed yet'}[n.verdict];
-  const detail = n.verdict === 'differs' ? `Wikipedia ${n.wiki_killed} killed, registry ${k ?? 'none stated'}` :
-    n.verdict === 'missing' ? 'No place found in the channels' : n.verdict === 'pending' ? 'The agents have not read this night yet' : `${ours.length} ${pl(ours.length, 'place', 'places')} in the registry`;
-  return `<div class="wrow"><time><a class="go" href="./#night=${d}">${fmtDay(d, 'dow')}</a></time><div class="says">${n.records.map(r => `<div lang="${r.lang}">${esc(r.text.replace(/^[^:]*?\d{4}[,:]\s*/, '').replace(/^Київ\. /, '').replace(/Засіб: —\. /, '').replace(/^Засіб: ([^.]+)\. (.)/, (m, w, c) => w[0].toUpperCase() + w.slice(1) + '; ' + c))} <a href="${r.url}" target="_blank" rel="noopener">${r.lang === 'uk' ? 'uk' : 'en'}.wikipedia</a></div>`).join('')}</div>` +
-    `<div><span class="v ${n.verdict}">${verdict}</span><br><span class="mute">${detail}</span></div></div>`;
-}).join('');
+const VERDICT = {match: 'Agrees', differs: 'Differs', no_figure: 'Nothing to compare',
+                 missing: 'Not in the registry', pending: 'Not processed yet'};
+
+$('#wiki-lede').innerHTML = `Wikipedia retells the same news, so it can never confirm a place on its own. ` +
+  `What it can do is say whether the registry missed an attack, missed a kind of place, or has a different death toll — ` +
+  `but only if the comparison is fixed in advance and allowed to fail. ` +
+  `Editors of ${W.articles.length} articles in English and Ukrainian recorded attacks on Kyiv on ${sm.dates} dates in this period. ` +
+  `<b>${sm.match} agree, ${sm.differs} differ, ${sm.no_figure} have no death toll on one side, ${sm.missing} are missing from the registry altogether.</b>` +
+  (sm.pending ? ` ${sm.pending} more have not been read yet.` : '');
+$('#wiki-src').innerHTML = `${W.window_note} An entry that names a bridge is not satisfied by a night of burning cars: ` +
+  `the kinds of place it names are checked too. Read on ${W.taken} from: ` +
+  W.articles.map(a => `<a href="https://${a.lang}.wikipedia.org/w/index.php?oldid=${a.revid}" target="_blank" rel="noopener">${esc(a.title)}</a>`).join('; ') + '.';
+
+const tidy = t => t.replace(/^[^:]*?\d{4}[,:]\s*/, '').replace(/^Київ\. /, '').replace(/Засіб: —\. /, '')
+  .replace(/^Засіб: ([^.]+)\. (.)/, (m, w, c) => w[0].toUpperCase() + w.slice(1) + '; ' + c);
+$('#wiki').innerHTML = Object.entries(W.dates).sort((a, b) => b[0].localeCompare(a[0])).map(([d, n]) =>
+  `<div class="wrow"><time>${fmtDay(d, 'dow')}<br>` +
+    n.nights.map(nd => `<a class="go" href="./#night=${nd}">${fmtDay(nd)}</a>`).join(' · ') + `</time>` +
+  `<div class="says">${n.records.map(r => `<div lang="${r.lang}">${esc(tidy(r.text))} <a href="${r.url}" target="_blank" rel="noopener">${r.lang}.wikipedia</a></div>`).join('')}` +
+    (n.named.length ? `<div class="mute">Names: ${esc(n.named.join(', '))}</div>` : '') + `</div>` +
+  `<div><span class="v ${n.verdict}">${VERDICT[n.verdict]}</span><br><span class="mute">${esc(n.detail)}</span></div></div>`).join('');
 </script>
 </body>
 </html>

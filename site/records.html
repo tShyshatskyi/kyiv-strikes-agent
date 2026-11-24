@@ -16,7 +16,7 @@
 <main>
 <section class="pagehead"><div class="wrap">
   <h1>The record</h1>
-  <p class="lede">Newest night first. Each place shows how well it is confirmed and, under Sources, the exact words of every channel that reported it.</p>
+  <p class="lede">Newest attack first. Each place shows how well it is confirmed and, under Sources, the exact words of every channel that reported it.</p>
   <div class="toolbar" id="filters"></div>
   <p class="status" id="status" aria-live="polite"></p>
   <div class="days" id="days"></div>
@@ -39,14 +39,13 @@ const meta = Object.fromEntries(R.days.map(d => [d.day, d]));
 
 let shown = 8;
 function siteHTML(s) {
-  const lvl = {confirmed: `Confirmed<small>${s.voices} independent sources</small>`, official: `Official only<small>city or emergency service</small>`,
-               single_source: `One source<small>not yet confirmed</small>`, aggregator_only: `Aggregator only<small>treat with care</small>`}[s.level];
+  const lvl = `${LEVEL_SHORT[s.level](s)}<small>${LEVEL_NOTE[s.level]}</small>`;
   return `<div class="site${s.photo ? ' has-photo' : ''}" id="${s.id}">` +
     (s.photo ? `<img class="ph" src="${s.photo}" alt="Photo from the official post" loading="lazy" data-cap="${esc(photoCaption(s))}">` : '') +
     `<h4><i style="background:${COLOR[s.wclass]}"></i>${esc(s.title)}</h4><div class="lvl">${lvl}</div>` +
     `<p class="meta">${esc(where(s))} · ${WEAPON[s.weapon] || 'Weapon not stated'}${s.time ? ' · ' + s.time : ''}${cas(s) ? ' · ' + cas(s) : ''}` +
     `${s.lat != null ? ` · <a href="./#site=${s.id}">Show on the map</a>` : ''}</p>` +
-    `<p class="sum">${esc(s.summary)}${s.flags.length ? `<br><span class="flag">Auditor's note: ${esc(s.flags.join(' '))}</span>` : ''}</p>` +
+    `<p class="sum">${esc(s.summary)}</p>` + auditorNote(s) +
     `<details><summary>Sources (${s.sources.length})</summary>${sourcesHTML(s)}</details></div>`;
 }
 function render() {
@@ -55,9 +54,8 @@ function render() {
   const any = state.w !== 'all' || state.t || state.d;
   $('#status').innerHTML = any ? `Showing ${v.length} of ${S.length} places. <button onclick="reset()">Clear filters</button>` : `All ${S.length} places over ${days.length} nights.`;
   $('#days').innerHTML = days.slice(0, shown).map(d => {
-    const m = meta[d] || {}, a = m.alerts || {}, c = m.city || {};
+    const m = meta[d] || {}, a = m.alerts || {};
     const bits = [`${byDay[d].length} ${pl(byDay[d].length, 'place', 'places')}`];
-    if (c.killed) bits.push(`${c.killed} killed`); if (c.injured) bits.push(`${c.injured} injured`);
     if (a.drone + a.missile) bits.push(`${hm(a.drone + a.missile)} under alert`);
     return `<article><div class="dayh"><h3><a href="./#night=${d}" style="text-decoration:none">${fmtDay(d, 'dowlong')}</a></h3><p class="tnum">${bits.join(' · ')}</p></div>` +
       (m.summary ? `<p class="daysum">${esc(m.summary)}</p>` : '') + byDay[d].map(siteHTML).join('') + `</article>`;

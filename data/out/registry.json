@@ -4614,15 +4614,12 @@
    "first_report": "2026-10-01 09:11",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city_council",
-    "hromadske",
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv",
@@ -4660,12 +4657,15 @@
    "addresses": [],
    "claims": 3,
    "geo": {
-    "lat": 50.411495,
-    "lon": 30.458009,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "hromadske"
+   ]
   },
   {
    "id": "2026-10-01-2",
@@ -4683,13 +4683,11 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "city_council",
-    "hromadske",
-    "kmva"
+    "city",
+    "hromadske"
    ],
    "official_voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv",
@@ -4727,12 +4725,13 @@
    "addresses": [],
    "claims": 3,
    "geo": {
-    "lat": 50.412569,
-    "lon": 30.43694,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-01-4",
@@ -4748,7 +4747,7 @@
    "first_report": "2026-10-01 10:40",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "kyiv_post"
    ],
@@ -4771,12 +4770,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.430959,
-    "lon": 30.53698,
+    "lat": 50.428666,
+    "lon": 30.548976,
     "district": "Печерський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-01-3",
@@ -4794,10 +4794,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -4817,12 +4817,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.407366,
-    "lon": 30.552899,
+    "lat": 50.428666,
+    "lon": 30.548976,
     "district": "Печерський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-01-5",
@@ -4838,7 +4839,7 @@
    "first_report": "2026-10-01 12:30",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "kyiv_post"
    ],
@@ -4868,7 +4869,8 @@
     "district": "Голосіївський",
     "precision": "street",
     "matched": "Південний міст, Теличка, Голосіївський район, Київ, 01013, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-01-6",
@@ -4886,10 +4888,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -4909,12 +4911,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.506395,
-    "lon": 30.437487,
+    "lat": 50.489508,
+    "lon": 30.428765,
     "district": "Подільський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-01-7",
@@ -4932,10 +4935,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -4961,12 +4964,13 @@
    ],
    "claims": 1,
    "geo": {
-    "lat": 50.458067,
-    "lon": 30.348695,
+    "lat": 50.472703,
+    "lon": 30.325153,
     "district": "Святошинський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-01-8",
@@ -4984,10 +4988,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -5007,12 +5011,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.451779,
-    "lon": 30.596666,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-01-9",
@@ -5028,7 +5033,7 @@
    "first_report": "2026-10-01 23:15",
    "killed": null,
    "injured": 1,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -5051,12 +5056,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.543168,
-    "lon": 30.449648,
+    "lat": 50.530636,
+    "lon": 30.438353,
     "district": "Оболонський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-01-10",
@@ -5072,13 +5078,12 @@
    "first_report": "2026-10-02 04:59",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city_council",
-    "hromadske"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "hromadske_ua",
@@ -5107,12 +5112,15 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.344478,
-    "lon": 30.568169,
+    "lat": 50.327293,
+    "lon": 30.555596,
     "district": "Голосіївський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "hromadske"
+   ]
   },
   {
    "id": "2026-10-01-11",
@@ -5130,10 +5138,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -5160,7 +5168,8 @@
     "district": "Голосіївський",
     "precision": "street",
     "matched": "Південний міст, Теличка, Голосіївський район, Київ, 01013, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-01-12",
@@ -5178,15 +5187,13 @@
    "injured": 2,
    "level": "confirmed",
    "voices": [
-    "city_council",
-    "dsns",
-    "kmva",
+    "city",
+    "emergency",
     "suspilne"
    ],
    "official_voices": [
-    "city_council",
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "channels": [
     "VA_Kyiv",
@@ -5246,12 +5253,15 @@
    "addresses": [],
    "claims": 5,
    "geo": {
-    "lat": 50.42095,
-    "lon": 30.72101,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "suspilne"
+   ]
   },
   {
    "id": "2026-10-02-2",
@@ -5269,12 +5279,12 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "city_council",
+    "city",
     "kyiv_independent",
     "kyiv_post"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "kyivindependent_official",
@@ -5321,7 +5331,8 @@
     "district": "Голосіївський",
     "precision": "street",
     "matched": "Південний міст, Теличка, Голосіївський район, Київ, 01013, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-02-1",
@@ -5337,7 +5348,7 @@
    "first_report": "2026-10-02 09:24",
    "killed": 1,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "hromadske"
    ],
@@ -5360,12 +5371,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.414359,
-    "lon": 30.704785,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-02-3",
@@ -5381,10 +5393,8 @@
    "first_report": "2026-10-02 10:41",
    "killed": null,
    "injured": null,
-   "level": "single_source",
-   "voices": [
-    "suspilne"
-   ],
+   "level": "disputed",
+   "voices": [],
    "official_voices": [],
    "channels": [
     "suspilne_kyiv"
@@ -5411,12 +5421,15 @@
    "addresses": [],
    "claims": 4,
    "geo": {
-    "lat": 50.336342,
-    "lon": 30.550112,
+    "lat": 50.327293,
+    "lon": 30.555596,
     "district": "Голосіївський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "suspilne"
+   ]
   },
   {
    "id": "2026-10-02-4",
@@ -5432,14 +5445,12 @@
    "first_report": "2026-10-02 19:22",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv",
@@ -5468,12 +5479,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.486443,
-    "lon": 30.452413,
+    "lat": 50.489508,
+    "lon": 30.428765,
     "district": "Подільський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-02-5",
@@ -5489,13 +5501,12 @@
    "first_report": "2026-10-03 06:57",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city_council",
-    "pravda"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "ukrpravda_news",
@@ -5531,7 +5542,10 @@
     "district": "Оболонський",
     "precision": "street",
     "matched": "Північний міст, проспект Степана Бандери, Оболонський район, Київ, 04176, Україна"
-   }
+   },
+   "retold_voices": [
+    "pravda"
+   ]
   },
   {
    "id": "2026-10-03-1",
@@ -5547,10 +5561,9 @@
    "first_report": "2026-10-03 10:05",
    "killed": null,
    "injured": 2,
-   "level": "confirmed",
+   "level": "media",
    "voices": [
-    "kyiv_post",
-    "suspilne"
+    "kyiv_post"
    ],
    "official_voices": [],
    "channels": [
@@ -5589,7 +5602,10 @@
     "district": "Деснянський",
     "precision": "street",
     "matched": "Північний міст, Деснянський район, Київ, 04176, Україна"
-   }
+   },
+   "retold_voices": [
+    "suspilne"
+   ]
   },
   {
    "id": "2026-10-03-2",
@@ -5607,10 +5623,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -5630,12 +5646,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.537334,
-    "lon": 30.430503,
+    "lat": 50.530636,
+    "lon": 30.438353,
     "district": "Оболонський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-03-3",
@@ -5653,10 +5670,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -5676,12 +5693,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.332702,
-    "lon": 30.535513,
+    "lat": 50.327293,
+    "lon": 30.555596,
     "district": "Голосіївський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-03-4",
@@ -5699,10 +5717,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -5722,12 +5740,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.503209,
-    "lon": 30.655781,
+    "lat": 50.519069,
+    "lon": 30.644687,
     "district": "Деснянський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-03-5",
@@ -5745,10 +5764,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -5768,12 +5787,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.457102,
-    "lon": 30.596441,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-03-6",
@@ -5791,10 +5811,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -5814,12 +5834,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.460301,
-    "lon": 30.582698,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-04-3",
@@ -5837,10 +5858,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -5871,7 +5892,8 @@
     "district": "Деснянський",
     "precision": "street",
     "matched": "Градинська вулиця, 27-й мікрорайон Вигурівщини-Троєщини, Вигурівщина-Троєщина, Деснянський район, Київ, 02034, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-04-1",
@@ -5887,10 +5909,8 @@
    "first_report": "2026-10-04 10:28",
    "killed": null,
    "injured": null,
-   "level": "single_source",
-   "voices": [
-    "suspilne"
-   ],
+   "level": "media",
+   "voices": [],
    "official_voices": [],
    "channels": [
     "suspilne_kyiv"
@@ -5910,12 +5930,15 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.457296,
-    "lon": 30.556986,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "suspilne"
+   ]
   },
   {
    "id": "2026-10-04-2",
@@ -5931,10 +5954,8 @@
    "first_report": "2026-10-04 10:28",
    "killed": null,
    "injured": null,
-   "level": "single_source",
-   "voices": [
-    "suspilne"
-   ],
+   "level": "media",
+   "voices": [],
    "official_voices": [],
    "channels": [
     "suspilne_kyiv"
@@ -5954,12 +5975,15 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.337873,
-    "lon": 30.553648,
+    "lat": 50.327293,
+    "lon": 30.555596,
     "district": "Голосіївський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "suspilne"
+   ]
   },
   {
    "id": "2026-10-04-4",
@@ -5975,13 +5999,12 @@
    "first_report": "2026-10-04 12:16",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city_council",
-    "pravda"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "ukrpravda_news",
@@ -6010,12 +6033,15 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.396775,
-    "lon": 30.700884,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "pravda"
+   ]
   },
   {
    "id": "2026-10-04-5",
@@ -6033,11 +6059,11 @@
    "injured": 2,
    "level": "confirmed",
    "voices": [
-    "city_council",
+    "city",
     "kyiv_post"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "kyivpost_official",
@@ -6076,7 +6102,8 @@
     "district": "Деснянський",
     "precision": "street",
     "matched": "Північний міст, Деснянський район, Київ, 04176, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-05-1",
@@ -6092,10 +6119,8 @@
    "first_report": "2026-10-05 13:14",
    "killed": null,
    "injured": 2,
-   "level": "single_source",
-   "voices": [
-    "kyiv_post"
-   ],
+   "level": "media",
+   "voices": [],
    "official_voices": [],
    "channels": [
     "kyivpost_official"
@@ -6117,12 +6142,15 @@
    ],
    "claims": 1,
    "geo": {
-    "lat": 50.520989,
-    "lon": 30.651155,
+    "lat": 50.519069,
+    "lon": 30.644687,
     "district": "Деснянський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "kyiv_post"
+   ]
   },
   {
    "id": "2026-10-05-2",
@@ -6140,10 +6168,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -6167,12 +6195,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.440064,
-    "lon": 30.526287,
+    "lat": 50.428666,
+    "lon": 30.548976,
     "district": "Печерський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-05-3",
@@ -6190,10 +6219,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -6217,12 +6246,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.527833,
-    "lon": 30.456564,
+    "lat": 50.530636,
+    "lon": 30.438353,
     "district": "Оболонський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-06-1",
@@ -6240,11 +6270,11 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "city_council",
+    "city",
     "pravda"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "ukrpravda_news",
@@ -6277,12 +6307,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.527654,
-    "lon": 30.427282,
+    "lat": 50.530636,
+    "lon": 30.438353,
     "district": "Оболонський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-06-2",
@@ -6300,14 +6331,12 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "city_council",
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "official_voices": [
-    "city_council",
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "channels": [
     "VA_Kyiv",
@@ -6349,12 +6378,13 @@
    "addresses": [],
    "claims": 3,
    "geo": {
-    "lat": 50.496707,
-    "lon": 30.441635,
+    "lat": 50.489508,
+    "lon": 30.428765,
     "district": "Подільський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-06-3",
@@ -6370,14 +6400,12 @@
    "first_report": "2026-10-07 03:53",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv",
@@ -6406,12 +6434,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.403059,
-    "lon": 30.688215,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-06-5",
@@ -6429,11 +6458,11 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "city_council",
+    "city",
     "pravda"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "ukrpravda_news",
@@ -6466,12 +6495,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.463204,
-    "lon": 30.47966,
+    "lat": 50.46288,
+    "lon": 30.451795,
     "district": "Шевченківський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-06-4",
@@ -6489,11 +6519,11 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "hromadske",
-    "kmva"
+    "city",
+    "hromadske"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv",
@@ -6526,12 +6556,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.404289,
-    "lon": 30.719569,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-07-1",
@@ -6547,7 +6578,7 @@
    "first_report": "2026-10-07 10:09",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -6575,7 +6606,8 @@
     "district": null,
     "precision": null,
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-07-2",
@@ -6591,7 +6623,7 @@
    "first_report": "2026-10-07 10:22",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -6618,12 +6650,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.509884,
-    "lon": 30.428232,
+    "lat": 50.489508,
+    "lon": 30.428765,
     "district": "Подільський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-07-3",
@@ -6639,7 +6672,7 @@
    "first_report": "2026-10-07 10:22",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -6675,12 +6708,15 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.389729,
-    "lon": 30.724359,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "suspilne"
+   ]
   },
   {
    "id": "2026-10-07-4",
@@ -6696,10 +6732,8 @@
    "first_report": "2026-10-07 10:23",
    "killed": null,
    "injured": null,
-   "level": "single_source",
-   "voices": [
-    "suspilne"
-   ],
+   "level": "media",
+   "voices": [],
    "official_voices": [],
    "channels": [
     "suspilne_kyiv"
@@ -6723,12 +6757,15 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.417035,
-    "lon": 30.685739,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "suspilne"
+   ]
   },
   {
    "id": "2026-10-07-5",
@@ -6744,7 +6781,7 @@
    "first_report": "2026-10-07 11:17",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -6776,7 +6813,8 @@
     "district": "Шевченківський",
     "precision": "street",
     "matched": "Кіностудія ім. Олександра Довженка, 44, Лукʼянівка, Шевченківський район, Київ, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-07-6",
@@ -6792,10 +6830,8 @@
    "first_report": "2026-10-07 15:03",
    "killed": null,
    "injured": null,
-   "level": "single_source",
-   "voices": [
-    "suspilne"
-   ],
+   "level": "media",
+   "voices": [],
    "official_voices": [],
    "channels": [
     "suspilne_kyiv"
@@ -6824,7 +6860,10 @@
     "district": null,
     "precision": null,
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "suspilne"
+   ]
   },
   {
    "id": "2026-10-07-7",
@@ -6840,16 +6879,12 @@
    "first_report": "2026-10-07 17:04",
    "killed": null,
    "injured": 2,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city_council",
-    "kmva",
-    "pravda",
-    "suspilne"
+    "city"
    ],
    "official_voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "channels": [
     "KyivCityOfficial",
@@ -6906,12 +6941,16 @@
    "addresses": [],
    "claims": 5,
    "geo": {
-    "lat": 50.415093,
-    "lon": 30.458197,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "pravda",
+    "suspilne"
+   ]
   },
   {
    "id": "2026-10-07-8",
@@ -6929,11 +6968,11 @@
    "injured": 1,
    "level": "confirmed",
    "voices": [
-    "kmva",
+    "city",
     "suspilne"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv",
@@ -6970,12 +7009,15 @@
    "addresses": [],
    "claims": 3,
    "geo": {
-    "lat": 50.439653,
-    "lon": 30.445106,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "suspilne"
+   ]
   },
   {
    "id": "2026-10-07-9",
@@ -6993,10 +7035,10 @@
    "injured": 1,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -7026,12 +7068,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.427009,
-    "lon": 30.467546,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-07-10",
@@ -7047,14 +7090,12 @@
    "first_report": "2026-10-07 17:22",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv",
@@ -7083,12 +7124,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.452161,
-    "lon": 30.588488,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-07-11",
@@ -7106,14 +7148,12 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "city_council",
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "official_voices": [
-    "city_council",
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "channels": [
     "VA_Kyiv",
@@ -7163,12 +7203,13 @@
    "addresses": [],
    "claims": 4,
    "geo": {
-    "lat": 50.467913,
-    "lon": 30.336652,
+    "lat": 50.472703,
+    "lon": 30.325153,
     "district": "Святошинський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-07-12",
@@ -7184,15 +7225,12 @@
    "first_report": "2026-10-07 19:33",
    "killed": 1,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city_council",
-    "kmva",
-    "pravda"
+    "city"
    ],
    "official_voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv",
@@ -7248,12 +7286,15 @@
    "addresses": [],
    "claims": 5,
    "geo": {
-    "lat": 50.54137,
-    "lon": 30.43609,
+    "lat": 50.530636,
+    "lon": 30.438353,
     "district": "Оболонський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "pravda"
+   ]
   },
   {
    "id": "2026-10-07-13",
@@ -7271,10 +7312,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -7294,12 +7335,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.503429,
-    "lon": 30.642635,
+    "lat": 50.519069,
+    "lon": 30.644687,
     "district": "Деснянський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-07-14",
@@ -7317,14 +7359,12 @@
    "injured": 4,
    "level": "confirmed",
    "voices": [
-    "city_council",
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "official_voices": [
-    "city_council",
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "channels": [
     "VA_Kyiv",
@@ -7366,12 +7406,13 @@
    "addresses": [],
    "claims": 3,
    "geo": {
-    "lat": 50.525787,
-    "lon": 30.653761,
+    "lat": 50.519069,
+    "lon": 30.644687,
     "district": "Деснянський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-08-1",
@@ -7389,10 +7430,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -7412,12 +7453,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.311694,
-    "lon": 30.564113,
+    "lat": 50.327293,
+    "lon": 30.555596,
     "district": "Голосіївський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-08-2",
@@ -7435,11 +7477,11 @@
    "injured": 2,
    "level": "confirmed",
    "voices": [
-    "city_council",
+    "city",
     "kyiv_post"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "kyivpost_official",
@@ -7478,12 +7520,13 @@
    "addresses": [],
    "claims": 3,
    "geo": {
-    "lat": 50.425643,
-    "lon": 30.474932,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-08-3",
@@ -7499,13 +7542,12 @@
    "first_report": "2026-10-08 12:36",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city_council",
-    "suspilne"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "suspilne_kyiv",
@@ -7534,12 +7576,15 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.463535,
-    "lon": 30.479917,
+    "lat": 50.46288,
+    "lon": 30.451795,
     "district": "Шевченківський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "suspilne"
+   ]
   },
   {
    "id": "2026-10-09-1",
@@ -7557,10 +7602,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "KyivCityOfficial"
@@ -7580,12 +7625,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.321372,
-    "lon": 30.549828,
+    "lat": 50.327293,
+    "lon": 30.555596,
     "district": "Голосіївський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-09-2",
@@ -7603,10 +7649,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "KyivCityOfficial"
@@ -7626,12 +7672,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.514628,
-    "lon": 30.641581,
+    "lat": 50.519069,
+    "lon": 30.644687,
     "district": "Деснянський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-09-3",
@@ -7649,10 +7696,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "KyivCityOfficial"
@@ -7672,12 +7719,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.406209,
-    "lon": 30.715155,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-09-4",
@@ -7695,10 +7743,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "KyivCityOfficial"
@@ -7718,12 +7766,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.454729,
-    "lon": 30.597625,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-09-5",
@@ -7741,10 +7790,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "KyivCityOfficial"
@@ -7764,12 +7813,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.413632,
-    "lon": 30.465461,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-09-6",
@@ -7787,12 +7837,12 @@
    "injured": 0,
    "level": "confirmed",
    "voices": [
-    "city_council",
-    "dsns"
+    "city",
+    "emergency"
    ],
    "official_voices": [
-    "city_council",
-    "dsns"
+    "city",
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv",
@@ -7825,12 +7875,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.454863,
-    "lon": 30.597933,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-10-1",
@@ -7848,10 +7899,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -7871,12 +7922,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.485627,
-    "lon": 30.408463,
+    "lat": 50.489508,
+    "lon": 30.428765,
     "district": "Подільський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-10-2",
@@ -7892,7 +7944,7 @@
    "first_report": "2026-10-10 10:35",
    "killed": 0,
    "injured": 0,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -7919,12 +7971,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.472591,
-    "lon": 30.58459,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-10-3",
@@ -7942,11 +7995,11 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "city_council",
+    "city",
     "kyiv_post"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "kyivpost_official",
@@ -7978,12 +8031,13 @@
    "addresses": [],
    "claims": 3,
    "geo": {
-    "lat": 50.410068,
-    "lon": 30.441654,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-10-4",
@@ -8001,10 +8055,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -8024,12 +8078,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.403096,
-    "lon": 30.46077,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-10-5",
@@ -8045,13 +8100,12 @@
    "first_report": "2026-10-10 14:19",
    "killed": null,
    "injured": 4,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city_council",
-    "hromadske"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "hromadske_ua",
@@ -8090,12 +8144,15 @@
    "addresses": [],
    "claims": 3,
    "geo": {
-    "lat": 50.541239,
-    "lon": 30.441734,
+    "lat": 50.530636,
+    "lon": 30.438353,
     "district": "Оболонський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "hromadske"
+   ]
   },
   {
    "id": "2026-10-10-6",
@@ -8111,15 +8168,14 @@
    "first_report": "2026-10-10 14:19",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "disputed",
    "voices": [
-    "city_council",
-    "dsns",
-    "hromadske"
+    "city",
+    "emergency"
    ],
    "official_voices": [
-    "city_council",
-    "dsns"
+    "city",
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv",
@@ -8163,12 +8219,15 @@
    "addresses": [],
    "claims": 3,
    "geo": {
-    "lat": 50.523695,
-    "lon": 30.453221,
+    "lat": 50.530636,
+    "lon": 30.438353,
     "district": "Оболонський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "hromadske"
+   ]
   },
   {
    "id": "2026-10-10-7",
@@ -8186,10 +8245,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -8213,12 +8272,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.540843,
-    "lon": 30.446494,
+    "lat": 50.530636,
+    "lon": 30.438353,
     "district": "Оболонський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-10-8",
@@ -8234,14 +8294,12 @@
    "first_report": "2026-10-10 18:48",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "disputed",
    "voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv",
@@ -8273,12 +8331,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.458005,
-    "lon": 30.462239,
+    "lat": 50.46288,
+    "lon": 30.451795,
     "district": "Шевченківський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-10-9",
@@ -8296,10 +8355,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -8319,12 +8378,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.324104,
-    "lon": 30.58579,
+    "lat": 50.327293,
+    "lon": 30.555596,
     "district": "Голосіївський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-10-10",
@@ -8342,10 +8402,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -8376,7 +8436,8 @@
     "district": "Дарницький",
     "precision": "street",
     "matched": "вулиця Архітектора Вербицького, Червоний Хутір, Дарницький район, Київ, 02121, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-10-11",
@@ -8394,10 +8455,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -8417,12 +8478,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.405082,
-    "lon": 30.678984,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-11-1",
@@ -8440,10 +8502,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -8463,12 +8525,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.399812,
-    "lon": 30.70513,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-11-2",
@@ -8486,10 +8549,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -8509,12 +8572,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.324608,
-    "lon": 30.56075,
+    "lat": 50.327293,
+    "lon": 30.555596,
     "district": "Голосіївський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-12-1",
@@ -8530,14 +8594,12 @@
    "first_report": "2026-10-12 11:46",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv",
@@ -8566,12 +8628,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.403766,
-    "lon": 30.695063,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-12-3",
@@ -8589,12 +8652,12 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "city_council",
-    "dsns"
+    "city",
+    "emergency"
    ],
    "official_voices": [
-    "city_council",
-    "dsns"
+    "city",
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv",
@@ -8627,12 +8690,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.428602,
-    "lon": 30.455463,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-12-4",
@@ -8650,10 +8714,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -8673,12 +8737,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.404943,
-    "lon": 30.716892,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-12-5",
@@ -8696,10 +8761,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -8719,12 +8784,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.422031,
-    "lon": 30.527633,
+    "lat": 50.428666,
+    "lon": 30.548976,
     "district": "Печерський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-12-2",
@@ -8742,10 +8808,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -8769,12 +8835,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.388823,
-    "lon": 30.684426,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-12-6",
@@ -8792,10 +8859,10 @@
    "injured": 11,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -8815,12 +8882,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.388893,
-    "lon": 30.704752,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-12-7",
@@ -8836,13 +8904,12 @@
    "first_report": "2026-10-12 22:44",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city_council",
-    "suspilne"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "suspilne_kyiv",
@@ -8871,12 +8938,15 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.4427,
-    "lon": 30.57863,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "suspilne"
+   ]
   },
   {
    "id": "2026-10-12-8",
@@ -8894,10 +8964,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -8917,12 +8987,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.508974,
-    "lon": 30.645746,
+    "lat": 50.519069,
+    "lon": 30.644687,
     "district": "Деснянський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-12-9",
@@ -8938,14 +9009,12 @@
    "first_report": "2026-10-13 07:16",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv",
@@ -8974,12 +9043,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.421107,
-    "lon": 30.702923,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-13-1",
@@ -8995,13 +9065,12 @@
    "first_report": "2026-10-13 09:10",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "kmva",
-    "suspilne"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv",
@@ -9030,12 +9099,15 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.417259,
-    "lon": 30.705574,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "suspilne"
+   ]
   },
   {
    "id": "2026-10-13-2",
@@ -9051,7 +9123,7 @@
    "first_report": "2026-10-13 09:54",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "kyiv_post"
    ],
@@ -9081,7 +9153,8 @@
     "district": null,
     "precision": null,
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-13-3",
@@ -9099,10 +9172,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "KyivCityOfficial"
@@ -9122,12 +9195,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.415107,
-    "lon": 30.730774,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-13-4",
@@ -9143,12 +9217,12 @@
    "first_report": "2026-10-13 10:14",
    "killed": null,
    "injured": null,
-   "level": "official",
+   "level": "disputed",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -9174,12 +9248,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.508176,
-    "lon": 30.668912,
+    "lat": 50.519069,
+    "lon": 30.644687,
     "district": "Деснянський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-13-5",
@@ -9197,11 +9272,11 @@
    "injured": 1,
    "level": "confirmed",
    "voices": [
-    "dsns",
+    "emergency",
     "suspilne"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv",
@@ -9234,12 +9309,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.398097,
-    "lon": 30.701304,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-13-6",
@@ -9255,14 +9331,12 @@
    "first_report": "2026-10-13 12:20",
    "killed": null,
    "injured": 2,
-   "level": "confirmed",
+   "level": "disputed",
    "voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv",
@@ -9293,12 +9367,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.430477,
-    "lon": 30.445512,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-13-7",
@@ -9314,7 +9389,7 @@
    "first_report": "2026-10-13 13:44",
    "killed": null,
    "injured": 2,
-   "level": "single_source",
+   "level": "disputed",
    "voices": [
     "suspilne"
    ],
@@ -9348,7 +9423,8 @@
     "district": "Солом'янський",
     "precision": "street",
     "matched": "Орлятко, 9-В, Солом’янський район, Київ, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-13-8",
@@ -9366,11 +9442,11 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "city_council",
+    "city",
     "kyiv_post"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "kyivpost_official",
@@ -9399,12 +9475,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.415676,
-    "lon": 30.469276,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-13-9",
@@ -9420,7 +9497,7 @@
    "first_report": "2026-10-13 17:27",
    "killed": 2,
    "injured": 9,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "kyiv_post"
    ],
@@ -9448,7 +9525,8 @@
     "district": null,
     "precision": null,
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-13-10",
@@ -9464,13 +9542,12 @@
    "first_report": "2026-10-13 20:50",
    "killed": 0,
    "injured": 0,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "dsns",
-    "suspilne"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv",
@@ -9503,12 +9580,15 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.430492,
-    "lon": 30.44638,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "suspilne"
+   ]
   },
   {
    "id": "2026-10-13-11",
@@ -9524,14 +9604,13 @@
    "first_report": "2026-10-13 22:42",
    "killed": 2,
    "injured": 21,
-   "level": "confirmed",
+   "level": "disputed",
    "voices": [
-    "dsns",
-    "hromadske",
+    "emergency",
     "suspilne"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv",
@@ -9575,12 +9654,15 @@
    "addresses": [],
    "claims": 3,
    "geo": {
-    "lat": 50.528119,
-    "lon": 30.639203,
+    "lat": 50.519069,
+    "lon": 30.644687,
     "district": "Деснянський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "hromadske"
+   ]
   },
   {
    "id": "2026-10-13-12",
@@ -9598,10 +9680,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -9630,7 +9712,8 @@
     "district": "Дніпровський",
     "precision": "building",
     "matched": "ТЕЦ-4 (Дарницька ТЕЦ), Дарницький масив, Дніпровський район, Київ, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-13-13",
@@ -9648,10 +9731,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -9678,7 +9761,8 @@
     "district": null,
     "precision": null,
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-13-14",
@@ -9696,12 +9780,12 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "city_council",
-    "dsns"
+    "city",
+    "emergency"
    ],
    "official_voices": [
-    "city_council",
-    "dsns"
+    "city",
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv",
@@ -9744,12 +9828,13 @@
    ],
    "claims": 3,
    "geo": {
-    "lat": 50.403913,
-    "lon": 30.695364,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-13-15",
@@ -9767,10 +9852,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -9799,7 +9884,8 @@
     "district": null,
     "precision": null,
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-13-16",
@@ -9817,10 +9903,10 @@
    "injured": 1,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -9840,12 +9926,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.409397,
-    "lon": 30.708783,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-13-17",
@@ -9863,12 +9950,12 @@
    "injured": 1,
    "level": "confirmed",
    "voices": [
-    "city_council",
-    "dsns"
+    "city",
+    "emergency"
    ],
    "official_voices": [
-    "city_council",
-    "dsns"
+    "city",
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv",
@@ -9901,12 +9988,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.334251,
-    "lon": 30.56467,
+    "lat": 50.327293,
+    "lon": 30.555596,
     "district": "Голосіївський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-13-18",
@@ -9922,12 +10010,12 @@
    "first_report": "2026-10-14 07:32",
    "killed": 2,
    "injured": 21,
-   "level": "official",
+   "level": "disputed",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -9953,12 +10041,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.516404,
-    "lon": 30.629764,
+    "lat": 50.519069,
+    "lon": 30.644687,
     "district": "Деснянський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-13-19",
@@ -9976,10 +10065,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -10003,12 +10092,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.45845,
-    "lon": 30.558221,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-13-20",
@@ -10026,10 +10116,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -10053,12 +10143,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.457981,
-    "lon": 30.461546,
+    "lat": 50.46288,
+    "lon": 30.451795,
     "district": "Шевченківський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-14-1",
@@ -10074,7 +10165,7 @@
    "first_report": "2026-10-14 12:53",
    "killed": 3,
    "injured": 25,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -10101,12 +10192,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.506353,
-    "lon": 30.628682,
+    "lat": 50.519069,
+    "lon": 30.644687,
     "district": "Деснянський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-14-2",
@@ -10122,7 +10214,7 @@
    "first_report": "2026-10-14 17:18",
    "killed": null,
    "injured": 1,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -10147,12 +10239,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.423129,
-    "lon": 30.576145,
+    "lat": 50.428666,
+    "lon": 30.548976,
     "district": "Печерський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-15-1",
@@ -10170,14 +10263,12 @@
    "injured": 5,
    "level": "confirmed",
    "voices": [
-    "city_council",
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "official_voices": [
-    "city_council",
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "channels": [
     "VA_Kyiv",
@@ -10219,12 +10310,13 @@
    "addresses": [],
    "claims": 3,
    "geo": {
-    "lat": 50.424088,
-    "lon": 30.555159,
+    "lat": 50.428666,
+    "lon": 30.548976,
     "district": "Печерський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-15-2",
@@ -10242,10 +10334,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -10265,12 +10357,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.422603,
-    "lon": 30.546196,
+    "lat": 50.428666,
+    "lon": 30.548976,
     "district": "Печерський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-15-3",
@@ -10288,10 +10381,10 @@
    "injured": 7,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "KyivCityOfficial"
@@ -10311,12 +10404,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.433179,
-    "lon": 30.535691,
+    "lat": 50.428666,
+    "lon": 30.548976,
     "district": "Печерський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-15-4",
@@ -10332,7 +10426,7 @@
    "first_report": "2026-10-15 16:25",
    "killed": null,
    "injured": 6,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "kyiv_post"
    ],
@@ -10357,12 +10451,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.441382,
-    "lon": 30.532971,
+    "lat": 50.428666,
+    "lon": 30.548976,
     "district": "Печерський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-15-5",
@@ -10380,10 +10475,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -10403,12 +10498,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.467849,
-    "lon": 30.319464,
+    "lat": 50.472703,
+    "lon": 30.325153,
     "district": "Святошинський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-15-6",
@@ -10426,10 +10522,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -10449,12 +10545,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.481285,
-    "lon": 30.342235,
+    "lat": 50.472703,
+    "lon": 30.325153,
     "district": "Святошинський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-15-7",
@@ -10472,10 +10569,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -10495,12 +10592,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.475829,
-    "lon": 30.457733,
+    "lat": 50.46288,
+    "lon": 30.451795,
     "district": "Шевченківський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-15-8",
@@ -10518,10 +10616,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -10545,12 +10643,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.457566,
-    "lon": 30.454539,
+    "lat": 50.46288,
+    "lon": 30.451795,
     "district": "Шевченківський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-15-9",
@@ -10568,10 +10667,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -10595,12 +10694,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.418795,
-    "lon": 30.448775,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-16-1",
@@ -10616,7 +10716,7 @@
    "first_report": "2026-10-16 09:11",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -10643,12 +10743,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.466262,
-    "lon": 30.448109,
+    "lat": 50.46288,
+    "lon": 30.451795,
     "district": "Шевченківський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-16-2",
@@ -10664,7 +10765,7 @@
    "first_report": "2026-10-16 09:11",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -10691,12 +10792,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.41083,
-    "lon": 30.450082,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-18-1",
@@ -10714,10 +10816,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -10737,12 +10839,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.522202,
-    "lon": 30.62051,
+    "lat": 50.519069,
+    "lon": 30.644687,
     "district": "Деснянський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-18-2",
@@ -10760,10 +10863,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -10783,12 +10886,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.457108,
-    "lon": 30.562379,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-18-3",
@@ -10804,14 +10908,14 @@
    "first_report": "2026-10-19 00:02",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "disputed",
    "voices": [
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "official_voices": [
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "channels": [
     "VA_Kyiv",
@@ -10854,12 +10958,13 @@
    "addresses": [],
    "claims": 4,
    "geo": {
-    "lat": 50.454104,
-    "lon": 30.564536,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-18-5",
@@ -10875,16 +10980,14 @@
    "first_report": "2026-10-19 03:30",
    "killed": null,
    "injured": 3,
-   "level": "confirmed",
+   "level": "disputed",
    "voices": [
-    "city_council",
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "official_voices": [
-    "city_council",
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "channels": [
     "KyivCityOfficial",
@@ -10945,12 +11048,13 @@
    "addresses": [],
    "claims": 5,
    "geo": {
-    "lat": 50.433478,
-    "lon": 30.46442,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-18-6",
@@ -10966,14 +11070,12 @@
    "first_report": "2026-10-19 03:30",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "disputed",
    "voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "channels": [
     "KyivCityOfficial",
@@ -11030,7 +11132,8 @@
     "district": "Солом'янський",
     "precision": "street",
     "matched": "ТРЦ, Караваєві Дачі, Солом’янський район, Київ, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-18-4",
@@ -11048,10 +11151,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -11071,12 +11174,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.466067,
-    "lon": 30.610004,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-18-7",
@@ -11094,10 +11198,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "KyivCityOfficial"
@@ -11122,7 +11226,8 @@
     "district": null,
     "precision": null,
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-18-8",
@@ -11140,10 +11245,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -11167,12 +11272,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.524935,
-    "lon": 30.675371,
+    "lat": 50.519069,
+    "lon": 30.644687,
     "district": "Деснянський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-19-1",
@@ -11190,10 +11296,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -11217,12 +11323,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.410844,
-    "lon": 30.436944,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-19-2",
@@ -11238,14 +11345,12 @@
    "first_report": "2026-10-19 09:34",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city_council",
-    "hromadske",
-    "suspilne"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "hromadske_ua",
@@ -11294,7 +11399,11 @@
     "district": "Дніпровський",
     "precision": "street",
     "matched": "станція метро \"Чернігівська\", вулиця Гната Хоткевича, Аварійне селище, Північно-Броварський масив, Дніпровський район, Київ, 02004, Україна"
-   }
+   },
+   "retold_voices": [
+    "hromadske",
+    "suspilne"
+   ]
   },
   {
    "id": "2026-10-19-4",
@@ -11310,10 +11419,8 @@
    "first_report": "2026-10-19 10:36",
    "killed": null,
    "injured": null,
-   "level": "single_source",
-   "voices": [
-    "hromadske"
-   ],
+   "level": "media",
+   "voices": [],
    "official_voices": [],
    "channels": [
     "hromadske_ua"
@@ -11338,7 +11445,10 @@
     "district": null,
     "precision": null,
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "hromadske"
+   ]
   },
   {
    "id": "2026-10-19-5",
@@ -11354,7 +11464,7 @@
    "first_report": "2026-10-19 11:04",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "kyiv_post"
    ],
@@ -11388,7 +11498,8 @@
     "district": "Солом'янський",
     "precision": "street",
     "matched": "ТРЦ Космо Мультімол, 6, вулиця Вадима Гетьмана, Шулявка, Солом’янський район, Київ, 03168, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-19-3",
@@ -11404,7 +11515,7 @@
    "first_report": "2026-10-19 12:18",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -11443,7 +11554,8 @@
     "district": "Дніпровський",
     "precision": "street",
     "matched": "Льодова арена, 6, вулиця Міста Шалетт, Семихатки, Північно-Броварський масив, Дніпровський район, Київ, 02192, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-19-6",
@@ -11459,10 +11571,8 @@
    "first_report": "2026-10-19 17:42",
    "killed": null,
    "injured": null,
-   "level": "single_source",
-   "voices": [
-    "suspilne"
-   ],
+   "level": "media",
+   "voices": [],
    "official_voices": [],
    "channels": [
     "suspilne_kyiv"
@@ -11487,7 +11597,10 @@
     "district": null,
     "precision": null,
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "suspilne"
+   ]
   },
   {
    "id": "2026-10-20-1",
@@ -11505,10 +11618,10 @@
    "injured": 4,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -11528,12 +11641,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.32441,
-    "lon": 30.531074,
+    "lat": 50.327293,
+    "lon": 30.555596,
     "district": "Голосіївський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-20-2",
@@ -11551,16 +11665,14 @@
    "injured": 1,
    "level": "confirmed",
    "voices": [
-    "city_council",
-    "dsns",
-    "kmva",
+    "city",
+    "emergency",
     "kyiv_post",
     "suspilne"
    ],
    "official_voices": [
-    "city_council",
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "channels": [
     "VA_Kyiv",
@@ -11627,7 +11739,8 @@
     "district": "Солом'янський",
     "precision": "street",
     "matched": "Інститут кардіології імені академіка М.Д. Стражеска, Зеленогірська вулиця, Турецьке містечко, Солом’янський район, Київ, 03152, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-20-3",
@@ -11645,10 +11758,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -11668,12 +11781,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.334759,
-    "lon": 30.568479,
+    "lat": 50.327293,
+    "lon": 30.555596,
     "district": "Голосіївський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-20-4",
@@ -11691,10 +11805,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -11714,12 +11828,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.438325,
-    "lon": 30.470367,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-20-5",
@@ -11735,14 +11850,12 @@
    "first_report": "2026-10-20 15:25",
    "killed": null,
    "injured": 2,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv",
@@ -11771,12 +11884,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.330939,
-    "lon": 30.539711,
+    "lat": 50.327293,
+    "lon": 30.555596,
     "district": "Голосіївський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-20-6",
@@ -11792,12 +11906,12 @@
    "first_report": "2026-10-20 16:04",
    "killed": null,
    "injured": null,
-   "level": "official",
+   "level": "disputed",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -11819,12 +11933,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.521269,
-    "lon": 30.632372,
+    "lat": 50.519069,
+    "lon": 30.644687,
     "district": "Деснянський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-20-7",
@@ -11840,12 +11955,12 @@
    "first_report": "2026-10-20 16:21",
    "killed": null,
    "injured": null,
-   "level": "official",
+   "level": "disputed",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -11867,12 +11982,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.525026,
-    "lon": 30.640709,
+    "lat": 50.519069,
+    "lon": 30.644687,
     "district": "Деснянський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-20-8",
@@ -11890,10 +12006,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -11913,12 +12029,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.522602,
-    "lon": 30.419068,
+    "lat": 50.530636,
+    "lon": 30.438353,
     "district": "Оболонський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-20-9",
@@ -11936,12 +12053,12 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "city_council",
-    "dsns"
+    "city",
+    "emergency"
    ],
    "official_voices": [
-    "city_council",
-    "dsns"
+    "city",
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv",
@@ -11974,12 +12091,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.472684,
-    "lon": 30.442606,
+    "lat": 50.46288,
+    "lon": 30.451795,
     "district": "Шевченківський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-20-10",
@@ -11995,7 +12113,7 @@
    "first_report": "2026-10-20 18:05",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -12030,12 +12148,13 @@
    "addresses": [],
    "claims": 5,
    "geo": {
-    "lat": 50.321493,
+    "lat": 50.327293,
     "lon": 30.555596,
     "district": "Голосіївський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-20-11",
@@ -12053,10 +12172,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -12080,12 +12199,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.339925,
-    "lon": 30.556258,
+    "lat": 50.327293,
+    "lon": 30.555596,
     "district": "Голосіївський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-20-12",
@@ -12103,10 +12223,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -12138,12 +12258,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.533577,
-    "lon": 30.654376,
+    "lat": 50.519069,
+    "lon": 30.644687,
     "district": "Деснянський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-20-13",
@@ -12161,10 +12282,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -12184,12 +12305,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.507968,
-    "lon": 30.628035,
+    "lat": 50.519069,
+    "lon": 30.644687,
     "district": "Деснянський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-20-14",
@@ -12207,12 +12329,12 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "official_voices": [
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "channels": [
     "VA_Kyiv",
@@ -12245,12 +12367,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.460099,
-    "lon": 30.342175,
+    "lat": 50.472703,
+    "lon": 30.325153,
     "district": "Святошинський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-20-15",
@@ -12268,10 +12391,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -12291,12 +12414,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.480983,
-    "lon": 30.338014,
+    "lat": 50.472703,
+    "lon": 30.325153,
     "district": "Святошинський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-20-16",
@@ -12314,10 +12438,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -12337,12 +12461,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.413589,
-    "lon": 30.47335,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-20-17",
@@ -12360,13 +12485,12 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "city_council",
-    "dsns",
-    "hromadske"
+    "city",
+    "emergency"
    ],
    "official_voices": [
-    "city_council",
-    "dsns"
+    "city",
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv",
@@ -12408,12 +12532,15 @@
    "addresses": [],
    "claims": 3,
    "geo": {
-    "lat": 50.434683,
-    "lon": 30.455875,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "hromadske"
+   ]
   },
   {
    "id": "2026-10-20-18",
@@ -12431,13 +12558,12 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "dsns",
-    "hromadske",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "official_voices": [
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "channels": [
     "VA_Kyiv",
@@ -12479,12 +12605,15 @@
    "addresses": [],
    "claims": 3,
    "geo": {
-    "lat": 50.516621,
-    "lon": 30.629958,
+    "lat": 50.519069,
+    "lon": 30.644687,
     "district": "Деснянський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "hromadske"
+   ]
   },
   {
    "id": "2026-10-20-19",
@@ -12502,10 +12631,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -12525,12 +12654,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.420782,
-    "lon": 30.447629,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-20-20",
@@ -12548,13 +12678,12 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "city_council",
-    "dsns",
-    "hromadske"
+    "city",
+    "emergency"
    ],
    "official_voices": [
-    "city_council",
-    "dsns"
+    "city",
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv",
@@ -12596,12 +12725,15 @@
    "addresses": [],
    "claims": 3,
    "geo": {
-    "lat": 50.478752,
-    "lon": 30.298801,
+    "lat": 50.472703,
+    "lon": 30.325153,
     "district": "Святошинський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "hromadske"
+   ]
   },
   {
    "id": "2026-10-21-1",
@@ -12671,12 +12803,15 @@
    "addresses": [],
    "claims": 6,
    "geo": {
-    "lat": 50.488337,
-    "lon": 30.306831,
+    "lat": 50.472703,
+    "lon": 30.325153,
     "district": "Святошинський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "suspilne"
+   ]
   },
   {
    "id": "2026-10-21-4",
@@ -12694,15 +12829,12 @@
    "injured": 5,
    "level": "confirmed",
    "voices": [
-    "city_council",
-    "dsns",
-    "hromadske",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "official_voices": [
-    "city_council",
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "channels": [
     "VA_Kyiv",
@@ -12753,12 +12885,15 @@
    "addresses": [],
    "claims": 4,
    "geo": {
-    "lat": 50.455081,
-    "lon": 30.574701,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "hromadske"
+   ]
   },
   {
    "id": "2026-10-21-2",
@@ -12774,15 +12909,12 @@
    "first_report": "2026-10-21 22:34",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city_council",
-    "hromadske",
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv",
@@ -12822,12 +12954,15 @@
    "addresses": [],
    "claims": 3,
    "geo": {
-    "lat": 50.443601,
-    "lon": 30.59924,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "hromadske"
+   ]
   },
   {
    "id": "2026-10-21-3",
@@ -12843,13 +12978,12 @@
    "first_report": "2026-10-21 22:49",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city_council",
-    "hromadske"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "hromadske_ua",
@@ -12880,12 +13014,15 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.457995,
-    "lon": 30.589803,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "hromadske"
+   ]
   },
   {
    "id": "2026-10-21-5",
@@ -12901,13 +13038,12 @@
    "first_report": "2026-10-21 22:49",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city_council",
-    "hromadske"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "hromadske_ua",
@@ -12938,12 +13074,15 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.440471,
-    "lon": 30.595365,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "hromadske"
+   ]
   },
   {
    "id": "2026-10-21-6",
@@ -12961,13 +13100,12 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "city_council",
-    "dsns",
-    "pravda"
+    "city",
+    "emergency"
    ],
    "official_voices": [
-    "city_council",
-    "dsns"
+    "city",
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv",
@@ -13019,12 +13157,15 @@
    ],
    "claims": 4,
    "geo": {
-    "lat": 50.40456,
-    "lon": 30.728855,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "pravda"
+   ]
   },
   {
    "id": "2026-10-21-7",
@@ -13040,16 +13181,14 @@
    "first_report": "2026-10-22 03:55",
    "killed": null,
    "injured": 8,
-   "level": "confirmed",
+   "level": "disputed",
    "voices": [
-    "dsns",
-    "hromadske",
-    "kmva",
-    "suspilne"
+    "city",
+    "emergency"
    ],
    "official_voices": [
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "channels": [
     "VA_Kyiv",
@@ -13103,12 +13242,16 @@
    "addresses": [],
    "claims": 5,
    "geo": {
-    "lat": 50.419088,
-    "lon": 30.549227,
+    "lat": 50.428666,
+    "lon": 30.548976,
     "district": "Печерський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "hromadske",
+    "suspilne"
+   ]
   },
   {
    "id": "2026-10-21-10",
@@ -13126,11 +13269,11 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "dsns",
+    "emergency",
     "hromadske"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv",
@@ -13163,12 +13306,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.481362,
-    "lon": 30.326061,
+    "lat": 50.472703,
+    "lon": 30.325153,
     "district": "Святошинський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-21-8",
@@ -13184,7 +13328,7 @@
    "first_report": "2026-10-22 07:52",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -13207,12 +13351,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.430034,
-    "lon": 30.554614,
+    "lat": 50.428666,
+    "lon": 30.548976,
     "district": "Печерський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-21-9",
@@ -13228,7 +13373,7 @@
    "first_report": "2026-10-22 07:52",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -13258,7 +13403,8 @@
     "district": "Печерський",
     "precision": "street",
     "matched": "Свято-Введенський чоловічий монастир, 42/2, Рибальська вулиця, Печерськ, Печерський район, Київ, 01016, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-21-11",
@@ -13276,10 +13422,10 @@
    "injured": 2,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -13303,12 +13449,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.53157,
-    "lon": 30.4116,
+    "lat": 50.530636,
+    "lon": 30.438353,
     "district": "Оболонський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-21-12",
@@ -13326,10 +13473,10 @@
    "injured": 6,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -13353,12 +13500,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.314445,
-    "lon": 30.569597,
+    "lat": 50.327293,
+    "lon": 30.555596,
     "district": "Голосіївський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-22-1",
@@ -13376,10 +13524,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -13402,12 +13550,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.455832,
-    "lon": 30.561013,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-22-2",
@@ -13425,10 +13574,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -13450,12 +13599,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.394864,
-    "lon": 30.700848,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-22-3",
@@ -13473,10 +13623,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -13498,12 +13648,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.478286,
-    "lon": 30.321938,
+    "lat": 50.472703,
+    "lon": 30.325153,
     "district": "Святошинський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-22-4",
@@ -13521,10 +13672,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -13546,12 +13697,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.34021,
-    "lon": 30.576374,
+    "lat": 50.327293,
+    "lon": 30.555596,
     "district": "Голосіївський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-22-5",
@@ -13569,12 +13721,12 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "kmva",
+    "city",
     "kyiv_post",
     "suspilne"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv",
@@ -13632,12 +13784,15 @@
    ],
    "claims": 6,
    "geo": {
-    "lat": 50.524728,
-    "lon": 30.425697,
+    "lat": 50.530636,
+    "lon": 30.438353,
     "district": "Оболонський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "suspilne"
+   ]
   },
   {
    "id": "2026-10-22-7",
@@ -13655,10 +13810,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -13680,12 +13835,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.438447,
-    "lon": 30.533784,
+    "lat": 50.428666,
+    "lon": 30.548976,
     "district": "Печерський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-22-8",
@@ -13701,13 +13857,12 @@
    "first_report": "2026-10-22 09:21",
    "killed": null,
    "injured": 2,
-   "level": "confirmed",
+   "level": "disputed",
    "voices": [
-    "kmva",
-    "suspilne"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv",
@@ -13750,12 +13905,15 @@
    "addresses": [],
    "claims": 3,
    "geo": {
-    "lat": 50.415849,
-    "lon": 30.560076,
+    "lat": 50.428666,
+    "lon": 30.548976,
     "district": "Печерський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "suspilne"
+   ]
   },
   {
    "id": "2026-10-22-6",
@@ -13771,7 +13929,7 @@
    "first_report": "2026-10-22 11:06",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -13801,7 +13959,8 @@
     "district": "Голосіївський",
     "precision": "street",
     "matched": "Південний міст, Теличка, Голосіївський район, Київ, 01013, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-22-9",
@@ -13817,7 +13976,7 @@
    "first_report": "2026-10-22 18:47",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -13851,7 +14010,8 @@
     "district": null,
     "precision": null,
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-23-1",
@@ -13869,10 +14029,10 @@
    "injured": 2,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -13892,12 +14052,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.535165,
-    "lon": 30.463709,
+    "lat": 50.530636,
+    "lon": 30.438353,
     "district": "Оболонський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-24-1",
@@ -13915,10 +14076,10 @@
    "injured": 2,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -13943,11 +14104,12 @@
    "claims": 1,
    "geo": {
     "lat": 50.530636,
-    "lon": 30.426953,
+    "lon": 30.438353,
     "district": "Оболонський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-24-2",
@@ -13963,12 +14125,12 @@
    "first_report": "2026-10-24 22:01",
    "killed": null,
    "injured": 1,
-   "level": "official",
+   "level": "disputed",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -13990,12 +14152,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.457329,
-    "lon": 30.442865,
+    "lat": 50.46288,
+    "lon": 30.451795,
     "district": "Шевченківський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-24-3",
@@ -14013,10 +14176,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -14036,12 +14199,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.521931,
-    "lon": 30.614147,
+    "lat": 50.519069,
+    "lon": 30.644687,
     "district": "Деснянський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-25-1",
@@ -14059,10 +14223,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -14082,12 +14246,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.456686,
-    "lon": 30.611605,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-25-2",
@@ -14103,13 +14268,12 @@
    "first_report": "2026-10-25 09:53",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city_council",
-    "suspilne"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "KyivCityOfficial",
@@ -14147,12 +14311,15 @@
    "addresses": [],
    "claims": 3,
    "geo": {
-    "lat": 50.510488,
-    "lon": 30.627604,
+    "lat": 50.519069,
+    "lon": 30.644687,
     "district": "Деснянський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "suspilne"
+   ]
   },
   {
    "id": "2026-10-25-3",
@@ -14168,7 +14335,7 @@
    "first_report": "2026-10-25 10:03",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -14191,12 +14358,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.529018,
-    "lon": 30.648686,
+    "lat": 50.519069,
+    "lon": 30.644687,
     "district": "Деснянський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-26-1",
@@ -14215,16 +14383,12 @@
    "level": "confirmed",
    "voices": [
     "bbc",
-    "city_council",
-    "dsns",
-    "hromadske",
-    "kmva",
-    "suspilne"
+    "city",
+    "emergency"
    ],
    "official_voices": [
-    "city_council",
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "channels": [
     "VA_Kyiv",
@@ -14351,12 +14515,16 @@
    ],
    "claims": 16,
    "geo": {
-    "lat": 50.517436,
-    "lon": 30.638623,
+    "lat": 50.519069,
+    "lon": 30.644687,
     "district": "Деснянський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "hromadske",
+    "suspilne"
+   ]
   },
   {
    "id": "2026-10-26-2",
@@ -14374,10 +14542,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -14397,12 +14565,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.43727,
-    "lon": 30.595895,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-26-3",
@@ -14418,14 +14587,14 @@
    "first_report": "2026-10-26 22:29",
    "killed": 1,
    "injured": null,
-   "level": "confirmed",
+   "level": "disputed",
    "voices": [
-    "city_council",
-    "dsns"
+    "city",
+    "emergency"
    ],
    "official_voices": [
-    "city_council",
-    "dsns"
+    "city",
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv",
@@ -14460,12 +14629,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.451366,
-    "lon": 30.611703,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-26-4",
@@ -14483,10 +14653,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -14506,12 +14676,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.494821,
-    "lon": 30.426021,
+    "lat": 50.489508,
+    "lon": 30.428765,
     "district": "Подільський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-26-5",
@@ -14529,10 +14700,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -14559,7 +14730,8 @@
     "district": "Голосіївський",
     "precision": "street",
     "matched": "Південний міст, Теличка, Голосіївський район, Київ, 01013, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-26-6",
@@ -14577,10 +14749,10 @@
    "injured": 2,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -14604,12 +14776,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.535551,
-    "lon": 30.434266,
+    "lat": 50.530636,
+    "lon": 30.438353,
     "district": "Оболонський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-26-7",
@@ -14627,10 +14800,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -14654,12 +14827,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.52396,
-    "lon": 30.634591,
+    "lat": 50.519069,
+    "lon": 30.644687,
     "district": "Деснянський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-26-8",
@@ -14677,10 +14851,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -14702,12 +14876,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.340009,
-    "lon": 30.571602,
+    "lat": 50.327293,
+    "lon": 30.555596,
     "district": "Голосіївський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-27-1",
@@ -14768,12 +14943,13 @@
    "addresses": [],
    "claims": 3,
    "geo": {
-    "lat": 50.512997,
-    "lon": 30.648935,
+    "lat": 50.519069,
+    "lon": 30.644687,
     "district": "Деснянський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-27-2",
@@ -14789,7 +14965,7 @@
    "first_report": "2026-10-27 09:04",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -14816,12 +14992,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.459826,
-    "lon": 30.588937,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-27-3",
@@ -14837,7 +15014,7 @@
    "first_report": "2026-10-27 09:04",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "disputed",
    "voices": [
     "hromadske",
     "suspilne"
@@ -14876,12 +15053,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.461413,
-    "lon": 30.580044,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-27-4",
@@ -14899,11 +15077,11 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "dsns",
+    "emergency",
     "kyiv_post"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv",
@@ -14951,7 +15129,8 @@
     "district": "Голосіївський",
     "precision": "street",
     "matched": "Південний міст, Теличка, Голосіївський район, Київ, 01013, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-27-5",
@@ -14967,7 +15146,7 @@
    "first_report": "2026-10-27 10:42",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -14999,7 +15178,8 @@
     "district": null,
     "precision": null,
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-28-1",
@@ -15017,10 +15197,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -15051,7 +15231,8 @@
     "district": "Солом'янський",
     "precision": "street",
     "matched": "вулиця Миколи Василенка, Грушки, Солом’янський район, Київ, 03113, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-29-1",
@@ -15069,10 +15250,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "KyivCityOfficial"
@@ -15099,7 +15280,8 @@
     "district": "Голосіївський",
     "precision": "street",
     "matched": "Вулиця Голосіївська, Голосіївська вулиця, Деміївка, Голосіївський район, Київ, 03039, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-29-2",
@@ -15115,14 +15297,12 @@
    "first_report": "2026-10-29 22:54",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv",
@@ -15153,12 +15333,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.397855,
-    "lon": 30.722073,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-29-3",
@@ -15174,14 +15355,12 @@
    "first_report": "2026-10-29 23:13",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv",
@@ -15210,12 +15389,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.459256,
-    "lon": 30.576514,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-29-4",
@@ -15233,10 +15413,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -15256,12 +15436,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.462777,
-    "lon": 30.59651,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-29-5",
@@ -15277,12 +15458,12 @@
    "first_report": "2026-10-29 23:21",
    "killed": null,
    "injured": null,
-   "level": "official",
+   "level": "disputed",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -15304,12 +15485,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.466116,
-    "lon": 30.574948,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-29-6",
@@ -15325,12 +15507,12 @@
    "first_report": "2026-10-29 23:29",
    "killed": null,
    "injured": null,
-   "level": "official",
+   "level": "disputed",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -15353,12 +15535,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.46126,
-    "lon": 30.573988,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-29-7",
@@ -15374,14 +15557,12 @@
    "first_report": "2026-10-29 23:40",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "disputed",
    "voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv",
@@ -15414,12 +15595,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.440539,
-    "lon": 30.594307,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-29-8",
@@ -15437,10 +15619,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -15460,12 +15642,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.520983,
-    "lon": 30.465583,
+    "lat": 50.530636,
+    "lon": 30.438353,
     "district": "Оболонський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-29-9",
@@ -15483,10 +15666,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -15510,12 +15693,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.449575,
-    "lon": 30.599414,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-29-10",
@@ -15531,12 +15715,12 @@
    "first_report": "2026-10-30 07:16",
    "killed": null,
    "injured": null,
-   "level": "official",
+   "level": "disputed",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -15562,12 +15746,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.453181,
-    "lon": 30.5725,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-29-11",
@@ -15585,10 +15770,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -15610,12 +15795,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.446427,
-    "lon": 30.594567,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-30-1",
@@ -15631,7 +15817,7 @@
    "first_report": "2026-10-30 09:08",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -15667,12 +15853,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.398747,
-    "lon": 30.713571,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-30-2",
@@ -15688,7 +15875,7 @@
    "first_report": "2026-10-30 09:34",
    "killed": 1,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -15711,12 +15898,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.446636,
-    "lon": 30.599383,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-30-4",
@@ -15732,7 +15920,7 @@
    "first_report": "2026-10-30 16:38",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -15764,7 +15952,8 @@
     "district": null,
     "precision": null,
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-30-3",
@@ -15782,10 +15971,10 @@
    "injured": 1,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -15811,12 +16000,13 @@
    ],
    "claims": 1,
    "geo": {
-    "lat": 50.390091,
-    "lon": 30.717798,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-30-5",
@@ -15834,12 +16024,11 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "city_council",
-    "hromadske",
+    "city",
     "suspilne"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "hromadske_ua",
@@ -15877,12 +16066,15 @@
    "addresses": [],
    "claims": 3,
    "geo": {
-    "lat": 50.457512,
-    "lon": 30.430817,
+    "lat": 50.46288,
+    "lon": 30.451795,
     "district": "Шевченківський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "hromadske"
+   ]
   },
   {
    "id": "2026-10-30-6",
@@ -15898,7 +16090,7 @@
    "first_report": "2026-10-30 22:48",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -15926,7 +16118,8 @@
     "district": null,
     "precision": null,
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-31-1",
@@ -15944,10 +16137,10 @@
    "injured": 1,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -15967,12 +16160,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.549862,
-    "lon": 30.440876,
+    "lat": 50.530636,
+    "lon": 30.438353,
     "district": "Оболонський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-31-2",
@@ -15990,10 +16184,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -16013,12 +16207,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.514216,
-    "lon": 30.655481,
+    "lat": 50.519069,
+    "lon": 30.644687,
     "district": "Деснянський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-10-31-3",
@@ -16036,10 +16231,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -16063,12 +16258,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.398202,
-    "lon": 30.723864,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-02-1",
@@ -16086,10 +16282,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -16120,7 +16316,8 @@
     "district": "Подільський",
     "precision": "street",
     "matched": "Введенська вулиця, Плоске, Подільський район, Київ, 04071, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-02-2",
@@ -16138,10 +16335,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -16172,7 +16369,8 @@
     "district": "Подільський",
     "precision": "street",
     "matched": "вулиця Івана Виговського, Варшавський масив, Виноградар, Подільський район, Київ, 04208, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-02-3",
@@ -16190,10 +16388,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -16213,12 +16411,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.394399,
-    "lon": 30.704669,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-03-1",
@@ -16236,10 +16435,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -16259,12 +16458,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.523576,
-    "lon": 30.645517,
+    "lat": 50.519069,
+    "lon": 30.644687,
     "district": "Деснянський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-04-1",
@@ -16282,10 +16482,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -16305,12 +16505,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.46732,
-    "lon": 30.308597,
+    "lat": 50.472703,
+    "lon": 30.325153,
     "district": "Святошинський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-04-2",
@@ -16326,14 +16527,12 @@
    "first_report": "2026-11-04 09:43",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv",
@@ -16362,12 +16561,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.312183,
-    "lon": 30.535895,
+    "lat": 50.327293,
+    "lon": 30.555596,
     "district": "Голосіївський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-04-3",
@@ -16383,7 +16583,7 @@
    "first_report": "2026-11-04 10:10",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -16406,12 +16606,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.508174,
-    "lon": 30.618533,
+    "lat": 50.519069,
+    "lon": 30.644687,
     "district": "Деснянський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-05-1",
@@ -16429,10 +16630,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -16452,12 +16653,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.4177,
-    "lon": 30.541306,
+    "lat": 50.428666,
+    "lon": 30.548976,
     "district": "Печерський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-06-1",
@@ -16473,14 +16675,12 @@
    "first_report": "2026-11-07 01:32",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "disputed",
    "voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv",
@@ -16511,12 +16711,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.413448,
-    "lon": 30.456224,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-06-2",
@@ -16532,12 +16733,12 @@
    "first_report": "2026-11-07 01:41",
    "killed": null,
    "injured": null,
-   "level": "official",
+   "level": "disputed",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -16559,12 +16760,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.431057,
-    "lon": 30.47082,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-06-5",
@@ -16582,12 +16784,12 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "official_voices": [
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "channels": [
     "VA_Kyiv",
@@ -16620,12 +16822,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.424973,
-    "lon": 30.464075,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-06-3",
@@ -16641,12 +16844,12 @@
    "first_report": "2026-11-07 05:39",
    "killed": null,
    "injured": null,
-   "level": "official",
+   "level": "disputed",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -16672,12 +16875,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.424807,
-    "lon": 30.436104,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-06-4",
@@ -16693,12 +16897,12 @@
    "first_report": "2026-11-07 05:39",
    "killed": null,
    "injured": 1,
-   "level": "official",
+   "level": "disputed",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -16724,12 +16928,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.437684,
-    "lon": 30.464898,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-06-6",
@@ -16747,10 +16952,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -16774,12 +16979,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.420252,
-    "lon": 30.44655,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-06-8",
@@ -16795,13 +17001,12 @@
    "first_report": "2026-11-07 07:06",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city_council",
-    "hromadske"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "hromadske_ua",
@@ -16841,7 +17046,10 @@
     "district": "Оболонський",
     "precision": "street",
     "matched": "Північний міст, проспект Степана Бандери, Оболонський район, Київ, 04176, Україна"
-   }
+   },
+   "retold_voices": [
+    "hromadske"
+   ]
   },
   {
    "id": "2026-11-06-9",
@@ -16859,10 +17067,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -16882,12 +17090,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.484101,
-    "lon": 30.302463,
+    "lat": 50.472703,
+    "lon": 30.325153,
     "district": "Святошинський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-06-10",
@@ -16905,10 +17114,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -16928,12 +17137,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.387081,
-    "lon": 30.690385,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-06-7",
@@ -16949,7 +17159,7 @@
    "first_report": "2026-11-07 08:47",
    "killed": null,
    "injured": 5,
-   "level": "single_source",
+   "level": "disputed",
    "voices": [
     "pravda"
    ],
@@ -16978,12 +17188,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.425428,
-    "lon": 30.448731,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-07-1",
@@ -17041,7 +17252,8 @@
     "district": "Оболонський",
     "precision": "street",
     "matched": "Північний міст, проспект Степана Бандери, Оболонський район, Київ, 04176, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-07-2",
@@ -17057,10 +17269,8 @@
    "first_report": "2026-11-07 09:33",
    "killed": null,
    "injured": null,
-   "level": "single_source",
-   "voices": [
-    "kyiv_post"
-   ],
+   "level": "media",
+   "voices": [],
    "official_voices": [],
    "channels": [
     "kyivpost_official"
@@ -17088,7 +17298,10 @@
     "district": null,
     "precision": null,
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "kyiv_post"
+   ]
   },
   {
    "id": "2026-11-07-3",
@@ -17106,10 +17319,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -17133,12 +17346,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.390452,
-    "lon": 30.683936,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-07-4",
@@ -17156,10 +17370,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -17183,12 +17397,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.46319,
-    "lon": 30.342159,
+    "lat": 50.472703,
+    "lon": 30.325153,
     "district": "Святошинський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-07-5",
@@ -17206,10 +17421,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -17233,12 +17448,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.455926,
-    "lon": 30.325592,
+    "lat": 50.472703,
+    "lon": 30.325153,
     "district": "Святошинський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-07-6",
@@ -17254,7 +17470,7 @@
    "first_report": "2026-11-07 12:31",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -17284,7 +17500,8 @@
     "district": null,
     "precision": null,
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-07-7",
@@ -17302,14 +17519,12 @@
    "injured": 0,
    "level": "confirmed",
    "voices": [
-    "city_council",
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "official_voices": [
-    "city_council",
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "channels": [
     "VA_Kyiv",
@@ -17351,12 +17566,13 @@
    "addresses": [],
    "claims": 3,
    "geo": {
-    "lat": 50.469253,
-    "lon": 30.445101,
+    "lat": 50.46288,
+    "lon": 30.451795,
     "district": "Шевченківський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-07-8",
@@ -17374,10 +17590,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -17408,7 +17624,8 @@
     "district": "Оболонський",
     "precision": "street",
     "matched": "вулиця Марка Вовчка, Пріорка, Оболонський район, Київ, 04120, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-08-1",
@@ -17424,7 +17641,7 @@
    "first_report": "2026-11-08 11:52",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -17456,7 +17673,8 @@
     "district": "Оболонський",
     "precision": "street",
     "matched": "Північний міст, проспект Степана Бандери, Оболонський район, Київ, 04176, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-09-1",
@@ -17472,13 +17690,12 @@
    "first_report": "2026-11-09 10:36",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "kmva",
-    "suspilne"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv",
@@ -17507,12 +17724,15 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.477348,
-    "lon": 30.312584,
+    "lat": 50.472703,
+    "lon": 30.325153,
     "district": "Святошинський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "suspilne"
+   ]
   },
   {
    "id": "2026-11-09-2",
@@ -17528,7 +17748,7 @@
    "first_report": "2026-11-09 10:38",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -17551,12 +17771,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.436128,
-    "lon": 30.449966,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-09-4",
@@ -17572,7 +17793,7 @@
    "first_report": "2026-11-09 11:36",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -17595,12 +17816,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.521027,
-    "lon": 30.668598,
+    "lat": 50.519069,
+    "lon": 30.644687,
     "district": "Деснянський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-09-3",
@@ -17618,10 +17840,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -17641,12 +17863,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.419398,
-    "lon": 30.466464,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-09-5",
@@ -17664,10 +17887,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -17691,12 +17914,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.461021,
-    "lon": 30.47164,
+    "lat": 50.46288,
+    "lon": 30.451795,
     "district": "Шевченківський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-10-1",
@@ -17714,10 +17938,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -17737,12 +17961,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.397441,
-    "lon": 30.693412,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-11-1",
@@ -17760,10 +17985,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -17783,12 +18008,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.324877,
-    "lon": 30.545073,
+    "lat": 50.327293,
+    "lon": 30.555596,
     "district": "Голосіївський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-11-2",
@@ -17804,12 +18030,12 @@
    "first_report": "2026-11-11 10:55",
    "killed": null,
    "injured": 1,
-   "level": "official",
+   "level": "disputed",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -17839,12 +18065,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.312028,
-    "lon": 30.562162,
+    "lat": 50.327293,
+    "lon": 30.555596,
     "district": "Голосіївський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-11-3",
@@ -17860,7 +18087,7 @@
    "first_report": "2026-11-11 10:58",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -17883,12 +18110,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.409055,
-    "lon": 30.726749,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-11-4",
@@ -17906,10 +18134,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -17929,12 +18157,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.423157,
-    "lon": 30.439937,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-11-5",
@@ -17950,7 +18179,7 @@
    "first_report": "2026-11-12 08:21",
    "killed": null,
    "injured": 1,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -17973,12 +18202,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.427316,
-    "lon": 30.442807,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-11-6",
@@ -17994,7 +18224,7 @@
    "first_report": "2026-11-12 08:46",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "pravda"
    ],
@@ -18017,12 +18247,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.424816,
-    "lon": 30.453458,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-11-7",
@@ -18040,10 +18271,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -18063,12 +18294,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.402734,
-    "lon": 30.446597,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-12-1",
@@ -18084,7 +18316,7 @@
    "first_report": "2026-11-12 09:12",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -18114,7 +18346,8 @@
     "district": null,
     "precision": null,
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-12-2",
@@ -18130,14 +18363,12 @@
    "first_report": "2026-11-12 12:49",
    "killed": null,
    "injured": 1,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv",
@@ -18166,12 +18397,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.474176,
-    "lon": 30.477886,
+    "lat": 50.46288,
+    "lon": 30.451795,
     "district": "Шевченківський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-12-3",
@@ -18187,7 +18419,7 @@
    "first_report": "2026-11-12 13:20",
    "killed": 1,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -18215,11 +18447,12 @@
    "claims": 1,
    "geo": {
     "lat": 50.420529,
-    "lon": 30.441682,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-12-4",
@@ -18237,10 +18470,10 @@
    "injured": 1,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -18260,12 +18493,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.455681,
-    "lon": 30.438925,
+    "lat": 50.46288,
+    "lon": 30.451795,
     "district": "Шевченківський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-13-1",
@@ -18281,7 +18515,7 @@
    "first_report": "2026-11-13 09:20",
    "killed": null,
    "injured": 1,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -18306,12 +18540,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.458537,
-    "lon": 30.476107,
+    "lat": 50.46288,
+    "lon": 30.451795,
     "district": "Шевченківський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-13-2",
@@ -18327,7 +18562,7 @@
    "first_report": "2026-11-13 14:08",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -18359,7 +18594,8 @@
     "district": null,
     "precision": null,
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-13-3",
@@ -18377,11 +18613,11 @@
    "injured": 3,
    "level": "confirmed",
    "voices": [
-    "kmva",
+    "city",
     "pravda"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv",
@@ -18421,7 +18657,8 @@
     "district": "Шевченківський",
     "precision": "street",
     "matched": "Інститут травматології та ортопедії, Бульварно-Кудрявська вулиця, Святославський яр, Афанасівський яр, Шевченківський район, Київ, 04053, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-13-4",
@@ -18439,10 +18676,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "KyivCityOfficial"
@@ -18462,12 +18699,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.412148,
-    "lon": 30.453403,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-13-5",
@@ -18485,10 +18723,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "KyivCityOfficial"
@@ -18508,12 +18746,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.463204,
-    "lon": 30.47966,
+    "lat": 50.46288,
+    "lon": 30.451795,
     "district": "Шевченківський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-14-1",
@@ -18531,10 +18770,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -18554,12 +18793,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.314495,
-    "lon": 30.570594,
+    "lat": 50.327293,
+    "lon": 30.555596,
     "district": "Голосіївський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-14-2",
@@ -18577,10 +18817,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -18600,12 +18840,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.340133,
-    "lon": 30.544023,
+    "lat": 50.327293,
+    "lon": 30.555596,
     "district": "Голосіївський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-14-3",
@@ -18623,10 +18864,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -18646,12 +18887,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.33589,
-    "lon": 30.551406,
+    "lat": 50.327293,
+    "lon": 30.555596,
     "district": "Голосіївський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-15-1",
@@ -18669,10 +18911,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -18703,7 +18945,8 @@
     "district": "Голосіївський",
     "precision": "street",
     "matched": "Столичне шосе, Конча-Заспа, Голосіївський район, Київ, 03084, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-15-2",
@@ -18721,10 +18964,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -18755,7 +18998,8 @@
     "district": "Голосіївський",
     "precision": "street",
     "matched": "вулиця Горіхуватський Шлях, Добрий Шлях, Голосіївський район, Київ, 03040, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-16-1",
@@ -18773,15 +19017,13 @@
    "injured": 0,
    "level": "confirmed",
    "voices": [
-    "city_council",
-    "dsns",
-    "kmva",
+    "city",
+    "emergency",
     "suspilne"
    ],
    "official_voices": [
-    "city_council",
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "channels": [
     "KyivCityOfficial",
@@ -18858,12 +19100,15 @@
    "addresses": [],
    "claims": 7,
    "geo": {
-    "lat": 50.51513,
-    "lon": 30.643645,
+    "lat": 50.519069,
+    "lon": 30.644687,
     "district": "Деснянський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "suspilne"
+   ]
   },
   {
    "id": "2026-11-16-2",
@@ -18881,13 +19126,12 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "city_council",
+    "city",
     "kyiv_independent",
-    "pravda",
     "suspilne"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "KyivCityOfficial",
@@ -18958,7 +19202,10 @@
     "district": "Деснянський",
     "precision": "street",
     "matched": "Північний міст, Деснянський район, Київ, 04176, Україна"
-   }
+   },
+   "retold_voices": [
+    "pravda"
+   ]
   },
   {
    "id": "2026-11-16-3",
@@ -18976,13 +19223,11 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "city_council",
-    "kyiv_independent",
-    "pravda",
-    "suspilne"
+    "city",
+    "kyiv_independent"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "KyivCityOfficial",
@@ -19053,7 +19298,11 @@
     "district": "Голосіївський",
     "precision": "street",
     "matched": "Південний міст, Теличка, Голосіївський район, Київ, 01013, Україна"
-   }
+   },
+   "retold_voices": [
+    "pravda",
+    "suspilne"
+   ]
   },
   {
    "id": "2026-11-16-4",
@@ -19071,10 +19320,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "KyivCityOfficial"
@@ -19099,7 +19348,8 @@
     "district": null,
     "precision": null,
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-16-5",
@@ -19117,10 +19367,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -19140,12 +19390,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.525064,
-    "lon": 30.458043,
+    "lat": 50.530636,
+    "lon": 30.438353,
     "district": "Оболонський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-16-6",
@@ -19161,13 +19412,12 @@
    "first_report": "2026-11-17 07:36",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city_council",
-    "suspilne"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "KyivCityOfficial",
@@ -19196,12 +19446,15 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.461483,
-    "lon": 30.556949,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "suspilne"
+   ]
   },
   {
    "id": "2026-11-16-7",
@@ -19217,13 +19470,12 @@
    "first_report": "2026-11-17 07:36",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city_council",
-    "suspilne"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "KyivCityOfficial",
@@ -19252,12 +19504,15 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.533196,
-    "lon": 30.421721,
+    "lat": 50.530636,
+    "lon": 30.438353,
     "district": "Оболонський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "suspilne"
+   ]
   },
   {
    "id": "2026-11-17-1",
@@ -19273,7 +19528,7 @@
    "first_report": "2026-11-17 09:11",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -19312,7 +19567,8 @@
     "district": "Голосіївський",
     "precision": "street",
     "matched": "Південний міст, Теличка, Голосіївський район, Київ, 01013, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-17-2",
@@ -19380,7 +19636,8 @@
     "district": "Деснянський",
     "precision": "street",
     "matched": "Північний міст, Деснянський район, Київ, 04176, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-17-3",
@@ -19398,10 +19655,10 @@
    "injured": 1,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -19433,12 +19690,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.533518,
-    "lon": 30.462875,
+    "lat": 50.530636,
+    "lon": 30.438353,
     "district": "Оболонський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-17-4",
@@ -19456,10 +19714,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -19481,12 +19739,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.448916,
-    "lon": 30.574696,
+    "lat": 50.456361,
+    "lon": 30.58374,
     "district": "Дніпровський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-17-5",
@@ -19502,14 +19761,12 @@
    "first_report": "2026-11-17 21:19",
    "killed": 0,
    "injured": 0,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv",
@@ -19538,12 +19795,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.516869,
-    "lon": 30.657003,
+    "lat": 50.519069,
+    "lon": 30.644687,
     "district": "Деснянський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-18-1",
@@ -19561,12 +19819,12 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "official_voices": [
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "channels": [
     "VA_Kyiv",
@@ -19599,12 +19857,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.418377,
-    "lon": 30.699295,
+    "lat": 50.402555,
+    "lon": 30.709862,
     "district": "Дарницький",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-18-2",
@@ -19620,13 +19879,12 @@
    "first_report": "2026-11-18 16:05",
    "killed": null,
    "injured": 3,
-   "level": "confirmed",
+   "level": "disputed",
    "voices": [
-    "city_council",
-    "kyiv_independent"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "kyivindependent_official",
@@ -19665,12 +19923,15 @@
    "addresses": [],
    "claims": 3,
    "geo": {
-    "lat": 50.411264,
-    "lon": 30.54295,
+    "lat": 50.428666,
+    "lon": 30.548976,
     "district": "Печерський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "kyiv_independent"
+   ]
   },
   {
    "id": "2026-11-18-3",
@@ -19686,13 +19947,13 @@
    "first_report": "2026-11-18 18:00",
    "killed": null,
    "injured": 1,
-   "level": "confirmed",
+   "level": "disputed",
    "voices": [
-    "dsns",
+    "emergency",
     "suspilne"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv",
@@ -19728,12 +19989,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.43701,
-    "lon": 30.545387,
+    "lat": 50.428666,
+    "lon": 30.548976,
     "district": "Печерський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-19-1",
@@ -19751,10 +20013,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -19774,12 +20036,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.491033,
-    "lon": 30.402615,
+    "lat": 50.489508,
+    "lon": 30.428765,
     "district": "Подільський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-19-2",
@@ -19797,12 +20060,12 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "official_voices": [
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "channels": [
     "VA_Kyiv",
@@ -19835,12 +20098,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.51254,
-    "lon": 30.670202,
+    "lat": 50.519069,
+    "lon": 30.644687,
     "district": "Деснянський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-19-3",
@@ -19858,12 +20122,12 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "official_voices": [
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "channels": [
     "VA_Kyiv",
@@ -19896,12 +20160,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.324161,
-    "lon": 30.525936,
+    "lat": 50.327293,
+    "lon": 30.555596,
     "district": "Голосіївський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-19-4",
@@ -19919,10 +20184,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -19946,12 +20211,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.495953,
-    "lon": 30.422724,
+    "lat": 50.489508,
+    "lon": 30.428765,
     "district": "Подільський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-19-5",
@@ -19969,10 +20235,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -19992,12 +20258,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.498739,
-    "lon": 30.410389,
+    "lat": 50.489508,
+    "lon": 30.428765,
     "district": "Подільський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-19-6",
@@ -20013,17 +20280,14 @@
    "first_report": "2026-11-19 15:13",
    "killed": null,
    "injured": 1,
-   "level": "confirmed",
+   "level": "disputed",
    "voices": [
-    "city_council",
-    "dsns",
-    "kmva",
-    "suspilne"
+    "city",
+    "emergency"
    ],
    "official_voices": [
-    "city_council",
-    "dsns",
-    "kmva"
+    "city",
+    "emergency"
    ],
    "channels": [
     "VA_Kyiv",
@@ -20076,12 +20340,15 @@
    "addresses": [],
    "claims": 4,
    "geo": {
-    "lat": 50.5387,
-    "lon": 30.431648,
+    "lat": 50.530636,
+    "lon": 30.438353,
     "district": "Оболонський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "suspilne"
+   ]
   },
   {
    "id": "2026-11-19-7",
@@ -20097,13 +20364,12 @@
    "first_report": "2026-11-19 15:29",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city_council",
-    "suspilne"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "suspilnenews",
@@ -20132,12 +20398,15 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.495187,
-    "lon": 30.449849,
+    "lat": 50.489508,
+    "lon": 30.428765,
     "district": "Подільський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "suspilne"
+   ]
   },
   {
    "id": "2026-11-19-8",
@@ -20155,10 +20424,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -20178,12 +20447,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.492624,
-    "lon": 30.444057,
+    "lat": 50.489508,
+    "lon": 30.428765,
     "district": "Подільський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-19-9",
@@ -20199,13 +20469,12 @@
    "first_report": "2026-11-19 15:29",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city_council",
-    "suspilne"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "suspilnenews",
@@ -20234,12 +20503,15 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.458605,
-    "lon": 30.421629,
+    "lat": 50.46288,
+    "lon": 30.451795,
     "district": "Шевченківський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "suspilne"
+   ]
   },
   {
    "id": "2026-11-19-10",
@@ -20257,10 +20529,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -20280,12 +20552,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.487502,
-    "lon": 30.409772,
+    "lat": 50.489508,
+    "lon": 30.428765,
     "district": "Подільський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-19-13",
@@ -20356,12 +20629,15 @@
    "addresses": [],
    "claims": 4,
    "geo": {
-    "lat": 50.464109,
-    "lon": 30.444401,
+    "lat": 50.46288,
+    "lon": 30.451795,
     "district": "Шевченківський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "pravda"
+   ]
   },
   {
    "id": "2026-11-19-11",
@@ -20379,10 +20655,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -20402,12 +20678,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.469631,
-    "lon": 30.445467,
+    "lat": 50.46288,
+    "lon": 30.451795,
     "district": "Шевченківський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-19-12",
@@ -20425,10 +20702,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -20448,12 +20725,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.471797,
-    "lon": 30.42311,
+    "lat": 50.46288,
+    "lon": 30.451795,
     "district": "Шевченківський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-19-14",
@@ -20506,12 +20784,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.469935,
-    "lon": 30.454238,
+    "lat": 50.46288,
+    "lon": 30.451795,
     "district": "Шевченківський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-19-15",
@@ -20527,13 +20806,13 @@
    "first_report": "2026-11-19 17:06",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "disputed",
    "voices": [
-    "city_council",
+    "city",
     "kyiv_post"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "kyivpost_official",
@@ -20568,12 +20847,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.458437,
-    "lon": 30.457387,
+    "lat": 50.46288,
+    "lon": 30.451795,
     "district": "Шевченківський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-19-16",
@@ -20589,16 +20869,16 @@
    "first_report": "2026-11-19 17:06",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "disputed",
    "voices": [
-    "city_council",
-    "dsns",
+    "city",
+    "emergency",
     "hromadske",
     "suspilne"
    ],
    "official_voices": [
-    "city_council",
-    "dsns"
+    "city",
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv",
@@ -20658,7 +20938,8 @@
     "district": "Шевченківський",
     "precision": "street",
     "matched": "Володимирський собор, 20, бульвар Тараса Шевченка, Центр, Шевченківський район, Київ, 01046, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-19-17",
@@ -20674,12 +20955,12 @@
    "first_report": "2026-11-19 17:06",
    "killed": null,
    "injured": null,
-   "level": "official",
+   "level": "disputed",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -20701,12 +20982,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.477938,
-    "lon": 30.46092,
+    "lat": 50.46288,
+    "lon": 30.451795,
     "district": "Шевченківський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-19-18",
@@ -20724,10 +21006,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "KyivCityOfficial"
@@ -20754,7 +21036,8 @@
     "district": "Голосіївський",
     "precision": "street",
     "matched": "Готельно-адміністративний центр «Торонто-Київ», 100, Велика Васильківська вулиця, Черепанова гора, Голосіївський район, Київ, 03150, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-19-19",
@@ -20770,13 +21053,12 @@
    "first_report": "2026-11-19 17:47",
    "killed": null,
    "injured": 1,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "dsns",
-    "suspilne"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv",
@@ -20809,12 +21091,15 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.492366,
-    "lon": 30.419975,
+    "lat": 50.489508,
+    "lon": 30.428765,
     "district": "Подільський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "suspilne"
+   ]
   },
   {
    "id": "2026-11-19-20",
@@ -20830,13 +21115,12 @@
    "first_report": "2026-11-19 17:47",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "dsns",
-    "suspilne"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv",
@@ -20869,12 +21153,15 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.479364,
-    "lon": 30.411866,
+    "lat": 50.489508,
+    "lon": 30.428765,
     "district": "Подільський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "suspilne"
+   ]
   },
   {
    "id": "2026-11-19-21",
@@ -20890,13 +21177,12 @@
    "first_report": "2026-11-19 17:47",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "dsns",
-    "suspilne"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv",
@@ -20929,12 +21215,15 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.497479,
-    "lon": 30.421293,
+    "lat": 50.489508,
+    "lon": 30.428765,
     "district": "Подільський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "suspilne"
+   ]
   },
   {
    "id": "2026-11-19-22",
@@ -20950,13 +21239,12 @@
    "first_report": "2026-11-19 17:47",
    "killed": null,
    "injured": 3,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "dsns",
-    "suspilne"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv",
@@ -20989,12 +21277,15 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.494155,
-    "lon": 30.43441,
+    "lat": 50.489508,
+    "lon": 30.428765,
     "district": "Подільський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "suspilne"
+   ]
   },
   {
    "id": "2026-11-19-23",
@@ -21054,7 +21345,8 @@
     "district": "Шевченківський",
     "precision": "street",
     "matched": "Посольство Австрії, 33, вулиця Івана Франка, Святославський яр, Афанасівський яр, Шевченківський район, Київ, 01030, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-19-24",
@@ -21112,7 +21404,8 @@
     "district": null,
     "precision": null,
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-19-25",
@@ -21130,10 +21423,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "KyivCityOfficial",
@@ -21162,12 +21455,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.529127,
-    "lon": 30.454455,
+    "lat": 50.530636,
+    "lon": 30.438353,
     "district": "Оболонський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-19-26",
@@ -21185,10 +21479,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "KyivCityOfficial",
@@ -21217,12 +21511,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.312464,
-    "lon": 30.560324,
+    "lat": 50.327293,
+    "lon": 30.555596,
     "district": "Голосіївський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-19-27",
@@ -21240,10 +21535,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "KyivCityOfficial",
@@ -21272,12 +21567,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.486629,
-    "lon": 30.437239,
+    "lat": 50.489508,
+    "lon": 30.428765,
     "district": "Подільський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-19-28",
@@ -21295,10 +21591,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "KyivCityOfficial",
@@ -21327,12 +21623,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.502105,
-    "lon": 30.419954,
+    "lat": 50.489508,
+    "lon": 30.428765,
     "district": "Подільський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-19-29",
@@ -21350,13 +21647,11 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "city_council",
-    "kmva",
+    "city",
     "suspilne"
    ],
    "official_voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv",
@@ -21403,7 +21698,8 @@
     "district": "Подільський",
     "precision": "street",
     "matched": "Подільський мостовий перехід, Рибальський острів, Подільський район, Київ, 04176, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-19-30",
@@ -21421,13 +21717,11 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "city_council",
-    "kmva",
+    "city",
     "suspilne"
    ],
    "official_voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv",
@@ -21474,7 +21768,8 @@
     "district": "Дарницький",
     "precision": "street",
     "matched": "Дарницький залізнично-автомобільний міст, Теличка, Голосіївський район, Київ, 01113, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-19-31",
@@ -21492,10 +21787,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -21522,7 +21817,8 @@
     "district": "Голосіївський",
     "precision": "street",
     "matched": "Південний міст, Теличка, Голосіївський район, Київ, 01013, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-19-32",
@@ -21540,10 +21836,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -21568,7 +21864,8 @@
     "district": null,
     "precision": null,
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-19-33",
@@ -21584,12 +21881,12 @@
    "first_report": "2026-11-20 08:21",
    "killed": null,
    "injured": null,
-   "level": "official",
+   "level": "disputed",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -21614,12 +21911,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.521648,
-    "lon": 30.416779,
+    "lat": 50.530636,
+    "lon": 30.438353,
     "district": "Оболонський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-20-1",
@@ -21635,7 +21933,7 @@
    "first_report": "2026-11-20 09:01",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "kyiv_post"
    ],
@@ -21667,7 +21965,8 @@
     "district": null,
     "precision": null,
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-20-2",
@@ -21685,11 +21984,11 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "city_council",
+    "city",
     "kyiv_post"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "kyivpost_official",
@@ -21727,7 +22026,8 @@
     "district": "Печерський",
     "precision": "street",
     "matched": "Дарницький залізничний міст, Дарницький залізнично-автомобільний міст, Теличка, Голосіївський район, Київ, 01113, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-20-3",
@@ -21745,11 +22045,11 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "city_council",
+    "city",
     "kyiv_post"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "kyivpost_official",
@@ -21787,7 +22087,8 @@
     "district": "Голосіївський",
     "precision": "street",
     "matched": "Південний міст, Теличка, Голосіївський район, Київ, 01013, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-20-4",
@@ -21803,12 +22104,12 @@
    "first_report": "2026-11-20 09:08",
    "killed": null,
    "injured": null,
-   "level": "official",
+   "level": "disputed",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -21834,12 +22135,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.487999,
-    "lon": 30.444867,
+    "lat": 50.489508,
+    "lon": 30.428765,
     "district": "Подільський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-20-5",
@@ -21857,10 +22159,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -21884,12 +22186,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.539218,
-    "lon": 30.455436,
+    "lat": 50.530636,
+    "lon": 30.438353,
     "district": "Оболонський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-20-6",
@@ -21907,10 +22210,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -21934,12 +22237,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.529954,
-    "lon": 30.448079,
+    "lat": 50.530636,
+    "lon": 30.438353,
     "district": "Оболонський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-20-7",
@@ -21957,10 +22261,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -21984,12 +22288,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.311912,
-    "lon": 30.575652,
+    "lat": 50.327293,
+    "lon": 30.555596,
     "district": "Голосіївський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-20-8",
@@ -22005,7 +22310,7 @@
    "first_report": "2026-11-20 09:23",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -22033,7 +22338,8 @@
     "district": null,
     "precision": null,
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-20-9",
@@ -22049,13 +22355,12 @@
    "first_report": "2026-11-20 10:58",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "kmva",
-    "suspilne"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv",
@@ -22088,12 +22393,15 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.504889,
-    "lon": 30.40871,
+    "lat": 50.489508,
+    "lon": 30.428765,
     "district": "Подільський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "suspilne"
+   ]
   },
   {
    "id": "2026-11-20-10",
@@ -22111,10 +22419,10 @@
    "injured": 1,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -22138,12 +22446,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.502374,
-    "lon": 30.415747,
+    "lat": 50.489508,
+    "lon": 30.428765,
     "district": "Подільський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-21-1",
@@ -22159,7 +22468,7 @@
    "first_report": "2026-11-21 09:03",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "kyiv_post"
    ],
@@ -22184,12 +22493,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.499714,
-    "lon": 30.436906,
+    "lat": 50.489508,
+    "lon": 30.428765,
     "district": "Подільський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-21-3",
@@ -22205,7 +22515,7 @@
    "first_report": "2026-11-21 12:31",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -22230,12 +22540,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.425355,
-    "lon": 30.447336,
+    "lat": 50.420529,
+    "lon": 30.458482,
     "district": "Солом'янський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-21-2",
@@ -22251,7 +22562,7 @@
    "first_report": "2026-11-21 12:51",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "kyiv_post"
    ],
@@ -22276,12 +22587,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.336126,
-    "lon": 30.560419,
+    "lat": 50.327293,
+    "lon": 30.555596,
     "district": "Голосіївський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-21-4",
@@ -22299,10 +22611,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "KyivCityOfficial"
@@ -22331,7 +22643,8 @@
     "district": "Голосіївський",
     "precision": "street",
     "matched": "Південний міст, Теличка, Голосіївський район, Київ, 01013, Україна"
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-22-5",
@@ -22347,7 +22660,7 @@
    "first_report": "2026-11-22 16:51",
    "killed": null,
    "injured": 1,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -22375,7 +22688,8 @@
     "district": null,
     "precision": null,
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-22-1",
@@ -22393,10 +22707,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -22422,12 +22736,13 @@
    ],
    "claims": 1,
    "geo": {
-    "lat": 50.526097,
-    "lon": 30.670778,
+    "lat": 50.519069,
+    "lon": 30.644687,
     "district": "Деснянський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-22-2",
@@ -22445,11 +22760,11 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "kmva",
+    "city",
     "suspilne"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv",
@@ -22478,12 +22793,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.49059,
-    "lon": 30.451989,
+    "lat": 50.489508,
+    "lon": 30.428765,
     "district": "Подільський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-22-3",
@@ -22501,13 +22817,11 @@
    "injured": null,
    "level": "confirmed",
    "voices": [
-    "city_council",
-    "kmva",
+    "city",
     "suspilne"
    ],
    "official_voices": [
-    "city_council",
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv",
@@ -22545,12 +22859,13 @@
    "addresses": [],
    "claims": 3,
    "geo": {
-    "lat": 50.481551,
-    "lon": 30.325848,
+    "lat": 50.472703,
+    "lon": 30.325153,
     "district": "Святошинський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-22-4",
@@ -22568,10 +22883,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -22591,12 +22906,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.468513,
-    "lon": 30.299944,
+    "lat": 50.472703,
+    "lon": 30.325153,
     "district": "Святошинський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-23-1",
@@ -22612,15 +22928,12 @@
    "first_report": "2026-11-23 15:20",
    "killed": null,
    "injured": 1,
-   "level": "confirmed",
+   "level": "disputed",
    "voices": [
-    "city_council",
-    "hromadske",
-    "pravda",
-    "suspilne"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "hromadske_ua",
@@ -22673,12 +22986,17 @@
    "addresses": [],
    "claims": 4,
    "geo": {
-    "lat": 50.310343,
-    "lon": 30.556484,
+    "lat": 50.327293,
+    "lon": 30.555596,
     "district": "Голосіївський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "hromadske",
+    "pravda",
+    "suspilne"
+   ]
   },
   {
    "id": "2026-11-23-3",
@@ -22694,12 +23012,12 @@
    "first_report": "2026-11-23 15:22",
    "killed": null,
    "injured": null,
-   "level": "official",
+   "level": "disputed",
    "voices": [
-    "city_council"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "vitaliy_klitschko"
@@ -22721,12 +23039,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.455096,
-    "lon": 30.448225,
+    "lat": 50.46288,
+    "lon": 30.451795,
     "district": "Шевченківський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-23-4",
@@ -22742,12 +23061,12 @@
    "first_report": "2026-11-23 15:30",
    "killed": null,
    "injured": null,
-   "level": "official",
+   "level": "disputed",
    "voices": [
-    "kmva"
+    "city"
    ],
    "official_voices": [
-    "kmva"
+    "city"
    ],
    "channels": [
     "VA_Kyiv"
@@ -22769,12 +23088,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.423094,
-    "lon": 30.568666,
+    "lat": 50.428666,
+    "lon": 30.548976,
     "district": "Печерський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-23-5",
@@ -22790,16 +23110,14 @@
    "first_report": "2026-11-23 15:53",
    "killed": null,
    "injured": 3,
-   "level": "confirmed",
+   "level": "disputed",
    "voices": [
-    "city_council",
-    "hromadske",
+    "city",
     "kyiv_independent",
-    "pravda",
-    "suspilne"
+    "pravda"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "hromadske_ua",
@@ -22861,12 +23179,16 @@
    "addresses": [],
    "claims": 6,
    "geo": {
-    "lat": 50.467941,
-    "lon": 30.482242,
+    "lat": 50.46288,
+    "lon": 30.451795,
     "district": "Шевченківський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "hromadske",
+    "suspilne"
+   ]
   },
   {
    "id": "2026-11-23-6",
@@ -22882,13 +23204,12 @@
    "first_report": "2026-11-23 16:33",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "disputed",
    "voices": [
-    "city_council",
-    "hromadske"
+    "city"
    ],
    "official_voices": [
-    "city_council"
+    "city"
    ],
    "channels": [
     "hromadske_ua",
@@ -22919,12 +23240,15 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.49798,
-    "lon": 30.42488,
+    "lat": 50.489508,
+    "lon": 30.428765,
     "district": "Подільський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": [
+    "hromadske"
+   ]
   },
   {
    "id": "2026-11-23-7",
@@ -22940,7 +23264,7 @@
    "first_report": "2026-11-23 17:11",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "pravda"
    ],
@@ -22963,12 +23287,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.498739,
-    "lon": 30.410389,
+    "lat": 50.489508,
+    "lon": 30.428765,
     "district": "Подільський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-23-9",
@@ -22984,13 +23309,13 @@
    "first_report": "2026-11-23 18:02",
    "killed": null,
    "injured": 4,
-   "level": "confirmed",
+   "level": "disputed",
    "voices": [
-    "dsns",
+    "emergency",
     "suspilne"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv",
@@ -23025,12 +23350,13 @@
    "addresses": [],
    "claims": 2,
    "geo": {
-    "lat": 50.438394,
-    "lon": 30.55316,
+    "lat": 50.428666,
+    "lon": 30.548976,
     "district": "Печерський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-23-10",
@@ -23046,7 +23372,7 @@
    "first_report": "2026-11-23 18:02",
    "killed": null,
    "injured": null,
-   "level": "single_source",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -23073,12 +23399,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.465303,
-    "lon": 30.299001,
+    "lat": 50.472703,
+    "lon": 30.325153,
     "district": "Святошинський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-23-2",
@@ -23094,12 +23421,12 @@
    "first_report": "2026-11-23 18:45",
    "killed": null,
    "injured": 1,
-   "level": "official",
+   "level": "disputed",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -23125,12 +23452,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.314293,
+    "lat": 50.327293,
     "lon": 30.555596,
     "district": "Голосіївський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   },
   {
    "id": "2026-11-23-8",
@@ -23148,10 +23476,10 @@
    "injured": null,
    "level": "official",
    "voices": [
-    "dsns"
+    "emergency"
    ],
    "official_voices": [
-    "dsns"
+    "emergency"
    ],
    "channels": [
     "dsns_kyiv"
@@ -23175,12 +23503,13 @@
    "addresses": [],
    "claims": 1,
    "geo": {
-    "lat": 50.510675,
-    "lon": 30.435514,
+    "lat": 50.489508,
+    "lon": 30.428765,
     "district": "Подільський",
     "precision": "district",
     "matched": null
-   }
+   },
+   "retold_voices": []
   }
  ],
  "llm": {

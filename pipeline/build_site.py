@@ -10,12 +10,13 @@ import json
 import re
 import sys
 from collections import Counter
+from datetime import datetime, timedelta
 from pathlib import Path
 
 import httpx
 from shapely.geometry import mapping
 
-from pipeline.sources import CHANNELS
+from pipeline.sources import CHANNELS, PERIOD_END, PERIOD_START
 from pipeline.tools import DISTRICT_SHAPES
 from pipeline.schemas import DISTRICTS_EN
 
@@ -26,6 +27,33 @@ MEDIA = SITE / "media"
 
 WEAPON_CLASS = {"drone": "drone", "jet_drone": "drone", "ballistic": "missile",
                 "cruise_missile": "missile", "missile": "missile", "unknown": "unknown"}
+
+
+# Phrases where the matcher stops describing the strike and starts explaining
+# its own bookkeeping to the auditor. Everything from there on is service text.
+SERVICE = re.compile(
+    r"\bc\d+\b|\bsite \d|\bclaims?\b|\baudit(?:or)?\b|kept (?:separate|apart|as its own)|"
+    r"per (?:audit|auditor|feedback)|classified as|likely an early", re.I)
+# Where a sentence or clause ends, so the trim lands on a readable boundary.
+BOUNDARY = re.compile(r"[.;—]|,\s+(?=while|although|though|since|because|plus)")
+
+
+def strip_service_text(text: str) -> str:
+    """Cut a public description at the point it turns into notes for the agents.
+
+    Nothing is reworded and nothing is added — the trailing clause is simply
+    dropped, because it describes the registry, not the attack. Descriptions
+    that are service text from the first word are left alone and counted, so
+    the build says out loud how many it could not clean.
+    """
+    m = SERVICE.search(text or "")
+    if not m:
+        return text
+    cuts = [b.end() for b in BOUNDARY.finditer(text, 0, m.start())]
+    if not cuts:
+        return text
+    kept = text[:cuts[-1]].rstrip(" ,;—")
+    return kept if kept.endswith(".") else kept + "."
 
 
 def districts_geojson() -> dict:
@@ -127,7 +155,6 @@ def main(argv: list[str]) -> None:
         pick_photos(sites, client)
 
     # Alerts per attack day, split by kind.
-    from datetime import datetime, timedelta
     alerts_by_day: dict = {}
     for a in reg["alerts"]:
         start = datetime.fromisoformat(a["start"])
@@ -138,7 +165,7 @@ def main(argv: list[str]) -> None:
 
     days = []
     for d in reg["days"]:
-        days.append({"day": d["day"], "summary": d["summary"], "city": d["city_totals"],
+        days.append({"day": d["day"], "summary": strip_service_text(d["summary"]), "city": d["city_totals"],
                      "alerts": alerts_by_day.get(d["day"], {"drone": 0, "missile": 0, "count": 0}),
                      "stats": d["stats"]})
     known = {d["day"] for d in days}
@@ -147,6 +174,12 @@ def main(argv: list[str]) -> None:
             days.append({"day": day, "summary": "", "city": {"killed": None, "injured": None},
                          "alerts": a, "stats": {}})
     days.sort(key=lambda d: d["day"])
+
+    # Collection runs a few hours either side of the period so a night that
+    # crosses midnight is complete; the headline alert figure must not.
+    first = PERIOD_START.date().isoformat()
+    last = (PERIOD_END - timedelta(days=1)).date().isoformat()
+    in_period = [a for a in reg["alerts"] if first <= a["start"][:10] <= last]
 
     # Workflow numbers, all computed from what the agents actually did.
     st = [d["stats"] for d in reg["days"]]
@@ -171,8 +204,8 @@ def main(argv: list[str]) -> None:
         "levels": dict(levels),
         "precision": {str(k): v for k, v in precision.items()},
         "llm": reg.get("llm", {}),
-        "alerts": len(reg["alerts"]),
-        "alert_hours": round(sum(a["minutes"] for a in reg["alerts"]) / 60),
+        "alerts": len(in_period),
+        "alert_hours": round(sum(a["minutes"] for a in in_period) / 60),
         "revise_days": len(auditor_notes),
     }
 
@@ -186,7 +219,8 @@ def main(argv: list[str]) -> None:
     for s in sites:
         g = s.get("geo") or {}
         slim.append({
-            "id": s["id"], "day": s["day"], "title": s["title"], "summary": s["summary"],
+            "id": s["id"], "day": s["day"], "title": s["title"],
+            "summary": strip_service_text(s["summary"]),
             "district": s.get("district_en"), "address": s.get("address"),
             "target": s["target"], "weapon": s["weapon"], "wclass": WEAPON_CLASS.get(s["weapon"], "unknown"),
             "time": s.get("time"), "first": s["first_report"], "killed": s.get("killed"),
@@ -201,18 +235,21 @@ def main(argv: list[str]) -> None:
     wiki = crosscheck(days, slim)
     workflow["wikipedia"] = wiki["summary"]
 
-    from datetime import timedelta as _td
-    from pipeline.sources import PERIOD_START, PERIOD_END
-    period = [PERIOD_START.date().isoformat(), (PERIOD_END - _td(days=1)).date().isoformat()]
-    days = [d for d in days if period[0] <= d["day"] <= period[1]]
+    period = [first, last]
+    days = [d for d in days if first <= d["day"] <= last]
     data = {"generated": reg["generated"], "period": period, "days": days,
             "sites": slim, "workflow": workflow, "examples": examples[:12],
             "wiki": wiki, "districts": round_coords(districts_geojson())}
     SITE.mkdir(exist_ok=True)
     (SITE / "data.js").write_text("window.REGISTRY = " + json.dumps(data, ensure_ascii=False) + ";\n",
                                   encoding="utf-8")
+    public = [x["summary"] for x in slim] + [d["summary"] for d in days]
+    dirty = [t for t in public if SERVICE.search(t or "")]
     print(f"site/data.js: {len(slim)} sites, {len(days)} days, "
           f"{sum(1 for s in slim if s['photo'])} photos")
+    print(f"public text: {len(dirty)} descriptions still carry agent notes")
+    for t in dirty:
+        print("  !", t[:160])
 
 
 if __name__ == "__main__":

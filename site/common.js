@@ -6,8 +6,15 @@ const TARGET = {residential_highrise: 'Apartment block', residential_house: 'Hou
   warehouse: 'Warehouse', commercial: 'Shop, mall or restaurant', office: 'Office building', education: 'School or university',
   medical: 'Hospital or clinic', transport: 'Transport, bridges, metro', infrastructure: 'Other city infrastructure',
   cultural_religious: 'Culture or church', vehicle: 'Car or vehicle', open_area: 'Open ground', other: 'Other'};
-const LEVEL = {confirmed: 'Confirmed by two or more independent sources', official: 'Reported by officials only',
-               single_source: 'One source so far', aggregator_only: 'Only aggregator channels'};
+// City hall's three channels are one voice; a newsroom counts as a second voice
+// only where its quote adds a figure or a name the officials had not given.
+const LEVEL = {confirmed: 'Two separate sources', official: 'Official report only',
+               media: 'Media report only', aggregator_only: 'Aggregator channels only',
+               disputed: 'Disputed – the auditor still queries this record'};
+const LEVEL_NOTE = {confirmed: 'city hall, the emergency service or a newsroom with its own detail',
+                    official: 'city hall or the emergency service, no independent account',
+                    media: 'no official report found', aggregator_only: 'treat with care',
+                    disputed: 'see the auditor\'s note'};
 const MONTH = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const MONTH_L = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 const DOW = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'], DOW_L = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -38,6 +45,10 @@ function hourOf(s) {
   return f ? +f[1] : null;
 }
 const cas = s => [s.killed ? `${s.killed} killed` : '', s.injured ? `${s.injured} injured` : ''].filter(Boolean).join(', ');
+const asOf = R => { const t = R.generated; return `${+t.slice(8, 10)} ${MONTH_L[+t.slice(5, 7) - 1]} ${t.slice(0, 4)}, ${t.slice(11, 16)} Kyiv time`; };
+// Places where debris fell on open ground are not places where a building was hit.
+const DEBRIS = new Set(['open_area']);
+const damaged = S => S.filter(s => !DEBRIS.has(s.target)).length;
 
 // ---------------------------------------------------------------- shared page parts
 const NAV = [['map', './', 'Map'], ['patterns', 'patterns.html', 'Patterns'], ['wiki', 'wikipedia.html', 'Wikipedia<span class="wide"> check</span>'],
@@ -52,8 +63,8 @@ function mountHeader(current) {
 }
 function mountFooter(extra = '') {
   const el = document.createElement('footer'), R = window.REGISTRY;
-  el.innerHTML = `<div class="wrap"><p>Reports from 13 public Telegram channels: the Kyiv City Military Administration, the mayor, the city council, the State Emergency Service, Suspilne, Ukrainska Pravda, Hromadske, the Kyiv Independent, the Kyiv Post, BBC Ukrainian and two local aggregators. Cross-checked against English and Ukrainian Wikipedia (CC BY-SA). Map tiles © Esri; district boundaries © OpenStreetMap contributors.</p>` +
-    (R ? `<p>Built ${R.generated.slice(0, 10)} from ${R.workflow.collected.toLocaleString('en')} posts. Casualty figures are the latest each source gave.</p>` : '') +
+  el.innerHTML = `<div class="wrap"><p>Reports from 13 public Telegram channels: the Kyiv City Military Administration, the mayor, the Kyiv City State Administration, the State Emergency Service, Suspilne, Ukrainska Pravda, Hromadske, the Kyiv Independent, the Kyiv Post, BBC Ukrainian and two local aggregators. Cross-checked against English and Ukrainian Wikipedia (CC BY-SA). Map tiles © Esri; district boundaries © OpenStreetMap contributors.</p>` +
+    (R ? `<p>Data as of ${asOf(R)}. Telegram posts can be edited or deleted after they are collected; these are the words as read on that date. Casualty figures are the latest each source gave.</p>` : '') +
     `${extra}<p><a href="how.html">How it works</a> · <a href="https://github.com/tShyshatskyi/kyiv-strikes-agent">Source code</a></p></div>`;
   document.body.append(el);
 }
@@ -101,8 +112,13 @@ function nightStrip(list, R, nights, selected, top = 110, bot = 40) {
 const nightTicks = nights => [0, 14, 31, 45, nights.length - 1].map(i => `<span>${fmtDay(nights[i])}</span>`).join('');
 
 // A place's confirmation, and the words of its sources.
-const LEVEL_SHORT = {confirmed: s => `Confirmed by ${s.voices} independent sources`, official: () => 'Officials only',
-                     single_source: () => 'One source so far', aggregator_only: () => 'Aggregators only'};
+const LEVEL_SHORT = {confirmed: s => `${s.voices} separate sources`, official: () => 'Official only',
+                     media: () => 'Media only', aggregator_only: () => 'Aggregators only',
+                     disputed: () => 'Disputed'};
+// Service notes from the auditor, folded away: they are written for the next
+// agent, not for a reader, so they never greet one.
+const auditorNote = s => s.flags.length
+  ? `<details class="note"><summary>Auditor's note (${s.flags.length})</summary><p>${esc(s.flags.join(' '))}</p></details>` : '';
 const where = s => [s.district, s.address].filter(Boolean).join(', ') || 'District not stated';
 const sourcesHTML = s => `<ul class="srcs">${s.sources.map(x =>
   `<li><blockquote lang="uk">“${esc(x.quote)}”</blockquote><span class="who">${esc(x.name)}${x.kind === 'aggregator' ? ' (aggregator)' : ''}, ${esc(x.posted.slice(5).replace('-', '.'))} · <a href="${x.url}" target="_blank" rel="noopener">post</a></span></li>`).join('')}</ul>`;

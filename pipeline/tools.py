@@ -9,9 +9,9 @@ alone gets this exact thing wrong now and then:
 - `geocode`        an address must land inside a real Kyiv district polygon.
 """
 
-import hashlib
+from __future__ import annotations
+
 import json
-import math
 import re
 import time
 from pathlib import Path
@@ -50,22 +50,81 @@ def check_quote(quote: str, post_text: str) -> bool:
 
 # --- confirmation -----------------------------------------------------------
 
-LEVELS = ["aggregator_only", "single_source", "official", "confirmed"]
+LEVELS = ["aggregator_only", "media", "official", "confirmed", "disputed"]
+
+# Words too common to prove a newsroom did its own work: they appear in every
+# briefing, so finding one in a media quote says nothing.
+_COMMON = {
+    "внаслідок", "зафіксовано", "влучання", "пошкоджено", "постраждали", "район",
+    "районі", "києві", "київ", "києва", "місті", "наслідки", "інформація",
+    "оперативна", "рятувальники", "служби", "медики", "попередньо", "станом",
+    "повідомив", "повідомили", "продовжують", "triage", "update",
+}
 
 
-def confirmation(channels: list[str]) -> dict:
-    witnesses = {CHANNELS[c][1] for c in channels if counts_as_witness(c)}
-    official = {CHANNELS[c][1] for c in channels if CHANNELS[c][2] == "official"}
-    if len(witnesses) >= 2:
+def _detail_tokens(text: str) -> set[str]:
+    """Numbers and names a report gives: the specifics a newsroom can only have
+    from its own reporter, a photo or a witness.
+
+    A capitalised word at the start of a sentence is skipped — it is the
+    sentence, not a name.
+    """
+    t = normalize_apostrophes(text or "")
+    out = set(re.findall(r"\d+", t))
+    for m in re.finditer(r"[А-ЯІЇЄҐA-Z][а-яіїєґa-zʼ'’-]{3,}", t):
+        before = t[:m.start()].rstrip(" \t")
+        if before and before[-1] not in ".!?:;…«\"'([\n•-":
+            word = m.group().lower()
+            if word not in _COMMON:
+                out.add(word)
+    return out - _COMMON
+
+
+def media_adds_detail(quote: str, official_text: str) -> bool:
+    """Does this media quote carry a figure or a name that no official post for
+    the same place had already given?"""
+    return bool(_detail_tokens(quote) - _detail_tokens(official_text))
+
+
+def confirmation(sources: list[dict], disputed: bool = False) -> dict:
+    """How well a place is confirmed, counting only voices that can disagree.
+
+    `sources` are this place's reports, each with `channel`, `posted` and
+    `quote`. City hall's three channels are one voice. A newsroom counts as a
+    second voice only when its quote adds a figure or a name that no earlier
+    official post for this place gave; otherwise it is retelling the briefing
+    and cannot confirm it.
+    """
+    voices, official, retold = set(), set(), set()
+    official_so_far = ""
+    for src in sorted(sources, key=lambda s: s.get("posted") or ""):
+        handle = src["channel"]
+        if handle not in CHANNELS:
+            continue
+        voice, kind = CHANNELS[handle][1], CHANNELS[handle][2]
+        if kind == "aggregator":
+            continue
+        if kind == "official":
+            voices.add(voice)
+            official.add(voice)
+            official_so_far += " " + (src.get("quote") or "")
+        elif media_adds_detail(src.get("quote") or "", official_so_far):
+            voices.add(voice)
+        else:
+            retold.add(voice)
+    if disputed:
+        level = "disputed"
+    elif len(voices) >= 2:
         level = "confirmed"
     elif official:
         level = "official"
-    elif witnesses:
-        level = "single_source"
+    elif voices or retold:
+        level = "media"
     else:
         level = "aggregator_only"
-    return {"level": level, "voices": sorted(witnesses),
-            "official_voices": sorted(official), "channels": sorted(set(channels))}
+    return {"level": level, "voices": sorted(voices), "official_voices": sorted(official),
+            "retold_voices": sorted(retold),
+            "channels": sorted({s["channel"] for s in sources if s["channel"] in CHANNELS})}
 
 
 def site_figures(claims: list[dict]) -> dict:
@@ -96,19 +155,14 @@ def district_of(lat: float, lon: float) -> str | None:
     return None
 
 
-def district_point(district: str, salt: str) -> tuple[float, float]:
-    """A stable point inside the district for a report that names only the
-    district. Spread around the district's interior so markers do not stack,
-    and always inside the polygon."""
-    poly = DISTRICT_SHAPES[district]
-    c = poly.representative_point()
-    h = int(hashlib.md5(salt.encode()).hexdigest(), 16)
-    for i in range(20):
-        ang = ((h >> (i * 3)) % 360) * math.pi / 180
-        r = 0.004 + ((h >> (i * 5)) % 100) / 100 * 0.018
-        p = Point(c.x + r * math.cos(ang) * 1.5, c.y + r * math.sin(ang))
-        if poly.contains(p):
-            return p.y, p.x
+def district_point(district: str) -> tuple[float, float]:
+    """The district's own label point, for a report that names only the district.
+
+    It is deliberately the same point for every such report: scattering them
+    inside the district would draw addresses nobody gave us. The map shades the
+    district instead and draws dots only where an address is known.
+    """
+    c = DISTRICT_SHAPES[district].representative_point()
     return c.y, c.x
 
 
@@ -140,7 +194,7 @@ def _nominatim(query: str) -> list[dict]:
     return result
 
 
-def geocode(address: str | None, district: str | None, salt: str) -> dict:
+def geocode(address: str | None, district: str | None) -> dict:
     """Place a site on the map, and say how precisely.
 
     precision: "building" (house number matched), "street", "district"
@@ -168,7 +222,7 @@ def geocode(address: str | None, district: str | None, salt: str) -> dict:
                     "precision": "building" if has_number else "street",
                     "matched": best["name"]}
     if district and district in DISTRICT_SHAPES:
-        lat, lon = district_point(district, salt)
+        lat, lon = district_point(district)
         return {"lat": round(lat, 6), "lon": round(lon, 6), "district": district,
                 "precision": "district", "matched": None}
     return {"lat": None, "lon": None, "district": district, "precision": None, "matched": None}

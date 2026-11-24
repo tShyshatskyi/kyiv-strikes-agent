@@ -107,8 +107,8 @@ select.chip{appearance:none;padding-right:28px;background:url("data:image/svg+xm
 .wrow{display:grid;grid-template-columns:7.5rem 1fr 9rem;gap:6px 20px;padding:14px 0;border-bottom:1px solid var(--track);font-size:var(--t-s);line-height:1.45}
 .wrow time{font-weight:700;color:var(--ink)}
 .wrow .v{font-weight:700}
-.wrow .v.differs{color:var(--missile)}
-.wrow .v.missing,.wrow .v.pending{color:var(--mute)}
+.wrow .v.differs,.wrow .v.missing{color:var(--missile)}
+.wrow .v.no_figure,.wrow .v.pending{color:var(--mute)}
 .wrow q{quotes:none}
 .wrow a{color:var(--mute)}
 @media (max-width:640px){.wrow{grid-template-columns:1fr auto}.wrow .says{grid-column:1/-1;grid-row:2}}
@@ -223,10 +223,15 @@ body.app{height:100svh;overflow:hidden;display:flex;flex-direction:column}
 .card .row3{display:flex;gap:6px;margin-top:auto;padding-top:10px}
 .card .row3 .chip{flex:1;justify-content:center;padding:9px 4px;color:var(--ink)}
 .chip:disabled{opacity:.35;cursor:default}
-.key{display:flex;gap:18px;font-size:var(--t-s);color:var(--mute);margin-top:auto;padding-top:10px}
+.key{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:var(--t-s);color:var(--mute);margin-top:auto;padding-top:10px}
 .key i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
 .key i.dot{background:var(--ink)}
-.key i.ring{border:1.6px solid var(--ink)}
+.key i.fill{border-radius:2px;background:var(--missile);opacity:.28}
+/* The auditor's working notes: folded away, grey, never a red wall. */
+.note{font-size:var(--t-s);color:var(--mute);margin-top:8px}
+.note summary{cursor:pointer;width:max-content}
+.note summary:hover{color:var(--ink)}
+.note p{margin-top:6px;padding-left:12px;border-left:2px solid var(--track)}
 .link{border:0;background:none;padding:0;font:inherit;font-weight:600;color:var(--ink);text-decoration:underline;text-underline-offset:.18em;cursor:pointer;white-space:nowrap}
 @media (max-width:640px){.card h2{font-size:1.25rem}.card.over{min-height:0}.card.over .sum{-webkit-line-clamp:3}}
 @media (max-height:700px){.card{height:200px}.card .sum{-webkit-line-clamp:2}.card.ph img{height:64px}}

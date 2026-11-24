@@ -43,15 +43,17 @@
   <h2>Limits</h2>
   <ol class="steps">
     <li><h3>Reports are what they are</h3><p>Telegram posts are early and sometimes corrected later. Casualty figures are the latest a source gave, not a final count.</p></li>
-    <li><h3>Many places have no address</h3><p>Officials usually name a district, not a street, for security reasons. Those places are drawn as rings at a fixed point inside their district.</p></li>
-    <li><h3>The auditor is a model too</h3><p>It catches a lot, but what it still disputes after one revision is published with its note attached rather than silently fixed.</p></li>
-    <li><h3>Wikipedia is not a witness</h3><p>It retells the same news, so it never raises a place's confirmation. It is used only to check whole nights and death tolls.</p></li>
+    <li><h3>Most places have no address</h3><p>Officials usually name a district, not a street, for security reasons. Those places get no point on the map: the district is shaded instead, because a dot would be an address no source gave.</p></li>
+    <li><h3>The auditor is a model too</h3><p>It catches a lot, but what it still disputes after one revision is marked <i>disputed</i> and never counted as confirmed.</p></li>
+    <li><h3>Wikipedia is not a witness</h3><p>It retells the same news, so it never raises a place's confirmation. It is used only to check whole attacks and death tolls.</p></li>
+    <li><h3>Attacks are still split at 09:00</h3><p>One attack that runs into the morning is still filed under two dates, so a place hit at 02:00 and summarised at 09:30 can appear twice and a death toll can be counted twice. This is why no casualty total is shown. Fixing it is the next piece of work.</p></li>
   </ol>
 </div></section>
 </main>
 
 <footer><div class="wrap">
   <p>Agents: Claude Haiku (reader) and Claude Sonnet (matcher, auditor), run through the Claude Code CLI in headless mode with structured output. Orchestration: LangGraph. Geocoding: Nominatim / OpenStreetMap. Map: Leaflet.</p>
+  <p id="asof"></p>
   <p><a href="./">The map</a> · <a href="https://github.com/tShyshatskyi/kyiv-strikes-agent">Source code</a></p>
 </div></footer>
 
@@ -64,11 +66,13 @@ const usd = Object.values(W.llm || {}).reduce((t, r) => t + r.usd, 0);
 const calls = Object.values(W.llm || {}).reduce((t, r) => t + r.calls, 0);
 const nights = new Set(R.sites.map(s => s.day)).size;
 const n = x => Number(x || 0).toLocaleString('en');
+$('#asof').textContent = `Data as of ${asOf(R)}. Telegram posts can be edited or deleted after they are collected; these are the words as read on that date.`;
 
 $('#kv').innerHTML = [
-  [n(W.collected), 'posts read'], [n(W.claims), 'claims extracted'], [n(W.rejected_quotes), 'claims thrown out by the quote check'],
-  [n(W.sites), 'distinct places'], [n(W.sent_back), 'nights sent back by the auditor'], [n(calls), 'agent calls'],
-  ['$' + usd.toFixed(0), 'model cost, the whole run'],
+  [n(W.candidates), `posts read by an agent, of ${n(W.collected)} collected`],
+  [n(W.claims), 'claims extracted'], [n(W.rejected_quotes), 'claims thrown out by the quote check'],
+  [n(W.sites), 'distinct places'], [n(W.sent_back), 'attacks sent back by the auditor'], [n(calls), 'agent calls'],
+  ['$' + usd.toFixed(0), 'API-equivalent cost; the run itself was on a subscription'],
 ].map(([b, l]) => `<div><b>${b}</b>${l}</div>`).join('');
 
 // The graph, drawn from the same steps the code runs.
@@ -89,7 +93,7 @@ $('#kv').innerHTML = [
   s += box(884, 20, 96, 'Finalize', 'rules in code');
   s += `<path d="M802 78 C802 104 660 104 660 82" stroke="#C4372B" stroke-width="1.6" fill="none" marker-end="url(#a)"/><text x="731" y="100" text-anchor="middle" font-size="11.5" fill="#C4372B">revise ×${n(W.sent_back)}</text>`;
   s += arrow(932, 118, 932, 170);
-  s += box(668, 172, 120, 'Wikipedia', `${W.wikipedia?.nights || 0} nights compared`) + box(812, 172, 168, 'Geocode', 'OpenStreetMap + districts');
+  s += box(668, 172, 120, 'Wikipedia', `${W.wikipedia?.dates || 0} dates compared`) + box(812, 172, 168, 'Geocode', 'OpenStreetMap + districts');
   s += arrow(812, 201, 790, 201);
   s += arrow(668, 201, 600, 201) + box(470, 172, 128, 'Publish', `${n(W.sites)} places`);
   s += `<text x="0" y="300" font-size="12" fill="#6E6A62">Every model answer is cached by a hash of its prompt, so a rerun costs nothing for work already done.</text></svg>`;
@@ -100,25 +104,34 @@ const issueNames = {wrong_merge: 'two different places merged into one', missed_
   wrong_field: 'a wrong district, weapon or type', not_kyiv_city: 'a place outside the city', not_this_attack: 'a report from another night', lost_claim: 'a report left out'};
 const iss = Object.entries(W.issues || {}).sort((a, b) => b[1] - a[1]);
 const steps = [
-  ['Collect', 'code', `Reads ${W.channels} public Telegram channels through the t.me web preview: the city administration, the mayor, the emergency service, eight newsrooms and two aggregators. No login, no API key.`, `${n(W.collected)} posts`],
+  ['Collect', 'code', `Reads ${W.channels} public Telegram channels through the t.me web preview: four official channels (the military administration, the mayor, the city state administration, the emergency service), seven newsrooms and two aggregators. No login, no API key.`, `${n(W.collected)} posts`],
   ['Filter', 'code', 'Keeps posts that describe damage in the city of Kyiv itself, not the oblast. Separately, the city\'s alert and all-clear posts are parsed into an alert timeline without any model.', `${n(W.candidates)} posts kept · ${n(W.alerts)} alerts, ${n(W.alert_hours)} hours`],
   ['Read', 'agent · Claude Haiku', 'Turns each post into claims, one per place: what was hit, where, with what, casualties, and a quote copied from the post that supports it.', `${n(W.claims)} claims`],
   ['Check quotes', 'code', 'Every quote is compared with its post character by character. A paraphrase or an invented detail is thrown out before anyone builds on it.', `${n(W.rejected_quotes)} thrown out`],
   ['Match', 'agent · Claude Sonnet', 'Groups the night\'s claims into distinct physical places, so a strike reported by six channels is counted once. Writes a title and summary from the claims alone.', `${n(W.sites)} places from ${n(W.kept_claims)} claims`],
   ['Audit', 'agent · Claude Sonnet', 'A separate agent with its own instructions reads the matcher\'s work as someone else\'s and hunts for errors. If it finds any, the graph sends the night back to the matcher with its notes, once.',
     `${n(W.sent_back)} nights sent back` + (iss.length ? ' · ' + iss.map(([k, v]) => `${v} × ${issueNames[k] || k}`).join(', ') : '')],
-  ['Finalize', 'code', 'Enforces what a prompt can only ask for: every claim used exactly once, nothing lost, places the auditor ruled out of area removed. Confirmation counts independent voices, so two channels of one newsroom are one voice and aggregators never count. Casualties are the latest figure, never a sum of updates.',
-    Object.entries(W.levels || {}).map(([k, v]) => `${v} ${LEVEL[k].toLowerCase()}`).join(' · ')],
-  ['Geocode', 'code', 'Addresses go to OpenStreetMap\'s Nominatim, then the point is tested against the real district boundaries. A point in the wrong district is rejected.',
-    Object.entries(W.precision || {}).map(([k, v]) => `${v} ${k === 'None' ? 'not placed' : 'to ' + k}`).join(' · ')],
-  ['Check against Wikipedia', 'code', 'Rows from three Wikipedia articles are lined up with attack nights. Missing nights and death tolls that differ are shown on the main page.',
-    W.wikipedia ? `${W.wikipedia.nights} nights · ${W.wikipedia.agrees} agree · ${W.wikipedia.differs} differ · ${W.wikipedia.missing} not in the registry` : ''],
+  ['Finalize', 'code', 'Enforces what a prompt can only ask for: every claim used exactly once, nothing lost, places the auditor ruled out of area removed. Confirmation counts only voices that could disagree: city hall\'s three channels are one voice, the emergency service is a second, and a newsroom counts only where its quote adds a figure or a name the officials had not given. Aggregators never count. Casualties are the latest figure, never a sum of updates.',
+    Object.entries(W.levels || {}).map(([k, v]) => `${v} ${(LEVEL[k] || k).toLowerCase()}`).join(' · ')],
+  ['Geocode', 'code', 'Addresses go to OpenStreetMap\'s Nominatim, then the point is tested against the real district boundaries. A point in the wrong district is rejected. A report that names only a district is not given a point at all — the map shades the district instead, because a dot would be an address nobody gave.',
+    Object.entries(W.precision || {}).map(([k, v]) => `${v} ${k === 'None' ? 'not placed' : k === 'district' ? 'district only' : 'to ' + k}`).join(' · ')],
+  ['Check against Wikipedia', 'code', 'Entries from three Wikipedia articles are compared with the registry on dates fixed in advance, so the check is allowed to fail. Both the kinds of place named and the death toll are compared; an entry naming a bridge is not satisfied by a night of burning cars.',
+    W.wikipedia ? `${W.wikipedia.dates} dates · ${W.wikipedia.match} agree · ${W.wikipedia.differs} differ · ${W.wikipedia.no_figure} nothing to compare · ${W.wikipedia.missing} not in the registry` : ''],
   ['Publish', 'code', 'The registry, the agents\' full trace, and this site.', ''],
 ];
 $('#steps').innerHTML = steps.map(([h, who, p, num]) => `<li><h3>${h}<small>${who}</small></h3><p>${p}</p>${num ? `<p class="n tnum">${num}</p>` : ''}</li>`).join('');
 
-$('#catch-lede').textContent = R.examples.length ? `Real notes from this run, as the auditor wrote them, and whether the matcher's second attempt fixed them.` : 'No examples in this run yet.';
-$('#catches').innerHTML = R.examples.map(e => `<li><b>${fmtDay(e.day, 'dow')}: ${issueNames[e.kind] || e.kind}</b>${esc(e.explanation)}<div class="fx">${e.fixed ? 'Fixed in the revision.' : 'Still disputed, published with the note attached.'}</div></li>`).join('');
+// Four cases, not twelve. The auditor writes for the next agent — internal
+// claim ids, two languages, several hundred characters — so its words are
+// folded away and what it found is stated in one line.
+const caught = R.examples.filter(e => issueNames[e.kind]).slice(0, 4);
+$('#catch-lede').textContent = caught.length
+  ? 'What the auditor found, and whether the matcher\'s next attempt fixed it. Its own working notes are folded in: they are written for the next agent, not for a reader.'
+  : 'No examples in this run yet.';
+$('#catches').innerHTML = caught.map(e =>
+  `<li><b>${fmtDay(e.day, 'dow')}: the auditor found ${issueNames[e.kind]}</b>` +
+  `<div class="fx">${e.fixed ? 'The matcher regrouped the night and the error is gone.' : 'Still disputed after the revision; the record carries the note.'}</div>` +
+  `<details class="note"><summary>The auditor's working note</summary><p>${esc(e.explanation)}</p></details></li>`).join('');
 </script>
 </body>
 </html>

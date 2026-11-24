@@ -126,7 +126,6 @@ def finalize_node(s: DayState) -> dict:
             dropped.append({"title": p["title_en"], "why": [i["explanation"] for i in open_issues
                                                            if n in i["sites"]][0]})
             continue
-        conf = tools.confirmation([c["channel"] for c in mine])
         photos = [ph for c in sorted(mine, key=lambda c: c["kind"] != "official")
                   for ph in c["photos"]][:3]
         sources, seen = [], set()
@@ -137,6 +136,7 @@ def finalize_node(s: DayState) -> dict:
             sources.append({"channel": c["channel"], "name": c["channel_name"], "kind": c["kind"],
                             "url": c["url"], "posted": c["post_time"], "quote": c["quote"]})
         flags = [i["explanation"] for i in open_issues if n in i["sites"]]
+        conf = tools.confirmation(sources, disputed=bool(flags))
         sites.append({
             "id": f"{day}-{len(sites) + 1}", "day": day,
             "title": p["title_en"], "summary": p["summary_en"],
@@ -246,19 +246,24 @@ async def analyse_day(s: dict) -> dict:
     return {"days": [out["result"]], "trace": out["trace"]}
 
 
-def geocode_node(s: RunState) -> dict:
-    sites = [site for d in s["days"] for site in d["sites"]]
+def place_sites(sites: list[dict]) -> None:
+    """Put every site on the map, in place. Also used by pipeline.recompute."""
     for site in sites:
         # Try the matcher's address, then every address a source gave.
         geo = None
         for address in site.get("addresses") or [None]:
-            geo = tools.geocode(address, site["district"], site["id"])
+            geo = tools.geocode(address, site["district"])
             if geo["precision"] in ("building", "street"):
                 break
         site["geo"] = geo
         if site["geo"]["district"] and not site["district"]:
             site["district"] = site["geo"]["district"]
             site["district_en"] = DISTRICTS_EN.get(site["district"])
+
+
+def geocode_node(s: RunState) -> dict:
+    sites = [site for d in s["days"] for site in d["sites"]]
+    place_sites(sites)
     placed = sum(1 for x in sites if x["geo"]["lat"] is not None)
     precise = sum(1 for x in sites if x["geo"]["precision"] in ("building", "street"))
     return {"sites": sites, "trace": [log("all", "geocode", f"{placed}/{len(sites)} sites on the map, "

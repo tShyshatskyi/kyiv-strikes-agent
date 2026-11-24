@@ -8,7 +8,13 @@ recorded, and do the death tolls agree?
 Three articles are read (English list of strikes on Kyiv, English war timeline,
 Ukrainian list of autumn 2026 missile strikes). Every row or timeline entry that
 names Kyiv and falls in the period becomes a record; code then lines each record
-up with an attack night and compares the numbers. No model is involved.
+up with the registry by a fixed date rule and compares both the kinds of place
+named and the death toll. No model is involved.
+
+A check that cannot fail is worth nothing, so the rule is fixed in advance: the
+dates an entry is compared against never depend on where the registry happens
+to have places, and an entry that names a bridge is not satisfied by a night of
+burning cars.
 
     python -m pipeline.wikipedia          refresh the snapshot (needs WIKIMEDIA_CONTACT)
 """
@@ -16,6 +22,7 @@ up with an attack night and compares the numbers. No model is involved.
 import json
 import os
 import re
+from collections import Counter
 from datetime import date, timedelta
 from pathlib import Path
 
@@ -155,49 +162,128 @@ def figures(text: str) -> tuple[int | None, int | None]:
     return killed, injured
 
 
-def night_of(rec: dict, days_with_sites: set[str]) -> str:
-    """Wikipedia dates an attack by the calendar day it was reported; the
-    registry files a night attack under the evening it started. Night attacks
-    are therefore moved back a day, evening attacks are not."""
-    d = date.fromisoformat(rec["date"])
-    if re.search(r"вечірн|evening", rec["text"], re.I):
-        return d.isoformat()
-    prev = (d - timedelta(days=1)).isoformat()
-    if prev not in days_with_sites and d.isoformat() in days_with_sites:
-        return d.isoformat()
-    return prev
+# What a Wikipedia entry names, and what would have to be in the registry for
+# that night if the registry had seen the same attack. Residential buildings are
+# left out on purpose: almost every entry mentions them, so they prove nothing.
+#   (label, what Wikipedia calls it, what the registry calls it, matching targets)
+OBJECTS = [
+    ("a bridge", r"міст\w*|мост\w*|bridge", r"bridge|міст", set()),
+    ("a metro station", r"метро|metro|subway", r"metro|subway", set()),
+    ("a kindergarten", r"дитсад\w*|дитячий сад|kindergarten|nursery",
+     r"kindergarten|nursery|preschool|day ?care", set()),
+    ("a hospital or clinic", r"медзаклад\w*|медичн\w*|лікарн\w*|hospital|clinic|institute of trauma",
+     r"hospital|clinic|medical|burn cent|institute|polyclinic", {"medical"}),
+    ("a school or university", r"заклад\w* освіти|школ\w*|університет\w*|гуртожит\w*|school|university|campus|dormitory",
+     r"school|universit|campus|dormitor|colleg|lyceum|academy", {"education"}),
+    ("an energy site", r"енергетик\w*|енергетичн\w*|ТЕЦ|підстанц\w*|power (?:station|plant|grid)|energy infrastructure|substation",
+     r"power|energy|substation|heat|boiler|transformer|electric", {"energy"}),
+    ("a shopping centre", r"ТРЦ|ТЦ\b|multimall|shopping (?:centre|center|mall)|mall",
+     r"mall|shopping|multimall|retail cent", {"commercial"}),
+    ("a data centre", r"data ?cent(?:er|re)|дата-?центр", r"data ?cent", set()),
+    ("a water utility", r"водоканал|водопровід|water utility|water facility",
+     r"water|vodokanal|водоканал", set()),
+]
+
+
+def named_objects(text: str) -> list[str]:
+    """The specific things a Wikipedia entry names, as labels."""
+    return [label for label, theirs, _, _ in OBJECTS if re.search(theirs, text, re.I)]
+
+
+def has_object(label: str, places: list[dict]) -> bool:
+    _, _, ours, targets = next(o for o in OBJECTS if o[0] == label)
+    return any(re.search(ours, p["title"], re.I) or (targets and p.get("target") in targets)
+               for p in places)
+
+
+def window(d: str) -> list[str]:
+    """The registry nights a Wikipedia entry for date `d` could be filed under.
+
+    Wikipedia dates an attack by the calendar day it was reported. The registry
+    still files reports by a 09:00 cut-off, so one attack lands partly on the
+    evening it began and partly on the next morning. Until attacks are
+    segmented (stage 1) an entry for `d` is therefore checked against both the
+    night of `d-1` and the night of `d` — a fixed rule, not a search for the
+    night that happens to have places in it.
+    """
+    return [(date.fromisoformat(d) - timedelta(days=1)).isoformat(), d]
 
 
 def crosscheck(days: list[dict], sites: list[dict]) -> dict:
-    """Per attack night: what Wikipedia says, and whether it agrees."""
+    """Per date Wikipedia records: what it says, and whether the registry agrees.
+
+    Four verdicts, and no verdict can be reached by moving the date around:
+
+    - `match`     both sides name the same kinds of place and give the same death toll;
+    - `differs`   a place Wikipedia names is absent, or the death tolls disagree;
+    - `no_figure` the places line up but one side gives no death toll, so there
+                  is nothing to compare;
+    - `missing`   Wikipedia records an attack for which the registry has no place at all.
+    """
     snap = json.loads(SNAPSHOT.read_text(encoding="utf-8"))
-    with_sites = {s["day"] for s in sites}
+    by_night: dict = {}
+    for s in sites:
+        by_night.setdefault(s["day"], []).append(s)
     city = {d["day"]: d.get("city") or {} for d in days}
     processed = {d["day"] for d in days if d.get("stats")}
-    by_night: dict = {}
+
+    by_date: dict = {}
     for rec in snap["records"]:
         k, i = figures(rec["text"])
-        night = night_of(rec, with_sites)
-        by_night.setdefault(night, []).append({**rec, "killed": k, "injured": i})
+        by_date.setdefault(rec["date"], []).append(
+            {**rec, "killed": k, "injured": i, "names": named_objects(rec["text"])})
+
     out = {}
-    for night, recs in sorted(by_night.items()):
-        ours = city.get(night, {}).get("killed")
+    for d, recs in sorted(by_date.items()):
+        nights = window(d)
+        places = [p for nd in nights for p in by_night.get(nd, [])]
         theirs = [r["killed"] for r in recs if r["killed"] is not None]
-        if night not in processed:
-            verdict = "pending"           # the agents have not read this night yet
-        elif night not in with_sites:
-            verdict = "missing"           # Wikipedia records an attack we have no place for
-        elif theirs and ours is not None and max(theirs) != ours:
+        wiki_killed = max(theirs) if theirs else None
+        # The same attack's toll is repeated on both sides of the 09:00 split,
+        # so the larger of the two nights is what the registry says it was.
+        ours_each = {nd: city.get(nd, {}).get("killed") for nd in nights}
+        said = [(nd, v) for nd, v in ours_each.items() if v is not None]
+        ours_night, ours_killed = max(said, key=lambda x: x[1]) if said else (None, None)
+        named = sorted({n for r in recs for n in r["names"]})
+        absent = [n for n in named if not has_object(n, places)]
+
+        if not any(nd in processed for nd in nights):
+            verdict, detail = "pending", "the agents have not read these nights yet"
+        elif not places:
+            verdict = "missing"
+            detail = "no place found in the channels for either night"
+        elif absent:
             verdict = "differs"
+            detail = f"Wikipedia names {', '.join(absent)}; the registry has none for these nights"
+        elif wiki_killed is not None and ours_killed is not None and wiki_killed != ours_killed:
+            verdict = "differs"
+            detail = f"Wikipedia {wiki_killed} killed, the registry {ours_killed}"
+        elif wiki_killed is None and ours_killed is None:
+            verdict = "no_figure"
+            detail = f"neither side gives a death toll; {len(places)} places line up"
+        elif wiki_killed is None:
+            verdict = "no_figure"
+            detail = f"Wikipedia gives no death toll; the registry has {ours_killed}"
+        elif ours_killed is None:
+            verdict = "no_figure"
+            detail = f"Wikipedia gives {wiki_killed} killed; the registry has no figure for these nights"
         else:
-            verdict = "agrees"
-        out[night] = {"records": recs, "verdict": verdict, "wiki_killed": max(theirs) if theirs else None}
-    return {"taken": snap["taken"], "articles": snap["articles"], "nights": out,
-            "summary": {"records": len(snap["records"]), "nights": len(out),
-                        "agrees": sum(v["verdict"] == "agrees" for v in out.values()),
-                        "differs": sum(v["verdict"] == "differs" for v in out.values()),
-                        "missing": sum(v["verdict"] == "missing" for v in out.values()),
-                        "pending": sum(v["verdict"] == "pending" for v in out.values())}}
+            verdict = "match"
+            detail = f"{wiki_killed} killed on both sides; {len(places)} places line up"
+        out[d] = {"records": recs, "verdict": verdict, "detail": detail, "nights": nights,
+                  "wiki_killed": wiki_killed, "ours_killed": ours_killed,
+                  "ours_night": ours_night, "places": len(places),
+                  "named": named, "absent": absent}
+
+    counts = Counter(v["verdict"] for v in out.values())
+    return {"taken": snap["taken"], "articles": snap["articles"], "dates": out,
+            "window_note": "A Wikipedia entry for a date is compared with the registry's "
+                           "nights of the evening before and that evening, because the registry "
+                           "still splits one attack at 09:00.",
+            "summary": {"records": len(snap["records"]), "dates": len(out),
+                        "match": counts["match"], "differs": counts["differs"],
+                        "no_figure": counts["no_figure"], "missing": counts["missing"],
+                        "pending": counts["pending"]}}
 
 
 if __name__ == "__main__":

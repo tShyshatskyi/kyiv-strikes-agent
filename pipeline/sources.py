@@ -1,9 +1,12 @@
 """Who we read, and how much each one counts.
 
 Every channel belongs to a *voice*. Two channels with the same voice are one
-witness, however many times they repost each other: the mayor's channel and the
-city administration's channel both speak for the city council, so a strike they
-both report is still confirmed by one voice, not two.
+witness, however many times they repost each other.
+
+The city administration, the mayor and the city state administration are one
+voice, not three. They are the same city hall publishing the same morning
+briefing on three channels, so a strike all three report is still one voice.
+The emergency service is a separate voice: its crews are physically on site.
 
 Aggregators (Trukha, Real Kyiv) are read because they are fast and often first,
 but they never count towards confirmation: they mostly repost the others.
@@ -21,10 +24,10 @@ PERIOD_END = datetime(2026, 11, 24, tzinfo=KYIV)  # exclusive: up to 23 Nov
 
 CHANNELS = {
     # handle:                  (display name,                          voice,        kind)
-    "VA_Kyiv":                 ("Kyiv City Military Administration",   "kmva",       "official"),
-    "vitaliy_klitschko":       ("Mayor Vitali Klitschko",              "city_council", "official"),
-    "KyivCityOfficial":        ("Kyiv City State Administration",      "city_council", "official"),
-    "dsns_kyiv":               ("State Emergency Service, Kyiv",       "dsns",       "official"),
+    "VA_Kyiv":                 ("Kyiv City Military Administration",   "city",       "official"),
+    "vitaliy_klitschko":       ("Mayor Vitali Klitschko",              "city",       "official"),
+    "KyivCityOfficial":        ("Kyiv City State Administration",      "city",       "official"),
+    "dsns_kyiv":               ("State Emergency Service, Kyiv",       "emergency",  "official"),
     "suspilne_kyiv":           ("Suspilne Kyiv",                       "suspilne",   "media"),
     "suspilnenews":            ("Suspilne News",                       "suspilne",   "media"),
     "ukrpravda_news":          ("Ukrainska Pravda",                    "pravda",     "media"),

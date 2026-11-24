@@ -18,4 +18,5 @@ mcp_config.json.bak
 data/raw/
 data/cache/llm/
 data/*.log
+data/out_v2_backup/
 site/.vercel/

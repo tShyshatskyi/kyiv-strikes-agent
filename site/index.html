@@ -59,39 +59,40 @@ L.control.attribution({position: 'topright', prefix: false}).addTo(map);
 const ESRI = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/';
 L.tileLayer(ESRI + 'World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {maxZoom: 16, attribution: 'Tiles © Esri · Districts © OpenStreetMap'}).addTo(map);
 L.tileLayer(ESRI + 'World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {maxZoom: 16}).addTo(map);
-const districtLayer = L.geoJSON(R.districts, {style: {color: '#6E6A62', weight: 1, opacity: .55, fill: false}, interactive: false}).addTo(map);
+// Four places in five are reported by district only. Those are shaded, not
+// plotted: a dot inside the district would be an address no source ever gave.
+// Dots are drawn only where an address was matched to a real point.
+const exact = s => s.precision === 'building' || s.precision === 'street';
+let shade = {}, shadeMax = 1;
+const districtLayer = L.geoJSON(R.districts, {interactive: false, style: f => {
+  const n = shade[f.properties.name] || 0;
+  return {color: '#6E6A62', weight: 1, opacity: .55, fillColor: '#C4372B',
+          fillOpacity: n ? 0.07 + 0.3 * Math.sqrt(n / shadeMax) : 0};
+}}).addTo(map);
+const DPOLY = {};
+districtLayer.eachLayer(l => DPOLY[l.feature.properties.name] = l);
 const dots = L.layerGroup().addTo(map), ring = L.layerGroup().addTo(map), marks = {};
 
-// Places known only by district all sit on one point per district; spread them
-// in a small spiral around it so each stays visible and tappable.
-function spread(items) {
-  const at = {};
-  return items.map(s => {
-    if (s.lat == null) return null;
-    if (s.precision === 'building' || s.precision === 'street') return [s.lat, s.lon];
-    const k = s.lat.toFixed(4) + s.lon.toFixed(4), i = at[k] = (at[k] ?? -1) + 1;
-    if (!i) return [s.lat, s.lon];
-    const r = 0.0021 * Math.sqrt(i), a = i * 2.39996;
-    return [s.lat + r * Math.sin(a), s.lon + r * Math.cos(a) * 1.55];
-  });
-}
 function drawDots(items) {
   dots.clearLayers(); ring.clearLayers();
   for (const k in marks) delete marks[k];
-  spread(items).forEach((ll, i) => {
-    const s = items[i]; if (!ll) return;
-    const c = COLOR[s.wclass], exact = s.precision === 'building' || s.precision === 'street';
-    const m = exact ? L.circleMarker(ll, {radius: 6.5, color: '#F6F4EF', weight: 1.5, fillColor: c, fillOpacity: 1})
-                    : L.circleMarker(ll, {radius: 5.5, color: c, weight: 1.6, opacity: .85, fill: true, fillOpacity: .12, fillColor: c});
-    m.on('click', () => goTo(list.indexOf(s), {fly: true}));
+  shade = count(items.filter(s => !exact(s) && s.district), s => s.district);
+  shadeMax = Math.max(1, ...Object.values(shade));
+  districtLayer.setStyle(districtLayer.options.style);
+  for (const s of items) {
+    if (!exact(s) || s.lat == null) continue;
+    const m = L.circleMarker([s.lat, s.lon], {radius: 6.5, color: '#F6F4EF', weight: 1.5, fillColor: COLOR[s.wclass], fillOpacity: 1});
+    m.on('click', () => goTo(list.indexOf(s) + 1, {fly: true}));
     marks[s.id] = m; dots.addLayer(m);
-  });
+  }
 }
 // Room the cards and filters take over the map, so fitting and panning avoid them.
 const pad = () => ({paddingTopLeft: [24, $('#filters').offsetHeight + 28], paddingBottomRight: [24, $('.deck').offsetHeight + 16]});
 function fit(items) {
-  const pts = items.filter(s => marks[s.id]).map(s => marks[s.id].getLatLng());
-  const b = pts.length > 1 ? L.latLngBounds(pts) : districtLayer.getBounds();
+  const b = L.latLngBounds([]);
+  items.forEach(s => { if (marks[s.id]) b.extend(marks[s.id].getLatLng()); });
+  Object.keys(shade).forEach(d => { if (DPOLY[d]) b.extend(DPOLY[d].getBounds()); });
+  if (!b.isValid()) b.extend(districtLayer.getBounds());
   if (!state.night && state.w === 'all' && !state.t && !state.d) b.extend(districtLayer.getBounds());
   // flyTo needs a laid-out map with a view; the first fit (and any failure) jumps instead.
   if (!ready) return map.fitBounds(b, {...pad(), maxZoom: 14});
@@ -105,27 +106,27 @@ function overviewCard() {
   if (state.night) {
     const d = DAY[state.night] || {}, c = d.city || {}, a = d.alerts || {drone: 0, missile: 0};
     const i = NIGHTS.indexOf(state.night);
-    const bits = [`${v.length} ${pl(v.length, 'place', 'places')}`, c.killed ? `${c.killed} killed` : '', c.injured ? `${c.injured} injured` : '', a.drone + a.missile ? `${hm(a.drone + a.missile)} under alert` : ''].filter(Boolean);
-    return `<article class="card over" data-i="0"><p class="when">Attack night${any ? ', filtered' : ''}</p><h2>${fmtDay(state.night, 'dowlong')}</h2>` +
+    const bits = [`${v.length} ${pl(v.length, 'place', 'places')}`, a.drone + a.missile ? `${hm(a.drone + a.missile)} under alert` : ''].filter(Boolean);
+    return `<article class="card over" data-i="0"><p class="when">Attack${any ? ', filtered' : ''}</p><h2>${fmtDay(state.night, 'dowlong')}</h2>` +
       `<p class="tot tnum">${bits.join(' · ')}</p>${d.summary ? `<p class="sum">${esc(d.summary)}</p>` : '<p class="sum mute">No place recorded this night.</p>'}` +
       `<div class="row3"><button class="chip" data-go="${NIGHTS[i - 1] || ''}"${i ? '' : ' disabled'}>Earlier night</button><button class="chip" data-go="">All nights</button><button class="chip" data-go="${NIGHTS[i + 1] || ''}"${i < NIGHTS.length - 1 ? '' : ' disabled'}>Later night</button></div></article>`;
   }
-  const killed = sum(R.days.map(d => d.city?.killed)), injured = sum(R.days.map(d => d.city?.injured));
+  const hit = damaged(S), nights = new Set(S.map(s => s.day)).size, addr = S.filter(exact).length;
   return `<article class="card over" data-i="0"><p class="when">1 October – 23 November 2026</p>` +
-    `<h2>Every place Russia hit in Kyiv this autumn, counted once.</h2>` +
+    `<h2>Every place Russia hit in Kyiv this autumn, with the words that record it.</h2>` +
     (any ? `<p class="tot tnum">${v.length} of ${S.length} places match. <button class="link" onclick="reset()">Clear filters</button></p>`
-         : `<p class="tot tnum">${S.length} places · ${killed} killed · ${injured} injured · ${R.workflow.alert_hours} hours under alert</p>`) +
-    `<p class="sum">Swipe for every place, newest first, or pick a night below. Read by three AI agents from ${R.workflow.collected.toLocaleString('en')} public posts. <a href="how.html">How it works</a></p>` +
-    `<p class="key"><span><i class="dot"></i>exact address</span><span><i class="ring"></i>district only</span></p></article>`;
+         : `<p class="tot tnum">${nights} dates with a recorded strike · ${hit} buildings and sites hit · ${S.length - hit} places where debris fell on open ground · ${R.workflow.alert_hours} hours under alert</p>`) +
+    `<p class="sum">Swipe for every place, newest first, or pick a date below. Three AI agents read the ${R.workflow.candidates.toLocaleString('en')} posts that mention damage, out of ${R.workflow.collected.toLocaleString('en')} collected. One attack that runs into the morning is still filed under two dates, so a few places appear twice; no casualty total is shown for the same reason. <a href="how.html">How it works</a></p>` +
+    `<p class="key"><span><i class="dot"></i>${addr} with an address</span><span><i class="fill"></i>${S.length - addr} known only by district</span><span>Data as of ${asOf(R)}</span></p></article>`;
 }
 function placeCard(s, i) {
   const meta = [WEAPON[s.weapon] || 'Weapon not stated', cas(s)].filter(Boolean).join(' · ');
   return `<article class="card${s.photo ? ' ph' : ''}" data-i="${i}" style="--c:${COLOR[s.wclass]}">` +
     (s.photo ? `<img src="${s.photo}" alt="" loading="lazy">` : '') +
     `<p class="when">${fmtDay(s.day, 'dow')}${s.time ? ', ' + esc(s.time) : ''}</p><h3>${esc(s.title)}</h3>` +
-    `<p class="meta">${esc(where(s))}${s.lat == null ? ' · not on the map' : ''}</p><p class="meta">${esc(meta)}</p>` +
+    `<p class="meta">${esc(where(s))}${exact(s) ? '' : s.district ? ' · district only' : ' · not on the map'}</p><p class="meta">${esc(meta)}</p>` +
     (s.photo ? '' : `<p class="sum">${esc(s.summary)}</p>`) +
-    `<p class="foot"><span class="${s.level === 'confirmed' ? 'ok' : ''}">${LEVEL_SHORT[s.level](s)}</span><button class="link" data-open="${i}">Sources (${s.sources.length})</button></p></article>`;
+    `<p class="foot"><span class="${s.level === 'confirmed' ? 'ok' : s.level === 'disputed' ? 'flag' : ''}">${LEVEL_SHORT[s.level](s)}</span><button class="link" data-open="${i}">Sources (${s.sources.length})</button></p></article>`;
 }
 function drawCards() {
   $('#cards').innerHTML = overviewCard() + list.map((s, i) => placeCard(s, i + 1)).join('');
@@ -138,14 +139,23 @@ function mark(i) {
   ring.clearLayers();
   const s = list[i - 1], m = s && marks[s.id];
   if (m) { m.bringToFront(); L.circleMarker(m.getLatLng(), {radius: 13, color: '#1C1B19', weight: 2, fill: false, interactive: false}).addTo(ring); }
+  // No address: outline the whole district, which is all anyone reported.
+  else if (s && DPOLY[s.district]) L.polygon(DPOLY[s.district].getLatLngs(), {color: '#1C1B19', weight: 2, fill: false, interactive: false}).addTo(ring);
   $('#prev').disabled = i <= 0; $('#next').disabled = i >= list.length;
 }
 function settle(i, fly) {
-  const s = list[i - 1], m = s && marks[s.id];
+  const s = list[i - 1];
   if (i === 0) return fit(list);
-  if (!m) return;
-  if (fly) map.flyTo(m.getLatLng(), Math.max(map.getZoom(), 14), {duration: .6});
-  else map.panInside(m.getLatLng(), pad());
+  if (!s) return;
+  const m = marks[s.id];
+  if (m) {
+    if (fly) map.flyTo(m.getLatLng(), Math.max(map.getZoom(), 14), {duration: .6});
+    else map.panInside(m.getLatLng(), pad());
+  } else if (DPOLY[s.district]) {
+    const b = DPOLY[s.district].getBounds();
+    if (fly && ready) { try { return map.flyToBounds(b, {...pad(), maxZoom: 13, duration: .6}); } catch {} }
+    map.panInside(b.getCenter(), pad());
+  }
 }
 function goTo(i, {fly = false} = {}) {
   const el = cardEls()[i]; if (!el) return;
@@ -184,8 +194,7 @@ function openSheet(s) {
   $('#sheet-body').innerHTML = (s.photo ? `<img src="${s.photo}" alt="Photo from the official post"><p class="cap">${esc(photoCaption(s))}</p>` : '') +
     `<p class="when">${fmtDay(s.day, 'dowlong')}${s.time ? ', ' + esc(s.time) : ''}</p><h2 id="sheet-h">${esc(s.title)}</h2>` +
     `<p class="meta">${esc(where(s))} · ${WEAPON[s.weapon] || 'Weapon not stated'}${cas(s) ? ' · ' + cas(s) : ''}</p>` +
-    `<p>${esc(s.summary)}</p><p class="meta">${LEVEL[s.level]}${s.level === 'confirmed' ? ` (${s.voices})` : ''}</p>` +
-    (s.flags.length ? `<p class="flag">Auditor's note: ${esc(s.flags.join(' '))}</p>` : '') +
+    `<p>${esc(s.summary)}</p><p class="meta">${LEVEL[s.level]} – ${LEVEL_NOTE[s.level]}</p>` + auditorNote(s) +
     `<h3>What the sources said</h3>${sourcesHTML(s)}<p class="meta"><a href="records.html#${s.id}">Open in the records</a></p>`;
   $('#sheet').showModal(); $('#sheet').scrollTop = 0;
 }

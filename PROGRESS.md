@@ -58,20 +58,63 @@ session (own system prompt, no tools/MCP/skills), cached on disk by prompt hash.
   Photos: 30 picked, 9 rejected by eye, 21 published. Redeployed.
 
 ## Resume
+Next up: **stage 1a** of `docs/review/plan.md` — `segment_attacks`, `validate`,
+auditor `public_note_en`, 2 revision rounds, then rerun ONLY the nights of
+6–7 Oct, 7–8 Oct, 6–7 Nov, 16–17 Nov, 19–20 Nov and check the pass criteria in
+the brief. Verify `claude -p` bills the second account with one cheap call
+before any big run. Stage 0 is done and deployed (docs/review/reports/stage-0.md).
+
 1. `PYTHONUTF8=1 KSR_SKIP_COLLECT=1 python -W ignore -m pipeline > data/full_run.log 2>&1`
-   (cached work is free; watch the 5-hour window, stop at 90%).
+   (cached work is free; watch the 5-hour window, stop at 90%; October and
+   November in separate windows).
 2. If the run was stopped: publish the finished nights only:
    `python -m pipeline $(grep finalize data/full_run.log | awk '{print $3}' | sort)`.
-3. `python -m pipeline.build_site`, look at new photos in site/media, add bad
-   site ids to data/photo_blocklist.txt, rebuild.
-4. `cd site && npx vercel deploy --prod --yes --scope taras-projects3`.
+3. `python -m pipeline.recompute` after any change to a confirmation or map
+   rule — re-derives levels and points with no model call.
+4. `python -m pipeline.build_site`, look at new photos in site/media, add bad
+   site ids to data/photo_blocklist.txt, rebuild. The build prints any public
+   description that still carries agent notes; that count must stay 0.
+5. `cd site && npx vercel deploy --prod --yes --scope taras-projects3`.
+6. `pytest tests/test_pipeline_rules.py` guards the rules the review caught.
+   Backup of the pre-stage-0 data: `data/out_v2_backup/` (not committed).
 
 ## Open questions
 - Recall looks low on some nights (14 Oct: 32 posts → 2 claims while Wikipedia
   lists 3 killed, 21 injured). The Wikipedia check on the page shows where.
+- The 09:00 cut-off in `prefilter.attack_day()` is the root cause of the
+  duplicates, the double-counted casualties and the date confusion. Stage 1
+  replaces it with alert-based attack windows.
 
 ## 2026-11-24 – map-first site
 - index.html is now a full-screen map: filters float on top, swipeable place cards along the bottom (card ↔ marker sync, sources sheet), night timeline + replay under the map.
 - Other blocks moved to their own pages in the header: patterns.html, wikipedia.html, records.html (how.html unchanged). Shared header/filters/strip helpers live in common.js.
 - Deep links: ./#night=YYYY-MM-DD and ./#site=ID open the map on that night/place; records.html#ID opens a record.
 - District-only places are spread in a small spiral around their district point so stacked rings stay visible.
+
+## 2026-11-25 – stage 0 of the review plan (no model calls)
+A harsh review of the site is in `docs/review/critique.md` and the fix plan in
+`docs/review/plan.md`; the report for this stage is
+`docs/review/reports/stage-0.md`. The site no longer says anything the data
+cannot support, though the duplicates themselves are still there.
+- 00:10 confirmation rules rewritten. City hall's three channels are one voice,
+  the emergency service is its own, a newsroom counts only where its quote adds
+  a figure or name no earlier official post gave, and an open auditor flag makes
+  a place `disputed`. Recomputed with `python -m pipeline.recompute`, no model
+  call: confirmed 117 → 56, official 162 → 182, media 62 → 60, disputed 0 → 43.
+- 00:20 Wikipedia check rewritten. `night_of()` used to move the date to
+  whichever day already had places, which made "0 nights missing" a property of
+  the code; it is gone. Dates are fixed in advance, the kinds of place named are
+  compared too, and there are four verdicts. 17 of 21 "agree" → 5 agree,
+  8 differ, 9 nothing to compare, 0 missing, over 22 dates.
+- 00:30 map stopped inventing addresses. `tools.district_point()` scattered the
+  274 district-only places at random inside their district, which read as 272
+  real addresses; now the district is shaded by count and only the 44 places
+  with a matched address get a point.
+- 00:35 casualties out of the hero (46 / 352 cannot be defended while one attack
+  is filed under two dates), weekday chart removed, auditor notes folded into a
+  grey toggle, 9 public descriptions trimmed of agent notes by code, alert hours
+  347 → 343 (alerts outside the period), "city council" → "Kyiv City State
+  Administration", "eight newsrooms" → seven, "$23 API-equivalent cost", and a
+  data-as-of line with a warning that Telegram posts can be edited.
+- `tests/test_pipeline_rules.py`: 18 tests pinning each of these rules. Every
+  page is also executed against a stubbed DOM and Leaflet before deploy.
