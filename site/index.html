@@ -154,7 +154,7 @@ function drawDots(list) {
     if (s.lat == null) continue;
     const c = COLOR[s.wclass], exact = s.precision === 'building' || s.precision === 'street';
     const m = exact ? L.circleMarker([s.lat, s.lon], {radius: 6.5, color: '#F6F4EF', weight: 1.5, fillColor: c, fillOpacity: 1})
-                    : L.circleMarker([s.lat, s.lon], {radius: 9, color: c, weight: 2.2, fill: true, fillOpacity: 0.08, fillColor: c});
+                    : L.circleMarker([s.lat, s.lon], {radius: 6, color: c, weight: 1.4, opacity: .75, fill: true, fillOpacity: 0.06, fillColor: c});
     m.bindPopup(() => popup(s), {maxWidth: 280});
     dots.addLayer(m);
   }
@@ -193,7 +193,7 @@ $('#nights').addEventListener('click', e => { const r = e.target.closest('[data-
 // ---------- charts
 function barRows(el, rows, key, total) {
   const max = Math.max(1, ...rows.map(r => r.n));
-  el.innerHTML = rows.map(r => `<button class="bar" data-k="${r.k}" aria-pressed="${state[key] === r.k}"><span>${r.label}</span>` +
+  el.innerHTML = rows.map(r => `<button class="bar" data-k="${r.k}" aria-pressed="${state[key] === r.k}"${key[0] === '_' ? ' style="cursor:default" tabindex="-1"' : ''}><span>${r.label}</span>` +
     `<span class="track">${['drone', 'missile', 'unknown'].map(c => r[c] ? `<i style="width:${100 * r[c] / max}%;background:${COLOR[c]}"></i>` : '').join('')}</span>` +
     `<b class="tnum">${total ? Math.round(100 * r.n / Math.max(1, total)) + '%' : r.n}</b></button>`).join('');
   el.onclick = e => { const b = e.target.closest('[data-k]'); if (b && key[0] !== '_') set({[key]: state[key] === b.dataset.k ? (key === 'w' ? 'all' : '') : b.dataset.k}); };

@@ -39,3 +39,33 @@ session (own system prompt, no tools/MCP/skills), cached on disk by prompt hash.
 - 10:30 collected 25,512 posts from 13 channels (Oct 1 – Nov 24 morning).
 - 10:55 first test day (18 Oct): 85 posts → 28 claims, 2 quotes rejected,
   matcher 9 sites, auditor caught a double count, matcher regrouped → 8.
+- 11:00 full run stopped at 87% of the 5-hour window; resumed 12:36 from cache.
+- 12:40 Wikipedia added as an outside check (pipeline/wikipedia.py). The API
+  refuses scripts without a contact address, so the snapshot
+  (data/wikipedia_snapshot.json, 31 records from 3 articles, revision ids kept)
+  was taken through a browser; set WIKIMEDIA_CONTACT to refresh it from code.
+  It never counts as a witness; it lines up nights and death tolls.
+- 13:00 site rebuilt in the Fall in Kyiv scheme (site/index.html, how.html,
+  style.css, common.js). Photos: 8 picked by the strict rule, 1 rejected by eye
+  (2026-10-31-3: trucks, not a homestead) → data/photo_blocklist.txt.
+- 13:10 live at https://kyiv-strike-registry.vercel.app (Vercel project
+  kyiv-strike-registry, scope taras-projects3), 14 nights so far.
+
+- 13:30 full run done at 84% of the window: 54 nights, 641 claims (39 quotes
+  rejected), 341 places, 85 audits, 33 nights sent back, 14 places removed by
+  the auditor, 43 still flagged. 117 confirmed / 162 official / 62 one source.
+  Wikipedia: 21 nights, all in the registry, 17 agree, 4 tolls differ.
+  Photos: 30 picked, 9 rejected by eye, 21 published. Redeployed.
+
+## Resume
+1. `PYTHONUTF8=1 KSR_SKIP_COLLECT=1 python -W ignore -m pipeline > data/full_run.log 2>&1`
+   (cached work is free; watch the 5-hour window, stop at 90%).
+2. If the run was stopped: publish the finished nights only:
+   `python -m pipeline $(grep finalize data/full_run.log | awk '{print $3}' | sort)`.
+3. `python -m pipeline.build_site`, look at new photos in site/media, add bad
+   site ids to data/photo_blocklist.txt, rebuild.
+4. `cd site && npx vercel deploy --prod --yes --scope taras-projects3`.
+
+## Open questions
+- Recall looks low on some nights (14 Oct: 32 posts → 2 claims while Wikipedia
+  lists 3 killed, 21 injured). The Wikipedia check on the page shows where.

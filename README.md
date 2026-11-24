@@ -5,7 +5,7 @@ Kyiv, works out which reports describe the same place, has a second agent audit
 that work, and publishes a map in which every record links to the exact words
 of the people who reported it.
 
-**Live page:** `site/index.html` (static; see *Run it* below).
+**Live page:** https://kyiv-strike-registry.vercel.app (how it works: `/how.html`).
 Period covered: 1 October – 23 November 2026.
 
 ## What it does
@@ -28,6 +28,7 @@ collect ─► filter ─┬─► read ─► check quotes ─► match ─► 
 | Audit | **auditor agent** (Claude Sonnet) | A separate agent hunts for the matcher's mistakes: double counts, wrong merges, statements no source makes, places outside the city. If it finds any, the graph sends the work back to the matcher with its notes. |
 | Finalize | code | Enforces what prompts only ask for: every claim used exactly once, nothing lost, places the auditor ruled out of area removed. Counts **independent voices** (two channels of one newsroom are one voice) and takes the latest casualty figure rather than adding updates together. |
 | Geocode | code | Nominatim, then a point-in-polygon check against real Kyiv district boundaries. Reports that give only a district are drawn as rings. |
+| Wikipedia check | code | Rows from three Wikipedia articles (English list of strikes on Kyiv, English war timeline, Ukrainian list of autumn 2026 missile strikes) are lined up with attack nights. Wikipedia retells the news, so it never confirms a place; it shows nights the registry missed and death tolls that differ. |
 | Publish | code | `data/out/registry.json`, the agents' trace `data/out/trace.jsonl`, and the site. |
 
 The edge out of *audit* is what makes this an agent rather than a script: a
@@ -52,7 +53,8 @@ python -m pip install -r requirements.txt
 python -m pipeline                 # the whole workflow
 python -m pipeline 2026-10-19      # one day, for a quick look
 python -m pipeline --graph         # print the graph as Mermaid
-python -m pipeline.build_site      # site/data.js from the registry
+python -m pipeline.build_site      # site/data.js from the registry, photos, Wikipedia check
+python -m pipeline.wikipedia       # refresh the Wikipedia snapshot (needs WIKIMEDIA_CONTACT)
 python -m http.server -d site      # open http://localhost:8000
 ```
 
@@ -76,6 +78,7 @@ pipeline/            v2 workflow
   tools.py           deterministic checks: quotes, voices, figures, geocoding
   collect.py         Telegram collector
   prefilter.py       damage filter and alert timeline
+  wikipedia.py       Wikipedia snapshot and night-by-night comparison
   build_site.py      registry → site/data.js
 site/                the page
 data/out/            registry.json, trace.jsonl
