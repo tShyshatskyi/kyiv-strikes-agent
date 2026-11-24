@@ -69,3 +69,9 @@ session (own system prompt, no tools/MCP/skills), cached on disk by prompt hash.
 ## Open questions
 - Recall looks low on some nights (14 Oct: 32 posts → 2 claims while Wikipedia
   lists 3 killed, 21 injured). The Wikipedia check on the page shows where.
+
+## 2026-11-24 – map-first site
+- index.html is now a full-screen map: filters float on top, swipeable place cards along the bottom (card ↔ marker sync, sources sheet), night timeline + replay under the map.
+- Other blocks moved to their own pages in the header: patterns.html, wikipedia.html, records.html (how.html unchanged). Shared header/filters/strip helpers live in common.js.
+- Deep links: ./#night=YYYY-MM-DD and ./#site=ID open the map on that night/place; records.html#ID opens a record.
+- District-only places are spread in a small spiral around their district point so stacked rings stay visible.

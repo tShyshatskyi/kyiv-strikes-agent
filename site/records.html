@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The record – Kyiv Strike Registry</title>
+<meta name="description" content="Every place hit in Kyiv from 1 October to 23 November 2026, night by night, with the exact words of every channel that reported it.">
+<meta name="theme-color" content="#F6F4EF">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link href="fonts/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top" id="top"></header>
+<main>
+<section class="pagehead"><div class="wrap">
+  <h1>The record</h1>
+  <p class="lede">Newest night first. Each place shows how well it is confirmed and, under Sources, the exact words of every channel that reported it.</p>
+  <div class="toolbar" id="filters"></div>
+  <p class="status" id="status" aria-live="polite"></p>
+  <div class="days" id="days"></div>
+  <div class="more"><button class="btn" id="more">Show earlier nights</button></div>
+</div></section>
+</main>
+
+<dialog class="viewer" id="viewer"><button aria-label="Close" onclick="this.closest('dialog').close()">×</button><img alt=""><p></p></dialog>
+
+<script src="data.js"></script>
+<script src="common.js"></script>
+<script>
+mountHeader('records'); mountFooter();
+const R = window.REGISTRY, S = R.sites, $ = s => document.querySelector(s);
+const state = {night: null, w: 'all', t: '', d: ''};
+const syncFilters = mountFilters($('#filters'), S, state, p => { Object.assign(state, p); shown = 8; render(); });
+const visible = () => S.filter(s => passes(state, s));
+window.reset = () => { Object.assign(state, {w: 'all', t: '', d: ''}); render(); };
+const meta = Object.fromEntries(R.days.map(d => [d.day, d]));
+
+let shown = 8;
+function siteHTML(s) {
+  const lvl = {confirmed: `Confirmed<small>${s.voices} independent sources</small>`, official: `Official only<small>city or emergency service</small>`,
+               single_source: `One source<small>not yet confirmed</small>`, aggregator_only: `Aggregator only<small>treat with care</small>`}[s.level];
+  return `<div class="site${s.photo ? ' has-photo' : ''}" id="${s.id}">` +
+    (s.photo ? `<img class="ph" src="${s.photo}" alt="Photo from the official post" loading="lazy" data-cap="${esc(photoCaption(s))}">` : '') +
+    `<h4><i style="background:${COLOR[s.wclass]}"></i>${esc(s.title)}</h4><div class="lvl">${lvl}</div>` +
+    `<p class="meta">${esc(where(s))} · ${WEAPON[s.weapon] || 'Weapon not stated'}${s.time ? ' · ' + s.time : ''}${cas(s) ? ' · ' + cas(s) : ''}` +
+    `${s.lat != null ? ` · <a href="./#site=${s.id}">Show on the map</a>` : ''}</p>` +
+    `<p class="sum">${esc(s.summary)}${s.flags.length ? `<br><span class="flag">Auditor's note: ${esc(s.flags.join(' '))}</span>` : ''}</p>` +
+    `<details><summary>Sources (${s.sources.length})</summary>${sourcesHTML(s)}</details></div>`;
+}
+function render() {
+  syncFilters();
+  const v = visible(), byDay = group(v, s => s.day), days = Object.keys(byDay).sort().reverse();
+  const any = state.w !== 'all' || state.t || state.d;
+  $('#status').innerHTML = any ? `Showing ${v.length} of ${S.length} places. <button onclick="reset()">Clear filters</button>` : `All ${S.length} places over ${days.length} nights.`;
+  $('#days').innerHTML = days.slice(0, shown).map(d => {
+    const m = meta[d] || {}, a = m.alerts || {}, c = m.city || {};
+    const bits = [`${byDay[d].length} ${pl(byDay[d].length, 'place', 'places')}`];
+    if (c.killed) bits.push(`${c.killed} killed`); if (c.injured) bits.push(`${c.injured} injured`);
+    if (a.drone + a.missile) bits.push(`${hm(a.drone + a.missile)} under alert`);
+    return `<article><div class="dayh"><h3><a href="./#night=${d}" style="text-decoration:none">${fmtDay(d, 'dowlong')}</a></h3><p class="tnum">${bits.join(' · ')}</p></div>` +
+      (m.summary ? `<p class="daysum">${esc(m.summary)}</p>` : '') + byDay[d].map(siteHTML).join('') + `</article>`;
+  }).join('') || `<p class="mute">No place matches these filters. <button class="btn sm" onclick="reset()">Clear filters</button></p>`;
+  $('#more').hidden = days.length <= shown;
+}
+$('#more').onclick = () => { shown += 10; render(); };
+$('#days').addEventListener('click', e => { const img = e.target.closest('.ph'); if (!img) return;
+  const v = $('#viewer'); v.querySelector('img').src = img.src; v.querySelector('p').textContent = img.dataset.cap; v.showModal(); });
+
+// records.html#<site id> opens that place.
+function openFromHash() {
+  const id = location.hash.slice(1), s = S.find(x => x.id === id); if (!s) return;
+  Object.assign(state, {w: 'all', t: '', d: ''});
+  const days = [...new Set(S.map(x => x.day))].sort().reverse();
+  shown = Math.max(shown, days.indexOf(s.day) + 1); render();
+  const el = document.getElementById(id); el.querySelector('details').open = true;
+  el.scrollIntoView({block: 'center'}); el.classList.add('lit'); setTimeout(() => el.classList.remove('lit'), 2400);
+}
+render(); openFromHash(); addEventListener('hashchange', openFromHash);
+</script>
+</body>
+</html>

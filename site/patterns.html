@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Patterns – Kyiv Strike Registry</title>
+<meta name="description" content="What hit Kyiv in autumn 2026, which districts, at what hour and on which night of the week, and what kind of places were hit.">
+<meta name="theme-color" content="#F6F4EF">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link href="fonts/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top" id="top"></header>
+<main>
+<section class="pagehead"><div class="wrap">
+  <h1>What hit, where and when</h1>
+  <p class="lede">Every chart counts places hit, not posts. Select a bar or a night to narrow the whole page to it.</p>
+  <div class="toolbar" id="filters"></div>
+  <p class="status" id="status" aria-live="polite"></p>
+  <div class="nights" id="nights"></div>
+  <div class="ticks" id="ticks"></div>
+  <p class="small mute" style="margin-top:8px">Each column is one attack night: places hit above the line, hours under air-raid alert below it.</p>
+</div></section>
+
+<section style="padding-top:56px"><div class="wrap">
+  <div class="charts" style="margin-top:0">
+    <div class="chart"><h3>What hit</h3><p>Weapon named by the sources. Officials often say only "debris" or "a hit", so many places have no weapon on record.</p><div class="bars" id="c-weapon"></div></div>
+    <div class="chart"><h3>Where</h3><p>Places hit in each of Kyiv's ten districts.</p><div class="bars" id="c-district"></div></div>
+    <div class="chart"><h3>When, by hour</h3><p>Kyiv time. The hour a source gives for the hit, or else the hour of the first report.</p><div class="cols" id="c-hour" style="grid-template-columns:repeat(24,1fr)"></div><div class="cols-ax" id="c-hour-ax" style="grid-template-columns:repeat(24,1fr)"></div></div>
+    <div class="chart"><h3>When, by night of the week</h3><p>An attack that runs past midnight is counted on the evening it began.</p><div class="bars" id="c-dow"></div></div>
+    <div class="chart"><h3>What was hit</h3><p>One square for every place. Select a square to see it on the map.</p><div class="tally" id="c-target"></div></div>
+  </div>
+</div></section>
+</main>
+
+<script src="data.js"></script>
+<script src="common.js"></script>
+<script>
+mountHeader('patterns'); mountFooter();
+const R = window.REGISTRY, S = R.sites, $ = s => document.querySelector(s);
+const NIGHTS = allNights(R.period);
+const state = {night: null, w: 'all', t: '', d: ''};
+const syncFilters = mountFilters($('#filters'), S, state, p => set(p));
+function set(p) { Object.assign(state, p); render(); }
+const visible = skip => S.filter(s => passes(state, s, skip));
+window.reset = () => set({night: null, w: 'all', t: '', d: ''});
+
+$('#nights').addEventListener('click', e => { const r = e.target.closest('[data-d]'); if (r) set({night: state.night === r.dataset.d ? null : r.dataset.d}); });
+
+function barRows(el, rows, key, total) {
+  const max = Math.max(1, ...rows.map(r => r.n)), live = key[0] !== '_';
+  el.innerHTML = rows.map(r => `<button class="bar" data-k="${r.k}" aria-pressed="${state[key] === r.k}"${live ? '' : ' style="cursor:default" tabindex="-1"'}><span>${r.label}</span>` +
+    `<span class="track">${['drone', 'missile', 'unknown'].map(c => r[c] ? `<i style="width:${100 * r[c] / max}%;background:${COLOR[c]}"></i>` : '').join('')}</span>` +
+    `<b class="tnum">${total ? Math.round(100 * r.n / Math.max(1, total)) + '%' : r.n}</b></button>`).join('');
+  el.onclick = e => { const b = e.target.closest('[data-k]'); if (b && live) set({[key]: state[key] === b.dataset.k ? (key === 'w' ? 'all' : '') : b.dataset.k}); };
+}
+const split = list => ({n: list.length, drone: list.filter(s => s.wclass === 'drone').length, missile: list.filter(s => s.wclass === 'missile').length, unknown: list.filter(s => s.wclass === 'unknown').length});
+
+function render() {
+  syncFilters();
+  const v = visible(), any = state.night || state.w !== 'all' || state.t || state.d;
+  $('#status').innerHTML = any ? `Showing ${v.length} of ${S.length} places${state.night ? ' on ' + fmtDay(state.night, 'dow') : ''}. <button onclick="reset()">Clear filters</button>` : `Showing all ${S.length} places.`;
+  $('#nights').innerHTML = nightStrip(visible('night'), R, NIGHTS, state.night);
+  $('#ticks').innerHTML = nightTicks(NIGHTS);
+
+  const vw = visible('w');
+  barRows($('#c-weapon'), [['drone', 'Drones'], ['missile', 'Missiles'], ['unknown', 'Not stated']].map(([k, l]) => {
+    const sub = vw.filter(s => s.wclass === k), types = count(sub, s => s.weapon);
+    const detail = Object.keys(types).filter(t => t !== k && t !== 'unknown').map(t => `${WEAPON[t].toLowerCase()} ${types[t]}`).join(', ');
+    return {k, label: l + (detail && k !== 'unknown' ? ` <span class="mute">${detail}</span>` : ''), ...split(sub)};
+  }), 'w', vw.length);
+  const vd = visible('d'), byD = group(vd.filter(s => s.district), s => s.district);
+  barRows($('#c-district'), Object.keys(byD).sort((a, b) => byD[b].length - byD[a].length).map(k => ({k, label: k, ...split(byD[k])})), 'd');
+
+  const hours = Array.from({length: 24}, () => []);
+  v.forEach(s => { const h = hourOf(s); if (h != null) hours[h].push(s); });
+  const maxH = Math.max(1, ...hours.map(h => h.length));
+  $('#c-hour').innerHTML = hours.map((a, h) => `<div title="${String(h).padStart(2, '0')}:00 – ${a.length} ${pl(a.length, 'place', 'places')}">${['drone', 'missile', 'unknown'].map(c => { const n = a.filter(s => s.wclass === c).length; return n ? `<i style="height:${100 * n / maxH}%;background:${COLOR[c]}"></i>` : ''; }).join('')}</div>`).join('');
+  $('#c-hour-ax').innerHTML = hours.map((_, h) => `<span>${h % 3 === 0 ? String(h).padStart(2, '0') : ''}</span>`).join('');
+
+  const dows = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  const nightsPer = count(NIGHTS, d => dowOf(d));
+  barRows($('#c-dow'), dows.map((l, i) => ({k: 'dow' + i, label: `${l} <span class="mute">${nightsPer[i] || 0} nights</span>`, ...split(v.filter(s => dowOf(s.day) === i))})), '_dow');
+
+  const vt = visible('t'), byT = group(vt, s => s.target);
+  $('#c-target').innerHTML = Object.keys(byT).sort((a, b) => byT[b].length - byT[a].length).map(k =>
+    `<div class="trow"><span>${TARGET[k] || k}</span><b class="tnum">${byT[k].length}</b><span class="sq">${byT[k].sort((a, b) => a.wclass.localeCompare(b.wclass)).map(s =>
+      `<a style="background:${COLOR[s.wclass]}" href="./#site=${s.id}" title="${esc(fmtDay(s.day) + ': ' + s.title)}" aria-label="${esc(s.title)}"></a>`).join('')}</span></div>`).join('');
+}
+render();
+</script>
+</body>
+</html>

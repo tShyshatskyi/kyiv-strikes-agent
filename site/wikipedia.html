@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checked against Wikipedia – Kyiv Strike Registry</title>
+<meta name="description" content="Every attack on Kyiv that Wikipedia editors recorded in autumn 2026, set against what the registry found that night.">
+<meta name="theme-color" content="#F6F4EF">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link href="fonts/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top" id="top"></header>
+<main>
+<section class="pagehead"><div class="wrap">
+  <h1>Checked against Wikipedia</h1>
+  <p class="lede" id="wiki-lede"></p>
+  <p class="lede small mute" id="wiki-src"></p>
+  <div class="wiki" id="wiki"></div>
+</div></section>
+</main>
+
+<script src="data.js"></script>
+<script src="common.js"></script>
+<script>
+mountHeader('wiki'); mountFooter();
+const R = window.REGISTRY, S = R.sites, $ = s => document.querySelector(s);
+const W = R.wiki, sm = W.summary;
+$('#wiki-lede').innerHTML = `Wikipedia retells the same news, so it cannot confirm a place on its own. It is still a useful outside check on whole nights. ` +
+  `Editors of ${W.articles.length} articles in English and Ukrainian recorded attacks on Kyiv on ${sm.nights} nights in this period. ` +
+  `The registry has places for ${sm.nights - sm.missing - (sm.pending || 0)} of them${sm.pending ? ` (${sm.pending} more nights are still being processed)` : ''}; on ${sm.differs} ${pl(sm.differs, 'night', 'nights')} the death toll differs.`;
+$('#wiki-src').innerHTML = `Read on ${W.taken} from: ` + W.articles.map(a => `<a href="https://${a.lang}.wikipedia.org/w/index.php?oldid=${a.revid}" target="_blank" rel="noopener">${esc(a.title)}</a>`).join('; ') + '.';
+const byDay = group(S, s => s.day), city = Object.fromEntries(R.days.map(d => [d.day, d.city || {}]));
+$('#wiki').innerHTML = Object.entries(W.nights).sort((a, b) => b[0].localeCompare(a[0])).map(([d, n]) => {
+  const ours = byDay[d] || [], k = city[d]?.killed;
+  const verdict = {agrees: 'Agrees', differs: 'Toll differs', missing: 'Not in the registry', pending: 'Not processed yet'}[n.verdict];
+  const detail = n.verdict === 'differs' ? `Wikipedia ${n.wiki_killed} killed, registry ${k ?? 'none stated'}` :
+    n.verdict === 'missing' ? 'No place found in the channels' : n.verdict === 'pending' ? 'The agents have not read this night yet' : `${ours.length} ${pl(ours.length, 'place', 'places')} in the registry`;
+  return `<div class="wrow"><time><a class="go" href="./#night=${d}">${fmtDay(d, 'dow')}</a></time><div class="says">${n.records.map(r => `<div lang="${r.lang}">${esc(r.text.replace(/^[^:]*?\d{4}[,:]\s*/, '').replace(/^Київ\. /, '').replace(/Засіб: —\. /, '').replace(/^Засіб: ([^.]+)\. (.)/, (m, w, c) => w[0].toUpperCase() + w.slice(1) + '; ' + c))} <a href="${r.url}" target="_blank" rel="noopener">${r.lang === 'uk' ? 'uk' : 'en'}.wikipedia</a></div>`).join('')}</div>` +
+    `<div><span class="v ${n.verdict}">${verdict}</span><br><span class="mute">${detail}</span></div></div>`;
+}).join('');
+</script>
+</body>
+</html>

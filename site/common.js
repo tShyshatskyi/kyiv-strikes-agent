@@ -38,3 +38,72 @@ function hourOf(s) {
   return f ? +f[1] : null;
 }
 const cas = s => [s.killed ? `${s.killed} killed` : '', s.injured ? `${s.injured} injured` : ''].filter(Boolean).join(', ');
+
+// ---------------------------------------------------------------- shared page parts
+const NAV = [['map', './', 'Map'], ['patterns', 'patterns.html', 'Patterns'], ['wiki', 'wikipedia.html', 'Wikipedia<span class="wide"> check</span>'],
+             ['records', 'records.html', 'Records']];
+function mountHeader(current) {
+  const el = document.getElementById('top');
+  el.innerHTML = `<div class="wrap"><a class="name" href="./"><img src="logo.svg" alt=""><span>Kyiv Strike Registry</span></a><nav>` +
+    NAV.map(([k, h, l]) => `<a class="n-${k}" href="${h}"${k === current ? ' aria-current="page"' : ''}>${l}</a>`).join('') +
+    `<a class="btn solid" href="how.html"${current === 'how' ? ' aria-current="page"' : ''}><span class="wide">How it works</span><span class="narrow">How</span></a></nav></div>`;
+  const cur = el.querySelector('nav [aria-current]');
+  if (cur) cur.scrollIntoView({block: 'nearest', inline: 'center'});
+}
+function mountFooter(extra = '') {
+  const el = document.createElement('footer'), R = window.REGISTRY;
+  el.innerHTML = `<div class="wrap"><p>Reports from 13 public Telegram channels: the Kyiv City Military Administration, the mayor, the city council, the State Emergency Service, Suspilne, Ukrainska Pravda, Hromadske, the Kyiv Independent, the Kyiv Post, BBC Ukrainian and two local aggregators. Cross-checked against English and Ukrainian Wikipedia (CC BY-SA). Map tiles © Esri; district boundaries © OpenStreetMap contributors.</p>` +
+    (R ? `<p>Built ${R.generated.slice(0, 10)} from ${R.workflow.collected.toLocaleString('en')} posts. Casualty figures are the latest each source gave.</p>` : '') +
+    `${extra}<p><a href="how.html">How it works</a> · <a href="https://github.com/tShyshatskyi/kyiv-strikes-agent">Source code</a></p></div>`;
+  document.body.append(el);
+}
+
+// Filters: what hit (chips), what was hit and where (selects).
+const W_CHIPS = [['all', 'All', null], ['drone', 'Drones', 'var(--drone)'], ['missile', 'Missiles', 'var(--missile)'], ['unknown', 'Not stated', 'var(--unk)']];
+function passes(state, s, skip) {
+  return (skip === 'night' || !state.night || s.day === state.night) && (skip === 'w' || state.w === 'all' || s.wclass === state.w) &&
+         (skip === 't' || !state.t || s.target === state.t) && (skip === 'd' || !state.d || s.district === state.d);
+}
+function mountFilters(el, S, state, onChange) {
+  const targets = count(S, s => s.target), dists = count(S.filter(s => s.district), s => s.district);
+  el.innerHTML = W_CHIPS.map(([k, l, c]) => `<button class="chip" data-w="${k}">${c ? `<i style="background:${c}"></i>` : ''}${l}</button>`).join('') +
+    `<select class="chip" data-f="t" aria-label="Type of place"><option value="">Any place</option>${Object.keys(targets).sort((a, b) => targets[b] - targets[a]).map(k => `<option value="${k}">${TARGET[k] || k} (${targets[k]})</option>`).join('')}</select>` +
+    `<select class="chip" data-f="d" aria-label="District"><option value="">Any district</option>${Object.keys(dists).sort().map(k => `<option value="${k}">${k} (${dists[k]})</option>`).join('')}</select>`;
+  el.addEventListener('click', e => { const b = e.target.closest('[data-w]'); if (b) onChange({w: b.dataset.w}); });
+  el.querySelectorAll('select').forEach(x => x.onchange = () => onChange({[x.dataset.f]: x.value}));
+  return () => {
+    el.querySelectorAll('[data-w]').forEach(b => b.setAttribute('aria-pressed', b.dataset.w === state.w));
+    el.querySelector('[data-f=t]').value = state.t; el.querySelector('[data-f=d]').value = state.d;
+  };
+}
+
+// One column per attack night: places hit above the line (by weapon), alert hours below it.
+function nightStrip(list, R, nights, selected, top = 110, bot = 40) {
+  const byDay = group(list, s => s.day);
+  const alerts = Object.fromEntries(R.days.map(d => [d.day, (d.alerts.drone + d.alerts.missile) / 60]));
+  const n = nights.length, w = 1000, cw = w / n;
+  const maxS = Math.max(4, ...Object.values(byDay).map(a => a.length)), maxA = Math.max(6, ...Object.values(alerts));
+  let svg = `<svg viewBox="0 -4 ${w} ${top + bot + 12}" preserveAspectRatio="none" role="img" aria-label="Places hit and alert hours per night">`;
+  nights.forEach((d, i) => {
+    const x = i * cw, a = byDay[d] || [];
+    let y = top;
+    for (const k of ['drone', 'missile', 'unknown']) {
+      const h = a.filter(s => s.wclass === k).length * (top - 6) / maxS;
+      if (h) { svg += `<rect x="${x + 1.5}" y="${y - h}" width="${cw - 3}" height="${h}" fill="${COLOR[k]}"/>`; y -= h; }
+    }
+    const ah = (alerts[d] || 0) * bot / maxA;
+    if (ah) svg += `<rect x="${x + 1.5}" y="${top + 3}" width="${cw - 3}" height="${ah}" fill="#B9B4A9"/>`;
+    if (selected === d) svg += `<rect class="sel" x="${x + .5}" y="-2" width="${cw - 1}" height="${top + bot + 8}" rx="2" vector-effect="non-scaling-stroke"/>`;
+    svg += `<rect class="hit" data-d="${d}" x="${x}" y="-4" width="${cw}" height="${top + bot + 12}" fill="transparent"><title>${fmtDay(d, 'dow')}: ${a.length} ${pl(a.length, 'place', 'places')}, ${hm((alerts[d] || 0) * 60)} under alert</title></rect>`;
+  });
+  return svg + `<line x1="0" x2="${w}" y1="${top + 1.5}" y2="${top + 1.5}" stroke="#1C1B19" stroke-width="1" vector-effect="non-scaling-stroke"/></svg>`;
+}
+const nightTicks = nights => [0, 14, 31, 45, nights.length - 1].map(i => `<span>${fmtDay(nights[i])}</span>`).join('');
+
+// A place's confirmation, and the words of its sources.
+const LEVEL_SHORT = {confirmed: s => `Confirmed by ${s.voices} independent sources`, official: () => 'Officials only',
+                     single_source: () => 'One source so far', aggregator_only: () => 'Aggregators only'};
+const where = s => [s.district, s.address].filter(Boolean).join(', ') || 'District not stated';
+const sourcesHTML = s => `<ul class="srcs">${s.sources.map(x =>
+  `<li><blockquote lang="uk">“${esc(x.quote)}”</blockquote><span class="who">${esc(x.name)}${x.kind === 'aggregator' ? ' (aggregator)' : ''}, ${esc(x.posted.slice(5).replace('-', '.'))} · <a href="${x.url}" target="_blank" rel="noopener">post</a></span></li>`).join('')}</ul>`;
+const photoCaption = s => `${s.title} – ${s.sources.find(x => x.kind === 'official')?.name || ''}`;

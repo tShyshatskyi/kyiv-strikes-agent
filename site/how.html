@@ -12,10 +12,7 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="top"><div class="wrap">
-  <a class="name" href="./"><img src="logo.svg" alt="">Kyiv Strike Registry</a>
-  <nav><a class="btn" href="./">Back to the map</a></nav>
-</div></header>
+<header class="top" id="top"></header>
 
 <main>
 <section class="hero"><div class="wrap">
@@ -55,12 +52,13 @@
 
 <footer><div class="wrap">
   <p>Agents: Claude Haiku (reader) and Claude Sonnet (matcher, auditor), run through the Claude Code CLI in headless mode with structured output. Orchestration: LangGraph. Geocoding: Nominatim / OpenStreetMap. Map: Leaflet.</p>
-  <p><a href="./">Back to the map</a> · <a href="https://github.com/tShyshatskyi/kyiv-strikes-agent">Source code</a></p>
+  <p><a href="./">The map</a> · <a href="https://github.com/tShyshatskyi/kyiv-strikes-agent">Source code</a></p>
 </div></footer>
 
 <script src="data.js"></script>
 <script src="common.js"></script>
 <script>
+mountHeader('how');
 const R = window.REGISTRY, W = R.workflow, $ = s => document.querySelector(s);
 const usd = Object.values(W.llm || {}).reduce((t, r) => t + r.usd, 0);
 const calls = Object.values(W.llm || {}).reduce((t, r) => t + r.calls, 0);
