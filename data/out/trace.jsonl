@@ -1,0 +1,79 @@
+{"day": "all", "step": "collect", "message": "Telegram channels up to date", "at": "2026-11-24T12:46:34"}
+{"day": "all", "step": "prefilter", "message": "25512 posts from 13 channels -> 2116 mention damage; 362 alerts", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-05", "step": "reader", "message": "18 posts -> 3 claims", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-05", "step": "check", "message": "3 quotes verified", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-05", "step": "matcher", "message": "3 claims grouped into 3 sites", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-05", "step": "auditor", "message": "approve: no issues", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-05", "step": "finalize", "message": "3 sites recorded", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-08", "step": "reader", "message": "60 posts -> 7 claims", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-08", "step": "check", "message": "6 quotes verified, 1 rejected (not in the post)", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-08", "step": "matcher", "message": "6 claims grouped into 3 sites", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-08", "step": "auditor", "message": "approve: no issues", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-08", "step": "finalize", "message": "3 sites recorded", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-11", "step": "reader", "message": "24 posts -> 2 claims", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-11", "step": "check", "message": "2 quotes verified", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-11", "step": "matcher", "message": "2 claims grouped into 2 sites", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-11", "step": "auditor", "message": "approve: no issues", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-11", "step": "finalize", "message": "2 sites recorded", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-14", "step": "reader", "message": "32 posts -> 3 claims", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-14", "step": "check", "message": "2 quotes verified, 1 rejected (not in the post)", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-14", "step": "matcher", "message": "2 claims grouped into 2 sites", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-14", "step": "auditor", "message": "approve: no issues", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-14", "step": "finalize", "message": "2 sites recorded", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-16", "step": "reader", "message": "23 posts -> 2 claims", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-16", "step": "check", "message": "2 quotes verified", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-16", "step": "matcher", "message": "2 claims grouped into 2 sites", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-16", "step": "auditor", "message": "approve: no issues", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-16", "step": "finalize", "message": "2 sites recorded", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-17", "step": "reader", "message": "4 posts -> 0 claims", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-17", "step": "check", "message": "0 quotes verified", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-17", "step": "finalize", "message": "0 sites recorded", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-19", "step": "reader", "message": "55 posts -> 10 claims", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-19", "step": "check", "message": "9 quotes verified, 1 rejected (not in the post)", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-19", "step": "matcher", "message": "9 claims grouped into 6 sites", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-19", "step": "auditor", "message": "approve: no issues", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-19", "step": "finalize", "message": "6 sites recorded", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-25", "step": "reader", "message": "9 posts -> 5 claims", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-25", "step": "check", "message": "5 quotes verified", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-25", "step": "matcher", "message": "5 claims grouped into 3 sites", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-25", "step": "auditor", "message": "approve: no issues", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-25", "step": "finalize", "message": "3 sites recorded", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-30", "step": "reader", "message": "36 posts -> 9 claims", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-30", "step": "check", "message": "9 quotes verified", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-30", "step": "matcher", "message": "9 claims grouped into 6 sites", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-30", "step": "auditor", "message": "approve: no issues", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-30", "step": "finalize", "message": "6 sites recorded", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-31", "step": "reader", "message": "25 posts -> 3 claims", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-31", "step": "check", "message": "3 quotes verified", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-31", "step": "matcher", "message": "3 claims grouped into 3 sites", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-31", "step": "auditor", "message": "approve: no issues", "at": "2026-11-24T12:46:38"}
+{"day": "2026-10-31", "step": "finalize", "message": "3 sites recorded", "at": "2026-11-24T12:46:38"}
+{"day": "2026-11-01", "step": "reader", "message": "7 posts -> 0 claims", "at": "2026-11-24T12:46:38"}
+{"day": "2026-11-01", "step": "check", "message": "0 quotes verified", "at": "2026-11-24T12:46:38"}
+{"day": "2026-11-01", "step": "finalize", "message": "0 sites recorded", "at": "2026-11-24T12:46:38"}
+{"day": "2026-11-02", "step": "reader", "message": "14 posts -> 3 claims", "at": "2026-11-24T12:46:38"}
+{"day": "2026-11-02", "step": "check", "message": "3 quotes verified", "at": "2026-11-24T12:46:38"}
+{"day": "2026-11-02", "step": "matcher", "message": "3 claims grouped into 3 sites", "at": "2026-11-24T12:46:38"}
+{"day": "2026-11-02", "step": "auditor", "message": "approve: no issues", "at": "2026-11-24T12:46:38"}
+{"day": "2026-11-02", "step": "finalize", "message": "3 sites recorded", "at": "2026-11-24T12:46:38"}
+{"day": "2026-11-03", "step": "reader", "message": "22 posts -> 1 claims", "at": "2026-11-24T12:46:38"}
+{"day": "2026-11-03", "step": "check", "message": "1 quotes verified", "at": "2026-11-24T12:46:38"}
+{"day": "2026-11-03", "step": "matcher", "message": "1 claims grouped into 1 sites", "at": "2026-11-24T12:46:38"}
+{"day": "2026-11-03", "step": "auditor", "message": "approve: no issues", "at": "2026-11-24T12:46:38"}
+{"day": "2026-11-03", "step": "finalize", "message": "1 sites recorded", "at": "2026-11-24T12:46:38"}
+{"day": "2026-11-05", "step": "reader", "message": "13 posts -> 1 claims", "at": "2026-11-24T12:46:38"}
+{"day": "2026-11-05", "step": "check", "message": "1 quotes verified", "at": "2026-11-24T12:46:38"}
+{"day": "2026-11-05", "step": "matcher", "message": "1 claims grouped into 1 sites", "at": "2026-11-24T12:46:38"}
+{"day": "2026-11-05", "step": "auditor", "message": "approve: no issues", "at": "2026-11-24T12:46:38"}
+{"day": "2026-11-05", "step": "finalize", "message": "1 sites recorded", "at": "2026-11-24T12:46:38"}
+{"day": "2026-11-08", "step": "reader", "message": "6 posts -> 1 claims", "at": "2026-11-24T12:46:38"}
+{"day": "2026-11-08", "step": "check", "message": "1 quotes verified", "at": "2026-11-24T12:46:38"}
+{"day": "2026-11-08", "step": "matcher", "message": "1 claims grouped into 1 sites", "at": "2026-11-24T12:46:38"}
+{"day": "2026-11-08", "step": "auditor", "message": "approve: no issues", "at": "2026-11-24T12:46:38"}
+{"day": "2026-11-08", "step": "finalize", "message": "1 sites recorded", "at": "2026-11-24T12:46:38"}
+{"day": "2026-11-10", "step": "reader", "message": "12 posts -> 1 claims", "at": "2026-11-24T12:46:38"}
+{"day": "2026-11-10", "step": "check", "message": "1 quotes verified", "at": "2026-11-24T12:46:38"}
+{"day": "2026-11-10", "step": "matcher", "message": "1 claims grouped into 1 sites", "at": "2026-11-24T12:46:38"}
+{"day": "2026-11-10", "step": "auditor", "message": "approve: no issues", "at": "2026-11-24T12:46:38"}
+{"day": "2026-11-10", "step": "finalize", "message": "1 sites recorded", "at": "2026-11-24T12:46:38"}
+{"day": "all", "step": "geocode", "message": "33/37 sites on the map, 6 at address level", "at": "2026-11-24T12:46:49"}

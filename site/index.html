@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kyiv Strike Registry – every place hit, counted once</title>
+<meta name="description" content="Every place Russia hit in Kyiv from 1 October to 23 November 2026, read from public reports by three AI agents that group and audit each other's work. Each record links to the words of its sources.">
+<meta name="theme-color" content="#F6F4EF">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link href="fonts/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="name" href="./"><img src="logo.svg" alt="">Kyiv Strike Registry</a>
+  <nav>
+    <a class="opt" href="#map-s">Map</a>
+    <a class="opt" href="#patterns">Patterns</a>
+    <a class="opt" href="#wikipedia">Wikipedia check</a>
+    <a class="opt" href="#records">Records</a>
+    <a class="btn solid" href="how.html">How it works</a>
+  </nav>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <h1>Every place Russia hit in Kyiv this autumn, counted once.</h1>
+  <p class="lede" id="lede"></p>
+  <div class="figs tnum" id="figs"></div>
+</div></section>
+
+<section id="map-s" style="padding-top:clamp(40px,6vh,64px)"><div class="wrap">
+  <div class="filters" id="filters">
+    <div class="fgroup" id="f-w"><span>What hit</span></div>
+    <div class="fgroup"><span>What was hit</span><select class="chip" id="f-t" aria-label="Type of place"></select>
+      <select class="chip" id="f-d" aria-label="District"></select></div>
+    <p class="status" id="status" aria-live="polite"></p>
+  </div>
+  <div class="mapbox">
+    <div id="map" role="region" aria-label="Map of places hit"></div>
+    <div class="clock" id="clock"></div>
+  </div>
+  <div class="mapbar">
+    <div class="legend">
+      <span><i style="background:var(--drone)"></i>Drone</span>
+      <span><i style="background:var(--missile)"></i>Missile</span>
+      <span><i style="background:var(--unk)"></i>Not stated</span>
+      <span><i class="ring"></i>District only, no address</span>
+    </div>
+    <button class="btn sm" id="replay">Replay the autumn</button>
+  </div>
+  <div class="nights" id="nights"></div>
+  <div class="ticks" id="ticks"></div>
+  <p class="small mute" style="margin-top:8px">Each column is one attack night: places hit above the line, hours under air-raid alert below it. Select a night to see it alone.</p>
+</div></section>
+
+<section id="patterns"><div class="wrap">
+  <h2>What hit, where and when</h2>
+  <p class="lede">The same filters apply here. Select a bar to narrow everything on the page to it.</p>
+  <div class="charts">
+    <div class="chart"><h3>What hit</h3><p>Weapon named by the sources. Officials often say only "debris" or "a hit", so many places have no weapon on record.</p><div class="bars" id="c-weapon"></div></div>
+    <div class="chart"><h3>Where</h3><p>Places hit in each of Kyiv's ten districts.</p><div class="bars" id="c-district"></div></div>
+    <div class="chart"><h3>When, by hour</h3><p id="c-hour-note">Kyiv time. The hour a source gives for the hit, or else the hour of the first report.</p><div class="cols" id="c-hour" style="grid-template-columns:repeat(24,1fr)"></div><div class="cols-ax" id="c-hour-ax" style="grid-template-columns:repeat(24,1fr)"></div></div>
+    <div class="chart"><h3>When, by night of the week</h3><p>An attack that runs past midnight is counted on the evening it began.</p><div class="bars" id="c-dow"></div></div>
+    <div class="chart"><h3>What was hit</h3><p>One square for every place. Select a square to open its record.</p><div class="tally" id="c-target"></div></div>
+  </div>
+</div></section>
+
+<section id="wikipedia"><div class="wrap">
+  <h2>Checked against Wikipedia</h2>
+  <p class="lede" id="wiki-lede"></p>
+  <div class="wiki" id="wiki"></div>
+</div></section>
+
+<section id="records"><div class="wrap">
+  <h2>The record</h2>
+  <p class="lede">Newest night first. Each place shows how well it is confirmed and, under Sources, the exact words of every channel that reported it.</p>
+  <div class="days" id="days"></div>
+  <div class="more"><button class="btn" id="more">Show earlier nights</button></div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <p>Reports from 13 public Telegram channels: the Kyiv City Military Administration, the mayor, the city council, the State Emergency Service, Suspilne, Ukrainska Pravda, Hromadske, the Kyiv Independent, the Kyiv Post, BBC Ukrainian and two local aggregators. Cross-checked against English and Ukrainian Wikipedia (CC BY-SA). Map tiles © Esri; district boundaries © OpenStreetMap contributors.</p>
+  <p id="gen"></p>
+  <p><a href="how.html">How it works</a> · <a href="https://github.com/tShyshatskyi/kyiv-strikes-agent">Source code</a></p>
+</div></footer>
+
+<dialog class="viewer" id="viewer"><button aria-label="Close" onclick="this.closest('dialog').close()">×</button><img alt=""><p></p></dialog>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="data.js"></script>
+<script src="common.js"></script>
+<script>
+const R = window.REGISTRY, S = R.sites;
+const $ = s => document.querySelector(s);
+const state = {night: null, w: 'all', t: '', d: ''};
+const NIGHTS = allNights(R.period);
+
+// ---------- hero
+(function hero() {
+  const nightsHit = new Set(S.map(s => s.day)).size;
+  const killed = sum(R.days.map(d => d.city?.killed)), injured = sum(R.days.map(d => d.city?.injured));
+  const conf = S.filter(s => s.level === 'confirmed').length;
+  const wf = R.workflow;
+  $('#lede').innerHTML = `From ${fmtDay(R.period[0], 'long')} to ${fmtDay(R.period[1], 'long')} 2026, Russian drones and missiles hit ${S.length} places in Kyiv over ${nightsHit} nights. ` +
+    `Three AI agents read ${wf.collected.toLocaleString('en')} public posts from ${wf.channels} Telegram channels, worked out which reports describe the same place, and audited each other's work. ` +
+    `Every record links to the exact words of the people who reported it. <a href="how.html">How it works</a>`;
+  $('#figs').innerHTML = [
+    [S.length, pl(S.length, 'place hit', 'places hit')],
+    [killed, 'people killed'], [injured, 'injured'],
+    [wf.alert_hours, 'hours under air-raid alert'],
+    [Math.round(100 * conf / Math.max(1, S.length)) + '%', 'confirmed by two or more independent sources'],
+  ].map(([n, l]) => `<div><b>${n}</b>${l}</div>`).join('');
+  $('#gen').textContent = `Built ${R.generated.slice(0, 10)} from ${wf.collected.toLocaleString('en')} posts. Casualty figures are the latest each source gave.`;
+})();
+
+// ---------- filters
+const W_CHIPS = [['all', 'All', null], ['drone', 'Drones', 'var(--drone)'], ['missile', 'Missiles', 'var(--missile)'], ['unknown', 'Not stated', 'var(--unk)']];
+$('#f-w').insertAdjacentHTML('beforeend', W_CHIPS.map(([k, l, c]) => `<button class="chip" data-w="${k}">${c ? `<i style="background:${c}"></i>` : ''}${l}</button>`).join(''));
+$('#f-w').addEventListener('click', e => { const b = e.target.closest('[data-w]'); if (b) set({w: b.dataset.w}); });
+const targets = count(S, s => s.target);
+$('#f-t').innerHTML = `<option value="">Any place</option>` + Object.keys(targets).sort((a, b) => targets[b] - targets[a]).map(k => `<option value="${k}">${TARGET[k] || k} (${targets[k]})</option>`).join('');
+const dists = count(S.filter(s => s.district), s => s.district);
+$('#f-d').innerHTML = `<option value="">Any district</option>` + Object.keys(dists).sort().map(k => `<option value="${k}">${k}</option>`).join('');
+$('#f-t').onchange = e => set({t: e.target.value});
+$('#f-d').onchange = e => set({d: e.target.value});
+
+function pass(s, skip) {
+  return (skip === 'night' || !state.night || s.day === state.night) && (skip === 'w' || state.w === 'all' || s.wclass === state.w) &&
+         (skip === 't' || !state.t || s.target === state.t) && (skip === 'd' || !state.d || s.district === state.d);
+}
+const visible = skip => S.filter(s => pass(s, skip));
+function set(p) { Object.assign(state, p); render(); }
+
+// ---------- map
+const map = L.map('map', {zoomControl: false, zoomSnap: 0.25, scrollWheelZoom: false, attributionControl: true});
+L.control.zoom({position: 'topright'}).addTo(map);
+const ESRI = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/';
+L.tileLayer(ESRI + 'World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {maxZoom: 16, attribution: 'Tiles © Esri'}).addTo(map);
+L.tileLayer(ESRI + 'World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {maxZoom: 16}).addTo(map);
+const districtLayer = L.geoJSON(R.districts, {style: {color: '#6E6A62', weight: 1, opacity: .55, fill: false}, interactive: false}).addTo(map);
+const fitCity = () => map.fitBounds(districtLayer.getBounds(), {padding: [10, 10]});
+fitCity();
+new ResizeObserver(() => map.invalidateSize()).observe($('#map'));
+map.on('click', () => map.scrollWheelZoom.enable());
+const dots = L.layerGroup().addTo(map);
+function drawDots(list) {
+  dots.clearLayers();
+  for (const s of list) {
+    if (s.lat == null) continue;
+    const c = COLOR[s.wclass], exact = s.precision === 'building' || s.precision === 'street';
+    const m = exact ? L.circleMarker([s.lat, s.lon], {radius: 6.5, color: '#F6F4EF', weight: 1.5, fillColor: c, fillOpacity: 1})
+                    : L.circleMarker([s.lat, s.lon], {radius: 9, color: c, weight: 2.2, fill: true, fillOpacity: 0.08, fillColor: c});
+    m.bindPopup(() => popup(s), {maxWidth: 280});
+    dots.addLayer(m);
+  }
+}
+function popup(s) {
+  return `${s.photo ? `<img src="${s.photo}" alt="">` : ''}<span class="mute">${fmtDay(s.day, 'dow')}${s.time ? ', ' + s.time : ''}</span><br><b>${esc(s.title)}</b><br>` +
+    `${esc([s.district, s.address].filter(Boolean).join(', '))}<br>${WEAPON[s.weapon] || 'Weapon not stated'}${cas(s) ? ' · ' + cas(s) : ''}<br>` +
+    `<span class="mute">${LEVEL[s.level]}</span><br><a href="#${s.id}" onclick="openRecord('${s.id}');return false">Sources and quotes</a>`;
+}
+
+// ---------- night strip
+function drawNights() {
+  const list = visible('night'), byDay = group(list, s => s.day);
+  const alerts = Object.fromEntries(R.days.map(d => [d.day, (d.alerts.drone + d.alerts.missile) / 60]));
+  const n = NIGHTS.length, w = 1000, cw = w / n, top = 110, bot = 40;
+  const maxS = Math.max(4, ...Object.values(byDay).map(a => a.length)), maxA = Math.max(6, ...Object.values(alerts));
+  let svg = `<svg viewBox="0 -4 ${w} ${top + bot + 12}" role="img" aria-label="Places hit and alert hours per night">`;
+  NIGHTS.forEach((d, i) => {
+    const x = i * cw, a = byDay[d] || [];
+    let y = top;
+    for (const k of ['drone', 'missile', 'unknown']) {
+      const h = a.filter(s => s.wclass === k).length * (top - 6) / maxS;
+      if (h) { svg += `<rect x="${x + 1.5}" y="${y - h}" width="${cw - 3}" height="${h}" fill="${COLOR[k]}"/>`; y -= h; }
+    }
+    const ah = (alerts[d] || 0) * bot / maxA;
+    if (ah) svg += `<rect x="${x + 1.5}" y="${top + 3}" width="${cw - 3}" height="${ah}" fill="#B9B4A9"/>`;
+    if (state.night === d) svg += `<rect class="sel" x="${x + .5}" y="-2" width="${cw - 1}" height="${top + bot + 8}" rx="2"/>`;
+    svg += `<rect class="hit" data-d="${d}" x="${x}" y="-4" width="${cw}" height="${top + bot + 12}" fill="transparent"><title>${fmtDay(d, 'dow')}: ${a.length} ${pl(a.length, 'place', 'places')}, ${hm((alerts[d] || 0) * 60)} under alert</title></rect>`;
+  });
+  svg += `<line x1="0" x2="${w}" y1="${top + 1.5}" y2="${top + 1.5}" stroke="#1C1B19" stroke-width="1"/></svg>`;
+  $('#nights').innerHTML = svg;
+  $('#ticks').innerHTML = [0, 14, 31, 45, n - 1].map(i => `<span>${fmtDay(NIGHTS[i])}</span>`).join('');
+}
+$('#nights').addEventListener('click', e => { const r = e.target.closest('[data-d]'); if (r) set({night: state.night === r.dataset.d ? null : r.dataset.d}); });
+
+// ---------- charts
+function barRows(el, rows, key, total) {
+  const max = Math.max(1, ...rows.map(r => r.n));
+  el.innerHTML = rows.map(r => `<button class="bar" data-k="${r.k}" aria-pressed="${state[key] === r.k}"><span>${r.label}</span>` +
+    `<span class="track">${['drone', 'missile', 'unknown'].map(c => r[c] ? `<i style="width:${100 * r[c] / max}%;background:${COLOR[c]}"></i>` : '').join('')}</span>` +
+    `<b class="tnum">${total ? Math.round(100 * r.n / Math.max(1, total)) + '%' : r.n}</b></button>`).join('');
+  el.onclick = e => { const b = e.target.closest('[data-k]'); if (b && key[0] !== '_') set({[key]: state[key] === b.dataset.k ? (key === 'w' ? 'all' : '') : b.dataset.k}); };
+}
+const split = list => ({n: list.length, drone: list.filter(s => s.wclass === 'drone').length, missile: list.filter(s => s.wclass === 'missile').length, unknown: list.filter(s => s.wclass === 'unknown').length});
+function drawCharts() {
+  const vw = visible('w');
+  barRows($('#c-weapon'), [['drone', 'Drones'], ['missile', 'Missiles'], ['unknown', 'Not stated']].map(([k, l]) => {
+    const sub = vw.filter(s => s.wclass === k), types = count(sub, s => s.weapon);
+    const detail = Object.keys(types).filter(t => t !== k && t !== 'unknown').map(t => `${WEAPON[t].toLowerCase()} ${types[t]}`).join(', ');
+    return {k, label: l + (detail && k !== 'unknown' ? ` <span class="mute">${detail}</span>` : ''), ...split(sub)};
+  }), 'w', vw.length);
+  const vd = visible('d'), byD = group(vd.filter(s => s.district), s => s.district);
+  barRows($('#c-district'), Object.keys(byD).sort((a, b) => byD[b].length - byD[a].length).map(k => ({k, label: k, ...split(byD[k])})), 'd');
+  const v = visible();
+  // hour of day
+  const hours = Array.from({length: 24}, () => []);
+  v.forEach(s => { const h = hourOf(s); if (h != null) hours[h].push(s); });
+  const maxH = Math.max(1, ...hours.map(h => h.length));
+  $('#c-hour').innerHTML = hours.map((a, h) => `<div title="${String(h).padStart(2, '0')}:00 – ${a.length} ${pl(a.length, 'place', 'places')}">${['drone', 'missile', 'unknown'].map(c => { const n = a.filter(s => s.wclass === c).length; return n ? `<i style="height:${100 * n / maxH}%;background:${COLOR[c]}"></i>` : ''; }).join('')}</div>`).join('');
+  $('#c-hour-ax').innerHTML = hours.map((_, h) => `<span>${h % 3 === 0 ? String(h).padStart(2, '0') : ''}</span>`).join('');
+  // night of week
+  const dows = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  const nightsPer = count(NIGHTS, d => dowOf(d));
+  barRows($('#c-dow'), dows.map((l, i) => ({k: 'dow' + i, label: `${l} <span class="mute">${nightsPer[i] || 0} nights</span>`, ...split(v.filter(s => dowOf(s.day) === i))})), '_dow');
+  // what was hit: squares
+  const vt = visible('t'), byT = group(vt, s => s.target);
+  $('#c-target').innerHTML = Object.keys(byT).sort((a, b) => byT[b].length - byT[a].length).map(k =>
+    `<div class="trow"><span>${TARGET[k] || k}</span><b class="tnum">${byT[k].length}</b><span class="sq">${byT[k].sort((a, b) => a.wclass.localeCompare(b.wclass)).map(s =>
+      `<button style="background:${COLOR[s.wclass]}" data-id="${s.id}" title="${esc(fmtDay(s.day) + ': ' + s.title)}" aria-label="${esc(s.title)}"></button>`).join('')}</span></div>`).join('');
+}
+$('#c-target').addEventListener('click', e => { const b = e.target.closest('[data-id]'); if (b) openRecord(b.dataset.id); });
+
+// ---------- Wikipedia check
+function drawWiki() {
+  const W = R.wiki, sm = W.summary;
+  $('#wiki-lede').innerHTML = `Wikipedia retells the same news, so it cannot confirm a place on its own. It is still a useful outside check on whole nights. ` +
+    `Editors of ${W.articles.length} articles in English and Ukrainian recorded attacks on Kyiv on ${sm.nights} nights in this period. ` +
+    `The registry has places for ${sm.nights - sm.missing - (sm.pending || 0)} of them${sm.pending ? ` (${sm.pending} more nights are still being processed)` : ''}; on ${sm.differs} ${pl(sm.differs, 'night', 'nights')} the death toll differs.`;
+  const byDay = group(S, s => s.day), city = Object.fromEntries(R.days.map(d => [d.day, d.city || {}]));
+  $('#wiki').innerHTML = Object.entries(W.nights).sort((a, b) => b[0].localeCompare(a[0])).map(([d, n]) => {
+    const ours = byDay[d] || [], k = city[d]?.killed;
+    const verdict = {agrees: 'Agrees', differs: 'Toll differs', missing: 'Not in the registry', pending: 'Not processed yet'}[n.verdict];
+    const detail = n.verdict === 'differs' ? `Wikipedia ${n.wiki_killed} killed, registry ${k ?? 'none stated'}` :
+      n.verdict === 'missing' ? 'No place found in the channels' : n.verdict === 'pending' ? 'The agents have not read this night yet' : `${ours.length} ${pl(ours.length, 'place', 'places')} in the registry`;
+    return `<div class="wrow"><time>${fmtDay(d, 'dow')}</time><div class="says">${n.records.map(r => `<div lang="${r.lang}">${esc(r.text.replace(/^[^:]*?\d{4}[,:]\s*/, '').replace(/^Київ\. /, '').replace(/Засіб: —\. /, '').replace(/^Засіб: ([^.]+)\. (.)/, (m, w, c) => w[0].toUpperCase() + w.slice(1) + '; ' + c))} <a href="${r.url}" target="_blank" rel="noopener">${r.lang === 'uk' ? 'uk' : 'en'}.wikipedia</a></div>`).join('')}</div>` +
+      `<div><span class="v ${n.verdict}">${verdict}</span><br><span class="mute">${detail}</span></div></div>`;
+  }).join('');
+}
+
+// ---------- records
+let shown = 8;
+function drawRecords() {
+  const v = visible(), byDay = group(v, s => s.day), days = Object.keys(byDay).sort().reverse();
+  const meta = Object.fromEntries(R.days.map(d => [d.day, d]));
+  $('#days').innerHTML = days.slice(0, shown).map(d => {
+    const m = meta[d] || {}, a = m.alerts || {}, c = m.city || {};
+    const bits = [`${byDay[d].length} ${pl(byDay[d].length, 'place', 'places')}`];
+    if (c.killed) bits.push(`${c.killed} killed`); if (c.injured) bits.push(`${c.injured} injured`);
+    if (a.drone + a.missile) bits.push(`${hm(a.drone + a.missile)} under alert`);
+    return `<article><div class="dayh"><h3>${fmtDay(d, 'dowlong')}</h3><p class="tnum">${bits.join(' · ')}</p></div>` +
+      (m.summary ? `<p class="daysum">${esc(m.summary)}</p>` : '') + byDay[d].map(siteHTML).join('') + `</article>`;
+  }).join('') || `<p class="mute">No place matches these filters. <button class="btn sm" onclick="reset()">Clear filters</button></p>`;
+  $('#more').hidden = days.length <= shown;
+}
+function siteHTML(s) {
+  const where = [s.district, s.address].filter(Boolean).join(', ') || 'District not stated';
+  const lvl = {confirmed: `Confirmed<small>${s.voices} independent sources</small>`, official: `Official only<small>city or emergency service</small>`,
+               single_source: `One source<small>not yet confirmed</small>`, aggregator_only: `Aggregator only<small>treat with care</small>`}[s.level];
+  return `<div class="site${s.photo ? ' has-photo' : ''}" id="${s.id}">` +
+    (s.photo ? `<img class="ph" src="${s.photo}" alt="Photo from the official post" loading="lazy" data-cap="${esc(s.title)} – ${esc(s.sources.find(x => x.kind === 'official')?.name || '')}">` : '') +
+    `<h4><i style="background:${COLOR[s.wclass]}"></i>${esc(s.title)}</h4><div class="lvl">${lvl}</div>` +
+    `<p class="meta">${esc(where)} · ${WEAPON[s.weapon] || 'Weapon not stated'}${s.time ? ' · ' + s.time : ''}${cas(s) ? ' · ' + cas(s) : ''}</p>` +
+    `<p class="sum">${esc(s.summary)}${s.flags.length ? `<br><span class="flag">Auditor's note: ${esc(s.flags.join(' '))}</span>` : ''}</p>` +
+    `<details><summary>Sources (${s.sources.length})</summary><ul class="srcs">${s.sources.map(x =>
+      `<li><blockquote lang="uk">“${esc(x.quote)}”</blockquote><span class="who">${esc(x.name)}${x.kind === 'aggregator' ? ' (aggregator)' : ''}, ${esc(x.posted.slice(5).replace('-', '.'))} · <a href="${x.url}" target="_blank" rel="noopener">post</a></span></li>`).join('')}</ul></details></div>`;
+}
+$('#more').onclick = () => { shown += 10; drawRecords(); };
+$('#days').addEventListener('click', e => { const img = e.target.closest('.ph'); if (!img) return;
+  const v = $('#viewer'); v.querySelector('img').src = img.src; v.querySelector('p').textContent = img.dataset.cap; v.showModal(); });
+window.openRecord = id => {
+  const s = S.find(x => x.id === id); if (!s) return;
+  if (!pass(s)) Object.assign(state, {night: null, w: 'all', t: '', d: ''});
+  const v = visible(), days = [...new Set(v.map(x => x.day))].sort().reverse();
+  shown = Math.max(shown, days.indexOf(s.day) + 1); render();
+  const el = document.getElementById(id); el.scrollIntoView({behavior: 'smooth', block: 'center'});
+  el.classList.add('lit'); el.querySelector('details').open = true; setTimeout(() => el.classList.remove('lit'), 2400);
+};
+window.reset = () => set({night: null, w: 'all', t: '', d: ''});
+
+// ---------- render
+function render() {
+  const v = visible();
+  document.querySelectorAll('#f-w .chip').forEach(b => b.setAttribute('aria-pressed', b.dataset.w === state.w));
+  $('#f-t').value = state.t; $('#f-d').value = state.d;
+  const any = state.night || state.w !== 'all' || state.t || state.d;
+  $('#status').innerHTML = any ? `Showing ${v.length} of ${S.length} places${state.night ? ' on ' + fmtDay(state.night, 'dow') : ''}. <button onclick="reset()">Clear filters</button>` : `Showing all ${S.length} places.`;
+  const c = state.night ? (R.days.find(d => d.day === state.night)?.city || {}) : {};
+  $('#clock').innerHTML = `<b>${state.night ? fmtDay(state.night, 'dowlong') : 'All nights, 1 Oct – 23 Nov'}</b>${v.length} ${pl(v.length, 'place', 'places')}${c.killed ? ` · ${c.killed} killed` : ''}${c.injured ? ` · ${c.injured} injured` : ''}`;
+  drawDots(v); drawNights(); drawCharts(); drawRecords();
+}
+drawWiki(); render();
+
+// ---------- replay: the autumn night by night
+let playing = null;
+$('#replay').onclick = () => {
+  if (playing) { clearInterval(playing); playing = null; $('#replay').textContent = 'Replay the autumn'; render(); return; }
+  const base = visible('night'); let i = 0;
+  $('#replay').textContent = 'Stop';
+  playing = setInterval(() => {
+    const upto = NIGHTS[i], list = base.filter(s => s.day <= upto), today = base.filter(s => s.day === upto);
+    drawDots(list);
+    $('#clock').innerHTML = `<b>${fmtDay(upto, 'dowlong')}</b>${today.length} tonight · ${list.length} so far`;
+    if (++i >= NIGHTS.length) { clearInterval(playing); playing = null; $('#replay').textContent = 'Replay the autumn'; setTimeout(render, 1200); }
+  }, matchMedia('(prefers-reduced-motion: reduce)').matches ? 40 : 170);
+};
+</script>
+</body>
+</html>

@@ -13,3 +13,9 @@ mcp_config.json.bak
 # PyCharm: keep run configurations, ignore local state
 .idea/workspace.xml
 .idea/shelf/
+
+# v2 pipeline: raw posts and model answers are reproducible, not committed
+data/raw/
+data/cache/llm/
+data/*.log
+site/.vercel/

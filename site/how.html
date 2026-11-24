@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How it works – Kyiv Strike Registry</title>
+<meta name="description" content="Three AI agents read, group and audit every public report of a strike on Kyiv; code checks what can be checked. How the workflow is built.">
+<meta name="theme-color" content="#F6F4EF">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link href="fonts/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="name" href="./"><img src="logo.svg" alt="">Kyiv Strike Registry</a>
+  <nav><a class="btn" href="./">Back to the map</a></nav>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <h1>Agents judge. Code checks.</h1>
+  <p class="lede">After a night attack on Kyiv, a dozen channels report the same hits in different words, at different hours, with casualty figures that change through the morning. Counting posts counts each strike five times. Reading them by hand takes a person a day per night.</p>
+  <p class="lede">This registry hands the reading to three AI agents with separate jobs, one of which exists only to find the others' mistakes. Everything that can be checked without judgement is checked by code, so an agent's error is caught by something that cannot make the same error.</p>
+  <div class="kv tnum" id="kv"></div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>The workflow</h2>
+  <p class="lede">A LangGraph graph. Each attack night runs as its own branch, all nights in parallel. Dark boxes are agents, light boxes are code.</p>
+  <figure class="flow" id="flow"></figure>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Step by step</h2>
+  <ol class="steps" id="steps"></ol>
+</div></section>
+
+<section><div class="wrap">
+  <h2>What the auditor caught</h2>
+  <p class="lede" id="catch-lede"></p>
+  <ul class="catches" id="catches"></ul>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Limits</h2>
+  <ol class="steps">
+    <li><h3>Reports are what they are</h3><p>Telegram posts are early and sometimes corrected later. Casualty figures are the latest a source gave, not a final count.</p></li>
+    <li><h3>Many places have no address</h3><p>Officials usually name a district, not a street, for security reasons. Those places are drawn as rings at a fixed point inside their district.</p></li>
+    <li><h3>The auditor is a model too</h3><p>It catches a lot, but what it still disputes after one revision is published with its note attached rather than silently fixed.</p></li>
+    <li><h3>Wikipedia is not a witness</h3><p>It retells the same news, so it never raises a place's confirmation. It is used only to check whole nights and death tolls.</p></li>
+  </ol>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <p>Agents: Claude Haiku (reader) and Claude Sonnet (matcher, auditor), run through the Claude Code CLI in headless mode with structured output. Orchestration: LangGraph. Geocoding: Nominatim / OpenStreetMap. Map: Leaflet.</p>
+  <p><a href="./">Back to the map</a> · <a href="https://github.com/tShyshatskyi/kyiv-strikes-agent">Source code</a></p>
+</div></footer>
+
+<script src="data.js"></script>
+<script src="common.js"></script>
+<script>
+const R = window.REGISTRY, W = R.workflow, $ = s => document.querySelector(s);
+const usd = Object.values(W.llm || {}).reduce((t, r) => t + r.usd, 0);
+const calls = Object.values(W.llm || {}).reduce((t, r) => t + r.calls, 0);
+const nights = new Set(R.sites.map(s => s.day)).size;
+const n = x => Number(x || 0).toLocaleString('en');
+
+$('#kv').innerHTML = [
+  [n(W.collected), 'posts read'], [n(W.claims), 'claims extracted'], [n(W.rejected_quotes), 'claims thrown out by the quote check'],
+  [n(W.sites), 'distinct places'], [n(W.sent_back), 'nights sent back by the auditor'], [n(calls), 'agent calls'],
+  ['$' + usd.toFixed(0), 'model cost, the whole run'],
+].map(([b, l]) => `<div><b>${b}</b>${l}</div>`).join('');
+
+// The graph, drawn from the same steps the code runs.
+(function flow() {
+  const box = (x, y, w, label, sub, agent) => `<g transform="translate(${x},${y})"><rect width="${w}" height="58" rx="6" fill="${agent ? '#1C1B19' : '#ECE8DF'}" stroke="${agent ? '#1C1B19' : '#DEDAD0'}"/>` +
+    `<text x="${w / 2}" y="25" text-anchor="middle" font-size="15" font-weight="700" fill="${agent ? '#F6F4EF' : '#1C1B19'}">${label}</text>` +
+    `<text x="${w / 2}" y="44" text-anchor="middle" font-size="11.5" fill="${agent ? '#C9C4B8' : '#6E6A62'}">${sub}</text></g>`;
+  const arrow = (x1, y1, x2, y2) => `<path d="M${x1} ${y1} L${x2} ${y2}" stroke="#1C1B19" stroke-width="1.4" fill="none" marker-end="url(#a)"/>`;
+  let s = `<svg viewBox="0 0 1000 330" role="img" aria-label="Workflow: collect, filter, then per night read, check quotes, match, audit with a loop back to match, then finalize, geocode, Wikipedia check and publish">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#1C1B19"/></marker></defs>`;
+  s += box(0, 20, 120, 'Collect', `${n(W.collected)} posts`) + arrow(120, 49, 146, 49);
+  s += box(148, 20, 120, 'Filter', `${n(W.candidates)} about damage`) + arrow(268, 49, 300, 49);
+  s += `<rect x="300" y="0" width="690" height="118" rx="8" fill="none" stroke="#A49F94" stroke-dasharray="4 4"/><text x="312" y="112" font-size="11.5" fill="#6E6A62">one branch per attack night, all nights in parallel</text>`;
+  s += box(316, 20, 120, 'Reader', 'Haiku: claims', true) + arrow(436, 49, 456, 49);
+  s += box(458, 20, 120, 'Quote check', `${n(W.rejected_quotes)} thrown out`) + arrow(578, 49, 598, 49);
+  s += box(600, 20, 120, 'Matcher', 'Sonnet: places', true) + arrow(720, 49, 740, 49);
+  s += box(742, 20, 120, 'Auditor', 'Sonnet: find errors', true) + arrow(862, 49, 882, 49);
+  s += box(884, 20, 96, 'Finalize', 'rules in code');
+  s += `<path d="M802 78 C802 104 660 104 660 82" stroke="#C4372B" stroke-width="1.6" fill="none" marker-end="url(#a)"/><text x="731" y="100" text-anchor="middle" font-size="11.5" fill="#C4372B">revise ×${n(W.sent_back)}</text>`;
+  s += arrow(932, 118, 932, 170);
+  s += box(668, 172, 120, 'Wikipedia', `${W.wikipedia?.nights || 0} nights compared`) + box(812, 172, 168, 'Geocode', 'OpenStreetMap + districts');
+  s += arrow(812, 201, 790, 201);
+  s += arrow(668, 201, 600, 201) + box(470, 172, 128, 'Publish', `${n(W.sites)} places`);
+  s += `<text x="0" y="300" font-size="12" fill="#6E6A62">Every model answer is cached by a hash of its prompt, so a rerun costs nothing for work already done.</text></svg>`;
+  $('#flow').innerHTML = s;
+})();
+
+const issueNames = {wrong_merge: 'two different places merged into one', missed_merge: 'one place counted twice', unsupported_summary: 'a statement no source makes',
+  wrong_field: 'a wrong district, weapon or type', not_kyiv_city: 'a place outside the city', not_this_attack: 'a report from another night', lost_claim: 'a report left out'};
+const iss = Object.entries(W.issues || {}).sort((a, b) => b[1] - a[1]);
+const steps = [
+  ['Collect', 'code', `Reads ${W.channels} public Telegram channels through the t.me web preview: the city administration, the mayor, the emergency service, eight newsrooms and two aggregators. No login, no API key.`, `${n(W.collected)} posts`],
+  ['Filter', 'code', 'Keeps posts that describe damage in the city of Kyiv itself, not the oblast. Separately, the city\'s alert and all-clear posts are parsed into an alert timeline without any model.', `${n(W.candidates)} posts kept · ${n(W.alerts)} alerts, ${n(W.alert_hours)} hours`],
+  ['Read', 'agent · Claude Haiku', 'Turns each post into claims, one per place: what was hit, where, with what, casualties, and a quote copied from the post that supports it.', `${n(W.claims)} claims`],
+  ['Check quotes', 'code', 'Every quote is compared with its post character by character. A paraphrase or an invented detail is thrown out before anyone builds on it.', `${n(W.rejected_quotes)} thrown out`],
+  ['Match', 'agent · Claude Sonnet', 'Groups the night\'s claims into distinct physical places, so a strike reported by six channels is counted once. Writes a title and summary from the claims alone.', `${n(W.sites)} places from ${n(W.kept_claims)} claims`],
+  ['Audit', 'agent · Claude Sonnet', 'A separate agent with its own instructions reads the matcher\'s work as someone else\'s and hunts for errors. If it finds any, the graph sends the night back to the matcher with its notes, once.',
+    `${n(W.sent_back)} nights sent back` + (iss.length ? ' · ' + iss.map(([k, v]) => `${v} × ${issueNames[k] || k}`).join(', ') : '')],
+  ['Finalize', 'code', 'Enforces what a prompt can only ask for: every claim used exactly once, nothing lost, places the auditor ruled out of area removed. Confirmation counts independent voices, so two channels of one newsroom are one voice and aggregators never count. Casualties are the latest figure, never a sum of updates.',
+    Object.entries(W.levels || {}).map(([k, v]) => `${v} ${LEVEL[k].toLowerCase()}`).join(' · ')],
+  ['Geocode', 'code', 'Addresses go to OpenStreetMap\'s Nominatim, then the point is tested against the real district boundaries. A point in the wrong district is rejected.',
+    Object.entries(W.precision || {}).map(([k, v]) => `${v} ${k === 'None' ? 'not placed' : 'to ' + k}`).join(' · ')],
+  ['Check against Wikipedia', 'code', 'Rows from three Wikipedia articles are lined up with attack nights. Missing nights and death tolls that differ are shown on the main page.',
+    W.wikipedia ? `${W.wikipedia.nights} nights · ${W.wikipedia.agrees} agree · ${W.wikipedia.differs} differ · ${W.wikipedia.missing} not in the registry` : ''],
+  ['Publish', 'code', 'The registry, the agents\' full trace, and this site.', ''],
+];
+$('#steps').innerHTML = steps.map(([h, who, p, num]) => `<li><h3>${h}<small>${who}</small></h3><p>${p}</p>${num ? `<p class="n tnum">${num}</p>` : ''}</li>`).join('');
+
+$('#catch-lede').textContent = R.examples.length ? `Real notes from this run, as the auditor wrote them, and whether the matcher's second attempt fixed them.` : 'No examples in this run yet.';
+$('#catches').innerHTML = R.examples.map(e => `<li><b>${fmtDay(e.day, 'dow')}: ${issueNames[e.kind] || e.kind}</b>${esc(e.explanation)}<div class="fx">${e.fixed ? 'Fixed in the revision.' : 'Still disputed, published with the note attached.'}</div></li>`).join('');
+</script>
+</body>
+</html>

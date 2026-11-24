@@ -1,0 +1,4778 @@
+{
+ "generated": "2026-11-24T12:46:49",
+ "period": [
+  "2026-10-05",
+  "2026-11-10"
+ ],
+ "collection": {
+  "posts_read": 25512,
+  "channels": 13,
+  "posts_per_channel": {
+   "VA_Kyiv": 1286,
+   "vitaliy_klitschko": 326,
+   "KyivCityOfficial": 1558,
+   "dsns_kyiv": 182,
+   "suspilne_kyiv": 1499,
+   "suspilnenews": 2816,
+   "ukrpravda_news": 1894,
+   "hromadske_ua": 2155,
+   "kyivindependent_official": 1294,
+   "kyivpost_official": 1621,
+   "bbcukrainian": 579,
+   "truexakyiv": 4117,
+   "kievreal1": 6185
+  },
+  "candidates": 2116,
+  "alerts": 362,
+  "alert_minutes": 20797
+ },
+ "alerts": [
+  {
+   "start": "2026-09-30T19:39:28+03:00",
+   "end": "2026-09-30T20:42:42+03:00",
+   "kind": "drone",
+   "minutes": 63,
+   "url": "https://t.me/VA_Kyiv/21279"
+  },
+  {
+   "start": "2026-09-30T21:37:05+03:00",
+   "end": "2026-09-30T23:00:28+03:00",
+   "kind": "drone",
+   "minutes": 83,
+   "url": "https://t.me/VA_Kyiv/21283"
+  },
+  {
+   "start": "2026-10-01T02:50:48+03:00",
+   "end": "2026-10-01T03:00:26+03:00",
+   "kind": "drone",
+   "minutes": 10,
+   "url": "https://t.me/VA_Kyiv/21286"
+  },
+  {
+   "start": "2026-10-01T03:40:49+03:00",
+   "end": "2026-10-01T03:55:43+03:00",
+   "kind": "drone",
+   "minutes": 15,
+   "url": "https://t.me/VA_Kyiv/21288"
+  },
+  {
+   "start": "2026-10-01T04:56:45+03:00",
+   "end": "2026-10-01T05:10:41+03:00",
+   "kind": "drone",
+   "minutes": 14,
+   "url": "https://t.me/VA_Kyiv/21290"
+  },
+  {
+   "start": "2026-10-01T06:26:54+03:00",
+   "end": "2026-10-01T08:23:57+03:00",
+   "kind": "drone",
+   "minutes": 117,
+   "url": "https://t.me/VA_Kyiv/21292"
+  },
+  {
+   "start": "2026-10-01T08:48:52+03:00",
+   "end": "2026-10-01T09:31:05+03:00",
+   "kind": "drone",
+   "minutes": 42,
+   "url": "https://t.me/VA_Kyiv/21296"
+  },
+  {
+   "start": "2026-10-01T10:34:46+03:00",
+   "end": "2026-10-01T12:30:30+03:00",
+   "kind": "drone",
+   "minutes": 116,
+   "url": "https://t.me/VA_Kyiv/21303"
+  },
+  {
+   "start": "2026-10-01T13:45:51+03:00",
+   "end": "2026-10-01T13:50:29+03:00",
+   "kind": "drone",
+   "minutes": 5,
+   "url": "https://t.me/VA_Kyiv/21322"
+  },
+  {
+   "start": "2026-10-01T14:39:56+03:00",
+   "end": "2026-10-01T14:45:49+03:00",
+   "kind": "drone",
+   "minutes": 6,
+   "url": "https://t.me/VA_Kyiv/21325"
+  },
+  {
+   "start": "2026-10-01T18:21:48+03:00",
+   "end": "2026-10-01T18:33:30+03:00",
+   "kind": "drone",
+   "minutes": 12,
+   "url": "https://t.me/VA_Kyiv/21330"
+  },
+  {
+   "start": "2026-10-01T19:54:58+03:00",
+   "end": "2026-10-01T20:34:55+03:00",
+   "kind": "drone",
+   "minutes": 40,
+   "url": "https://t.me/VA_Kyiv/21334"
+  },
+  {
+   "start": "2026-10-01T20:45:30+03:00",
+   "end": "2026-10-01T21:50:57+03:00",
+   "kind": "drone",
+   "minutes": 65,
+   "url": "https://t.me/VA_Kyiv/21339"
+  },
+  {
+   "start": "2026-10-01T23:15:49+03:00",
+   "end": "2026-10-01T23:41:26+03:00",
+   "kind": "drone",
+   "minutes": 26,
+   "url": "https://t.me/VA_Kyiv/21350"
+  },
+  {
+   "start": "2026-10-02T00:12:46+03:00",
+   "end": "2026-10-02T00:27:40+03:00",
+   "kind": "drone",
+   "minutes": 15,
+   "url": "https://t.me/VA_Kyiv/21352"
+  },
+  {
+   "start": "2026-10-02T02:56:56+03:00",
+   "end": "2026-10-02T04:03:29+03:00",
+   "kind": "drone",
+   "minutes": 67,
+   "url": "https://t.me/VA_Kyiv/21354"
+  },
+  {
+   "start": "2026-10-02T04:47:43+03:00",
+   "end": "2026-10-02T05:19:05+03:00",
+   "kind": "drone",
+   "minutes": 31,
+   "url": "https://t.me/VA_Kyiv/21356"
+  },
+  {
+   "start": "2026-10-02T05:46:55+03:00",
+   "end": "2026-10-02T06:42:09+03:00",
+   "kind": "drone",
+   "minutes": 55,
+   "url": "https://t.me/VA_Kyiv/21358"
+  },
+  {
+   "start": "2026-10-02T11:02:08+03:00",
+   "end": "2026-10-02T12:00:38+03:00",
+   "kind": "drone",
+   "minutes": 58,
+   "url": "https://t.me/VA_Kyiv/21381"
+  },
+  {
+   "start": "2026-10-02T16:49:05+03:00",
+   "end": "2026-10-02T18:01:22+03:00",
+   "kind": "drone",
+   "minutes": 72,
+   "url": "https://t.me/VA_Kyiv/21386"
+  },
+  {
+   "start": "2026-10-02T18:22:51+03:00",
+   "end": "2026-10-02T19:34:35+03:00",
+   "kind": "drone",
+   "minutes": 72,
+   "url": "https://t.me/VA_Kyiv/21389"
+  },
+  {
+   "start": "2026-10-02T20:23:26+03:00",
+   "end": "2026-10-02T20:48:00+03:00",
+   "kind": "drone",
+   "minutes": 25,
+   "url": "https://t.me/VA_Kyiv/21394"
+  },
+  {
+   "start": "2026-10-03T06:32:13+03:00",
+   "end": "2026-10-03T07:09:35+03:00",
+   "kind": "drone",
+   "minutes": 37,
+   "url": "https://t.me/VA_Kyiv/21397"
+  },
+  {
+   "start": "2026-10-03T09:53:39+03:00",
+   "end": "2026-10-03T09:56:58+03:00",
+   "kind": "drone",
+   "minutes": 3,
+   "url": "https://t.me/VA_Kyiv/21400"
+  },
+  {
+   "start": "2026-10-03T14:59:10+03:00",
+   "end": "2026-10-03T15:12:54+03:00",
+   "kind": "drone",
+   "minutes": 14,
+   "url": "https://t.me/VA_Kyiv/21405"
+  },
+  {
+   "start": "2026-10-03T17:32:55+03:00",
+   "end": "2026-10-03T17:53:59+03:00",
+   "kind": "drone",
+   "minutes": 21,
+   "url": "https://t.me/VA_Kyiv/21407"
+  },
+  {
+   "start": "2026-10-03T18:52:18+03:00",
+   "end": "2026-10-03T19:10:07+03:00",
+   "kind": "drone",
+   "minutes": 18,
+   "url": "https://t.me/VA_Kyiv/21412"
+  },
+  {
+   "start": "2026-10-03T20:19:31+03:00",
+   "end": "2026-10-03T20:52:40+03:00",
+   "kind": "drone",
+   "minutes": 33,
+   "url": "https://t.me/VA_Kyiv/21414"
+  },
+  {
+   "start": "2026-10-03T21:27:53+03:00",
+   "end": "2026-10-03T21:36:35+03:00",
+   "kind": "drone",
+   "minutes": 9,
+   "url": "https://t.me/VA_Kyiv/21416"
+  },
+  {
+   "start": "2026-10-03T22:26:38+03:00",
+   "end": "2026-10-03T23:51:29+03:00",
+   "kind": "drone",
+   "minutes": 85,
+   "url": "https://t.me/VA_Kyiv/21418"
+  },
+  {
+   "start": "2026-10-04T00:51:35+03:00",
+   "end": "2026-10-04T00:56:05+03:00",
+   "kind": "drone",
+   "minutes": 4,
+   "url": "https://t.me/VA_Kyiv/21420"
+  },
+  {
+   "start": "2026-10-04T01:31:14+03:00",
+   "end": "2026-10-04T01:36:39+03:00",
+   "kind": "drone",
+   "minutes": 5,
+   "url": "https://t.me/VA_Kyiv/21423"
+  },
+  {
+   "start": "2026-10-04T02:57:09+03:00",
+   "end": "2026-10-04T03:02:20+03:00",
+   "kind": "drone",
+   "minutes": 5,
+   "url": "https://t.me/VA_Kyiv/21425"
+  },
+  {
+   "start": "2026-10-04T04:47:33+03:00",
+   "end": "2026-10-04T05:19:45+03:00",
+   "kind": "drone",
+   "minutes": 32,
+   "url": "https://t.me/VA_Kyiv/21427"
+  },
+  {
+   "start": "2026-10-04T05:42:07+03:00",
+   "end": "2026-10-04T05:50:45+03:00",
+   "kind": "drone",
+   "minutes": 9,
+   "url": "https://t.me/VA_Kyiv/21429"
+  },
+  {
+   "start": "2026-10-04T07:45:35+03:00",
+   "end": "2026-10-04T07:49:52+03:00",
+   "kind": "drone",
+   "minutes": 4,
+   "url": "https://t.me/VA_Kyiv/21431"
+  },
+  {
+   "start": "2026-10-04T10:04:46+03:00",
+   "end": "2026-10-04T10:32:32+03:00",
+   "kind": "drone",
+   "minutes": 28,
+   "url": "https://t.me/VA_Kyiv/21435"
+  },
+  {
+   "start": "2026-10-04T10:40:14+03:00",
+   "end": "2026-10-04T11:47:09+03:00",
+   "kind": "drone",
+   "minutes": 67,
+   "url": "https://t.me/VA_Kyiv/21447"
+  },
+  {
+   "start": "2026-10-04T12:02:25+03:00",
+   "end": "2026-10-04T17:05:02+03:00",
+   "kind": "drone",
+   "minutes": 303,
+   "url": "https://t.me/VA_Kyiv/21452"
+  },
+  {
+   "start": "2026-10-04T22:47:12+03:00",
+   "end": "2026-10-04T22:54:21+03:00",
+   "kind": "drone",
+   "minutes": 7,
+   "url": "https://t.me/VA_Kyiv/21473"
+  },
+  {
+   "start": "2026-10-04T23:32:41+03:00",
+   "end": "2026-10-05T00:37:50+03:00",
+   "kind": "drone",
+   "minutes": 65,
+   "url": "https://t.me/VA_Kyiv/21475"
+  },
+  {
+   "start": "2026-10-05T20:21:11+03:00",
+   "end": "2026-10-05T20:27:29+03:00",
+   "kind": "drone",
+   "minutes": 6,
+   "url": "https://t.me/VA_Kyiv/21485"
+  },
+  {
+   "start": "2026-10-06T01:09:17+03:00",
+   "end": "2026-10-06T01:24:03+03:00",
+   "kind": "drone",
+   "minutes": 15,
+   "url": "https://t.me/VA_Kyiv/21488"
+  },
+  {
+   "start": "2026-10-06T05:24:34+03:00",
+   "end": "2026-10-06T06:07:57+03:00",
+   "kind": "drone",
+   "minutes": 43,
+   "url": "https://t.me/VA_Kyiv/21490"
+  },
+  {
+   "start": "2026-10-06T21:09:27+03:00",
+   "end": "2026-10-06T21:58:53+03:00",
+   "kind": "drone",
+   "minutes": 49,
+   "url": "https://t.me/VA_Kyiv/21510"
+  },
+  {
+   "start": "2026-10-06T22:59:56+03:00",
+   "end": "2026-10-06T23:25:51+03:00",
+   "kind": "drone",
+   "minutes": 26,
+   "url": "https://t.me/VA_Kyiv/21512"
+  },
+  {
+   "start": "2026-10-07T03:10:14+03:00",
+   "end": "2026-10-07T07:06:02+03:00",
+   "kind": "missile",
+   "minutes": 236,
+   "url": "https://t.me/VA_Kyiv/21514"
+  },
+  {
+   "start": "2026-10-07T09:48:26+03:00",
+   "end": "2026-10-07T10:07:54+03:00",
+   "kind": "drone",
+   "minutes": 19,
+   "url": "https://t.me/VA_Kyiv/21522"
+  },
+  {
+   "start": "2026-10-07T13:24:10+03:00",
+   "end": "2026-10-07T13:25:38+03:00",
+   "kind": "drone",
+   "minutes": 1,
+   "url": "https://t.me/VA_Kyiv/21533"
+  },
+  {
+   "start": "2026-10-07T15:29:45+03:00",
+   "end": "2026-10-07T15:46:50+03:00",
+   "kind": "drone",
+   "minutes": 17,
+   "url": "https://t.me/VA_Kyiv/21535"
+  },
+  {
+   "start": "2026-10-07T16:28:56+03:00",
+   "end": "2026-10-07T20:53:45+03:00",
+   "kind": "drone",
+   "minutes": 265,
+   "url": "https://t.me/VA_Kyiv/21537"
+  },
+  {
+   "start": "2026-10-07T21:29:20+03:00",
+   "end": "2026-10-07T22:36:04+03:00",
+   "kind": "drone",
+   "minutes": 67,
+   "url": "https://t.me/VA_Kyiv/21562"
+  },
+  {
+   "start": "2026-10-07T23:30:11+03:00",
+   "end": "2026-10-07T23:48:17+03:00",
+   "kind": "missile",
+   "minutes": 18,
+   "url": "https://t.me/VA_Kyiv/21565"
+  },
+  {
+   "start": "2026-10-07T23:49:15+03:00",
+   "end": "2026-10-08T00:22:00+03:00",
+   "kind": "drone",
+   "minutes": 33,
+   "url": "https://t.me/VA_Kyiv/21567"
+  },
+  {
+   "start": "2026-10-08T02:29:09+03:00",
+   "end": "2026-10-08T04:24:54+03:00",
+   "kind": "drone",
+   "minutes": 116,
+   "url": "https://t.me/VA_Kyiv/21569"
+  },
+  {
+   "start": "2026-10-08T07:40:40+03:00",
+   "end": "2026-10-08T08:30:42+03:00",
+   "kind": "drone",
+   "minutes": 50,
+   "url": "https://t.me/VA_Kyiv/21571"
+  },
+  {
+   "start": "2026-10-08T09:14:17+03:00",
+   "end": "2026-10-08T12:27:00+03:00",
+   "kind": "drone",
+   "minutes": 193,
+   "url": "https://t.me/VA_Kyiv/21575"
+  },
+  {
+   "start": "2026-10-08T13:03:55+03:00",
+   "end": "2026-10-08T13:16:18+03:00",
+   "kind": "drone",
+   "minutes": 12,
+   "url": "https://t.me/VA_Kyiv/21582"
+  },
+  {
+   "start": "2026-10-08T17:11:22+03:00",
+   "end": "2026-10-08T18:36:21+03:00",
+   "kind": "drone",
+   "minutes": 85,
+   "url": "https://t.me/VA_Kyiv/21587"
+  },
+  {
+   "start": "2026-10-08T19:37:14+03:00",
+   "end": "2026-10-08T22:58:54+03:00",
+   "kind": "drone",
+   "minutes": 202,
+   "url": "https://t.me/VA_Kyiv/21598"
+  },
+  {
+   "start": "2026-10-08T23:43:26+03:00",
+   "end": "2026-10-09T01:18:17+03:00",
+   "kind": "drone",
+   "minutes": 95,
+   "url": "https://t.me/VA_Kyiv/21600"
+  },
+  {
+   "start": "2026-10-09T03:35:54+03:00",
+   "end": "2026-10-09T04:47:01+03:00",
+   "kind": "drone",
+   "minutes": 71,
+   "url": "https://t.me/VA_Kyiv/21602"
+  },
+  {
+   "start": "2026-10-09T06:50:14+03:00",
+   "end": "2026-10-09T08:17:29+03:00",
+   "kind": "drone",
+   "minutes": 87,
+   "url": "https://t.me/VA_Kyiv/21604"
+  },
+  {
+   "start": "2026-10-09T09:01:50+03:00",
+   "end": "2026-10-09T11:51:18+03:00",
+   "kind": "drone",
+   "minutes": 169,
+   "url": "https://t.me/VA_Kyiv/21608"
+  },
+  {
+   "start": "2026-10-09T12:10:54+03:00",
+   "end": "2026-10-09T12:39:08+03:00",
+   "kind": "drone",
+   "minutes": 28,
+   "url": "https://t.me/VA_Kyiv/21611"
+  },
+  {
+   "start": "2026-10-09T13:54:19+03:00",
+   "end": "2026-10-09T14:21:11+03:00",
+   "kind": "drone",
+   "minutes": 27,
+   "url": "https://t.me/VA_Kyiv/21617"
+  },
+  {
+   "start": "2026-10-09T15:22:57+03:00",
+   "end": "2026-10-09T16:07:18+03:00",
+   "kind": "drone",
+   "minutes": 44,
+   "url": "https://t.me/VA_Kyiv/21621"
+  },
+  {
+   "start": "2026-10-09T16:55:22+03:00",
+   "end": "2026-10-09T19:30:33+03:00",
+   "kind": "drone",
+   "minutes": 155,
+   "url": "https://t.me/VA_Kyiv/21624"
+  },
+  {
+   "start": "2026-10-09T20:06:21+03:00",
+   "end": "2026-10-09T20:17:30+03:00",
+   "kind": "drone",
+   "minutes": 11,
+   "url": "https://t.me/VA_Kyiv/21627"
+  },
+  {
+   "start": "2026-10-09T21:14:05+03:00",
+   "end": "2026-10-09T21:27:58+03:00",
+   "kind": "drone",
+   "minutes": 14,
+   "url": "https://t.me/VA_Kyiv/21630"
+  },
+  {
+   "start": "2026-10-09T22:29:09+03:00",
+   "end": "2026-10-09T23:00:16+03:00",
+   "kind": "drone",
+   "minutes": 31,
+   "url": "https://t.me/VA_Kyiv/21632"
+  },
+  {
+   "start": "2026-10-10T00:35:49+03:00",
+   "end": "2026-10-10T01:49:55+03:00",
+   "kind": "drone",
+   "minutes": 74,
+   "url": "https://t.me/VA_Kyiv/21634"
+  },
+  {
+   "start": "2026-10-10T03:06:14+03:00",
+   "end": "2026-10-10T04:09:22+03:00",
+   "kind": "drone",
+   "minutes": 63,
+   "url": "https://t.me/VA_Kyiv/21636"
+  },
+  {
+   "start": "2026-10-10T05:53:03+03:00",
+   "end": "2026-10-10T07:52:20+03:00",
+   "kind": "drone",
+   "minutes": 119,
+   "url": "https://t.me/VA_Kyiv/21638"
+  },
+  {
+   "start": "2026-10-10T08:27:00+03:00",
+   "end": "2026-10-10T09:03:54+03:00",
+   "kind": "drone",
+   "minutes": 37,
+   "url": "https://t.me/VA_Kyiv/21640"
+  },
+  {
+   "start": "2026-10-10T11:14:40+03:00",
+   "end": "2026-10-10T12:58:49+03:00",
+   "kind": "drone",
+   "minutes": 104,
+   "url": "https://t.me/VA_Kyiv/21644"
+  },
+  {
+   "start": "2026-10-10T15:42:56+03:00",
+   "end": "2026-10-10T19:51:51+03:00",
+   "kind": "drone",
+   "minutes": 249,
+   "url": "https://t.me/VA_Kyiv/21673"
+  },
+  {
+   "start": "2026-10-10T20:30:48+03:00",
+   "end": "2026-10-10T21:13:23+03:00",
+   "kind": "drone",
+   "minutes": 43,
+   "url": "https://t.me/VA_Kyiv/21678"
+  },
+  {
+   "start": "2026-10-10T22:24:51+03:00",
+   "end": "2026-10-10T23:29:01+03:00",
+   "kind": "drone",
+   "minutes": 64,
+   "url": "https://t.me/VA_Kyiv/21681"
+  },
+  {
+   "start": "2026-10-11T00:52:04+03:00",
+   "end": "2026-10-11T01:12:24+03:00",
+   "kind": "drone",
+   "minutes": 20,
+   "url": "https://t.me/VA_Kyiv/21684"
+  },
+  {
+   "start": "2026-10-11T09:19:00+03:00",
+   "end": "2026-10-11T09:36:27+03:00",
+   "kind": "drone",
+   "minutes": 17,
+   "url": "https://t.me/VA_Kyiv/21688"
+  },
+  {
+   "start": "2026-10-11T11:06:39+03:00",
+   "end": "2026-10-11T12:10:16+03:00",
+   "kind": "drone",
+   "minutes": 64,
+   "url": "https://t.me/VA_Kyiv/21691"
+  },
+  {
+   "start": "2026-10-11T12:50:47+03:00",
+   "end": "2026-10-11T13:01:57+03:00",
+   "kind": "missile",
+   "minutes": 11,
+   "url": "https://t.me/VA_Kyiv/21695"
+  },
+  {
+   "start": "2026-10-11T15:15:09+03:00",
+   "end": "2026-10-11T15:46:09+03:00",
+   "kind": "drone",
+   "minutes": 31,
+   "url": "https://t.me/VA_Kyiv/21697"
+  },
+  {
+   "start": "2026-10-11T16:24:46+03:00",
+   "end": "2026-10-11T17:42:07+03:00",
+   "kind": "drone",
+   "minutes": 77,
+   "url": "https://t.me/VA_Kyiv/21701"
+  },
+  {
+   "start": "2026-10-11T19:08:28+03:00",
+   "end": "2026-10-11T20:17:48+03:00",
+   "kind": "drone",
+   "minutes": 69,
+   "url": "https://t.me/VA_Kyiv/21705"
+  },
+  {
+   "start": "2026-10-11T22:08:25+03:00",
+   "end": "2026-10-11T22:22:24+03:00",
+   "kind": "drone",
+   "minutes": 14,
+   "url": "https://t.me/VA_Kyiv/21710"
+  },
+  {
+   "start": "2026-10-12T05:42:32+03:00",
+   "end": "2026-10-12T06:14:09+03:00",
+   "kind": "drone",
+   "minutes": 32,
+   "url": "https://t.me/VA_Kyiv/21712"
+  },
+  {
+   "start": "2026-10-12T06:57:21+03:00",
+   "end": "2026-10-12T08:39:47+03:00",
+   "kind": "drone",
+   "minutes": 102,
+   "url": "https://t.me/VA_Kyiv/21714"
+  },
+  {
+   "start": "2026-10-12T10:27:44+03:00",
+   "end": "2026-10-12T12:56:26+03:00",
+   "kind": "drone",
+   "minutes": 149,
+   "url": "https://t.me/VA_Kyiv/21717"
+  },
+  {
+   "start": "2026-10-12T17:38:24+03:00",
+   "end": "2026-10-12T17:45:43+03:00",
+   "kind": "drone",
+   "minutes": 7,
+   "url": "https://t.me/VA_Kyiv/21724"
+  },
+  {
+   "start": "2026-10-12T19:00:04+03:00",
+   "end": "2026-10-12T19:12:40+03:00",
+   "kind": "drone",
+   "minutes": 13,
+   "url": "https://t.me/VA_Kyiv/21731"
+  },
+  {
+   "start": "2026-10-12T22:10:12+03:00",
+   "end": "2026-10-13T00:59:19+03:00",
+   "kind": "missile",
+   "minutes": 169,
+   "url": "https://t.me/VA_Kyiv/21742"
+  },
+  {
+   "start": "2026-10-13T03:49:22+03:00",
+   "end": "2026-10-13T04:10:13+03:00",
+   "kind": "drone",
+   "minutes": 21,
+   "url": "https://t.me/VA_Kyiv/21745"
+  },
+  {
+   "start": "2026-10-13T04:30:18+03:00",
+   "end": "2026-10-13T05:19:13+03:00",
+   "kind": "drone",
+   "minutes": 49,
+   "url": "https://t.me/VA_Kyiv/21747"
+  },
+  {
+   "start": "2026-10-13T06:58:33+03:00",
+   "end": "2026-10-13T08:13:44+03:00",
+   "kind": "drone",
+   "minutes": 75,
+   "url": "https://t.me/VA_Kyiv/21749"
+  },
+  {
+   "start": "2026-10-13T10:43:34+03:00",
+   "end": "2026-10-13T12:17:23+03:00",
+   "kind": "drone",
+   "minutes": 94,
+   "url": "https://t.me/VA_Kyiv/21754"
+  },
+  {
+   "start": "2026-10-13T17:05:34+03:00",
+   "end": "2026-10-13T17:27:06+03:00",
+   "kind": "drone",
+   "minutes": 22,
+   "url": "https://t.me/VA_Kyiv/21771"
+  },
+  {
+   "start": "2026-10-13T21:12:09+03:00",
+   "end": "2026-10-13T21:27:59+03:00",
+   "kind": "drone",
+   "minutes": 16,
+   "url": "https://t.me/VA_Kyiv/21775"
+  },
+  {
+   "start": "2026-10-13T22:40:22+03:00",
+   "end": "2026-10-13T23:50:27+03:00",
+   "kind": "missile",
+   "minutes": 70,
+   "url": "https://t.me/VA_Kyiv/21777"
+  },
+  {
+   "start": "2026-10-14T01:40:04+03:00",
+   "end": "2026-10-14T04:27:42+03:00",
+   "kind": "drone",
+   "minutes": 168,
+   "url": "https://t.me/VA_Kyiv/21793"
+  },
+  {
+   "start": "2026-10-14T04:37:32+03:00",
+   "end": "2026-10-14T07:56:43+03:00",
+   "kind": "missile",
+   "minutes": 199,
+   "url": "https://t.me/VA_Kyiv/21795"
+  },
+  {
+   "start": "2026-10-14T10:06:53+03:00",
+   "end": "2026-10-14T10:32:50+03:00",
+   "kind": "drone",
+   "minutes": 26,
+   "url": "https://t.me/VA_Kyiv/21814"
+  },
+  {
+   "start": "2026-10-14T11:41:28+03:00",
+   "end": "2026-10-14T12:32:11+03:00",
+   "kind": "drone",
+   "minutes": 51,
+   "url": "https://t.me/VA_Kyiv/21816"
+  },
+  {
+   "start": "2026-10-14T15:25:42+03:00",
+   "end": "2026-10-14T15:45:16+03:00",
+   "kind": "drone",
+   "minutes": 20,
+   "url": "https://t.me/VA_Kyiv/21820"
+  },
+  {
+   "start": "2026-10-14T16:49:43+03:00",
+   "end": "2026-10-14T17:37:45+03:00",
+   "kind": "drone",
+   "minutes": 48,
+   "url": "https://t.me/VA_Kyiv/21822"
+  },
+  {
+   "start": "2026-10-14T20:15:26+03:00",
+   "end": "2026-10-14T23:11:32+03:00",
+   "kind": "drone",
+   "minutes": 176,
+   "url": "https://t.me/VA_Kyiv/21826"
+  },
+  {
+   "start": "2026-10-15T03:34:38+03:00",
+   "end": "2026-10-15T05:46:44+03:00",
+   "kind": "drone",
+   "minutes": 132,
+   "url": "https://t.me/VA_Kyiv/21829"
+  },
+  {
+   "start": "2026-10-15T07:59:44+03:00",
+   "end": "2026-10-15T08:04:59+03:00",
+   "kind": "drone",
+   "minutes": 5,
+   "url": "https://t.me/VA_Kyiv/21831"
+  },
+  {
+   "start": "2026-10-15T14:08:39+03:00",
+   "end": "2026-10-15T14:47:47+03:00",
+   "kind": "drone",
+   "minutes": 39,
+   "url": "https://t.me/VA_Kyiv/21851"
+  },
+  {
+   "start": "2026-10-15T16:54:26+03:00",
+   "end": "2026-10-15T17:19:10+03:00",
+   "kind": "drone",
+   "minutes": 25,
+   "url": "https://t.me/VA_Kyiv/21855"
+  },
+  {
+   "start": "2026-10-15T19:23:57+03:00",
+   "end": "2026-10-15T22:45:13+03:00",
+   "kind": "missile",
+   "minutes": 201,
+   "url": "https://t.me/VA_Kyiv/21859"
+  },
+  {
+   "start": "2026-10-15T23:02:29+03:00",
+   "end": "2026-10-16T01:27:56+03:00",
+   "kind": "drone",
+   "minutes": 145,
+   "url": "https://t.me/VA_Kyiv/21865"
+  },
+  {
+   "start": "2026-10-16T02:09:50+03:00",
+   "end": "2026-10-16T03:19:13+03:00",
+   "kind": "drone",
+   "minutes": 69,
+   "url": "https://t.me/VA_Kyiv/21867"
+  },
+  {
+   "start": "2026-10-16T04:58:12+03:00",
+   "end": "2026-10-16T05:56:22+03:00",
+   "kind": "drone",
+   "minutes": 58,
+   "url": "https://t.me/VA_Kyiv/21869"
+  },
+  {
+   "start": "2026-10-16T06:45:53+03:00",
+   "end": "2026-10-16T06:58:01+03:00",
+   "kind": "drone",
+   "minutes": 12,
+   "url": "https://t.me/VA_Kyiv/21871"
+  },
+  {
+   "start": "2026-10-16T08:47:48+03:00",
+   "end": "2026-10-16T09:17:56+03:00",
+   "kind": "drone",
+   "minutes": 30,
+   "url": "https://t.me/VA_Kyiv/21874"
+  },
+  {
+   "start": "2026-10-16T09:54:01+03:00",
+   "end": "2026-10-16T10:17:01+03:00",
+   "kind": "drone",
+   "minutes": 23,
+   "url": "https://t.me/VA_Kyiv/21877"
+  },
+  {
+   "start": "2026-10-16T17:33:48+03:00",
+   "end": "2026-10-16T17:58:13+03:00",
+   "kind": "drone",
+   "minutes": 24,
+   "url": "https://t.me/VA_Kyiv/21881"
+  },
+  {
+   "start": "2026-10-16T18:44:25+03:00",
+   "end": "2026-10-16T18:53:32+03:00",
+   "kind": "drone",
+   "minutes": 9,
+   "url": "https://t.me/VA_Kyiv/21885"
+  },
+  {
+   "start": "2026-10-17T04:33:55+03:00",
+   "end": "2026-10-17T05:25:25+03:00",
+   "kind": "missile",
+   "minutes": 52,
+   "url": "https://t.me/VA_Kyiv/21887"
+  },
+  {
+   "start": "2026-10-17T06:58:16+03:00",
+   "end": "2026-10-17T08:09:04+03:00",
+   "kind": "drone",
+   "minutes": 71,
+   "url": "https://t.me/VA_Kyiv/21889"
+  },
+  {
+   "start": "2026-10-17T20:48:57+03:00",
+   "end": "2026-10-17T21:14:43+03:00",
+   "kind": "missile",
+   "minutes": 26,
+   "url": "https://t.me/VA_Kyiv/21893"
+  },
+  {
+   "start": "2026-10-17T21:19:39+03:00",
+   "end": "2026-10-17T22:02:13+03:00",
+   "kind": "drone",
+   "minutes": 43,
+   "url": "https://t.me/VA_Kyiv/21895"
+  },
+  {
+   "start": "2026-10-17T22:23:40+03:00",
+   "end": "2026-10-17T23:27:19+03:00",
+   "kind": "missile",
+   "minutes": 64,
+   "url": "https://t.me/VA_Kyiv/21897"
+  },
+  {
+   "start": "2026-10-18T09:01:06+03:00",
+   "end": "2026-10-18T09:28:03+03:00",
+   "kind": "drone",
+   "minutes": 27,
+   "url": "https://t.me/VA_Kyiv/21901"
+  },
+  {
+   "start": "2026-10-18T09:59:26+03:00",
+   "end": "2026-10-18T11:09:38+03:00",
+   "kind": "drone",
+   "minutes": 70,
+   "url": "https://t.me/VA_Kyiv/21903"
+  },
+  {
+   "start": "2026-10-18T18:20:07+03:00",
+   "end": "2026-10-18T18:43:24+03:00",
+   "kind": "drone",
+   "minutes": 23,
+   "url": "https://t.me/VA_Kyiv/21908"
+  },
+  {
+   "start": "2026-10-18T19:47:58+03:00",
+   "end": "2026-10-18T20:00:41+03:00",
+   "kind": "missile",
+   "minutes": 13,
+   "url": "https://t.me/VA_Kyiv/21910"
+  },
+  {
+   "start": "2026-10-18T22:34:10+03:00",
+   "end": "2026-10-18T23:41:13+03:00",
+   "kind": "missile",
+   "minutes": 67,
+   "url": "https://t.me/VA_Kyiv/21913"
+  },
+  {
+   "start": "2026-10-19T03:59:26+03:00",
+   "end": "2026-10-19T04:15:31+03:00",
+   "kind": "drone",
+   "minutes": 16,
+   "url": "https://t.me/VA_Kyiv/21922"
+  },
+  {
+   "start": "2026-10-19T06:36:12+03:00",
+   "end": "2026-10-19T07:09:42+03:00",
+   "kind": "missile",
+   "minutes": 34,
+   "url": "https://t.me/VA_Kyiv/21924"
+  },
+  {
+   "start": "2026-10-19T08:26:06+03:00",
+   "end": "2026-10-19T08:41:28+03:00",
+   "kind": "drone",
+   "minutes": 15,
+   "url": "https://t.me/VA_Kyiv/21926"
+  },
+  {
+   "start": "2026-10-19T10:28:42+03:00",
+   "end": "2026-10-19T10:43:59+03:00",
+   "kind": "drone",
+   "minutes": 15,
+   "url": "https://t.me/VA_Kyiv/21930"
+  },
+  {
+   "start": "2026-10-19T15:43:50+03:00",
+   "end": "2026-10-19T15:49:18+03:00",
+   "kind": "drone",
+   "minutes": 5,
+   "url": "https://t.me/VA_Kyiv/21942"
+  },
+  {
+   "start": "2026-10-20T02:53:27+03:00",
+   "end": "2026-10-20T02:59:30+03:00",
+   "kind": "drone",
+   "minutes": 6,
+   "url": "https://t.me/VA_Kyiv/21950"
+  },
+  {
+   "start": "2026-10-20T03:07:47+03:00",
+   "end": "2026-10-20T03:50:42+03:00",
+   "kind": "missile",
+   "minutes": 43,
+   "url": "https://t.me/VA_Kyiv/21952"
+  },
+  {
+   "start": "2026-10-20T06:28:42+03:00",
+   "end": "2026-10-20T06:42:21+03:00",
+   "kind": "drone",
+   "minutes": 14,
+   "url": "https://t.me/VA_Kyiv/21955"
+  },
+  {
+   "start": "2026-10-20T08:38:35+03:00",
+   "end": "2026-10-20T09:26:06+03:00",
+   "kind": "drone",
+   "minutes": 48,
+   "url": "https://t.me/VA_Kyiv/21957"
+  },
+  {
+   "start": "2026-10-20T12:12:47+03:00",
+   "end": "2026-10-20T12:37:28+03:00",
+   "kind": "missile",
+   "minutes": 25,
+   "url": "https://t.me/VA_Kyiv/21961"
+  },
+  {
+   "start": "2026-10-20T12:46:07+03:00",
+   "end": "2026-10-20T17:54:13+03:00",
+   "kind": "drone",
+   "minutes": 308,
+   "url": "https://t.me/VA_Kyiv/21963"
+  },
+  {
+   "start": "2026-10-20T18:51:19+03:00",
+   "end": "2026-10-20T21:35:56+03:00",
+   "kind": "drone",
+   "minutes": 165,
+   "url": "https://t.me/VA_Kyiv/21975"
+  },
+  {
+   "start": "2026-10-20T21:44:57+03:00",
+   "end": "2026-10-21T00:48:07+03:00",
+   "kind": "missile",
+   "minutes": 183,
+   "url": "https://t.me/VA_Kyiv/21979"
+  },
+  {
+   "start": "2026-10-21T02:38:48+03:00",
+   "end": "2026-10-21T04:55:57+03:00",
+   "kind": "drone",
+   "minutes": 137,
+   "url": "https://t.me/VA_Kyiv/21986"
+  },
+  {
+   "start": "2026-10-21T05:18:55+03:00",
+   "end": "2026-10-21T08:55:11+03:00",
+   "kind": "drone",
+   "minutes": 216,
+   "url": "https://t.me/VA_Kyiv/21988"
+  },
+  {
+   "start": "2026-10-21T10:11:15+03:00",
+   "end": "2026-10-21T10:12:50+03:00",
+   "kind": "drone",
+   "minutes": 2,
+   "url": "https://t.me/VA_Kyiv/21996"
+  },
+  {
+   "start": "2026-10-21T21:16:33+03:00",
+   "end": "2026-10-21T21:30:43+03:00",
+   "kind": "drone",
+   "minutes": 14,
+   "url": "https://t.me/VA_Kyiv/22001"
+  },
+  {
+   "start": "2026-10-21T22:06:22+03:00",
+   "end": "2026-10-22T01:01:18+03:00",
+   "kind": "missile",
+   "minutes": 175,
+   "url": "https://t.me/VA_Kyiv/22003"
+  },
+  {
+   "start": "2026-10-22T01:54:57+03:00",
+   "end": "2026-10-22T02:28:48+03:00",
+   "kind": "missile",
+   "minutes": 34,
+   "url": "https://t.me/VA_Kyiv/22013"
+  },
+  {
+   "start": "2026-10-22T02:54:57+03:00",
+   "end": "2026-10-22T05:17:26+03:00",
+   "kind": "missile",
+   "minutes": 142,
+   "url": "https://t.me/VA_Kyiv/22015"
+  },
+  {
+   "start": "2026-10-22T06:22:26+03:00",
+   "end": "2026-10-22T06:29:00+03:00",
+   "kind": "drone",
+   "minutes": 7,
+   "url": "https://t.me/VA_Kyiv/22021"
+  },
+  {
+   "start": "2026-10-22T08:51:33+03:00",
+   "end": "2026-10-22T09:41:29+03:00",
+   "kind": "drone",
+   "minutes": 50,
+   "url": "https://t.me/VA_Kyiv/22024"
+  },
+  {
+   "start": "2026-10-22T11:22:54+03:00",
+   "end": "2026-10-22T11:53:45+03:00",
+   "kind": "drone",
+   "minutes": 31,
+   "url": "https://t.me/VA_Kyiv/22039"
+  },
+  {
+   "start": "2026-10-22T12:35:18+03:00",
+   "end": "2026-10-22T13:40:29+03:00",
+   "kind": "missile",
+   "minutes": 65,
+   "url": "https://t.me/VA_Kyiv/22041"
+  },
+  {
+   "start": "2026-10-22T17:15:27+03:00",
+   "end": "2026-10-22T17:52:06+03:00",
+   "kind": "drone",
+   "minutes": 37,
+   "url": "https://t.me/VA_Kyiv/22050"
+  },
+  {
+   "start": "2026-10-22T20:57:48+03:00",
+   "end": "2026-10-22T21:16:51+03:00",
+   "kind": "missile",
+   "minutes": 19,
+   "url": "https://t.me/VA_Kyiv/22055"
+  },
+  {
+   "start": "2026-10-23T00:16:15+03:00",
+   "end": "2026-10-23T00:27:42+03:00",
+   "kind": "drone",
+   "minutes": 11,
+   "url": "https://t.me/VA_Kyiv/22057"
+  },
+  {
+   "start": "2026-10-23T02:23:41+03:00",
+   "end": "2026-10-23T02:50:18+03:00",
+   "kind": "drone",
+   "minutes": 27,
+   "url": "https://t.me/VA_Kyiv/22059"
+  },
+  {
+   "start": "2026-10-23T04:01:20+03:00",
+   "end": "2026-10-23T04:12:32+03:00",
+   "kind": "drone",
+   "minutes": 11,
+   "url": "https://t.me/VA_Kyiv/22061"
+  },
+  {
+   "start": "2026-10-23T06:08:37+03:00",
+   "end": "2026-10-23T06:22:10+03:00",
+   "kind": "drone",
+   "minutes": 14,
+   "url": "https://t.me/VA_Kyiv/22063"
+  },
+  {
+   "start": "2026-10-23T08:26:27+03:00",
+   "end": "2026-10-23T08:50:01+03:00",
+   "kind": "drone",
+   "minutes": 24,
+   "url": "https://t.me/VA_Kyiv/22065"
+  },
+  {
+   "start": "2026-10-23T10:13:02+03:00",
+   "end": "2026-10-23T10:34:34+03:00",
+   "kind": "drone",
+   "minutes": 22,
+   "url": "https://t.me/VA_Kyiv/22068"
+  },
+  {
+   "start": "2026-10-23T11:13:27+03:00",
+   "end": "2026-10-23T11:55:22+03:00",
+   "kind": "drone",
+   "minutes": 42,
+   "url": "https://t.me/VA_Kyiv/22071"
+  },
+  {
+   "start": "2026-10-23T14:25:01+03:00",
+   "end": "2026-10-23T14:50:06+03:00",
+   "kind": "drone",
+   "minutes": 25,
+   "url": "https://t.me/VA_Kyiv/22074"
+  },
+  {
+   "start": "2026-10-24T01:48:15+03:00",
+   "end": "2026-10-24T02:03:00+03:00",
+   "kind": "missile",
+   "minutes": 15,
+   "url": "https://t.me/VA_Kyiv/22087"
+  },
+  {
+   "start": "2026-10-24T03:41:01+03:00",
+   "end": "2026-10-24T04:32:24+03:00",
+   "kind": "drone",
+   "minutes": 51,
+   "url": "https://t.me/VA_Kyiv/22089"
+  },
+  {
+   "start": "2026-10-24T14:42:14+03:00",
+   "end": "2026-10-24T16:07:49+03:00",
+   "kind": "drone",
+   "minutes": 86,
+   "url": "https://t.me/VA_Kyiv/22094"
+  },
+  {
+   "start": "2026-10-24T18:33:31+03:00",
+   "end": "2026-10-24T18:41:00+03:00",
+   "kind": "drone",
+   "minutes": 7,
+   "url": "https://t.me/VA_Kyiv/22097"
+  },
+  {
+   "start": "2026-10-24T20:26:44+03:00",
+   "end": "2026-10-24T22:24:23+03:00",
+   "kind": "drone",
+   "minutes": 118,
+   "url": "https://t.me/VA_Kyiv/22101"
+  },
+  {
+   "start": "2026-10-24T23:16:01+03:00",
+   "end": "2026-10-24T23:40:28+03:00",
+   "kind": "drone",
+   "minutes": 24,
+   "url": "https://t.me/VA_Kyiv/22104"
+  },
+  {
+   "start": "2026-10-25T00:12:42+03:00",
+   "end": "2026-10-25T00:29:21+03:00",
+   "kind": "missile",
+   "minutes": 17,
+   "url": "https://t.me/VA_Kyiv/22106"
+  },
+  {
+   "start": "2026-10-25T03:06:27+03:00",
+   "end": "2026-10-25T03:27:10+03:00",
+   "kind": "missile",
+   "minutes": 21,
+   "url": "https://t.me/VA_Kyiv/22108"
+  },
+  {
+   "start": "2026-10-25T03:38:39+02:00",
+   "end": "2026-10-25T04:04:18+02:00",
+   "kind": "drone",
+   "minutes": 26,
+   "url": "https://t.me/VA_Kyiv/22110"
+  },
+  {
+   "start": "2026-10-25T06:43:13+02:00",
+   "end": "2026-10-25T09:23:01+02:00",
+   "kind": "drone",
+   "minutes": 160,
+   "url": "https://t.me/VA_Kyiv/22113"
+  },
+  {
+   "start": "2026-10-25T09:50:34+02:00",
+   "end": "2026-10-25T11:39:13+02:00",
+   "kind": "drone",
+   "minutes": 109,
+   "url": "https://t.me/VA_Kyiv/22117"
+  },
+  {
+   "start": "2026-10-25T15:25:59+02:00",
+   "end": "2026-10-25T16:06:30+02:00",
+   "kind": "drone",
+   "minutes": 41,
+   "url": "https://t.me/VA_Kyiv/22121"
+  },
+  {
+   "start": "2026-10-25T19:02:03+02:00",
+   "end": "2026-10-25T19:34:37+02:00",
+   "kind": "drone",
+   "minutes": 33,
+   "url": "https://t.me/VA_Kyiv/22123"
+  },
+  {
+   "start": "2026-10-25T21:38:21+02:00",
+   "end": "2026-10-26T03:47:44+02:00",
+   "kind": "missile",
+   "minutes": 369,
+   "url": "https://t.me/VA_Kyiv/22125"
+  },
+  {
+   "start": "2026-10-26T09:44:11+02:00",
+   "end": "2026-10-26T09:49:01+02:00",
+   "kind": "drone",
+   "minutes": 5,
+   "url": "https://t.me/VA_Kyiv/22129"
+  },
+  {
+   "start": "2026-10-26T13:46:49+02:00",
+   "end": "2026-10-26T13:49:27+02:00",
+   "kind": "drone",
+   "minutes": 3,
+   "url": "https://t.me/VA_Kyiv/22131"
+  },
+  {
+   "start": "2026-10-26T17:50:15+02:00",
+   "end": "2026-10-26T18:45:46+02:00",
+   "kind": "drone",
+   "minutes": 56,
+   "url": "https://t.me/VA_Kyiv/22135"
+  },
+  {
+   "start": "2026-10-26T18:46:12+02:00",
+   "end": "2026-10-26T23:11:20+02:00",
+   "kind": "missile",
+   "minutes": 265,
+   "url": "https://t.me/VA_Kyiv/22138"
+  },
+  {
+   "start": "2026-10-27T12:58:36+02:00",
+   "end": "2026-10-27T13:20:52+02:00",
+   "kind": "drone",
+   "minutes": 22,
+   "url": "https://t.me/VA_Kyiv/22165"
+  },
+  {
+   "start": "2026-10-27T19:30:38+02:00",
+   "end": "2026-10-27T20:11:17+02:00",
+   "kind": "drone",
+   "minutes": 41,
+   "url": "https://t.me/VA_Kyiv/22169"
+  },
+  {
+   "start": "2026-10-27T22:42:18+02:00",
+   "end": "2026-10-27T22:52:39+02:00",
+   "kind": "missile",
+   "minutes": 10,
+   "url": "https://t.me/VA_Kyiv/22171"
+  },
+  {
+   "start": "2026-10-29T01:46:57+02:00",
+   "end": "2026-10-29T02:10:02+02:00",
+   "kind": "missile",
+   "minutes": 23,
+   "url": "https://t.me/VA_Kyiv/22180"
+  },
+  {
+   "start": "2026-10-29T07:34:47+02:00",
+   "end": "2026-10-29T08:28:22+02:00",
+   "kind": "drone",
+   "minutes": 54,
+   "url": "https://t.me/VA_Kyiv/22182"
+  },
+  {
+   "start": "2026-10-29T08:44:14+02:00",
+   "end": "2026-10-29T09:09:00+02:00",
+   "kind": "drone",
+   "minutes": 25,
+   "url": "https://t.me/VA_Kyiv/22184"
+  },
+  {
+   "start": "2026-10-29T09:47:04+02:00",
+   "end": "2026-10-29T10:15:01+02:00",
+   "kind": "missile",
+   "minutes": 28,
+   "url": "https://t.me/VA_Kyiv/22189"
+  },
+  {
+   "start": "2026-10-29T20:32:56+02:00",
+   "end": "2026-10-29T20:49:07+02:00",
+   "kind": "missile",
+   "minutes": 16,
+   "url": "https://t.me/VA_Kyiv/22200"
+  },
+  {
+   "start": "2026-10-29T21:09:07+02:00",
+   "end": "2026-10-29T22:23:06+02:00",
+   "kind": "drone",
+   "minutes": 74,
+   "url": "https://t.me/VA_Kyiv/22202"
+  },
+  {
+   "start": "2026-10-29T22:40:08+02:00",
+   "end": "2026-10-30T00:22:44+02:00",
+   "kind": "missile",
+   "minutes": 103,
+   "url": "https://t.me/VA_Kyiv/22206"
+  },
+  {
+   "start": "2026-10-30T00:30:27+02:00",
+   "end": "2026-10-30T02:47:51+02:00",
+   "kind": "missile",
+   "minutes": 137,
+   "url": "https://t.me/VA_Kyiv/22214"
+  },
+  {
+   "start": "2026-10-30T02:57:58+02:00",
+   "end": "2026-10-30T04:02:08+02:00",
+   "kind": "missile",
+   "minutes": 64,
+   "url": "https://t.me/VA_Kyiv/22218"
+  },
+  {
+   "start": "2026-10-30T05:00:30+02:00",
+   "end": "2026-10-30T05:42:42+02:00",
+   "kind": "drone",
+   "minutes": 42,
+   "url": "https://t.me/VA_Kyiv/22220"
+  },
+  {
+   "start": "2026-10-30T05:53:23+02:00",
+   "end": "2026-10-30T08:46:13+02:00",
+   "kind": "missile",
+   "minutes": 173,
+   "url": "https://t.me/VA_Kyiv/22222"
+  },
+  {
+   "start": "2026-10-30T12:03:25+02:00",
+   "end": "2026-10-30T12:22:56+02:00",
+   "kind": "drone",
+   "minutes": 20,
+   "url": "https://t.me/VA_Kyiv/22230"
+  },
+  {
+   "start": "2026-10-30T13:15:29+02:00",
+   "end": "2026-10-30T14:00:49+02:00",
+   "kind": "drone",
+   "minutes": 45,
+   "url": "https://t.me/VA_Kyiv/22232"
+  },
+  {
+   "start": "2026-10-30T14:37:02+02:00",
+   "end": "2026-10-30T14:42:42+02:00",
+   "kind": "missile",
+   "minutes": 6,
+   "url": "https://t.me/VA_Kyiv/22234"
+  },
+  {
+   "start": "2026-10-30T15:29:04+02:00",
+   "end": "2026-10-30T15:43:22+02:00",
+   "kind": "missile",
+   "minutes": 14,
+   "url": "https://t.me/VA_Kyiv/22236"
+  },
+  {
+   "start": "2026-10-30T21:42:33+02:00",
+   "end": "2026-10-30T21:51:32+02:00",
+   "kind": "drone",
+   "minutes": 9,
+   "url": "https://t.me/VA_Kyiv/22240"
+  },
+  {
+   "start": "2026-10-30T22:20:47+02:00",
+   "end": "2026-10-30T22:35:42+02:00",
+   "kind": "drone",
+   "minutes": 15,
+   "url": "https://t.me/VA_Kyiv/22242"
+  },
+  {
+   "start": "2026-10-30T23:23:52+02:00",
+   "end": "2026-10-30T23:29:34+02:00",
+   "kind": "drone",
+   "minutes": 6,
+   "url": "https://t.me/VA_Kyiv/22244"
+  },
+  {
+   "start": "2026-10-31T04:17:51+02:00",
+   "end": "2026-10-31T05:07:18+02:00",
+   "kind": "drone",
+   "minutes": 49,
+   "url": "https://t.me/VA_Kyiv/22246"
+  },
+  {
+   "start": "2026-10-31T06:23:54+02:00",
+   "end": "2026-10-31T07:13:55+02:00",
+   "kind": "drone",
+   "minutes": 50,
+   "url": "https://t.me/VA_Kyiv/22248"
+  },
+  {
+   "start": "2026-10-31T08:32:33+02:00",
+   "end": "2026-10-31T09:21:36+02:00",
+   "kind": "drone",
+   "minutes": 49,
+   "url": "https://t.me/VA_Kyiv/22250"
+  },
+  {
+   "start": "2026-10-31T10:07:43+02:00",
+   "end": "2026-10-31T10:34:44+02:00",
+   "kind": "drone",
+   "minutes": 27,
+   "url": "https://t.me/VA_Kyiv/22253"
+  },
+  {
+   "start": "2026-10-31T14:54:14+02:00",
+   "end": "2026-10-31T14:59:07+02:00",
+   "kind": "drone",
+   "minutes": 5,
+   "url": "https://t.me/VA_Kyiv/22264"
+  },
+  {
+   "start": "2026-10-31T16:26:13+02:00",
+   "end": "2026-10-31T16:43:18+02:00",
+   "kind": "drone",
+   "minutes": 17,
+   "url": "https://t.me/VA_Kyiv/22267"
+  },
+  {
+   "start": "2026-10-31T16:57:27+02:00",
+   "end": "2026-10-31T17:14:12+02:00",
+   "kind": "drone",
+   "minutes": 17,
+   "url": "https://t.me/VA_Kyiv/22269"
+  },
+  {
+   "start": "2026-10-31T17:53:31+02:00",
+   "end": "2026-10-31T18:37:02+02:00",
+   "kind": "drone",
+   "minutes": 44,
+   "url": "https://t.me/VA_Kyiv/22271"
+  },
+  {
+   "start": "2026-10-31T19:06:15+02:00",
+   "end": "2026-10-31T23:56:48+02:00",
+   "kind": "drone",
+   "minutes": 291,
+   "url": "https://t.me/VA_Kyiv/22275"
+  },
+  {
+   "start": "2026-11-01T00:39:17+02:00",
+   "end": "2026-11-01T02:53:07+02:00",
+   "kind": "drone",
+   "minutes": 134,
+   "url": "https://t.me/VA_Kyiv/22281"
+  },
+  {
+   "start": "2026-11-01T03:15:36+02:00",
+   "end": "2026-11-01T04:07:30+02:00",
+   "kind": "drone",
+   "minutes": 52,
+   "url": "https://t.me/VA_Kyiv/22283"
+  },
+  {
+   "start": "2026-11-01T05:03:29+02:00",
+   "end": "2026-11-01T05:23:30+02:00",
+   "kind": "drone",
+   "minutes": 20,
+   "url": "https://t.me/VA_Kyiv/22287"
+  },
+  {
+   "start": "2026-11-01T06:18:15+02:00",
+   "end": "2026-11-01T06:34:55+02:00",
+   "kind": "drone",
+   "minutes": 17,
+   "url": "https://t.me/VA_Kyiv/22289"
+  },
+  {
+   "start": "2026-11-01T06:52:06+02:00",
+   "end": "2026-11-01T11:16:23+02:00",
+   "kind": "drone",
+   "minutes": 264,
+   "url": "https://t.me/VA_Kyiv/22291"
+  },
+  {
+   "start": "2026-11-01T12:19:52+02:00",
+   "end": "2026-11-01T12:41:22+02:00",
+   "kind": "drone",
+   "minutes": 22,
+   "url": "https://t.me/VA_Kyiv/22296"
+  },
+  {
+   "start": "2026-11-01T15:07:12+02:00",
+   "end": "2026-11-01T15:41:04+02:00",
+   "kind": "drone",
+   "minutes": 34,
+   "url": "https://t.me/VA_Kyiv/22298"
+  },
+  {
+   "start": "2026-11-02T07:19:19+02:00",
+   "end": "2026-11-02T07:47:16+02:00",
+   "kind": "drone",
+   "minutes": 28,
+   "url": "https://t.me/VA_Kyiv/22301"
+  },
+  {
+   "start": "2026-11-02T14:00:22+02:00",
+   "end": "2026-11-02T14:50:24+02:00",
+   "kind": "missile",
+   "minutes": 50,
+   "url": "https://t.me/VA_Kyiv/22305"
+  },
+  {
+   "start": "2026-11-02T15:25:07+02:00",
+   "end": "2026-11-02T16:18:38+02:00",
+   "kind": "drone",
+   "minutes": 54,
+   "url": "https://t.me/VA_Kyiv/22309"
+  },
+  {
+   "start": "2026-11-02T17:09:15+02:00",
+   "end": "2026-11-02T19:21:41+02:00",
+   "kind": "drone",
+   "minutes": 132,
+   "url": "https://t.me/VA_Kyiv/22311"
+  },
+  {
+   "start": "2026-11-02T19:47:26+02:00",
+   "end": "2026-11-02T19:55:40+02:00",
+   "kind": "drone",
+   "minutes": 8,
+   "url": "https://t.me/VA_Kyiv/22316"
+  },
+  {
+   "start": "2026-11-02T20:56:56+02:00",
+   "end": "2026-11-03T07:15:33+02:00",
+   "kind": "missile",
+   "minutes": 619,
+   "url": "https://t.me/VA_Kyiv/22318"
+  },
+  {
+   "start": "2026-11-03T07:24:39+02:00",
+   "end": "2026-11-03T13:29:51+02:00",
+   "kind": "drone",
+   "minutes": 365,
+   "url": "https://t.me/VA_Kyiv/22323"
+  },
+  {
+   "start": "2026-11-03T15:20:38+02:00",
+   "end": "2026-11-03T15:28:43+02:00",
+   "kind": "drone",
+   "minutes": 8,
+   "url": "https://t.me/VA_Kyiv/22350"
+  },
+  {
+   "start": "2026-11-03T22:06:58+02:00",
+   "end": "2026-11-03T22:46:21+02:00",
+   "kind": "drone",
+   "minutes": 39,
+   "url": "https://t.me/VA_Kyiv/22359"
+  },
+  {
+   "start": "2026-11-03T23:02:37+02:00",
+   "end": "2026-11-03T23:20:00+02:00",
+   "kind": "missile",
+   "minutes": 17,
+   "url": "https://t.me/VA_Kyiv/22361"
+  },
+  {
+   "start": "2026-11-04T00:34:24+02:00",
+   "end": "2026-11-04T02:01:07+02:00",
+   "kind": "drone",
+   "minutes": 87,
+   "url": "https://t.me/VA_Kyiv/22364"
+  },
+  {
+   "start": "2026-11-04T03:19:35+02:00",
+   "end": "2026-11-04T03:54:06+02:00",
+   "kind": "drone",
+   "minutes": 35,
+   "url": "https://t.me/VA_Kyiv/22366"
+  },
+  {
+   "start": "2026-11-04T04:59:52+02:00",
+   "end": "2026-11-04T05:09:26+02:00",
+   "kind": "drone",
+   "minutes": 10,
+   "url": "https://t.me/VA_Kyiv/22368"
+  },
+  {
+   "start": "2026-11-04T06:17:00+02:00",
+   "end": "2026-11-04T06:27:51+02:00",
+   "kind": "drone",
+   "minutes": 11,
+   "url": "https://t.me/VA_Kyiv/22370"
+  },
+  {
+   "start": "2026-11-04T07:55:12+02:00",
+   "end": "2026-11-04T08:25:02+02:00",
+   "kind": "drone",
+   "minutes": 30,
+   "url": "https://t.me/VA_Kyiv/22373"
+  },
+  {
+   "start": "2026-11-04T08:47:42+02:00",
+   "end": "2026-11-04T09:43:14+02:00",
+   "kind": "drone",
+   "minutes": 56,
+   "url": "https://t.me/VA_Kyiv/22375"
+  },
+  {
+   "start": "2026-11-04T13:35:47+02:00",
+   "end": "2026-11-04T14:03:18+02:00",
+   "kind": "drone",
+   "minutes": 28,
+   "url": "https://t.me/VA_Kyiv/22383"
+  },
+  {
+   "start": "2026-11-04T14:55:03+02:00",
+   "end": "2026-11-04T15:56:22+02:00",
+   "kind": "drone",
+   "minutes": 61,
+   "url": "https://t.me/VA_Kyiv/22386"
+  },
+  {
+   "start": "2026-11-04T22:20:56+02:00",
+   "end": "2026-11-04T23:22:49+02:00",
+   "kind": "drone",
+   "minutes": 62,
+   "url": "https://t.me/VA_Kyiv/22400"
+  },
+  {
+   "start": "2026-11-05T01:22:51+02:00",
+   "end": "2026-11-05T01:44:54+02:00",
+   "kind": "drone",
+   "minutes": 22,
+   "url": "https://t.me/VA_Kyiv/22402"
+  },
+  {
+   "start": "2026-11-05T08:45:54+02:00",
+   "end": "2026-11-05T09:04:18+02:00",
+   "kind": "drone",
+   "minutes": 18,
+   "url": "https://t.me/VA_Kyiv/22405"
+  },
+  {
+   "start": "2026-11-05T09:43:41+02:00",
+   "end": "2026-11-05T10:32:31+02:00",
+   "kind": "missile",
+   "minutes": 49,
+   "url": "https://t.me/VA_Kyiv/22410"
+  },
+  {
+   "start": "2026-11-05T10:55:51+02:00",
+   "end": "2026-11-05T11:03:00+02:00",
+   "kind": "drone",
+   "minutes": 7,
+   "url": "https://t.me/VA_Kyiv/22413"
+  },
+  {
+   "start": "2026-11-05T15:46:13+02:00",
+   "end": "2026-11-05T16:39:06+02:00",
+   "kind": "drone",
+   "minutes": 53,
+   "url": "https://t.me/VA_Kyiv/22416"
+  },
+  {
+   "start": "2026-11-05T20:09:26+02:00",
+   "end": "2026-11-05T20:20:16+02:00",
+   "kind": "drone",
+   "minutes": 11,
+   "url": "https://t.me/VA_Kyiv/22420"
+  },
+  {
+   "start": "2026-11-05T21:27:30+02:00",
+   "end": "2026-11-05T22:37:35+02:00",
+   "kind": "drone",
+   "minutes": 70,
+   "url": "https://t.me/VA_Kyiv/22422"
+  },
+  {
+   "start": "2026-11-06T04:48:13+02:00",
+   "end": "2026-11-06T05:32:34+02:00",
+   "kind": "drone",
+   "minutes": 44,
+   "url": "https://t.me/VA_Kyiv/22425"
+  },
+  {
+   "start": "2026-11-06T07:45:52+02:00",
+   "end": "2026-11-06T07:53:23+02:00",
+   "kind": "drone",
+   "minutes": 8,
+   "url": "https://t.me/VA_Kyiv/22427"
+  },
+  {
+   "start": "2026-11-06T09:32:26+02:00",
+   "end": "2026-11-06T09:46:38+02:00",
+   "kind": "drone",
+   "minutes": 14,
+   "url": "https://t.me/VA_Kyiv/22430"
+  },
+  {
+   "start": "2026-11-06T15:10:07+02:00",
+   "end": "2026-11-06T15:43:15+02:00",
+   "kind": "drone",
+   "minutes": 33,
+   "url": "https://t.me/VA_Kyiv/22444"
+  },
+  {
+   "start": "2026-11-06T16:13:47+02:00",
+   "end": "2026-11-06T16:22:10+02:00",
+   "kind": "drone",
+   "minutes": 8,
+   "url": "https://t.me/VA_Kyiv/22446"
+  },
+  {
+   "start": "2026-11-06T19:20:47+02:00",
+   "end": "2026-11-06T20:04:07+02:00",
+   "kind": "drone",
+   "minutes": 43,
+   "url": "https://t.me/VA_Kyiv/22449"
+  },
+  {
+   "start": "2026-11-06T20:16:38+02:00",
+   "end": "2026-11-06T22:15:23+02:00",
+   "kind": "drone",
+   "minutes": 119,
+   "url": "https://t.me/VA_Kyiv/22452"
+  },
+  {
+   "start": "2026-11-06T22:50:08+02:00",
+   "end": "2026-11-06T23:33:25+02:00",
+   "kind": "missile",
+   "minutes": 43,
+   "url": "https://t.me/VA_Kyiv/22455"
+  },
+  {
+   "start": "2026-11-06T23:54:16+02:00",
+   "end": "2026-11-07T04:08:27+02:00",
+   "kind": "missile",
+   "minutes": 254,
+   "url": "https://t.me/VA_Kyiv/22457"
+  },
+  {
+   "start": "2026-11-07T04:10:47+02:00",
+   "end": "2026-11-07T07:36:03+02:00",
+   "kind": "drone",
+   "minutes": 205,
+   "url": "https://t.me/VA_Kyiv/22467"
+  },
+  {
+   "start": "2026-11-07T08:07:24+02:00",
+   "end": "2026-11-07T12:21:19+02:00",
+   "kind": "drone",
+   "minutes": 254,
+   "url": "https://t.me/VA_Kyiv/22473"
+  },
+  {
+   "start": "2026-11-07T13:13:08+02:00",
+   "end": "2026-11-07T13:26:34+02:00",
+   "kind": "drone",
+   "minutes": 13,
+   "url": "https://t.me/VA_Kyiv/22486"
+  },
+  {
+   "start": "2026-11-07T14:04:03+02:00",
+   "end": "2026-11-07T16:14:07+02:00",
+   "kind": "drone",
+   "minutes": 130,
+   "url": "https://t.me/VA_Kyiv/22488"
+  },
+  {
+   "start": "2026-11-08T01:15:19+02:00",
+   "end": "2026-11-08T01:36:55+02:00",
+   "kind": "drone",
+   "minutes": 22,
+   "url": "https://t.me/VA_Kyiv/22492"
+  },
+  {
+   "start": "2026-11-08T13:10:32+02:00",
+   "end": "2026-11-08T13:33:57+02:00",
+   "kind": "drone",
+   "minutes": 23,
+   "url": "https://t.me/VA_Kyiv/22497"
+  },
+  {
+   "start": "2026-11-08T15:26:14+02:00",
+   "end": "2026-11-08T16:01:06+02:00",
+   "kind": "drone",
+   "minutes": 35,
+   "url": "https://t.me/VA_Kyiv/22509"
+  },
+  {
+   "start": "2026-11-08T20:21:26+02:00",
+   "end": "2026-11-08T21:36:35+02:00",
+   "kind": "drone",
+   "minutes": 75,
+   "url": "https://t.me/VA_Kyiv/22512"
+  },
+  {
+   "start": "2026-11-08T22:04:06+02:00",
+   "end": "2026-11-08T22:27:23+02:00",
+   "kind": "drone",
+   "minutes": 23,
+   "url": "https://t.me/VA_Kyiv/22514"
+  },
+  {
+   "start": "2026-11-08T23:44:43+02:00",
+   "end": "2026-11-09T00:01:27+02:00",
+   "kind": "drone",
+   "minutes": 17,
+   "url": "https://t.me/VA_Kyiv/22516"
+  },
+  {
+   "start": "2026-11-09T00:41:50+02:00",
+   "end": "2026-11-09T01:05:13+02:00",
+   "kind": "drone",
+   "minutes": 23,
+   "url": "https://t.me/VA_Kyiv/22518"
+  },
+  {
+   "start": "2026-11-09T01:31:45+02:00",
+   "end": "2026-11-09T01:54:16+02:00",
+   "kind": "drone",
+   "minutes": 23,
+   "url": "https://t.me/VA_Kyiv/22520"
+  },
+  {
+   "start": "2026-11-09T09:58:20+02:00",
+   "end": "2026-11-09T10:18:11+02:00",
+   "kind": "drone",
+   "minutes": 20,
+   "url": "https://t.me/VA_Kyiv/22524"
+  },
+  {
+   "start": "2026-11-09T11:29:51+02:00",
+   "end": "2026-11-09T11:49:13+02:00",
+   "kind": "drone",
+   "minutes": 19,
+   "url": "https://t.me/VA_Kyiv/22529"
+  },
+  {
+   "start": "2026-11-09T12:57:41+02:00",
+   "end": "2026-11-09T14:46:58+02:00",
+   "kind": "drone",
+   "minutes": 109,
+   "url": "https://t.me/VA_Kyiv/22533"
+  },
+  {
+   "start": "2026-11-09T23:01:50+02:00",
+   "end": "2026-11-09T23:16:18+02:00",
+   "kind": "missile",
+   "minutes": 14,
+   "url": "https://t.me/VA_Kyiv/22537"
+  },
+  {
+   "start": "2026-11-10T00:59:16+02:00",
+   "end": "2026-11-10T02:39:18+02:00",
+   "kind": "drone",
+   "minutes": 100,
+   "url": "https://t.me/VA_Kyiv/22539"
+  },
+  {
+   "start": "2026-11-10T07:03:29+02:00",
+   "end": "2026-11-10T07:48:37+02:00",
+   "kind": "drone",
+   "minutes": 45,
+   "url": "https://t.me/VA_Kyiv/22541"
+  },
+  {
+   "start": "2026-11-10T08:49:27+02:00",
+   "end": "2026-11-10T09:40:08+02:00",
+   "kind": "drone",
+   "minutes": 51,
+   "url": "https://t.me/VA_Kyiv/22543"
+  },
+  {
+   "start": "2026-11-10T11:53:03+02:00",
+   "end": "2026-11-10T12:23:33+02:00",
+   "kind": "drone",
+   "minutes": 30,
+   "url": "https://t.me/VA_Kyiv/22547"
+  },
+  {
+   "start": "2026-11-10T13:51:47+02:00",
+   "end": "2026-11-10T14:21:51+02:00",
+   "kind": "drone",
+   "minutes": 30,
+   "url": "https://t.me/VA_Kyiv/22551"
+  },
+  {
+   "start": "2026-11-10T21:22:16+02:00",
+   "end": "2026-11-10T21:38:51+02:00",
+   "kind": "missile",
+   "minutes": 17,
+   "url": "https://t.me/VA_Kyiv/22566"
+  },
+  {
+   "start": "2026-11-10T23:24:53+02:00",
+   "end": "2026-11-10T23:42:17+02:00",
+   "kind": "missile",
+   "minutes": 17,
+   "url": "https://t.me/VA_Kyiv/22568"
+  },
+  {
+   "start": "2026-11-11T02:08:18+02:00",
+   "end": "2026-11-11T03:09:48+02:00",
+   "kind": "drone",
+   "minutes": 62,
+   "url": "https://t.me/VA_Kyiv/22570"
+  },
+  {
+   "start": "2026-11-11T06:19:27+02:00",
+   "end": "2026-11-11T06:47:23+02:00",
+   "kind": "drone",
+   "minutes": 28,
+   "url": "https://t.me/VA_Kyiv/22572"
+  },
+  {
+   "start": "2026-11-11T06:57:01+02:00",
+   "end": "2026-11-11T07:19:19+02:00",
+   "kind": "drone",
+   "minutes": 22,
+   "url": "https://t.me/VA_Kyiv/22574"
+  },
+  {
+   "start": "2026-11-11T08:48:09+02:00",
+   "end": "2026-11-11T09:41:25+02:00",
+   "kind": "missile",
+   "minutes": 53,
+   "url": "https://t.me/VA_Kyiv/22577"
+  },
+  {
+   "start": "2026-11-11T10:35:32+02:00",
+   "end": "2026-11-11T11:42:53+02:00",
+   "kind": "drone",
+   "minutes": 67,
+   "url": "https://t.me/VA_Kyiv/22583"
+  },
+  {
+   "start": "2026-11-11T16:56:10+02:00",
+   "end": "2026-11-11T17:07:00+02:00",
+   "kind": "drone",
+   "minutes": 11,
+   "url": "https://t.me/VA_Kyiv/22591"
+  },
+  {
+   "start": "2026-11-12T00:56:54+02:00",
+   "end": "2026-11-12T02:00:12+02:00",
+   "kind": "missile",
+   "minutes": 63,
+   "url": "https://t.me/VA_Kyiv/22597"
+  },
+  {
+   "start": "2026-11-12T07:01:35+02:00",
+   "end": "2026-11-12T07:09:12+02:00",
+   "kind": "drone",
+   "minutes": 8,
+   "url": "https://t.me/VA_Kyiv/22599"
+  },
+  {
+   "start": "2026-11-12T07:56:39+02:00",
+   "end": "2026-11-12T08:04:42+02:00",
+   "kind": "drone",
+   "minutes": 8,
+   "url": "https://t.me/VA_Kyiv/22601"
+  },
+  {
+   "start": "2026-11-12T12:34:40+02:00",
+   "end": "2026-11-12T12:44:27+02:00",
+   "kind": "drone",
+   "minutes": 10,
+   "url": "https://t.me/VA_Kyiv/22611"
+  },
+  {
+   "start": "2026-11-12T18:27:47+02:00",
+   "end": "2026-11-12T19:21:28+02:00",
+   "kind": "drone",
+   "minutes": 54,
+   "url": "https://t.me/VA_Kyiv/22616"
+  },
+  {
+   "start": "2026-11-13T01:55:24+02:00",
+   "end": "2026-11-13T02:07:00+02:00",
+   "kind": "missile",
+   "minutes": 12,
+   "url": "https://t.me/VA_Kyiv/22619"
+  },
+  {
+   "start": "2026-11-13T02:57:35+02:00",
+   "end": "2026-11-13T03:25:13+02:00",
+   "kind": "drone",
+   "minutes": 28,
+   "url": "https://t.me/VA_Kyiv/22621"
+  },
+  {
+   "start": "2026-11-13T05:00:52+02:00",
+   "end": "2026-11-13T05:22:26+02:00",
+   "kind": "drone",
+   "minutes": 22,
+   "url": "https://t.me/VA_Kyiv/22624"
+  },
+  {
+   "start": "2026-11-13T08:25:28+02:00",
+   "end": "2026-11-13T09:20:44+02:00",
+   "kind": "drone",
+   "minutes": 55,
+   "url": "https://t.me/VA_Kyiv/22636"
+  },
+  {
+   "start": "2026-11-13T11:08:45+02:00",
+   "end": "2026-11-13T11:57:47+02:00",
+   "kind": "missile",
+   "minutes": 49,
+   "url": "https://t.me/VA_Kyiv/22639"
+  },
+  {
+   "start": "2026-11-14T02:07:15+02:00",
+   "end": "2026-11-14T02:53:46+02:00",
+   "kind": "drone",
+   "minutes": 47,
+   "url": "https://t.me/VA_Kyiv/22642"
+  },
+  {
+   "start": "2026-11-14T09:04:07+02:00",
+   "end": "2026-11-14T09:35:37+02:00",
+   "kind": "drone",
+   "minutes": 32,
+   "url": "https://t.me/VA_Kyiv/22645"
+  },
+  {
+   "start": "2026-11-14T11:07:59+02:00",
+   "end": "2026-11-14T12:07:56+02:00",
+   "kind": "drone",
+   "minutes": 60,
+   "url": "https://t.me/VA_Kyiv/22647"
+  },
+  {
+   "start": "2026-11-15T01:18:35+02:00",
+   "end": "2026-11-15T01:54:09+02:00",
+   "kind": "drone",
+   "minutes": 36,
+   "url": "https://t.me/VA_Kyiv/22651"
+  },
+  {
+   "start": "2026-11-15T02:42:28+02:00",
+   "end": "2026-11-15T03:30:08+02:00",
+   "kind": "drone",
+   "minutes": 48,
+   "url": "https://t.me/VA_Kyiv/22653"
+  },
+  {
+   "start": "2026-11-15T05:23:19+02:00",
+   "end": "2026-11-15T05:34:37+02:00",
+   "kind": "drone",
+   "minutes": 11,
+   "url": "https://t.me/VA_Kyiv/22655"
+  },
+  {
+   "start": "2026-11-15T07:29:40+02:00",
+   "end": "2026-11-15T07:39:18+02:00",
+   "kind": "drone",
+   "minutes": 10,
+   "url": "https://t.me/VA_Kyiv/22657"
+  },
+  {
+   "start": "2026-11-15T08:26:35+02:00",
+   "end": "2026-11-15T09:31:54+02:00",
+   "kind": "missile",
+   "minutes": 65,
+   "url": "https://t.me/VA_Kyiv/22659"
+  },
+  {
+   "start": "2026-11-15T10:15:06+02:00",
+   "end": "2026-11-15T10:28:28+02:00",
+   "kind": "missile",
+   "minutes": 13,
+   "url": "https://t.me/VA_Kyiv/22663"
+  },
+  {
+   "start": "2026-11-15T12:01:30+02:00",
+   "end": "2026-11-15T12:25:00+02:00",
+   "kind": "missile",
+   "minutes": 24,
+   "url": "https://t.me/VA_Kyiv/22665"
+  },
+  {
+   "start": "2026-11-15T14:13:39+02:00",
+   "end": "2026-11-15T14:22:22+02:00",
+   "kind": "drone",
+   "minutes": 9,
+   "url": "https://t.me/VA_Kyiv/22669"
+  },
+  {
+   "start": "2026-11-15T16:27:58+02:00",
+   "end": "2026-11-15T16:35:00+02:00",
+   "kind": "drone",
+   "minutes": 7,
+   "url": "https://t.me/VA_Kyiv/22671"
+  },
+  {
+   "start": "2026-11-15T19:53:53+02:00",
+   "end": "2026-11-15T20:07:54+02:00",
+   "kind": "missile",
+   "minutes": 14,
+   "url": "https://t.me/VA_Kyiv/22673"
+  },
+  {
+   "start": "2026-11-15T20:40:29+02:00",
+   "end": "2026-11-15T20:49:51+02:00",
+   "kind": "missile",
+   "minutes": 9,
+   "url": "https://t.me/VA_Kyiv/22675"
+  },
+  {
+   "start": "2026-11-15T22:49:05+02:00",
+   "end": "2026-11-15T23:03:06+02:00",
+   "kind": "missile",
+   "minutes": 14,
+   "url": "https://t.me/VA_Kyiv/22678"
+  },
+  {
+   "start": "2026-11-15T23:52:05+02:00",
+   "end": "2026-11-15T23:59:49+02:00",
+   "kind": "missile",
+   "minutes": 8,
+   "url": "https://t.me/VA_Kyiv/22682"
+  },
+  {
+   "start": "2026-11-16T00:41:07+02:00",
+   "end": "2026-11-16T00:49:19+02:00",
+   "kind": "missile",
+   "minutes": 8,
+   "url": "https://t.me/VA_Kyiv/22684"
+  },
+  {
+   "start": "2026-11-16T01:33:12+02:00",
+   "end": "2026-11-16T01:59:22+02:00",
+   "kind": "drone",
+   "minutes": 26,
+   "url": "https://t.me/VA_Kyiv/22686"
+  },
+  {
+   "start": "2026-11-16T04:22:45+02:00",
+   "end": "2026-11-16T04:36:10+02:00",
+   "kind": "missile",
+   "minutes": 13,
+   "url": "https://t.me/VA_Kyiv/22688"
+  },
+  {
+   "start": "2026-11-16T04:38:39+02:00",
+   "end": "2026-11-16T07:07:28+02:00",
+   "kind": "drone",
+   "minutes": 149,
+   "url": "https://t.me/VA_Kyiv/22690"
+  },
+  {
+   "start": "2026-11-16T07:21:52+02:00",
+   "end": "2026-11-16T10:03:33+02:00",
+   "kind": "drone",
+   "minutes": 162,
+   "url": "https://t.me/VA_Kyiv/22694"
+  },
+  {
+   "start": "2026-11-16T10:45:29+02:00",
+   "end": "2026-11-16T11:22:48+02:00",
+   "kind": "missile",
+   "minutes": 37,
+   "url": "https://t.me/VA_Kyiv/22699"
+  },
+  {
+   "start": "2026-11-16T11:47:35+02:00",
+   "end": "2026-11-16T12:43:53+02:00",
+   "kind": "drone",
+   "minutes": 56,
+   "url": "https://t.me/VA_Kyiv/22702"
+  },
+  {
+   "start": "2026-11-16T14:43:43+02:00",
+   "end": "2026-11-16T15:03:01+02:00",
+   "kind": "drone",
+   "minutes": 19,
+   "url": "https://t.me/VA_Kyiv/22706"
+  },
+  {
+   "start": "2026-11-16T16:59:29+02:00",
+   "end": "2026-11-16T17:10:14+02:00",
+   "kind": "drone",
+   "minutes": 11,
+   "url": "https://t.me/VA_Kyiv/22709"
+  },
+  {
+   "start": "2026-11-16T17:30:02+02:00",
+   "end": "2026-11-16T19:01:08+02:00",
+   "kind": "missile",
+   "minutes": 91,
+   "url": "https://t.me/VA_Kyiv/22711"
+  },
+  {
+   "start": "2026-11-16T23:26:13+02:00",
+   "end": "2026-11-17T00:41:49+02:00",
+   "kind": "missile",
+   "minutes": 76,
+   "url": "https://t.me/VA_Kyiv/22717"
+  },
+  {
+   "start": "2026-11-17T05:36:35+02:00",
+   "end": "2026-11-17T06:14:56+02:00",
+   "kind": "missile",
+   "minutes": 38,
+   "url": "https://t.me/VA_Kyiv/22719"
+  },
+  {
+   "start": "2026-11-17T08:33:07+02:00",
+   "end": "2026-11-17T10:31:13+02:00",
+   "kind": "drone",
+   "minutes": 118,
+   "url": "https://t.me/VA_Kyiv/22723"
+  },
+  {
+   "start": "2026-11-17T18:16:04+02:00",
+   "end": "2026-11-17T18:24:20+02:00",
+   "kind": "drone",
+   "minutes": 8,
+   "url": "https://t.me/VA_Kyiv/22741"
+  },
+  {
+   "start": "2026-11-17T19:34:32+02:00",
+   "end": "2026-11-17T20:09:16+02:00",
+   "kind": "drone",
+   "minutes": 35,
+   "url": "https://t.me/VA_Kyiv/22744"
+  },
+  {
+   "start": "2026-11-18T04:32:00+02:00",
+   "end": "2026-11-18T05:14:38+02:00",
+   "kind": "drone",
+   "minutes": 43,
+   "url": "https://t.me/VA_Kyiv/22748"
+  },
+  {
+   "start": "2026-11-18T08:47:44+02:00",
+   "end": "2026-11-18T09:53:25+02:00",
+   "kind": "drone",
+   "minutes": 66,
+   "url": "https://t.me/VA_Kyiv/22750"
+  },
+  {
+   "start": "2026-11-18T10:51:54+02:00",
+   "end": "2026-11-18T11:18:18+02:00",
+   "kind": "drone",
+   "minutes": 26,
+   "url": "https://t.me/VA_Kyiv/22755"
+  },
+  {
+   "start": "2026-11-18T13:44:13+02:00",
+   "end": "2026-11-18T13:52:17+02:00",
+   "kind": "drone",
+   "minutes": 8,
+   "url": "https://t.me/VA_Kyiv/22758"
+  },
+  {
+   "start": "2026-11-18T14:32:25+02:00",
+   "end": "2026-11-18T14:50:38+02:00",
+   "kind": "drone",
+   "minutes": 18,
+   "url": "https://t.me/VA_Kyiv/22765"
+  },
+  {
+   "start": "2026-11-18T15:51:52+02:00",
+   "end": "2026-11-18T16:00:48+02:00",
+   "kind": "drone",
+   "minutes": 9,
+   "url": "https://t.me/VA_Kyiv/22768"
+  },
+  {
+   "start": "2026-11-18T17:09:32+02:00",
+   "end": "2026-11-18T17:21:28+02:00",
+   "kind": "drone",
+   "minutes": 12,
+   "url": "https://t.me/VA_Kyiv/22772"
+  },
+  {
+   "start": "2026-11-18T17:58:35+02:00",
+   "end": "2026-11-18T18:42:50+02:00",
+   "kind": "drone",
+   "minutes": 44,
+   "url": "https://t.me/VA_Kyiv/22774"
+  },
+  {
+   "start": "2026-11-19T02:02:47+02:00",
+   "end": "2026-11-19T02:24:23+02:00",
+   "kind": "drone",
+   "minutes": 22,
+   "url": "https://t.me/VA_Kyiv/22782"
+  },
+  {
+   "start": "2026-11-19T07:40:14+02:00",
+   "end": "2026-11-19T08:16:53+02:00",
+   "kind": "drone",
+   "minutes": 37,
+   "url": "https://t.me/VA_Kyiv/22784"
+  },
+  {
+   "start": "2026-11-19T09:16:45+02:00",
+   "end": "2026-11-19T09:23:04+02:00",
+   "kind": "drone",
+   "minutes": 6,
+   "url": "https://t.me/VA_Kyiv/22787"
+  },
+  {
+   "start": "2026-11-19T11:34:55+02:00",
+   "end": "2026-11-19T11:51:14+02:00",
+   "kind": "drone",
+   "minutes": 16,
+   "url": "https://t.me/VA_Kyiv/22789"
+  },
+  {
+   "start": "2026-11-19T12:14:37+02:00",
+   "end": "2026-11-19T12:39:52+02:00",
+   "kind": "drone",
+   "minutes": 25,
+   "url": "https://t.me/VA_Kyiv/22793"
+  },
+  {
+   "start": "2026-11-19T12:52:17+02:00",
+   "end": "2026-11-19T13:27:49+02:00",
+   "kind": "drone",
+   "minutes": 36,
+   "url": "https://t.me/VA_Kyiv/22797"
+  },
+  {
+   "start": "2026-11-19T13:46:08+02:00",
+   "end": "2026-11-19T14:00:27+02:00",
+   "kind": "drone",
+   "minutes": 14,
+   "url": "https://t.me/VA_Kyiv/22799"
+  },
+  {
+   "start": "2026-11-19T14:33:04+02:00",
+   "end": "2026-11-19T16:38:17+02:00",
+   "kind": "drone",
+   "minutes": 125,
+   "url": "https://t.me/VA_Kyiv/22801"
+  },
+  {
+   "start": "2026-11-19T17:27:15+02:00",
+   "end": "2026-11-19T17:37:28+02:00",
+   "kind": "drone",
+   "minutes": 10,
+   "url": "https://t.me/VA_Kyiv/22808"
+  },
+  {
+   "start": "2026-11-19T20:14:54+02:00",
+   "end": "2026-11-19T20:51:46+02:00",
+   "kind": "drone",
+   "minutes": 37,
+   "url": "https://t.me/VA_Kyiv/22820"
+  },
+  {
+   "start": "2026-11-19T20:53:44+02:00",
+   "end": "2026-11-20T07:53:27+02:00",
+   "kind": "missile",
+   "minutes": 660,
+   "url": "https://t.me/VA_Kyiv/22822"
+  },
+  {
+   "start": "2026-11-20T09:32:36+02:00",
+   "end": "2026-11-20T10:05:37+02:00",
+   "kind": "missile",
+   "minutes": 33,
+   "url": "https://t.me/VA_Kyiv/22837"
+  },
+  {
+   "start": "2026-11-20T10:34:17+02:00",
+   "end": "2026-11-20T10:53:17+02:00",
+   "kind": "drone",
+   "minutes": 19,
+   "url": "https://t.me/VA_Kyiv/22839"
+  },
+  {
+   "start": "2026-11-20T12:22:22+02:00",
+   "end": "2026-11-20T12:42:42+02:00",
+   "kind": "drone",
+   "minutes": 20,
+   "url": "https://t.me/VA_Kyiv/22843"
+  },
+  {
+   "start": "2026-11-20T20:43:54+02:00",
+   "end": "2026-11-20T21:19:15+02:00",
+   "kind": "drone",
+   "minutes": 35,
+   "url": "https://t.me/VA_Kyiv/22849"
+  },
+  {
+   "start": "2026-11-21T00:41:52+02:00",
+   "end": "2026-11-21T00:51:23+02:00",
+   "kind": "drone",
+   "minutes": 10,
+   "url": "https://t.me/VA_Kyiv/22851"
+  },
+  {
+   "start": "2026-11-21T01:52:22+02:00",
+   "end": "2026-11-21T02:02:11+02:00",
+   "kind": "drone",
+   "minutes": 10,
+   "url": "https://t.me/VA_Kyiv/22853"
+  },
+  {
+   "start": "2026-11-21T04:44:06+02:00",
+   "end": "2026-11-21T06:39:16+02:00",
+   "kind": "missile",
+   "minutes": 115,
+   "url": "https://t.me/VA_Kyiv/22855"
+  },
+  {
+   "start": "2026-11-21T07:17:37+02:00",
+   "end": "2026-11-21T08:05:12+02:00",
+   "kind": "drone",
+   "minutes": 48,
+   "url": "https://t.me/VA_Kyiv/22860"
+  },
+  {
+   "start": "2026-11-21T12:31:41+02:00",
+   "end": "2026-11-21T12:39:45+02:00",
+   "kind": "drone",
+   "minutes": 8,
+   "url": "https://t.me/VA_Kyiv/22882"
+  },
+  {
+   "start": "2026-11-21T20:25:38+02:00",
+   "end": "2026-11-21T20:34:04+02:00",
+   "kind": "drone",
+   "minutes": 8,
+   "url": "https://t.me/VA_Kyiv/22901"
+  },
+  {
+   "start": "2026-11-22T01:22:38+02:00",
+   "end": "2026-11-22T02:08:26+02:00",
+   "kind": "drone",
+   "minutes": 46,
+   "url": "https://t.me/VA_Kyiv/22903"
+  },
+  {
+   "start": "2026-11-22T13:07:29+02:00",
+   "end": "2026-11-22T13:33:46+02:00",
+   "kind": "drone",
+   "minutes": 26,
+   "url": "https://t.me/VA_Kyiv/22907"
+  },
+  {
+   "start": "2026-11-22T15:33:26+02:00",
+   "end": "2026-11-22T18:37:08+02:00",
+   "kind": "drone",
+   "minutes": 184,
+   "url": "https://t.me/VA_Kyiv/22909"
+  },
+  {
+   "start": "2026-11-23T03:58:07+02:00",
+   "end": "2026-11-23T04:27:08+02:00",
+   "kind": "drone",
+   "minutes": 29,
+   "url": "https://t.me/VA_Kyiv/22912"
+  },
+  {
+   "start": "2026-11-23T07:01:06+02:00",
+   "end": "2026-11-23T07:24:09+02:00",
+   "kind": "drone",
+   "minutes": 23,
+   "url": "https://t.me/VA_Kyiv/22914"
+  },
+  {
+   "start": "2026-11-23T14:26:25+02:00",
+   "end": "2026-11-23T16:31:46+02:00",
+   "kind": "drone",
+   "minutes": 125,
+   "url": "https://t.me/VA_Kyiv/22922"
+  },
+  {
+   "start": "2026-11-23T18:46:50+02:00",
+   "end": "2026-11-23T19:00:26+02:00",
+   "kind": "drone",
+   "minutes": 14,
+   "url": "https://t.me/VA_Kyiv/22929"
+  },
+  {
+   "start": "2026-11-23T21:53:37+02:00",
+   "end": "2026-11-23T22:19:49+02:00",
+   "kind": "drone",
+   "minutes": 26,
+   "url": "https://t.me/VA_Kyiv/22937"
+  },
+  {
+   "start": "2026-11-24T02:01:13+02:00",
+   "end": "2026-11-24T03:06:45+02:00",
+   "kind": "drone",
+   "minutes": 66,
+   "url": "https://t.me/VA_Kyiv/22939"
+  }
+ ],
+ "days": [
+  {
+   "day": "2026-10-05",
+   "summary": "On the night/morning of 5-6 October 2026, Russian strikes on Kyiv damaged a bridge roadway in Desnianskyi district, set vehicles on fire in a residential courtyard in Pecherskyi district, and caused a minor roof fire at an educational institution in Obolonskyi district.",
+   "dropped": [],
+   "city_totals": {
+    "killed": null,
+    "injured": null
+   },
+   "audit_examples": [],
+   "stats": {
+    "posts": 18,
+    "claims": 3,
+    "rejected_quotes": 0,
+    "sites": 3,
+    "audit_rounds": 1,
+    "revisions": 0,
+    "issues_found": [],
+    "open_issues": 0,
+    "dropped": 0
+   }
+  },
+  {
+   "day": "2026-10-08",
+   "summary": "On 8 October 2026, Russian drone strikes hit Kyiv's Solomianskyi, Shevchenkivskyi, and Holosiivskyi districts, with a direct hit and fire at a four-storey commercial building causing deaths and injuries, and debris falling in open areas including near parked vehicles that caught fire.",
+   "dropped": [],
+   "city_totals": {
+    "killed": 4,
+    "injured": 19
+   },
+   "audit_examples": [],
+   "stats": {
+    "posts": 60,
+    "claims": 6,
+    "rejected_quotes": 1,
+    "sites": 3,
+    "audit_rounds": 1,
+    "revisions": 0,
+    "issues_found": [],
+    "open_issues": 0,
+    "dropped": 0
+   }
+  },
+  {
+   "day": "2026-10-11",
+   "summary": "On the night/day of 11 October 2026, drone debris fell in two separate districts of Kyiv, damaging a car in Darnytskyi district and landing in a green zone near an apartment building in Holosiivskyi district.",
+   "dropped": [],
+   "city_totals": {
+    "killed": null,
+    "injured": null
+   },
+   "audit_examples": [],
+   "stats": {
+    "posts": 24,
+    "claims": 2,
+    "rejected_quotes": 0,
+    "sites": 2,
+    "audit_rounds": 1,
+    "revisions": 0,
+    "issues_found": [],
+    "open_issues": 0,
+    "dropped": 0
+   }
+  },
+  {
+   "day": "2026-10-14",
+   "summary": "On 14 October 2026, a Russian ballistic missile struck a 9-storey residential building in Kyiv's Desnianskyi district, while separately an electric car exploded in Pecherskyi district, injuring its driver.",
+   "dropped": [],
+   "city_totals": {
+    "killed": 4,
+    "injured": 25
+   },
+   "audit_examples": [],
+   "stats": {
+    "posts": 32,
+    "claims": 2,
+    "rejected_quotes": 1,
+    "sites": 2,
+    "audit_rounds": 1,
+    "revisions": 0,
+    "issues_found": [],
+    "open_issues": 0,
+    "dropped": 0
+   }
+  },
+  {
+   "day": "2026-10-16",
+   "summary": "On the night of 16 October 2026, Russian strikes caused fires at a non-residential building and a private house in Shevchenkivskyi district and at a non-residential (outbuilding) structure in Solomianskyi district.",
+   "dropped": [],
+   "city_totals": {
+    "killed": null,
+    "injured": null
+   },
+   "audit_examples": [],
+   "stats": {
+    "posts": 23,
+    "claims": 2,
+    "rejected_quotes": 0,
+    "sites": 2,
+    "audit_rounds": 1,
+    "revisions": 0,
+    "issues_found": [],
+    "open_issues": 0,
+    "dropped": 0
+   }
+  },
+  {
+   "day": "2026-10-17",
+   "summary": "",
+   "dropped": [],
+   "city_totals": {
+    "killed": null,
+    "injured": null
+   },
+   "audit_examples": [],
+   "stats": {
+    "posts": 4,
+    "claims": 0,
+    "rejected_quotes": 0,
+    "sites": 0,
+    "audit_rounds": 0,
+    "revisions": 0,
+    "issues_found": [],
+    "open_issues": 0,
+    "dropped": 0
+   }
+  },
+  {
+   "day": "2026-10-19",
+   "summary": "On the night of 19 October 2026, Russian strikes on Kyiv damaged a medical diagnostic center, the Chernihivska metro station and surrounding area, the Shalet ice arena, a Datagroup data center, the Cosmo Multimall shopping centre, and the Book Chamber of Ukraine.",
+   "dropped": [],
+   "city_totals": {
+    "killed": 1,
+    "injured": 8
+   },
+   "audit_examples": [],
+   "stats": {
+    "posts": 55,
+    "claims": 9,
+    "rejected_quotes": 1,
+    "sites": 6,
+    "audit_rounds": 1,
+    "revisions": 0,
+    "issues_found": [],
+    "open_issues": 0,
+    "dropped": 0
+   }
+  },
+  {
+   "day": "2026-10-25",
+   "summary": "On the night of 25 October 2026, drone debris and strikes caused fires and debris falls in open areas of Kyiv's Dniprovskyi and Desnianskyi districts, with no casualties or infrastructure damage reported.",
+   "dropped": [],
+   "city_totals": {
+    "killed": null,
+    "injured": null
+   },
+   "audit_examples": [],
+   "stats": {
+    "posts": 9,
+    "claims": 5,
+    "rejected_quotes": 0,
+    "sites": 3,
+    "audit_rounds": 1,
+    "revisions": 0,
+    "issues_found": [],
+    "open_issues": 0,
+    "dropped": 0
+   }
+  },
+  {
+   "day": "2026-10-30",
+   "summary": "On the night/day of 30 October 2026, Russian strikes on Kyiv caused fires and damage in Darnytskyi, Dniprovskyi, Shevchenkivskyi and other districts, including a fatality, a damaged museum, a damaged apartment building, and a power outage affecting several districts after a hit on energy infrastructure.",
+   "dropped": [],
+   "city_totals": {
+    "killed": 1,
+    "injured": 1
+   },
+   "audit_examples": [],
+   "stats": {
+    "posts": 36,
+    "claims": 9,
+    "rejected_quotes": 0,
+    "sites": 6,
+    "audit_rounds": 1,
+    "revisions": 0,
+    "issues_found": [],
+    "open_issues": 0,
+    "dropped": 0
+   }
+  },
+  {
+   "day": "2026-10-31",
+   "summary": "On the night of October 31, 2026, drone and debris strikes caused fires and damage at three separate sites in Kyiv's Obolonskyi, Desnianskyi, and Darnytskyi districts, with one woman reported injured.",
+   "dropped": [],
+   "city_totals": {
+    "killed": null,
+    "injured": null
+   },
+   "audit_examples": [],
+   "stats": {
+    "posts": 25,
+    "claims": 3,
+    "rejected_quotes": 0,
+    "sites": 3,
+    "audit_rounds": 1,
+    "revisions": 0,
+    "issues_found": [],
+    "open_issues": 0,
+    "dropped": 0
+   }
+  },
+  {
+   "day": "2026-11-01",
+   "summary": "",
+   "dropped": [],
+   "city_totals": {
+    "killed": null,
+    "injured": null
+   },
+   "audit_examples": [],
+   "stats": {
+    "posts": 7,
+    "claims": 0,
+    "rejected_quotes": 0,
+    "sites": 0,
+    "audit_rounds": 0,
+    "revisions": 0,
+    "issues_found": [],
+    "open_issues": 0,
+    "dropped": 0
+   }
+  },
+  {
+   "day": "2026-11-02",
+   "summary": "On the night and day of 2 November 2026, two separate fires broke out in Podilskyi district (a residential building and a car) and drone debris caused a fire in an open area in Darnytskyi district.",
+   "dropped": [],
+   "city_totals": {
+    "killed": null,
+    "injured": null
+   },
+   "audit_examples": [],
+   "stats": {
+    "posts": 14,
+    "claims": 3,
+    "rejected_quotes": 0,
+    "sites": 3,
+    "audit_rounds": 1,
+    "revisions": 0,
+    "issues_found": [],
+    "open_issues": 0,
+    "dropped": 0
+   }
+  },
+  {
+   "day": "2026-11-03",
+   "summary": "On the night of 2026-11-03/04, falling debris was reported in open ground near a private house in Kyiv's Desnianskyi district, with no injuries or further damage specified.",
+   "dropped": [],
+   "city_totals": {
+    "killed": null,
+    "injured": null
+   },
+   "audit_examples": [],
+   "stats": {
+    "posts": 22,
+    "claims": 1,
+    "rejected_quotes": 0,
+    "sites": 1,
+    "audit_rounds": 1,
+    "revisions": 0,
+    "issues_found": [],
+    "open_issues": 0,
+    "dropped": 0
+   }
+  },
+  {
+   "day": "2026-11-05",
+   "summary": "On the night/morning of 5 November 2026, debris from a downed target fell in an open area in Kyiv's Pecherskyi district; no other impacts were reported.",
+   "dropped": [],
+   "city_totals": {
+    "killed": null,
+    "injured": null
+   },
+   "audit_examples": [],
+   "stats": {
+    "posts": 13,
+    "claims": 1,
+    "rejected_quotes": 0,
+    "sites": 1,
+    "audit_rounds": 1,
+    "revisions": 0,
+    "issues_found": [],
+    "open_issues": 0,
+    "dropped": 0
+   }
+  },
+  {
+   "day": "2026-11-08",
+   "summary": "On the night of 2026-11-08, several missiles struck the Pivnichnyi (Northern) Bridge in Kyiv, damaging the road surface, trolleybus contact line, and a power line.",
+   "dropped": [],
+   "city_totals": {
+    "killed": null,
+    "injured": null
+   },
+   "audit_examples": [],
+   "stats": {
+    "posts": 6,
+    "claims": 1,
+    "rejected_quotes": 0,
+    "sites": 1,
+    "audit_rounds": 1,
+    "revisions": 0,
+    "issues_found": [],
+    "open_issues": 0,
+    "dropped": 0
+   }
+  },
+  {
+   "day": "2026-11-10",
+   "summary": "On the night of November 10, 2026, a Russian attack damaged a private house in Kyiv's Darnytskyi district.",
+   "dropped": [],
+   "city_totals": {
+    "killed": null,
+    "injured": null
+   },
+   "audit_examples": [],
+   "stats": {
+    "posts": 12,
+    "claims": 1,
+    "rejected_quotes": 0,
+    "sites": 1,
+    "audit_rounds": 1,
+    "revisions": 0,
+    "issues_found": [],
+    "open_issues": 0,
+    "dropped": 0
+   }
+  }
+ ],
+ "sites": [
+  {
+   "id": "2026-10-05-1",
+   "day": "2026-10-05",
+   "title": "Jet drone hit the Northern Bridge roadway",
+   "summary": "A jet-powered drone struck the Northern Bridge over the Dnipro River while a car was crossing, tearing a meter-wide hole in the roadway and injuring two people, one of whom was hospitalized.",
+   "district": "Деснянський",
+   "district_en": "Desnianskyi",
+   "address": "Northern Bridge over Dnipro River",
+   "target": "infrastructure",
+   "weapon": "jet_drone",
+   "time": null,
+   "first_report": "2026-10-05 13:14",
+   "killed": null,
+   "injured": 2,
+   "level": "single_source",
+   "voices": [
+    "kyiv_post"
+   ],
+   "official_voices": [],
+   "channels": [
+    "kyivpost_official"
+   ],
+   "sources": [
+    {
+     "channel": "kyivpost_official",
+     "name": "Kyiv Post",
+     "kind": "media",
+     "url": "https://t.me/kyivpost_official/40530",
+     "posted": "2026-10-05 13:14",
+     "quote": "A car was moving across the bridge when the jet-powered drone hit. The explosion tore a meter-wide hole in the roadway, injuring two people, one of whom was hospitalized."
+    }
+   ],
+   "photos": [],
+   "flags": [],
+   "addresses": [
+    "Northern Bridge over Dnipro River"
+   ],
+   "claims": 1,
+   "geo": {
+    "lat": 50.520989,
+    "lon": 30.651155,
+    "district": "Деснянський",
+    "precision": "district",
+    "matched": null
+   }
+  },
+  {
+   "id": "2026-10-05-2",
+   "day": "2026-10-05",
+   "title": "Debris hit parked cars in residential courtyard",
+   "summary": "Strike debris hit the courtyard of a residential building, setting two parked cars on fire and damaging a third.",
+   "district": "Печерський",
+   "district_en": "Pecherskyi",
+   "address": null,
+   "target": "residential_highrise",
+   "weapon": "unknown",
+   "time": null,
+   "first_report": "2026-10-05 22:11",
+   "killed": null,
+   "injured": null,
+   "level": "official",
+   "voices": [
+    "dsns"
+   ],
+   "official_voices": [
+    "dsns"
+   ],
+   "channels": [
+    "dsns_kyiv"
+   ],
+   "sources": [
+    {
+     "channel": "dsns_kyiv",
+     "name": "State Emergency Service, Kyiv",
+     "kind": "official",
+     "url": "https://t.me/dsns_kyiv/5086",
+     "posted": "2026-10-05 22:11",
+     "quote": "Внаслідок влучання у дворі багатоповерхівки горіли два легкові автомобілі, ще один було пошкоджено."
+    }
+   ],
+   "photos": [
+    "https://cdn4.telesco.pe/file/HUjEj_t82s15XnlKw1GMFsLM8RIAdu3X8k7hydJ8dL3B4-lkALBLmb854oDcy_QBHiQVLdAeSRh_niE_WPwFERDBPVh6NUKjsxV0dT-mLyOcEdfQustU5a64J_rexhIp5zUKgvthSDfVFMiDIbbgmS3vmKUrSv5XQ74oRW01Yd7BFK7w5kaFbtAVSTfdbygUXxg73QWFxOAYc3rE4y7c5bJ8hGTARXb1WbDDtzh5GimCxh4T-vGBfM3oKJO6C_SwV2w472t73o7I4RF1yGJdYkQUdARaT_bxGqKz3oAROR4VrflGM4xL-KoENeQpok2DlrN9Jhk42tJ597c6CZdDXQ.jpg",
+    "https://cdn4.telesco.pe/file/YagTh0cQ3797r0VLKz0OcP4qqqX603enmSl_yvdsjgbO-x5olTxCn9PVFOH1PHDoXhnYV4IcKG0CocRYvT-t3boKEMzGN2mGXOQCXbz5SQ-Np9yjvZm4wo83AVTRa06ZOMjKNYpAP2EHaPJlMIUzZkbd17poy61bFpzFymiw9rd-z1x7mQWDqUG3-fI3tEzkhdf7fVKOeJs50ARqpUxbvsKHTC-dMHxwOO_OIsmGCEGdPxuHm4RBQozRmM3t2NTDHUJXUFMzxJNT7-NQeK2wgZC6J9H1XEKgnDQbnodtEhW6AyIHW5yOWl87sn-HMgz-Aw1I8DX44KYMfcyVRRqy9Q.jpg",
+    "https://cdn4.telesco.pe/file/Tb3c8WC_sUVaOx4ehXBRHSsERj8jd6cCazlIiG9knMjdAz8CXWfgFSVhACLreANJOgI2L_RkTE33Q9sKS0UwAhHWaQzy4so2c19xtp-TDquoi_1TB6atFf448aJcEl4R5wOEZk1T7bwIqf4oezqX44voUalNLzPcHamd5kgG48CP1txrp2DAWkA3FR2ClCkWKAQwPtfFyHRfhdbnTA76KGO5DjCHKcZ0yqqDIGNmi5SsYo8E2tGG37HVnLtWk5D7DiYrIdAOMXR2Zop1IW0iuB8VpvovmA9N2Fsi0Ag2hnY1vlMOwmA0bUEZrH3bQD7Np_Kx291GhDcDIEQA5UhPeA.jpg"
+   ],
+   "flags": [],
+   "addresses": [],
+   "claims": 1,
+   "geo": {
+    "lat": 50.440064,
+    "lon": 30.526287,
+    "district": "Печерський",
+    "precision": "district",
+    "matched": null
+   }
+  },
+  {
+   "id": "2026-10-05-3",
+   "day": "2026-10-05",
+   "title": "Fire on roof of educational institution",
+   "summary": "A morning strike caused a minor fire on the roof of an educational institution in Obolonskyi district.",
+   "district": "Оболонський",
+   "district_en": "Obolonskyi",
+   "address": null,
+   "target": "education",
+   "weapon": "unknown",
+   "time": null,
+   "first_report": "2026-10-06 07:31",
+   "killed": null,
+   "injured": null,
+   "level": "official",
+   "voices": [
+    "dsns"
+   ],
+   "official_voices": [
+    "dsns"
+   ],
+   "channels": [
+    "dsns_kyiv"
+   ],
+   "sources": [
+    {
+     "channel": "dsns_kyiv",
+     "name": "State Emergency Service, Kyiv",
+     "kind": "official",
+     "url": "https://t.me/dsns_kyiv/5093",
+     "posted": "2026-10-06 07:31",
+     "quote": "Внаслідок ранкового ворожого обстрілу в Оболонському районі сталося незначне загоряння на даху навчального закладу."
+    }
+   ],
+   "photos": [
+    "https://cdn4.telesco.pe/file/SpnzzYL2U2gd6qpMt7SL1YdK_ODpbvgsU7pK6WsjDA4ZSaI9j7RUpQ-owpzNgrr-LzEmUzC6dZWQmtGm3_GdiGU2zDtHFJ_q0Zg9iuBm47PxbjlV2wkHbAolON5ty8M6sXw6mYdNAUa4NhAjNTq3Y-b_wBxM7yJYTgKmU9b0AF9IEM_pN5iQK2-dFHvDUQ8J1x8V0EMh8H0KhUh63Viu9gCRxjVGUrAYw3H7XnsxDsySmRdho0X7G7EUEbvCEn8YGT6W2LDP5Wo2PIqf2t2Q8AqAbOdF0aWewGtXfWJDCC-AC0uNQKSl3pm2CM6R8pwQmHxrYILg329ZP_GqNO7z1g.jpg",
+    "https://cdn4.telesco.pe/file/X4Jh2YEUT0o-lMI1fj1YEYE7-W3fa5qH-hDmx20oa1lnd3dNgORhlknBx0kpmHEL5VBBGdhgFvyTZK1Mv68DIzTvNUQvZPcQYnjGFC20H6UpmuK8MArXuXMqy6q5-3tLJuS6SJyQnVxPhPrEsckq3_Gyw4Rmfz5pasd5rzMT4tXRqZP-fgYbYDN_H-wR6Z4Ubcdo8qToGREivN8zu056cpTXwazqZRKIxqXU6QW6WKJ86ouqrw_zTZR9azF4Bb4gQJLDB_2cGcSjIaz0vv0IcK774Qssv68tYy_lASkP6mNr-KvprHEWAjTyLLSpSQv70z9UYjjqSFayE6T4bdfyKQ.jpg",
+    "https://cdn4.telesco.pe/file/gaKFE6faXF7R-OjP6eC3JS9KAc3-KU1J9VQB8gvCMuC2uxgNO-SgcJ-RQ2qr1hdQnD3LavZE74H2yXd8POcj5g0zuNN0oW_UguKwOWYuovYULfWrRM3qy2oedUzRuBsSv-SYc2OiVdNYP-ywtGff-NGDNbVIQjSSExWW_WBZtPhie4n1ywH1945KqJvroYeKYzpkYWkomKofS9FoETwhrtVFQDw1ENHISwQ_TVyVHMOFCAanoFr-qRPPwEcTAbsIVr-KOmIHEULqBlObSjn4AudXNdALIDe_8kMe_iB7dOSTNarJozPJpRG66z6CCka5g8qOk5flVn-fks54VVU6Vw.jpg"
+   ],
+   "flags": [],
+   "addresses": [],
+   "claims": 1,
+   "geo": {
+    "lat": 50.527833,
+    "lon": 30.456564,
+    "district": "Оболонський",
+    "precision": "district",
+    "matched": null
+   }
+  },
+  {
+   "id": "2026-10-08-1",
+   "day": "2026-10-08",
+   "title": "Drone debris fell on open ground",
+   "summary": "Debris from a downed drone fell on open territory in Holosiivskyi district.",
+   "district": "Голосіївський",
+   "district_en": "Holosiivskyi",
+   "address": null,
+   "target": "open_area",
+   "weapon": "drone",
+   "time": null,
+   "first_report": "2026-10-08 09:31",
+   "killed": null,
+   "injured": null,
+   "level": "official",
+   "voices": [
+    "city_council"
+   ],
+   "official_voices": [
+    "city_council"
+   ],
+   "channels": [
+    "vitaliy_klitschko"
+   ],
+   "sources": [
+    {
+     "channel": "vitaliy_klitschko",
+     "name": "Mayor Vitali Klitschko",
+     "kind": "official",
+     "url": "https://t.me/vitaliy_klitschko/7793",
+     "posted": "2026-10-08 09:31",
+     "quote": "У Голосіївському районі уламки БпЛА впали на відкритій території"
+    }
+   ],
+   "photos": [],
+   "flags": [],
+   "addresses": [],
+   "claims": 1,
+   "geo": {
+    "lat": 50.311694,
+    "lon": 30.564113,
+    "district": "Голосіївський",
+    "precision": "district",
+    "matched": null
+   }
+  },
+  {
+   "id": "2026-10-08-2",
+   "day": "2026-10-08",
+   "title": "Drone hit a four-storey commercial building",
+   "summary": "A drone struck a four-storey store building in Solomianskyi district, causing a fire that was later localized; two bodies were found and two people were injured, with Kyiv Post reporting three killed and 14 injured citywide.",
+   "district": "Солом'янський",
+   "district_en": "Solomianskyi",
+   "address": null,
+   "target": "commercial",
+   "weapon": "drone",
+   "time": null,
+   "first_report": "2026-10-08 11:32",
+   "killed": 2,
+   "injured": 2,
+   "level": "confirmed",
+   "voices": [
+    "city_council",
+    "kyiv_post"
+   ],
+   "official_voices": [
+    "city_council"
+   ],
+   "channels": [
+    "kyivpost_official",
+    "vitaliy_klitschko"
+   ],
+   "sources": [
+    {
+     "channel": "vitaliy_klitschko",
+     "name": "Mayor Vitali Klitschko",
+     "kind": "official",
+     "url": "https://t.me/vitaliy_klitschko/7797",
+     "posted": "2026-10-08 11:32",
+     "quote": "У Соломʼянському районі влучання БпЛА в 4-поверхову будівлю магазину"
+    },
+    {
+     "channel": "vitaliy_klitschko",
+     "name": "Mayor Vitali Klitschko",
+     "kind": "official",
+     "url": "https://t.me/vitaliy_klitschko/7798",
+     "posted": "2026-10-08 12:13",
+     "quote": "У Соломʼянському районі локалізували пожежу в 4-поверховому магазині, в який влучив ворожий БпЛА. Виявили тіла 2 загиблих. Та двох постраждалих."
+    },
+    {
+     "channel": "kyivpost_official",
+     "name": "Kyiv Post",
+     "kind": "media",
+     "url": "https://t.me/kyivpost_official/40658",
+     "posted": "2026-10-08 14:54",
+     "quote": "Russia's fresh drone attacks on Kyiv killed three people and injured 14 on Thursday, with a UAV striking a four-story store."
+    }
+   ],
+   "photos": [
+    "https://cdn4.telesco.pe/file/nA5bJKuGWFSg_yZqzyhQMUEvJZS784ezxseUFI5Hj5b51xql3eeT5uy2CPLpmM1xSTCya0LrHDNunpTFDIBpiH644OoUJhMeXQ0kxypGTnz8kirI9phyaTEONyVutRZQtBKoRytzg3QcUXPYjmerpB0-GksqCI0MdsCNphmTL8xZ_BDjvgF8S91yBW32iyPTcE2WgvkS6R7qTxTU0KIXMsOsOwjeNzHzQaapCjdgnDYTJhAqTnAzIWhKGQNrlyLSOrpZEiyyr2Hl2z6Yui3QBbKw9k0J8T-r_5o1tz8rCQ7hFXGdA5nHQs0szdPKXQNbLl04wxdUGuhPpPDrvcOjUA.jpg"
+   ],
+   "flags": [],
+   "addresses": [],
+   "claims": 3,
+   "geo": {
+    "lat": 50.425643,
+    "lon": 30.474932,
+    "district": "Солом'янський",
+    "precision": "district",
+    "matched": null
+   }
+  },
+  {
+   "id": "2026-10-08-3",
+   "day": "2026-10-08",
+   "title": "Drone debris fell on open ground, igniting cars",
+   "summary": "Debris fell on open territory in Shevchenkivskyi district, setting nearby cars on fire, as reported by both the mayor and Suspilne Kyiv.",
+   "district": "Шевченківський",
+   "district_en": "Shevchenkivskyi",
+   "address": null,
+   "target": "open_area",
+   "weapon": "drone",
+   "time": null,
+   "first_report": "2026-10-08 12:36",
+   "killed": null,
+   "injured": null,
+   "level": "confirmed",
+   "voices": [
+    "city_council",
+    "suspilne"
+   ],
+   "official_voices": [
+    "city_council"
+   ],
+   "channels": [
+    "suspilne_kyiv",
+    "vitaliy_klitschko"
+   ],
+   "sources": [
+    {
+     "channel": "vitaliy_klitschko",
+     "name": "Mayor Vitali Klitschko",
+     "kind": "official",
+     "url": "https://t.me/vitaliy_klitschko/7799",
+     "posted": "2026-10-08 12:36",
+     "quote": "У Шевченківському районі уламки БпЛА впали на відкритій території. За попередньою інформацією, палають автівки."
+    },
+    {
+     "channel": "suspilne_kyiv",
+     "name": "Suspilne Kyiv",
+     "kind": "media",
+     "url": "https://t.me/suspilne_kyiv/29745",
+     "posted": "2026-10-08 13:45",
+     "quote": "У Шевченківському районі уламки впали на відкритій території. За попередньою інформацією, палають автівки"
+    }
+   ],
+   "photos": [],
+   "flags": [],
+   "addresses": [],
+   "claims": 2,
+   "geo": {
+    "lat": 50.463535,
+    "lon": 30.479917,
+    "district": "Шевченківський",
+    "precision": "district",
+    "matched": null
+   }
+  },
+  {
+   "id": "2026-10-11-1",
+   "day": "2026-10-11",
+   "title": "Debris hit open ground near a gas station",
+   "summary": "The city administration reported that debris fell on open ground next to a gas station in Darnytskyi district, damaging a car.",
+   "district": "Дарницький",
+   "district_en": "Darnytskyi",
+   "address": null,
+   "target": "open_area",
+   "weapon": "unknown",
+   "time": null,
+   "first_report": "2026-10-11 12:28",
+   "killed": null,
+   "injured": null,
+   "level": "official",
+   "voices": [
+    "kmva"
+   ],
+   "official_voices": [
+    "kmva"
+   ],
+   "channels": [
+    "VA_Kyiv"
+   ],
+   "sources": [
+    {
+     "channel": "VA_Kyiv",
+     "name": "Kyiv City Military Administration",
+     "kind": "official",
+     "url": "https://t.me/VA_Kyiv/21694",
+     "posted": "2026-10-11 12:28",
+     "quote": "У Дарницькому районі уламки впали на відкритій території поряд з АЗС, пошкоджено автомобіль"
+    }
+   ],
+   "photos": [],
+   "flags": [],
+   "addresses": [],
+   "claims": 1,
+   "geo": {
+    "lat": 50.399812,
+    "lon": 30.70513,
+    "district": "Дарницький",
+    "precision": "district",
+    "matched": null
+   }
+  },
+  {
+   "id": "2026-10-11-2",
+   "day": "2026-10-11",
+   "title": "Drone debris fell in green zone near apartment building",
+   "summary": "The mayor reported that drone debris fell in a green zone near an apartment building in Holosiivskyi district.",
+   "district": "Голосіївський",
+   "district_en": "Holosiivskyi",
+   "address": null,
+   "target": "open_area",
+   "weapon": "drone",
+   "time": null,
+   "first_report": "2026-10-11 16:49",
+   "killed": null,
+   "injured": null,
+   "level": "official",
+   "voices": [
+    "city_council"
+   ],
+   "official_voices": [
+    "city_council"
+   ],
+   "channels": [
+    "vitaliy_klitschko"
+   ],
+   "sources": [
+    {
+     "channel": "vitaliy_klitschko",
+     "name": "Mayor Vitali Klitschko",
+     "kind": "official",
+     "url": "https://t.me/vitaliy_klitschko/7832",
+     "posted": "2026-10-11 16:49",
+     "quote": "У Голосіївському районі уламки БпЛА впали в зеленій зоні неподалік від багатоповерхівки"
+    }
+   ],
+   "photos": [],
+   "flags": [],
+   "addresses": [],
+   "claims": 1,
+   "geo": {
+    "lat": 50.324608,
+    "lon": 30.56075,
+    "district": "Голосіївський",
+    "precision": "district",
+    "matched": null
+   }
+  },
+  {
+   "id": "2026-10-14-1",
+   "day": "2026-10-14",
+   "title": "Missile hit a 9-storey residential building",
+   "summary": "A Russian ballistic missile struck a 9-storey residential building in Kyiv's Desnianskyi district.",
+   "district": "Деснянський",
+   "district_en": "Desnianskyi",
+   "address": null,
+   "target": "residential_highrise",
+   "weapon": "ballistic",
+   "time": null,
+   "first_report": "2026-10-14 12:53",
+   "killed": 3,
+   "injured": 25,
+   "level": "single_source",
+   "voices": [
+    "suspilne"
+   ],
+   "official_voices": [],
+   "channels": [
+    "suspilne_kyiv"
+   ],
+   "sources": [
+    {
+     "channel": "suspilne_kyiv",
+     "name": "Suspilne Kyiv",
+     "kind": "media",
+     "url": "https://t.me/suspilne_kyiv/30045",
+     "posted": "2026-10-14 12:53",
+     "quote": "Російська ракета влучила в дев'ятиповерхівку в Деснянському районі Києва"
+    }
+   ],
+   "photos": [
+    "https://cdn4.telesco.pe/file/TfjZTgE-p0MP-9vCSEgJnXBidSfi7OvMjVGpY9j0JWYaBNsDVEP5h7Nh1Yy4V1VqwXGcdidTUqaNhFWX_Bhm9lFkHHxdGCuIjcyDf-HqF6UIBzkstmykFewHdF3sugt2BUanGJZUx1_T_BkIESE8zJeq_sAJy8G1VT3PB2yL0NAESrNWNMJkb-7NSPXrHMUfBYodO6lYK4Qq1Nqzy5rNRa3iNZW0pBHbVkRfT3v3Jp-7p2vqjqiv8TGisdiB8HAf7m6JMM_NacTV7PQMbiQJniiF0oVW4S30hwm_VQBP6o-9n1HGLv3quVGGFY7qf7q99Sy9k2lXY_9kMT2cvtCE5A.jpg",
+    "https://cdn4.telesco.pe/file/ZO2Txmwj4Q0FuTR838mKCtYkjROIQsR7bGwxH9kwTUX8t0yfoggZLRVRXrbuBlMlOPobmqyjXyZSFfBDweSSdiG6lvKYAaL4mDhK61Es2qrTd3L_SnsnOKbf203Xs__tVwW96SDXr6zIeCE5Vai-0LGtV6lQ19N8rv5_JRMDLh-WETqiR8f8_fQPZTHgW9fUM4L8mr_MXhKJUIworhaPXaFT6hEVSmg3vNc3ybsiyXgAXHT_S4MzQinE5O_0O3Vbt6S11o3y9ciNEIfk07ulFITZFBBk8DwsXB5yZfcrPlddU90orEPgZU8NjmMfv6jgY3_ROVOvfIWuA9TQBpy7fw.jpg",
+    "https://cdn4.telesco.pe/file/kUcM5-i1Wfy9JiDaamjyjFNe0k0c4DI11L2CsbnO09TxqMS_NZKP2Rmc8tlAVLpKvQBXZD8Kns1UzwCwxyS92TceAHn59g0qWj-N-UVi_Jw60ghCfokF7GlH7gOULmSqBEWBEHzlTLfdLCebJZYaeH59tJRqBJxH0LLPfEdvGdZtDMECLzzobDrgCOevyaRIDvuganw2nTc7jCv1OTLUsIa8FtRLqNUk6zFQZfM1iJ6JQypXbn80lI2QE2jIItzqLvhC8aGwRIg3UpWYquRur2ufok4x6qJFhB75i1oadGmWeE4vuCDxpw1Aa1FuiOTiSXm1umcjiluexm_TDAmfeQ.jpg"
+   ],
+   "flags": [],
+   "addresses": [],
+   "claims": 1,
+   "geo": {
+    "lat": 50.506353,
+    "lon": 30.628682,
+    "district": "Деснянський",
+    "precision": "district",
+    "matched": null
+   }
+  },
+  {
+   "id": "2026-10-14-2",
+   "day": "2026-10-14",
+   "title": "Electric car exploded in Pecherskyi district",
+   "summary": "An electric car exploded in Kyiv's Pecherskyi district, injuring the driver.",
+   "district": "Печерський",
+   "district_en": "Pecherskyi",
+   "address": null,
+   "target": "vehicle",
+   "weapon": "unknown",
+   "time": null,
+   "first_report": "2026-10-14 17:18",
+   "killed": null,
+   "injured": 1,
+   "level": "single_source",
+   "voices": [
+    "suspilne"
+   ],
+   "official_voices": [],
+   "channels": [
+    "suspilne_kyiv"
+   ],
+   "sources": [
+    {
+     "channel": "suspilne_kyiv",
+     "name": "Suspilne Kyiv",
+     "kind": "media",
+     "url": "https://t.me/suspilne_kyiv/30060",
+     "posted": "2026-10-14 17:18",
+     "quote": "На столичному Печерському вибухнув електрокар, поранений водій"
+    }
+   ],
+   "photos": [
+    "https://cdn4.telesco.pe/file/YiwPkxaqoDQzcVRz5C97loOyRmLmBl0BsZwHXxxBC5E-4HXLERMzbDsPdEyQODzaKUxFP8aVSg84f8H7HsyytBC-O5iu4-7nb1uP5cT7AyzxRltBpZUNzw9j_Ng_XxQ9CtC3uNAyN0BVuNcS28SC416EkFF1GOdvv61FT23p_zjSsnQFltbjVYgMewfRKFHwug-fvFtgg0gQwwpgJvSBXw75RwENFRzr4AWI_lOgs74fU7Yj8fCPYiFAt-7Xws4pu123qqyToeR9l14gzABHCt7KNZ3totl8-aoVZrp-pLriSciBjLOlRk0mKEbeM6m14INQRUlJddLdumlk9Fa25w.jpg"
+   ],
+   "flags": [],
+   "addresses": [],
+   "claims": 1,
+   "geo": {
+    "lat": 50.423129,
+    "lon": 30.576145,
+    "district": "Печерський",
+    "precision": "district",
+    "matched": null
+   }
+  },
+  {
+   "id": "2026-10-16-1",
+   "day": "2026-10-16",
+   "title": "Fire at a non-residential building and private house",
+   "summary": "A strike caused a fire affecting a non-residential outbuilding and a private residential house in Shevchenkivskyi district.",
+   "district": "Шевченківський",
+   "district_en": "Shevchenkivskyi",
+   "address": null,
+   "target": "residential_house",
+   "weapon": "unknown",
+   "time": null,
+   "first_report": "2026-10-16 09:11",
+   "killed": null,
+   "injured": null,
+   "level": "single_source",
+   "voices": [
+    "suspilne"
+   ],
+   "official_voices": [],
+   "channels": [
+    "suspilne_kyiv"
+   ],
+   "sources": [
+    {
+     "channel": "suspilne_kyiv",
+     "name": "Suspilne Kyiv",
+     "kind": "media",
+     "url": "https://t.me/suspilne_kyiv/30128",
+     "posted": "2026-10-16 09:11",
+     "quote": "внаслідок чергового обстрілу РФ загорілися господарська нежитлова будівля та приватний житловий будинок у Шевченківському районі"
+    }
+   ],
+   "photos": [
+    "https://cdn4.telesco.pe/file/io8oHzfq7LofoOFddaQFKL6mjqdfUE3ZVecnpouR3arF_fA5de0r8dJoDVSBno6FagA2aGKBWIJWJOOlrheuGAdbdWa48t_CidtWt0sPjBQRpxiZDA8-j8f8isuy03B6KY6BDXefVkGoLKrpyuMp6hRN0Vw0kr796eZQ8tKIBSX_4XiD0Mp6loc1gNSv0s2dHG7dCdcH6ctmEQKwJ4aUxA8BzolIe8rfXNLkHjs7cZA6XjiRszeNYUebmsajc4ydH57OrvdQdPbDSKrfK6EVfghLoRuLFtrw88Od8658NcK4PfwWy8pv8HaV_-ww4kjJrt2LoJFjyINQy6NOr4Vx7w.jpg",
+    "https://cdn4.telesco.pe/file/M9ANce3eWS2yI68JE3zDA80KmUxIL4kq_X8PXxk19C8PFPmCE-IC1-L18J7NY5QhKhWFhFbHIuQCZJNDYXDCaZFBKtYOZluA0fRX2gjta6js5YVUi0zrQzXVYVHpzYpD7n3GVnvatTjNbORbeolCD1j7fnOFRd6tC9pllrBLEO7YDfJykV3z0Ih2uOxJ3KtpkQgYo08JCkJ6qd1pe9GUEoO88AvW6rSVDVMfMSp-qCcg3c1nJh36I_jnXjHl4HDfRqiOnE-W0CTTXXCTm0jCf4eeYehTuZdzaLOpTbv14CVJLWVRKCGiv345ZihIVQrU1bbDfONx9qVdxe_-FUJvsQ.jpg",
+    "https://cdn4.telesco.pe/file/jV9XIAXAJyw2iUx0KXl9R9d9YJy6UfZ5XB-XXSoyHPITLjC8H_WrbWOPdH8Cyw5Qnv1rjPXR5wkP-bxqHp-nC_F9X78BNgsfrIKEt2hwLzJEZ7h-x8hV0IuTquLC6Ec-yEJgPRB_SnBRKc9K5fxouFo_Cetc3s4ehgXewmBct1NMPUdAq-TgCCxHFjcqeuMEF84qKn_eeqxPya9JZSTBvTvt2L-pw96te3xQla62B6CC4YBp3dYyD7LZViEn09CsxQeyoDAUrWZIVckI0vLwLNhTArozU-m9a3zLQ3m_Orrz0AKUKincXmPTDBlE_hvbRVp2Zf-LRR8wTtPp8AJFQQ.jpg"
+   ],
+   "flags": [],
+   "addresses": [],
+   "claims": 1,
+   "geo": {
+    "lat": 50.466262,
+    "lon": 30.448109,
+    "district": "Шевченківський",
+    "precision": "district",
+    "matched": null
+   }
+  },
+  {
+   "id": "2026-10-16-2",
+   "day": "2026-10-16",
+   "title": "Fire at a non-residential building",
+   "summary": "A strike caused a fire at a non-residential outbuilding in Solomianskyi district.",
+   "district": "Солом'янський",
+   "district_en": "Solomianskyi",
+   "address": null,
+   "target": "warehouse",
+   "weapon": "unknown",
+   "time": null,
+   "first_report": "2026-10-16 09:11",
+   "killed": null,
+   "injured": null,
+   "level": "single_source",
+   "voices": [
+    "suspilne"
+   ],
+   "official_voices": [],
+   "channels": [
+    "suspilne_kyiv"
+   ],
+   "sources": [
+    {
+     "channel": "suspilne_kyiv",
+     "name": "Suspilne Kyiv",
+     "kind": "media",
+     "url": "https://t.me/suspilne_kyiv/30128",
+     "posted": "2026-10-16 09:11",
+     "quote": "чергова атака спричинила пожежу у Солом'янському районі — горіла господарча будівля"
+    }
+   ],
+   "photos": [
+    "https://cdn4.telesco.pe/file/io8oHzfq7LofoOFddaQFKL6mjqdfUE3ZVecnpouR3arF_fA5de0r8dJoDVSBno6FagA2aGKBWIJWJOOlrheuGAdbdWa48t_CidtWt0sPjBQRpxiZDA8-j8f8isuy03B6KY6BDXefVkGoLKrpyuMp6hRN0Vw0kr796eZQ8tKIBSX_4XiD0Mp6loc1gNSv0s2dHG7dCdcH6ctmEQKwJ4aUxA8BzolIe8rfXNLkHjs7cZA6XjiRszeNYUebmsajc4ydH57OrvdQdPbDSKrfK6EVfghLoRuLFtrw88Od8658NcK4PfwWy8pv8HaV_-ww4kjJrt2LoJFjyINQy6NOr4Vx7w.jpg",
+    "https://cdn4.telesco.pe/file/M9ANce3eWS2yI68JE3zDA80KmUxIL4kq_X8PXxk19C8PFPmCE-IC1-L18J7NY5QhKhWFhFbHIuQCZJNDYXDCaZFBKtYOZluA0fRX2gjta6js5YVUi0zrQzXVYVHpzYpD7n3GVnvatTjNbORbeolCD1j7fnOFRd6tC9pllrBLEO7YDfJykV3z0Ih2uOxJ3KtpkQgYo08JCkJ6qd1pe9GUEoO88AvW6rSVDVMfMSp-qCcg3c1nJh36I_jnXjHl4HDfRqiOnE-W0CTTXXCTm0jCf4eeYehTuZdzaLOpTbv14CVJLWVRKCGiv345ZihIVQrU1bbDfONx9qVdxe_-FUJvsQ.jpg",
+    "https://cdn4.telesco.pe/file/jV9XIAXAJyw2iUx0KXl9R9d9YJy6UfZ5XB-XXSoyHPITLjC8H_WrbWOPdH8Cyw5Qnv1rjPXR5wkP-bxqHp-nC_F9X78BNgsfrIKEt2hwLzJEZ7h-x8hV0IuTquLC6Ec-yEJgPRB_SnBRKc9K5fxouFo_Cetc3s4ehgXewmBct1NMPUdAq-TgCCxHFjcqeuMEF84qKn_eeqxPya9JZSTBvTvt2L-pw96te3xQla62B6CC4YBp3dYyD7LZViEn09CsxQeyoDAUrWZIVckI0vLwLNhTArozU-m9a3zLQ3m_Orrz0AKUKincXmPTDBlE_hvbRVp2Zf-LRR8wTtPp8AJFQQ.jpg"
+   ],
+   "flags": [],
+   "addresses": [],
+   "claims": 1,
+   "geo": {
+    "lat": 50.41083,
+    "lon": 30.450082,
+    "district": "Солом'янський",
+    "precision": "district",
+    "matched": null
+   }
+  },
+  {
+   "id": "2026-10-19-1",
+   "day": "2026-10-19",
+   "title": "Diagnostic medical center damaged by blast wave",
+   "summary": "A diagnostic medical center in Solomianskyi district was significantly damaged, with the blast wave breaking over 200 windows.",
+   "district": "Солом'янський",
+   "district_en": "Solomianskyi",
+   "address": null,
+   "target": "medical",
+   "weapon": "unknown",
+   "time": null,
+   "first_report": "2026-10-19 09:26",
+   "killed": null,
+   "injured": null,
+   "level": "official",
+   "voices": [
+    "city_council"
+   ],
+   "official_voices": [
+    "city_council"
+   ],
+   "channels": [
+    "vitaliy_klitschko"
+   ],
+   "sources": [
+    {
+     "channel": "vitaliy_klitschko",
+     "name": "Mayor Vitali Klitschko",
+     "kind": "official",
+     "url": "https://t.me/vitaliy_klitschko/7901",
+     "posted": "2026-10-19 09:26",
+     "quote": "У Соломʼянському районі внаслідок ворожої атаки значних ушкоджень зазнав один із Консультативно-діагностичних центрів міста. Вибуховою хвилею вибило понад 200 вікон"
+    }
+   ],
+   "photos": [
+    "https://cdn4.telesco.pe/file/GVhZEuBe15Xt09nxa_Sy1sqgx5AV2WFIMME9axoBtSz_ykdGG58-Q2K0iHuZSmHJxNtUUB51fRLfSdU1F_H6gu8jsipMhMiX1qUPF4T2QNOfwiyW0uKWgGCUk2ctoyTdo8hU26mm8RxVyDfQXWZgCNUMVUPXCNdMt70_GThMCI01DM98J-LG3x2U_luNkclmG6MrQz9ZpfAVA7U-e_9MbHoxHIGv2du3lehJC4uJkgnyJswL1Ox2cuV5aSiz1QI3ksuaCYatOx0reiBZfodcIaoPAVf99qDuwTFsaNMl6tYfiNFkMjQZfxh0SfK0uLWMufsCQlnPKeJIEy5yoZ2etg.jpg",
+    "https://cdn4.telesco.pe/file/ItWFlRWt_KxkuiEO6r0jF_nYQIxf7krOTym20ISSXNwWrvXdVKLjkqsBn5Dn7mdf4gihVI_czdmgnl-e0nCiRYEmo3pSVf6-IbRcMt0ypj43xKYrT4f7qgXS1qpMZeS3JzGdhXJYUE2EEXugMnHSKj9GNYQNNQyvQ9SOH-UgYK1P9svuAVuFB3pvQN4LF-clzYiMv6by15BtSSswVtJmULHHFnypXDwJE1XB1trL6n-Ti_H8PEgP3fhU8BU2Xw2Ba8kVeJaKqmjdwIyh6KscF6UoFL8YTUqcdXAmXYLq2l1a6vLQ255QPsAGWeLqvxGLvoYOndUwMuIsLdqgOIq0eg.jpg",
+    "https://cdn4.telesco.pe/file/vDgL5aDtnBIqkUkLQkx4FGX93R7sdPF3B9Em9QOiT_pIVoBhjJRF8xGxQfrA2v1SvH7rf9iWWJ8lxSbR-x-qrJcPCtPkUq-KD7c0imE73v-6dLGRY6s1sCjjSZo31DiHDCN7Gr-1VGq3PYuA6FjiSpHLKN89eGdk8cbgHLMgYeLj0leNmsDr5CG75nh5tj5veIJ6_juZCH3CtR0NQBNthvFKr811wTESDNZpfiH2tbXt8nR9PVoIkBPMxt-WETCzXr3hEFYeEyXm_Fhi2zqSW3Bc0s3AzhvGnPcWQfR3XPYTTKx5N07wTi8x7XCz8tnFg84XNscPBxfJDvt0315G9Q.jpg"
+   ],
+   "flags": [],
+   "addresses": [],
+   "claims": 1,
+   "geo": {
+    "lat": 50.410844,
+    "lon": 30.436944,
+    "district": "Солом'янський",
+    "precision": "district",
+    "matched": null
+   }
+  },
+  {
+   "id": "2026-10-19-2",
+   "day": "2026-10-19",
+   "title": "Chernihivska metro station and surroundings damaged",
+   "summary": "The above-ground Chernihivska metro station was damaged, including tracks, contact rail and cable network; nearby shops and homes were also affected.",
+   "district": "Дніпровський",
+   "district_en": "Dniprovskyi",
+   "address": "станція метро Чернігівська",
+   "target": "transport",
+   "weapon": "unknown",
+   "time": null,
+   "first_report": "2026-10-19 09:34",
+   "killed": null,
+   "injured": null,
+   "level": "confirmed",
+   "voices": [
+    "city_council",
+    "hromadske",
+    "suspilne"
+   ],
+   "official_voices": [
+    "city_council"
+   ],
+   "channels": [
+    "hromadske_ua",
+    "suspilnenews",
+    "vitaliy_klitschko"
+   ],
+   "sources": [
+    {
+     "channel": "suspilnenews",
+     "name": "Suspilne News",
+     "kind": "media",
+     "url": "https://t.me/suspilnenews/77783",
+     "posted": "2026-10-19 09:34",
+     "quote": "пошкоджена наземна станція метрополітену, а також колії та кабельна мережа"
+    },
+    {
+     "channel": "hromadske_ua",
+     "name": "hromadske",
+     "kind": "media",
+     "url": "https://t.me/hromadske_ua/89696",
+     "posted": "2026-10-19 11:39",
+     "quote": "станція метро «Чернігівська» у Києві після російської атаки. Там пошкоджені колії, контактна рейка та кабельна мережа"
+    },
+    {
+     "channel": "vitaliy_klitschko",
+     "name": "Mayor Vitali Klitschko",
+     "kind": "official",
+     "url": "https://t.me/vitaliy_klitschko/7906",
+     "posted": "2026-10-19 16:46",
+     "quote": "станції «Чернігівська», яка постраждала внаслідок ворожого обстрілу"
+    }
+   ],
+   "photos": [
+    "https://cdn4.telesco.pe/file/lGxnUWtuRzCTYaxodveMAPzIhoKckg4L9GatrBtVJmkcPjXhaTPolvU5HGvOT27FBIML0aGPAaiqx4Yc58sp4z6hlBFznA2iRyH7Bddf95RLrkxMcTqn74tdlz996eEgWAQAwRHWJfo7KGCbtf3CZWdJPimTbah7lsDAEZeqJc8zUN7mWfvVX5_s6YStiAwpqgSzDtAfK_Ql8mAX6rFfrm2OxXwScjxSSVQKkzjxy8EtOtny79uwIvt3JFNHkUK-9glBuW5R0tCZMpTwx4E-B76To9-Jlugm1f9tLMGYwZQbMeFLtTkyWOo4keLxrJJ7VS9ieH-3TuLU0zYDGDQRiA.jpg",
+    "https://cdn4.telesco.pe/file/jQSGIQYZcUK5E700N97-c8K-YkWdKt-jHjh-0a_cXfTiK-eL18kcEdJRZXbbWeqDsL-ZOjz2rX02OjeEGZHPqpB6LGGGg_F-_hpgDPAa32Ka2eu6JCzKrGDQUune_bhb4HjaoYkQZMO1PI-Tdz6-vYImISTVJE50YIusjkOSVUFT9MR4dbiI5UYnew4D7Ie7Msie91DGEkItoNIcqgP8M_DNNi0-2yCPjFWZbAmIAjwo9Ge6--eFKE4QL4c3GMMcKJ8cu2o1tV32cVvnKpFH6hOr2LLXuS3_Ly6UdUCcazFvtWlOX2EhrjKxsOF_LFNQWXyOQhHNGCOYli3jngyrlg.jpg",
+    "https://cdn4.telesco.pe/file/Pc7d1BAMOF51JFxv8U07SNLD0MBHwumtQyspuAgWiSCUs-lzLcjWPgK2AQ8Jx5QO5lbA6guniPnJedRCBHSTgmI0fQMksqsf7x6X7eekKBFNX6RxtSmGrMU6nk0qwITTrSzGG_nMWMUEI2HOv9muJXR6UIedIzIjcF5zG7ywG9nZ_VYpRCL1vNnGHnpX8-mInzAXfqI2D_ykZQ5DAeqHkWe-5PLz4lYORc8949Gq9jnxoN2M3jsBj9DRt3eDgNHf7Fvw2RxYrHLJxwJJa1rmPaBZyIrRjJmmdZ-uMnclGP7lhvp0mMEMGAkmEZs00pdF9UL3a5E0Brlk9zYNiD5qAw.jpg"
+   ],
+   "flags": [],
+   "addresses": [
+    "станція метро Чернігівська"
+   ],
+   "claims": 3,
+   "geo": {
+    "lat": 50.459299,
+    "lon": 30.630631,
+    "district": "Дніпровський",
+    "precision": "street",
+    "matched": "станція метро \"Чернігівська\", вулиця Гната Хоткевича, Аварійне селище, Північно-Броварський масив, Дніпровський район, Київ, 02004, Україна"
+   }
+  },
+  {
+   "id": "2026-10-19-4",
+   "day": "2026-10-19",
+   "title": "Datagroup data center destroyed",
+   "summary": "A ballistic strike destroyed the Datagroup data center in Kyiv.",
+   "district": null,
+   "district_en": null,
+   "address": null,
+   "target": "industrial",
+   "weapon": "ballistic",
+   "time": null,
+   "first_report": "2026-10-19 10:36",
+   "killed": null,
+   "injured": null,
+   "level": "single_source",
+   "voices": [
+    "hromadske"
+   ],
+   "official_voices": [],
+   "channels": [
+    "hromadske_ua"
+   ],
+   "sources": [
+    {
+     "channel": "hromadske_ua",
+     "name": "hromadske",
+     "kind": "media",
+     "url": "https://t.me/hromadske_ua/89693",
+     "posted": "2026-10-19 10:36",
+     "quote": "росіяни балістичним ударом знищили дата-центр «Датагруп» у Києві"
+    }
+   ],
+   "photos": [],
+   "flags": [],
+   "addresses": [],
+   "claims": 1,
+   "geo": {
+    "lat": null,
+    "lon": null,
+    "district": null,
+    "precision": null,
+    "matched": null
+   }
+  },
+  {
+   "id": "2026-10-19-5",
+   "day": "2026-10-19",
+   "title": "Cosmo Multimall shopping centre damaged",
+   "summary": "The Cosmo Multimall shopping centre was severely damaged: its roof and structural elements were hit and part of the ceilings collapsed.",
+   "district": "Солом'янський",
+   "district_en": "Solomianskyi",
+   "address": "ТРЦ Cosmo Multimall",
+   "target": "commercial",
+   "weapon": "unknown",
+   "time": null,
+   "first_report": "2026-10-19 11:04",
+   "killed": null,
+   "injured": null,
+   "level": "single_source",
+   "voices": [
+    "kyiv_post"
+   ],
+   "official_voices": [],
+   "channels": [
+    "kyivpost_official"
+   ],
+   "sources": [
+    {
+     "channel": "kyivpost_official",
+     "name": "Kyiv Post",
+     "kind": "media",
+     "url": "https://t.me/kyivpost_official/41051",
+     "posted": "2026-10-19 11:04",
+     "quote": "Russian attack has severely damaged the Cosmo Multimall shopping centre in Kyiv. The roof and structural elements were damaged, and part of the building's ceilings collapsed"
+    }
+   ],
+   "photos": [
+    "https://cdn4.telesco.pe/file/SGWqpQrv-iW9ufGHdS1p6p_GBe6b2YMbRol24ODbQlO2SXD0cisVDh3pMOPNSSnxU_rTFTzde7jByCkpSi4pTbAUHlc1C6ZNfoKC6jkJOqYmY-8GfsfD7vyUKX0NWl6piNVolxTOLLFbGn-ESiXEBd1_eC2NuMIuQNU3_pFFNrn-NAeNH1fSdSG-ofIUtrqPaXTzUtu13NrFqN1T9iBoVRN7fvxwjMCagfKJM7vNudRM5U0V2Jpx2p1trNTXzciOIInFjuAGpOD3sdhHVajfWAdUY8jrlAVc3H5B3sX71479bogKBbDLz9f-2v6_Kb_Bu0LuHa73rhSge_W7wlGexA.jpg",
+    "https://cdn4.telesco.pe/file/d6pLgq1ZJhBtzvSBI47d5Q3UP4yy9GByeOU9r5a5cov2hdeQM34JOMZTNXiey7TwaSmBbmKbAoKqWUIhtfw-18VDHZV2QMYNohvWQ8i0Nva8XUQTq37aPp3vUvlJ4AzBIjObIlaYeLOIqfZ3LzvGkSqOqxZgi8qAw2J91OgsQ1qz7iAXFVKzWMTI-cI5GV8HdKuPmbuxBpa5X5tZ1JdqdMR_2kCBc39ecyw4RVwB5KGU2ejpo6Hru-JgQ4CnzBeJJdQLyMCVrqauod25Iwb8Q8OHlPGh05vlscAdbZLeHb3VKLBTjhzSKSGk4zAltDanB2Jg6pEFkGA_xJWZnP40Mg.jpg",
+    "https://cdn4.telesco.pe/file/N40xN379y8EMGVzyLna0Cb6w5Kfx48RXCZ3utilQgKXQYqzz8lwnX6Sqnnu7mjQd5ZTlE1xM8eIdIMUZJXzTfl_iG2i-RWHJUcK1RUFXQ_6GLVA-RFaeELPAGamV1RW0VAw6uwZMhDj3QzceET3QLx4IT6nCDoRfS3CbiKDUktLaIw9_HQGGtgivVc4php94zCc3S-7futdKa6YNtYX7mYd39OpNYq9vS332y8xyzGUTzlCfkae1DZQNDDYwnTo0T7oeB-bAt5iNx-rHLQJhOZMRlTH4XymC3adNTXnGy8WUjDk4mzUZ99wbvfrZO-50WsqxS4Y1aMLFF_DFr_g6ww.jpg"
+   ],
+   "flags": [],
+   "addresses": [
+    "ТРЦ Cosmo Multimall"
+   ],
+   "claims": 1,
+   "geo": {
+    "lat": 50.450256,
+    "lon": 30.442187,
+    "district": "Солом'янський",
+    "precision": "street",
+    "matched": "ТРЦ Космо Мультімол, 6, вулиця Вадима Гетьмана, Шулявка, Солом’янський район, Київ, 03168, Україна"
+   }
+  },
+  {
+   "id": "2026-10-19-3",
+   "day": "2026-10-19",
+   "title": "Shalet ice arena destroyed",
+   "summary": "The Shalet ice arena in Dniprovskyi district was destroyed in the night's combined attack.",
+   "district": "Дніпровський",
+   "district_en": "Dniprovskyi",
+   "address": "льодова арена «Шалетт»",
+   "target": "infrastructure",
+   "weapon": "unknown",
+   "time": null,
+   "first_report": "2026-10-19 12:18",
+   "killed": null,
+   "injured": null,
+   "level": "single_source",
+   "voices": [
+    "suspilne"
+   ],
+   "official_voices": [],
+   "channels": [
+    "suspilne_kyiv",
+    "suspilnenews"
+   ],
+   "sources": [
+    {
+     "channel": "suspilnenews",
+     "name": "Suspilne News",
+     "kind": "media",
+     "url": "https://t.me/suspilnenews/77794",
+     "posted": "2026-10-19 12:18",
+     "quote": "Унаслідок нічної комбінованої атаки РФ руйнувань зазнала льодова арена «Шалетт» у Дніпровському районі Києва"
+    },
+    {
+     "channel": "suspilne_kyiv",
+     "name": "Suspilne Kyiv",
+     "kind": "media",
+     "url": "https://t.me/suspilne_kyiv/30220",
+     "posted": "2026-10-19 12:21",
+     "quote": "Унаслідок нічної комбінованої атаки РФ руйнувань зазнала льодова арена «Шалетт» у Дніпровському районі Києва"
+    }
+   ],
+   "photos": [],
+   "flags": [],
+   "addresses": [
+    "льодова арена «Шалетт»"
+   ],
+   "claims": 2,
+   "geo": {
+    "lat": 50.46499,
+    "lon": 30.615405,
+    "district": "Дніпровський",
+    "precision": "street",
+    "matched": "Льодова арена, 6, вулиця Міста Шалетт, Семихатки, Північно-Броварський масив, Дніпровський район, Київ, 02192, Україна"
+   }
+  },
+  {
+   "id": "2026-10-19-6",
+   "day": "2026-10-19",
+   "title": "Book Chamber of Ukraine damaged",
+   "summary": "The Book Chamber of Ukraine building sustained damage from the Russian strike.",
+   "district": null,
+   "district_en": null,
+   "address": null,
+   "target": "cultural_religious",
+   "weapon": "unknown",
+   "time": null,
+   "first_report": "2026-10-19 17:42",
+   "killed": null,
+   "injured": null,
+   "level": "single_source",
+   "voices": [
+    "suspilne"
+   ],
+   "official_voices": [],
+   "channels": [
+    "suspilne_kyiv"
+   ],
+   "sources": [
+    {
+     "channel": "suspilne_kyiv",
+     "name": "Suspilne Kyiv",
+     "kind": "media",
+     "url": "https://t.me/suspilne_kyiv/30233",
+     "posted": "2026-10-19 17:42",
+     "quote": "Книжкова палата зазнала пошкоджень через удар РФ"
+    }
+   ],
+   "photos": [],
+   "flags": [],
+   "addresses": [],
+   "claims": 1,
+   "geo": {
+    "lat": null,
+    "lon": null,
+    "district": null,
+    "precision": null,
+    "matched": null
+   }
+  },
+  {
+   "id": "2026-10-25-1",
+   "day": "2026-10-25",
+   "title": "Debris fell on open ground",
+   "summary": "The Kyiv City Military Administration reported that debris fell on an open area in the Dniprovskyi district.",
+   "district": "Дніпровський",
+   "district_en": "Dniprovskyi",
+   "address": null,
+   "target": "open_area",
+   "weapon": "unknown",
+   "time": null,
+   "first_report": "2026-10-25 09:20",
+   "killed": null,
+   "injured": null,
+   "level": "official",
+   "voices": [
+    "kmva"
+   ],
+   "official_voices": [
+    "kmva"
+   ],
+   "channels": [
+    "VA_Kyiv"
+   ],
+   "sources": [
+    {
+     "channel": "VA_Kyiv",
+     "name": "Kyiv City Military Administration",
+     "kind": "official",
+     "url": "https://t.me/VA_Kyiv/22115",
+     "posted": "2026-10-25 09:20",
+     "quote": "У Дніпровському районі уламки впали на відкритій території."
+    }
+   ],
+   "photos": [],
+   "flags": [],
+   "addresses": [],
+   "claims": 1,
+   "geo": {
+    "lat": 50.456686,
+    "lon": 30.611605,
+    "district": "Дніпровський",
+    "precision": "district",
+    "matched": null
+   }
+  },
+  {
+   "id": "2026-10-25-2",
+   "day": "2026-10-25",
+   "title": "Drone debris sparked fire on open ground",
+   "summary": "The mayor and the Kyiv City State Administration reported that drone debris caused a fire on open ground in the Desnianskyi district; a later Suspilne report repeated the same account.",
+   "district": "Деснянський",
+   "district_en": "Desnianskyi",
+   "address": null,
+   "target": "open_area",
+   "weapon": "drone",
+   "time": null,
+   "first_report": "2026-10-25 09:53",
+   "killed": null,
+   "injured": null,
+   "level": "confirmed",
+   "voices": [
+    "city_council",
+    "suspilne"
+   ],
+   "official_voices": [
+    "city_council"
+   ],
+   "channels": [
+    "KyivCityOfficial",
+    "suspilne_kyiv",
+    "vitaliy_klitschko"
+   ],
+   "sources": [
+    {
+     "channel": "vitaliy_klitschko",
+     "name": "Mayor Vitali Klitschko",
+     "kind": "official",
+     "url": "https://t.me/vitaliy_klitschko/7972",
+     "posted": "2026-10-25 09:53",
+     "quote": "у Деснянському районі, внаслідок падіння БпЛА, сталося загоряння на відкритій території"
+    },
+    {
+     "channel": "KyivCityOfficial",
+     "name": "Kyiv City State Administration",
+     "kind": "official",
+     "url": "https://t.me/KyivCityOfficial/22064",
+     "posted": "2026-10-25 09:54",
+     "quote": "у Деснянському районі, внаслідок падіння БпЛА, сталося загоряння на відкритій території"
+    },
+    {
+     "channel": "suspilne_kyiv",
+     "name": "Suspilne Kyiv",
+     "kind": "media",
+     "url": "https://t.me/suspilne_kyiv/30489",
+     "posted": "2026-10-25 10:03",
+     "quote": "у Деснянському районі, внаслідок падіння БпЛА, сталося загоряння на відкритій території"
+    }
+   ],
+   "photos": [],
+   "flags": [],
+   "addresses": [],
+   "claims": 3,
+   "geo": {
+    "lat": 50.510488,
+    "lon": 30.627604,
+    "district": "Деснянський",
+    "precision": "district",
+    "matched": null
+   }
+  },
+  {
+   "id": "2026-10-25-3",
+   "day": "2026-10-25",
+   "title": "Drone debris fell in a forest strip",
+   "summary": "Suspilne Kyiv reported that drone debris fell into a forest strip in the Desnianskyi district.",
+   "district": "Деснянський",
+   "district_en": "Desnianskyi",
+   "address": null,
+   "target": "open_area",
+   "weapon": "drone",
+   "time": null,
+   "first_report": "2026-10-25 10:03",
+   "killed": null,
+   "injured": null,
+   "level": "single_source",
+   "voices": [
+    "suspilne"
+   ],
+   "official_voices": [],
+   "channels": [
+    "suspilne_kyiv"
+   ],
+   "sources": [
+    {
+     "channel": "suspilne_kyiv",
+     "name": "Suspilne Kyiv",
+     "kind": "media",
+     "url": "https://t.me/suspilne_kyiv/30489",
+     "posted": "2026-10-25 10:03",
+     "quote": "У Києві в Деснянському районі уламки БпЛА впали в лісосмугу."
+    }
+   ],
+   "photos": [],
+   "flags": [],
+   "addresses": [],
+   "claims": 1,
+   "geo": {
+    "lat": 50.529018,
+    "lon": 30.648686,
+    "district": "Деснянський",
+    "precision": "district",
+    "matched": null
+   }
+  },
+  {
+   "id": "2026-10-30-1",
+   "day": "2026-10-30",
+   "title": "Fire at non-residential buildings including a warehouse",
+   "summary": "A fire broke out on the territory of non-residential buildings in Darnytskyi district; a warehouse building, garbage, timber and roofing were burning.",
+   "district": "Дарницький",
+   "district_en": "Darnytskyi",
+   "address": null,
+   "target": "warehouse",
+   "weapon": "unknown",
+   "time": null,
+   "first_report": "2026-10-30 09:08",
+   "killed": null,
+   "injured": null,
+   "level": "single_source",
+   "voices": [
+    "suspilne"
+   ],
+   "official_voices": [],
+   "channels": [
+    "suspilne_kyiv",
+    "suspilnenews"
+   ],
+   "sources": [
+    {
+     "channel": "suspilne_kyiv",
+     "name": "Suspilne Kyiv",
+     "kind": "media",
+     "url": "https://t.me/suspilne_kyiv/30669",
+     "posted": "2026-10-30 09:08",
+     "quote": "У Дарницькому районі виникла пожежа на території нежитлової забудови"
+    },
+    {
+     "channel": "suspilnenews",
+     "name": "Suspilne News",
+     "kind": "media",
+     "url": "https://t.me/suspilnenews/78492",
+     "posted": "2026-10-30 09:34",
+     "quote": "У Дарницькому районі виникли пожежі в нежитлових будівлях: горіли складська будівля, сміття, деревина та покрівля"
+    }
+   ],
+   "photos": [
+    "https://cdn4.telesco.pe/file/tgGV2vOLtKVr0KIEdKiEQaOu26lWDKakblKtlJwDw1NpxWhS2-u198eQQ7eqDLimQ3MThY57I2yzQpLdhlt1rC2kQweXAmswM9wt8DxMvRIRA_MtcFMckJa7a7KRUh4tkDHo39xtabE47CiaK5JVfSH3csjSZZC8NmZsaKcAdzk08em84kg7xpjFBaRnsh38VsNs2JzkJWQxBpASTsC42yi5-5GOcu6SsOogpzig7ZFshMxQmD3-CXQGODwvHi4hiuPYgig1v8HRJL3IjL5ABmq80fbICjf0hVvHNTmu9H6kv5tOcULEnROSAvQQdkCOlOJqzpUfaz8EIs08iJNKGw.jpg",
+    "https://cdn4.telesco.pe/file/RYrF7KEgA_UOMYCFxF095JydjK6MA5xiGv8t7PxA4jrzuI-wOi-s2VlISSUVwX3OPgK5XpBKpaIvpFu8jnCil_X1U5a7ixtjpJtYujdayTc5JsZlH10MwGiMZvqrh8YuS3Bx3exI-SY2GnsXhPKwvq5-eKRRdh_J-9uBQC5LR2rVpsHt6n5qjLq7c1VAAFBzTvbUOPFE7307Q6BukVazJLkYUnPejmH4FKS4mR1sghD_2w-TYPoR6XILXpZfEZGJEcrFNfScOmeWksBha0o7tQBvOIMbmHihhOzBnpS7Lq_easjyCn879YrpSIqz24PlHmzec7mE_e4NoTVXJTp6-w.jpg",
+    "https://cdn4.telesco.pe/file/P53niYMECChA7H5hVsv_NHkwbrqGnUgojmW5-dbyCctcVPvuHY0PEeVrfRvkxmERu50Uc0R4rfhZd5YNamoZ0-KHd0BaiA8PA9c5BCzoB4EL1TRsDq1PEhI45odM-LyMUx-X0jhsi73NC-5GFvaZYECnhle0mHt4ibBZEs3jQ1BCPMNC0kl9QRjR2WtfJmC59jvos8F_tb6yCN27l2nr63oo-5IgeCdWiYNhYMpz4qDmW2sJxbkYRvxFVQuYckxKlkF_30YSWGsWox6IX-HBNlSXSFW2df_19qRGweXizMEwdZ-mSCW1Vep_HDFDbh8xEK8-xESYTLfqwSkRSnG4Eg.jpg"
+   ],
+   "flags": [],
+   "addresses": [],
+   "claims": 2,
+   "geo": {
+    "lat": 50.398747,
+    "lon": 30.713571,
+    "district": "Дарницький",
+    "precision": "district",
+    "matched": null
+   }
+  },
+  {
+   "id": "2026-10-30-2",
+   "day": "2026-10-30",
+   "title": "Debris destroyed a one-storey residential house",
+   "summary": "Debris partially destroyed a one-storey residential building in Dniprovskyi district, causing a fire; one person was killed.",
+   "district": "Дніпровський",
+   "district_en": "Dniprovskyi",
+   "address": null,
+   "target": "residential_house",
+   "weapon": "unknown",
+   "time": null,
+   "first_report": "2026-10-30 09:34",
+   "killed": 1,
+   "injured": null,
+   "level": "single_source",
+   "voices": [
+    "suspilne"
+   ],
+   "official_voices": [],
+   "channels": [
+    "suspilnenews"
+   ],
+   "sources": [
+    {
+     "channel": "suspilnenews",
+     "name": "Suspilne News",
+     "kind": "media",
+     "url": "https://t.me/suspilnenews/78492",
+     "posted": "2026-10-30 09:34",
+     "quote": "У Дніпровському районі Києва унаслідок обстрілів армії РФ загинула людина. Уламки частково зруйнували одноповерхову будівлю, виникла пожежа."
+    }
+   ],
+   "photos": [],
+   "flags": [],
+   "addresses": [],
+   "claims": 1,
+   "geo": {
+    "lat": 50.446636,
+    "lon": 30.599383,
+    "district": "Дніпровський",
+    "precision": "district",
+    "matched": null
+   }
+  },
+  {
+   "id": "2026-10-30-4",
+   "day": "2026-10-30",
+   "title": "Museum of Ukrainian Diaspora damaged",
+   "summary": "The Museum of Ukrainian Diaspora, a branch of the Kyiv History Museum, was damaged: windows were blown out and the facade and roof were damaged.",
+   "district": null,
+   "district_en": null,
+   "address": "Музей української діаспори",
+   "target": "cultural_religious",
+   "weapon": "unknown",
+   "time": null,
+   "first_report": "2026-10-30 16:38",
+   "killed": null,
+   "injured": null,
+   "level": "single_source",
+   "voices": [
+    "suspilne"
+   ],
+   "official_voices": [],
+   "channels": [
+    "suspilne_kyiv"
+   ],
+   "sources": [
+    {
+     "channel": "suspilne_kyiv",
+     "name": "Suspilne Kyiv",
+     "kind": "media",
+     "url": "https://t.me/suspilne_kyiv/30689",
+     "posted": "2026-10-30 16:38",
+     "quote": "Унаслідок російського обстрілу пошкоджено Музей української діаспори — філію Музею історії міста Києва. У будівлі вибило вікна, пошкодило фасад і покрівлю."
+    }
+   ],
+   "photos": [
+    "https://cdn4.telesco.pe/file/idUiYmDdn0JOq0sfhb8xzx3OJvLyZErFzwpaeF0UfvOK1un85twX5XWk2Y08TLhPPxMMYCwFIwsb98mulGpVqnru29ArrDoPyQHeCHYfadDgA651AQTGChTCc1HjCp_ykdIygi5s1hBUGs4zlfwVYJ7xTSBHWgiLP-hWi0S3cNG7EGIZD8HqCoxOE5-I-dE_r6VY-7VcCoVkFlRvKJkKk_ZBYrzLtrFR5QUdZg0PWVgAWSsaUy4_yUv_L0zgz_P3sshqvDpcRuTofWkvf8TV77I_Dc9XZEreZ3m-a30RF3sf0RxUs_xOwSFG7hEuFJRIjmXjR9D4AKyUat5d0V2o8Q.jpg"
+   ],
+   "flags": [],
+   "addresses": [
+    "Музей української діаспори"
+   ],
+   "claims": 1,
+   "geo": {
+    "lat": null,
+    "lon": null,
+    "district": null,
+    "precision": null,
+    "matched": null
+   }
+  },
+  {
+   "id": "2026-10-30-3",
+   "day": "2026-10-30",
+   "title": "Fire at a private residential house on vul. Sadova",
+   "summary": "A private residential house caught fire on vul. Sadova in Darnytskyi district; the report of the fire came in at 15:47.",
+   "district": "Дарницький",
+   "district_en": "Darnytskyi",
+   "address": "вул. Садова",
+   "target": "residential_house",
+   "weapon": "unknown",
+   "time": "15:47",
+   "first_report": "2026-10-30 17:46",
+   "killed": null,
+   "injured": 1,
+   "level": "official",
+   "voices": [
+    "dsns"
+   ],
+   "official_voices": [
+    "dsns"
+   ],
+   "channels": [
+    "dsns_kyiv"
+   ],
+   "sources": [
+    {
+     "channel": "dsns_kyiv",
+     "name": "State Emergency Service, Kyiv",
+     "kind": "official",
+     "url": "https://t.me/dsns_kyiv/5554",
+     "posted": "2026-10-30 17:46",
+     "quote": "Повідомлення про пожежу на вулиці Садовій надійшло о 15:47. Горів приватний житловий будинок."
+    }
+   ],
+   "photos": [
+    "https://cdn4.telesco.pe/file/viYbS2nnX_vxCUUG06-6Xr23O0us0c8Gok9oKZbIA0tFOLHP5mUMvCf92opPUMIGay7fl1S4GsArp8CeoN49SY4P1HnVWvrUUmHrACdWmKnFxRw_TaVhXnXbArCVZfe98mTkfAMIM3nWFtWIO4m3Q4kioNYREtkWwGOZb7JqgZE3lNX4lMtLRuABRTXLL_DzUX_JizrlgCFn7P_l2sL-tycRoNzQjzmGJiqt4iKR8WYb7cl_42CWE3ZvouBb3ZM7Wv8wRP-OBTb3XmKbsnjo1ZIE0E8keKYmcJ8c0k1yb0nvZWs1edHiRU2pyafvocr4EjBJoxdc21dPOvgyC9vNgw.jpg",
+    "https://cdn4.telesco.pe/file/D0H76UwXzT64VIIpqI16No2vglo9hck3m2TgTV3klac4owWPLmZifSHI8Dx6CoNdnd2XgJqrjhyJtgckM9qYTCnplH4QS39I1IAUQ_nXdfG1u8cMexC-s2PFvhNeNTGmA4BdWIkqmY8nGE6mCMf-VZ3QKJBAPd27crdqsGO4LB2aFRjCu8DW_XvfsBuwnU9gyX6AfkUgw_MEbahOBANOa9SPIkSf-G7IehX-rNAMz0hSQNoFYR5cB29H-IWdkYGxpKlg5A5AtOqnXmVle24MqJSG7TUUMxupD_h75qjxsrsOsoZQa8e2iAf3EiMHD6qrXmopg3fXn4-a9MQKHndgAw.jpg",
+    "https://cdn4.telesco.pe/file/XspFS0U4nfBfXW7hDnbGBq1fFVaYTLHkT8cVEN1qCndJ3lAPX_VMgK_fnWSZi9Zesddwlirng6C5zbzuGShuFCjJUveTjmCauyJHMisuHWpwkVBih_VrPfIPApKMcjOeF_Qv7Yc-roOTKgeRyJGXFqnr2EcOKF2CU7MTWqQc-vj-_gKAr36h_DCJUIIwSwv6sbue82QPC5EwHZePWyowZqopfVjKou6J9_1wLPOmeOIdQao7Os9xWVXiBxstn-1mT33YXj3nerrK7Z7xk9jcPCOGzu-PH_SzkWGruu7AtBscUvk8TCVhOh_679Ez2gAQNstWcrfALxjVDd8HYQIfRw.jpg"
+   ],
+   "flags": [],
+   "addresses": [
+    "вул. Садова"
+   ],
+   "claims": 1,
+   "geo": {
+    "lat": 50.390091,
+    "lon": 30.717798,
+    "district": "Дарницький",
+    "precision": "district",
+    "matched": null
+   }
+  },
+  {
+   "id": "2026-10-30-5",
+   "day": "2026-10-30",
+   "title": "Blast damaged a 14-storey residential building",
+   "summary": "An explosion occurred in an apartment of a 14-storey residential building in Shevchenkivskyi district; police said it apparently happened inside one of the apartments, and glazing on the 6th-7th floors was damaged.",
+   "district": "Шевченківський",
+   "district_en": "Shevchenkivskyi",
+   "address": null,
+   "target": "residential_highrise",
+   "weapon": "unknown",
+   "time": "22:24",
+   "first_report": "2026-10-30 22:00",
+   "killed": null,
+   "injured": null,
+   "level": "confirmed",
+   "voices": [
+    "city_council",
+    "hromadske",
+    "suspilne"
+   ],
+   "official_voices": [
+    "city_council"
+   ],
+   "channels": [
+    "hromadske_ua",
+    "suspilne_kyiv",
+    "vitaliy_klitschko"
+   ],
+   "sources": [
+    {
+     "channel": "suspilne_kyiv",
+     "name": "Suspilne Kyiv",
+     "kind": "media",
+     "url": "https://t.me/suspilne_kyiv/30696",
+     "posted": "2026-10-30 22:00",
+     "quote": "Вибух стався у житловому будинку у Шевченківському районі столиці, повідомили у поліції Києва. За попередньою інформацію, вибухнуло в одній з квартир багатоповерхівки."
+    },
+    {
+     "channel": "vitaliy_klitschko",
+     "name": "Mayor Vitali Klitschko",
+     "kind": "official",
+     "url": "https://t.me/vitaliy_klitschko/8035",
+     "posted": "2026-10-30 22:24",
+     "quote": "У Шевченківському районі пошкоджене скління в 14-поверховому житловому будинку на рівні 6-7 поверхів."
+    },
+    {
+     "channel": "hromadske_ua",
+     "name": "hromadske",
+     "kind": "media",
+     "url": "https://t.me/hromadske_ua/90353",
+     "posted": "2026-10-30 23:05",
+     "quote": "у Шевченківському районі столиці пошкоджено скління в 14-поверховому житловому будинку на рівні шостого та сьомого поверхів"
+    }
+   ],
+   "photos": [],
+   "flags": [],
+   "addresses": [],
+   "claims": 3,
+   "geo": {
+    "lat": 50.457512,
+    "lon": 30.430817,
+    "district": "Шевченківський",
+    "precision": "district",
+    "matched": null
+   }
+  },
+  {
+   "id": "2026-10-30-6",
+   "day": "2026-10-30",
+   "title": "Energy infrastructure hit, causing power outages",
+   "summary": "A drone struck an energy infrastructure facility, leaving parts of Obolonskyi, Darnytskyi, Desnianskyi and Podilskyi districts without power.",
+   "district": null,
+   "district_en": null,
+   "address": null,
+   "target": "energy",
+   "weapon": "drone",
+   "time": null,
+   "first_report": "2026-10-30 22:48",
+   "killed": null,
+   "injured": null,
+   "level": "single_source",
+   "voices": [
+    "suspilne"
+   ],
+   "official_voices": [],
+   "channels": [
+    "suspilne_kyiv"
+   ],
+   "sources": [
+    {
+     "channel": "suspilne_kyiv",
+     "name": "Suspilne Kyiv",
+     "kind": "media",
+     "url": "https://t.me/suspilne_kyiv/30702",
+     "posted": "2026-10-30 22:48",
+     "quote": "Частина Оболонського, Дарницького, Деснянського та Подільського районів без світла через влучання в обʼєкт енергетики"
+    }
+   ],
+   "photos": [],
+   "flags": [],
+   "addresses": [],
+   "claims": 1,
+   "geo": {
+    "lat": null,
+    "lon": null,
+    "district": null,
+    "precision": null,
+    "matched": null
+   }
+  },
+  {
+   "id": "2026-10-31-1",
+   "day": "2026-10-31",
+   "title": "Debris fell on territory of a shopping center",
+   "summary": "Debris fell on the grounds of a shopping center in Obolonskyi district; a woman was reportedly injured according to preliminary information.",
+   "district": "Оболонський",
+   "district_en": "Obolonskyi",
+   "address": null,
+   "target": "commercial",
+   "weapon": "unknown",
+   "time": null,
+   "first_report": "2026-10-31 18:51",
+   "killed": null,
+   "injured": 1,
+   "level": "official",
+   "voices": [
+    "kmva"
+   ],
+   "official_voices": [
+    "kmva"
+   ],
+   "channels": [
+    "VA_Kyiv"
+   ],
+   "sources": [
+    {
+     "channel": "VA_Kyiv",
+     "name": "Kyiv City Military Administration",
+     "kind": "official",
+     "url": "https://t.me/VA_Kyiv/22274",
+     "posted": "2026-10-31 18:51",
+     "quote": "В Оболонському районі уламки впали на території торгівельного центру. За попередньою інформацією, постраждала жінка."
+    }
+   ],
+   "photos": [],
+   "flags": [],
+   "addresses": [],
+   "claims": 1,
+   "geo": {
+    "lat": 50.549862,
+    "lon": 30.440876,
+    "district": "Оболонський",
+    "precision": "district",
+    "matched": null
+   }
+  },
+  {
+   "id": "2026-10-31-2",
+   "day": "2026-10-31",
+   "title": "Drone debris caused fire in parking lot near a market",
+   "summary": "A drone strike caused a fire on non-residential territory and among parked cars near a market in Desnianskyi district.",
+   "district": "Деснянський",
+   "district_en": "Desnianskyi",
+   "address": null,
+   "target": "open_area",
+   "weapon": "drone",
+   "time": null,
+   "first_report": "2026-10-31 21:52",
+   "killed": null,
+   "injured": null,
+   "level": "official",
+   "voices": [
+    "kmva"
+   ],
+   "official_voices": [
+    "kmva"
+   ],
+   "channels": [
+    "VA_Kyiv"
+   ],
+   "sources": [
+    {
+     "channel": "VA_Kyiv",
+     "name": "Kyiv City Military Administration",
+     "kind": "official",
+     "url": "https://t.me/VA_Kyiv/22279",
+     "posted": "2026-10-31 21:52",
+     "quote": "У Деснянському районі внаслідок падіння БпЛА виникло загоряння на нежитловій території та припаркованих автомобілів."
+    }
+   ],
+   "photos": [],
+   "flags": [],
+   "addresses": [],
+   "claims": 1,
+   "geo": {
+    "lat": 50.514216,
+    "lon": 30.655481,
+    "district": "Деснянський",
+    "precision": "district",
+    "matched": null
+   }
+  },
+  {
+   "id": "2026-10-31-3",
+   "day": "2026-10-31",
+   "title": "Drone fell on open ground of a private homestead",
+   "summary": "An enemy drone fell on the open territory of a private homestead in Darnytskyi district, according to the State Emergency Service.",
+   "district": "Дарницький",
+   "district_en": "Darnytskyi",
+   "address": null,
+   "target": "open_area",
+   "weapon": "drone",
+   "time": null,
+   "first_report": "2026-10-31 22:14",
+   "killed": null,
+   "injured": null,
+   "level": "official",
+   "voices": [
+    "dsns"
+   ],
+   "official_voices": [
+    "dsns"
+   ],
+   "channels": [
+    "dsns_kyiv"
+   ],
+   "sources": [
+    {
+     "channel": "dsns_kyiv",
+     "name": "State Emergency Service, Kyiv",
+     "kind": "official",
+     "url": "https://t.me/dsns_kyiv/5562",
+     "posted": "2026-10-31 22:14",
+     "quote": "Також у Дарницькому районі зафіксовано падіння ворожого БпЛА на відкритій території приватної садиби."
+    }
+   ],
+   "photos": [
+    "https://cdn4.telesco.pe/file/IqxplPMLeFkZZ7kVG2-J1EaPyKbbFVUD6JD_XkTxrms7JCPS6Amcf42lD43eLenMqJ4wAMWxZgUo0WVKdE598yuUscvXIqtFJlDS1lPmnymF2XQfAHtmSxgVyY24kxI395E9NebBADIn-nBua4a_qU5THq_RVh58BrlCpuu-TbPVxs1tA5RRdHfhGkPnCeKc346dK3o0A46BAq08wx98j5wmy0Z7zsYGCAgUOire8bXfSEUuXR0COcMoJjzV_6MgysT-S9Wz1p6fpDOtgevOojO3wZVJVDuwtBCUL6WUoIHTW8YaVv00PNDag67dhRcLmx6j9Er9RyFJO3XgglLikg.jpg",
+    "https://cdn4.telesco.pe/file/aHzHibf-wqJnmT71-rFVggZ9LkPhDEAZfM3rppsZkMnuIYJY-nbQDqntitDQ9zw-MB3qfcfiJTo6qIFEeV087az7k05_vfKLpEnXPYgyZLEMi0iki1j9If5D6g-CeEzeQ-18BglFnT-_VuAaxHoGIpvI0MxHg3iPWNhfZk5rCj9QZAb_zI-zYgDuZ5WtB4fwHZ2Ypidu_WEX6X4RtUDra9pH2gYa8cZnczXEifdO9XSffMBlF1U_NOctBJn9KIbdYJZ7lf4zHDNSoRDFugs7cK-nK_fyyhsVrMZIG092_bjIxrgbhhpYBcHpEyQVZ37eydGg3g1CALHG4J14wthWig.jpg",
+    "https://cdn4.telesco.pe/file/LVhYhwm0obXOUJ_HmtDtY2dt-FmShpzIHcCKQUU50umOjKd9ZUX_5odz2QxQXZQpSlDq5RJNvIWZfIsl7wwzwag0kOznbljy5q_1LbR92sJTlkSojwPvE_agv7Tl063XIcMNNR6Ko2HanMD5PYcph5jTXoKgL4aj-_nb_ktDZDC-UTOWSEH63xz28p6qv4i2kNmiThnaqGshAW_VSGDxsGg9v4uFX_sS8M7vlm_Os2AwLfH3kHBMy8emoK8RGfuhkch5X_ytV7XNRnDjuPQWwiz5H0B6d2-7u9Yog18txXh9B-EqVFQv9runTrDa9OMo8r64w0nopy5kb3xoRmA0kA.jpg"
+   ],
+   "flags": [],
+   "addresses": [],
+   "claims": 1,
+   "geo": {
+    "lat": 50.398202,
+    "lon": 30.723864,
+    "district": "Дарницький",
+    "precision": "district",
+    "matched": null
+   }
+  },
+  {
+   "id": "2026-11-02-1",
+   "day": "2026-11-02",
+   "title": "Fire in apartment of a 5-storey residential building",
+   "summary": "A fire broke out in a first-floor apartment of a 5-storey residential building on Vvedenska Street.",
+   "district": "Подільський",
+   "district_en": "Podilskyi",
+   "address": "вул. Введенська",
+   "target": "residential_highrise",
+   "weapon": "unknown",
+   "time": "08:29",
+   "first_report": "2026-11-02 09:14",
+   "killed": null,
+   "injured": null,
+   "level": "official",
+   "voices": [
+    "dsns"
+   ],
+   "official_voices": [
+    "dsns"
+   ],
+   "channels": [
+    "dsns_kyiv"
+   ],
+   "sources": [
+    {
+     "channel": "dsns_kyiv",
+     "name": "State Emergency Service, Kyiv",
+     "kind": "official",
+     "url": "https://t.me/dsns_kyiv/5578",
+     "posted": "2026-11-02 09:14",
+     "quote": "02 листопада о 08:29 надійшло повідомлення про пожежу на вулиці Введенській. Горіла квартира на першому поверсі 5-поверхового житлового будинку."
+    }
+   ],
+   "photos": [
+    "https://cdn4.telesco.pe/file/hPkZ-4v_tYP1m_LMDDrXwckrAUk8kzOJQx8gwcyOzndc-pUbp2gFJgocVW3da76ukekDtRfPVVJyYcprzoTqtPooITsNrhibubML3Z-xM_IbPj02QpDshGcEPa1g5EmnxKvu2beyBtmK9szLM_ighsjYvZ3DXjaQ6O2vviKeYXXioMUOlMjO5rF2B9T9etVJvWIn9oosfR6DOs6hLLtmi8-17bJMyCm-O4sYM7J2MBuUqKX-81sCSPwIY6w79jgjl4z7tFxyt49FlcMQRFoiLPNQkvWljI0P5VyU2lf5BgwEsh_62MNk_8m9pFYwPfkjw2TaubVqfB30S_KzkrT_3Q.jpg",
+    "https://cdn4.telesco.pe/file/UmHyrSA8Sg5H45q0Ed6-68WjyblYz_Mw9Nb6S69QSjPAftozDdPqKMaAqmzRNjKASvKkYWBMAK2ujGCDEazFtcCDq8BwwbFI8bTfBCsyv8Sbl68ad_s9tccCZmve7x-OXPGqqSGxiKi_JYO-ubyhk1btYbtOn7MTm8HLlMzaQlbjv5QiFBeJyBVxKxldyP_MBWZl7c0ty1UaJBHOZ0lnnhvr9vtPO9aKg6W4fTe9LuTOGRhXcymffb3QwNJT5YCZouZE8dmrGz2Cobze6lHmpTBMtO6ZMgyUivOuZPlwJ3qEeSk6LYcluhfVQfsjbXv-DquVVopN1oaiIQBW82vHBQ.jpg",
+    "https://cdn4.telesco.pe/file/n_Lt6zzgISuPZVQjanjQ-tu2DRCCUrue71sFWG9porbp6_4n6JEFqukDNxnBDU-P92wiSs-DSdAC_bd_CiY-_rA3hX2B6miFqk06bjWBlzSKLiJopGlidXvRPX_itsVCVWKQgcR2Ifs8JTIc6ll4quKnao5hU0UdUDTLqsVDCC9h-drUEjumRuQwKnNJarJgMedOpBsBmED5IpjfUtyop8-df4I9TyeQLRfu3tYI0F55uuIQNkMorT5i1H8D4xVqaqZpSwyQhRYYcBdenSfELJUGoHAz0e6LwAaV3DhXoLFqBYo6RgTWggH-FZ4MqJp8q8f6v1nWsnwosdadkDTq_w.jpg"
+   ],
+   "flags": [],
+   "addresses": [
+    "вул. Введенська"
+   ],
+   "claims": 1,
+   "geo": {
+    "lat": 50.471671,
+    "lon": 30.511654,
+    "district": "Подільський",
+    "precision": "street",
+    "matched": "Введенська вулиця, Плоске, Подільський район, Київ, 04071, Україна"
+   }
+  },
+  {
+   "id": "2026-11-02-2",
+   "day": "2026-11-02",
+   "title": "Passenger car on fire near roadway",
+   "summary": "A passenger car near the roadway on Ivana Vyhovskoho Street was fully engulfed in flames.",
+   "district": "Подільський",
+   "district_en": "Podilskyi",
+   "address": "вул. Івана Виговського",
+   "target": "vehicle",
+   "weapon": "unknown",
+   "time": "10:57",
+   "first_report": "2026-11-02 12:10",
+   "killed": null,
+   "injured": null,
+   "level": "official",
+   "voices": [
+    "dsns"
+   ],
+   "official_voices": [
+    "dsns"
+   ],
+   "channels": [
+    "dsns_kyiv"
+   ],
+   "sources": [
+    {
+     "channel": "dsns_kyiv",
+     "name": "State Emergency Service, Kyiv",
+     "kind": "official",
+     "url": "https://t.me/dsns_kyiv/5582",
+     "posted": "2026-11-02 12:10",
+     "quote": "02 листопада о 10:57 надійшло повідомлення про пожежу на вул. Івана Виговського. Біля проїжджої частини дороги вогнем було повністю охоплено легковик."
+    }
+   ],
+   "photos": [
+    "https://cdn4.telesco.pe/file/dl7iZZpZCF2CRHZmYay34GtOrp3p53IMOnTNQo6llhHhB3dTnLYnElzVv5E9TWHbpN5-814sIaLsCMtOzcWvjZ771-hmJxQAWCXxcxaUwf8BLyk2jPL8yemx9MQonGsjPj8VKVZ5rsW2hpQy4MurNQEl4AgNHrsT21kH6Wco9d-T9jg7IxlG6P5YyIMGU9Z3x0frbJILBS4K4oo48QikMipfX70jRhbZjBW9eNxdQZMC-Weu0y0ISoMaqXkPxB0W0E4XbeVt8epoXgpWXGExs-QKNYfTEnlXYOBnioX981SJHfFjr1pj4hdTr2nptg_ZYMdEhADFLVGE1jDrXDMpKA.jpg",
+    "https://cdn4.telesco.pe/file/GB1EGPfqReiQyRNl8FWwHE2EWcRiywR9ljWqWrDcMy8KiUBwmyewjbn1QrKOhKR5ZVs4nKuCQmq7Cm8va8pAmzLD6Lsatlfx1XtHgWl_WEwf4XI-ASTm6WzVdEU9qA9D2A6c8KwQVj2NFLhJ-MVyuE-w5jNk8_gjME87g6wjM9oAoSFL87M6Ap-2pjZm8DHTAzj9wsC44UyjCCaaHOJ4ieSVBig615R46d_TBY_M2rXeiae7irb7laBgz0mFvkxyun7szGz-fza_GdqnL8MfLaV1ea9S33ce35rqzjHgU2rlenDoBareQdGm6TmckXlnOfRU0IcH_VIYA2izwrqh7A.jpg",
+    "https://cdn4.telesco.pe/file/dcN4Z9JzsdukyqXs5l1ePNsuzvXF0jblaKh-rte3PPnIJHr2RW66yYTOgvDAw-M_wPeeidB6j5Ha5pYajvbJN16IF1gTM_p80FYOdo_hC27muYFkw_1EHx96OwKOgfQPxmcNYkmKiuR6wLy8kOecPjEVEz0QhHdaErM25budNx8aqoba2-0x5hAha7CBUmlFZqRlmf-GZ7sMgMC4DdqIhUtIKGYajcK64Qr6VYPSF9RxomOoPr-FG0KnbKCyOe_e0eFrDHY91SMowyxiC06L5SkEl4BD64o9Rp-ZvW753xdlPTy_7_QaO229XMxqdjETMWFgG_6ckDtwPozSX8Z5XA.jpg"
+   ],
+   "flags": [],
+   "addresses": [
+    "вул. Івана Виговського"
+   ],
+   "claims": 1,
+   "geo": {
+    "lat": 50.505439,
+    "lon": 30.407087,
+    "district": "Подільський",
+    "precision": "street",
+    "matched": "вулиця Івана Виговського, Варшавський масив, Виноградар, Подільський район, Київ, 04208, Україна"
+   }
+  },
+  {
+   "id": "2026-11-02-3",
+   "day": "2026-11-02",
+   "title": "Drone debris sparks fire in open area",
+   "summary": "Drone debris fell on open ground in Darnytskyi district, igniting the grass cover.",
+   "district": "Дарницький",
+   "district_en": "Darnytskyi",
+   "address": null,
+   "target": "open_area",
+   "weapon": "drone",
+   "time": null,
+   "first_report": "2026-11-02 23:16",
+   "killed": null,
+   "injured": null,
+   "level": "official",
+   "voices": [
+    "city_council"
+   ],
+   "official_voices": [
+    "city_council"
+   ],
+   "channels": [
+    "vitaliy_klitschko"
+   ],
+   "sources": [
+    {
+     "channel": "vitaliy_klitschko",
+     "name": "Mayor Vitali Klitschko",
+     "kind": "official",
+     "url": "https://t.me/vitaliy_klitschko/8041",
+     "posted": "2026-11-02 23:16",
+     "quote": "Уламки БпЛА впали на відкритій території в Дарницькому районі. Горить травʼяний настил."
+    }
+   ],
+   "photos": [],
+   "flags": [],
+   "addresses": [],
+   "claims": 1,
+   "geo": {
+    "lat": 50.394399,
+    "lon": 30.704669,
+    "district": "Дарницький",
+    "precision": "district",
+    "matched": null
+   }
+  },
+  {
+   "id": "2026-11-03-1",
+   "day": "2026-11-03",
+   "title": "Debris fell on open ground near a private house",
+   "summary": "The Kyiv City Military Administration reported that debris fell on open ground near a private house in the Desnianskyi district.",
+   "district": "Деснянський",
+   "district_en": "Desnianskyi",
+   "address": null,
+   "target": "open_area",
+   "weapon": "unknown",
+   "time": null,
+   "first_report": "2026-11-04 07:25",
+   "killed": null,
+   "injured": null,
+   "level": "official",
+   "voices": [
+    "kmva"
+   ],
+   "official_voices": [
+    "kmva"
+   ],
+   "channels": [
+    "VA_Kyiv"
+   ],
+   "sources": [
+    {
+     "channel": "VA_Kyiv",
+     "name": "Kyiv City Military Administration",
+     "kind": "official",
+     "url": "https://t.me/VA_Kyiv/22372",
+     "posted": "2026-11-04 07:25",
+     "quote": "У Деснянському районі уламки впали на відкритій території біля приватного будинку"
+    }
+   ],
+   "photos": [],
+   "flags": [],
+   "addresses": [],
+   "claims": 1,
+   "geo": {
+    "lat": 50.523576,
+    "lon": 30.645517,
+    "district": "Деснянський",
+    "precision": "district",
+    "matched": null
+   }
+  },
+  {
+   "id": "2026-11-05-1",
+   "day": "2026-11-05",
+   "title": "Debris fell in an open area",
+   "summary": "The Kyiv City Military Administration reported that debris fell on an open area in the Pecherskyi district.",
+   "district": "Печерський",
+   "district_en": "Pecherskyi",
+   "address": null,
+   "target": "open_area",
+   "weapon": "unknown",
+   "time": null,
+   "first_report": "2026-11-05 09:18",
+   "killed": null,
+   "injured": null,
+   "level": "official",
+   "voices": [
+    "kmva"
+   ],
+   "official_voices": [
+    "kmva"
+   ],
+   "channels": [
+    "VA_Kyiv"
+   ],
+   "sources": [
+    {
+     "channel": "VA_Kyiv",
+     "name": "Kyiv City Military Administration",
+     "kind": "official",
+     "url": "https://t.me/VA_Kyiv/22408",
+     "posted": "2026-11-05 09:18",
+     "quote": "У Печерському районі уламки впали на відкритій території"
+    }
+   ],
+   "photos": [],
+   "flags": [],
+   "addresses": [],
+   "claims": 1,
+   "geo": {
+    "lat": 50.4177,
+    "lon": 30.541306,
+    "district": "Печерський",
+    "precision": "district",
+    "matched": null
+   }
+  },
+  {
+   "id": "2026-11-08-1",
+   "day": "2026-11-08",
+   "title": "Missiles hit the Pivnichnyi (Northern) Bridge",
+   "summary": "Several missiles struck the Pivnichnyi (Northern) Bridge overnight, damaging the road surface, the trolleybus contact line, and a power line.",
+   "district": "Оболонський",
+   "district_en": "Obolonskyi",
+   "address": "Північний міст",
+   "target": "infrastructure",
+   "weapon": "missile",
+   "time": null,
+   "first_report": "2026-11-08 11:52",
+   "killed": null,
+   "injured": null,
+   "level": "single_source",
+   "voices": [
+    "suspilne"
+   ],
+   "official_voices": [],
+   "channels": [
+    "suspilnenews"
+   ],
+   "sources": [
+    {
+     "channel": "suspilnenews",
+     "name": "Suspilne News",
+     "kind": "media",
+     "url": "https://t.me/suspilnenews/79009",
+     "posted": "2026-11-08 11:52",
+     "quote": "У Північний міст у Києві вночі влучили кілька ракет, пошкоджені дорожнє полотно, контактна тролейбусна лінія та лінія електропередачі"
+    }
+   ],
+   "photos": [
+    "https://cdn4.telesco.pe/file/dohJRfpMcB1GqbAuuXFJvIpI--6P0zpwbDRuBgBebsh647QSdn3tE-8wrlyXhbKXc9eNnkh1DZzMj0GWyDUaa-uuAj_mZ6rj85LVQeBixchxjzz5i8bbKZByyEK_EVhzDIKcRiRP6yw_zbs7wykxGXhxkijrC5Yp4KKgJc5s7xBOgDmUbZQMRfv5-SayFsVO8L0wn0FUM6bVXAWzZ5r5GIqDANSJklDKCYmmDSHGK_cohDKJYSjwpULTVAJVbkZ2-RpL1UaS4RBvoczF9u2XOQcBVUFX0LUKDGdJBwcDDgca74f_iR5KP2B59ddW3uCTJEOA_Z8RbcDBEoUlNw_j0g.jpg"
+   ],
+   "flags": [],
+   "addresses": [
+    "Північний міст"
+   ],
+   "claims": 1,
+   "geo": {
+    "lat": 50.490443,
+    "lon": 30.535145,
+    "district": "Оболонський",
+    "precision": "street",
+    "matched": "Північний міст, проспект Степана Бандери, Оболонський район, Київ, 04176, Україна"
+   }
+  },
+  {
+   "id": "2026-11-10-1",
+   "day": "2026-11-10",
+   "title": "Private house damaged by blast",
+   "summary": "The Kyiv City Military Administration reported that a private house was damaged in the Darnytskyi district as a result of the enemy attack.",
+   "district": "Дарницький",
+   "district_en": "Darnytskyi",
+   "address": null,
+   "target": "residential_house",
+   "weapon": "unknown",
+   "time": null,
+   "first_report": "2026-11-11 08:40",
+   "killed": null,
+   "injured": null,
+   "level": "official",
+   "voices": [
+    "kmva"
+   ],
+   "official_voices": [
+    "kmva"
+   ],
+   "channels": [
+    "VA_Kyiv"
+   ],
+   "sources": [
+    {
+     "channel": "VA_Kyiv",
+     "name": "Kyiv City Military Administration",
+     "kind": "official",
+     "url": "https://t.me/VA_Kyiv/22576",
+     "posted": "2026-11-11 08:40",
+     "quote": "У Дарницькому районі внаслідок ворожої атаки пошкоджено приватний будинок"
+    }
+   ],
+   "photos": [],
+   "flags": [],
+   "addresses": [],
+   "claims": 1,
+   "geo": {
+    "lat": 50.397441,
+    "lon": 30.693412,
+    "district": "Дарницький",
+    "precision": "district",
+    "matched": null
+   }
+  }
+ ],
+ "llm": {
+  "auditor": {
+   "calls": 38,
+   "usd": 5.2571781,
+   "seconds": 2834.488
+  },
+  "matcher": {
+   "calls": 52,
+   "usd": 2.5434360000000007,
+   "seconds": 704.8969999999998
+  },
+  "reader": {
+   "calls": 101,
+   "usd": 5.0309901,
+   "seconds": 3556.1970000000006
+  }
+ },
+ "failed_days": []
+}
