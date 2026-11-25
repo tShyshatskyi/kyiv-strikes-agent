@@ -18,6 +18,7 @@ import json
 import os
 import subprocess
 import tempfile
+import threading
 import time
 from pathlib import Path
 
@@ -36,6 +37,13 @@ MODELS = {
 # instructions or tools.
 _NEUTRAL_CWD = Path(tempfile.gettempdir()) / "ksr-llm"
 _NEUTRAL_CWD.mkdir(exist_ok=True)
+
+
+# At most this many model calls run at once. Every `claude -p` is its own
+# process of 150-400 MB; with eleven days read in parallel and six attacks
+# matched at once, the 1a rerun of 25 Nov was killed for low memory.
+MAX_PARALLEL = max(1, int(os.environ.get("KSR_MAX_PARALLEL", "3")))
+_SLOTS = threading.BoundedSemaphore(MAX_PARALLEL)
 
 
 class LLMError(RuntimeError):
@@ -126,7 +134,8 @@ def ask(role: str, prompt: str, schema: dict, timeout: int = 600) -> dict:
     last = None
     for attempt in range(3):
         try:
-            answer = backend(role, model, prompt, schema, timeout)
+            with _SLOTS:
+                answer = backend(role, model, prompt, schema, timeout)
             break
         except (LLMError, subprocess.TimeoutExpired) as exc:
             last = exc

@@ -2,7 +2,8 @@
 
     python scripts/check_known_cases.py data/out_1a/registry.json [attack ids...]
 
-1. each bridge and the kindergarten appears on one place per attack;
+1. each bridge and the kindergarten is one place per attack (a place is the
+   object when its title names it, or its text does and it is of that kind);
 2. no attack repeats another attack's casualty figure (no casualty report
    counted under two attacks);
 3. attack titles and place titles come from code;
@@ -42,6 +43,21 @@ BENCHMARK_ONCE = [
     ("2026-10-13-N", "Desnianskyi 9-storey block", r"9-storey|nine-storey|9-floor", "Деснянський"),
     ("2026-11-19-N", "Kyivvodokanal", r"vodokanal|water utility", None),
 ]
+# A place *is* the named object when its title names it, or when its text names
+# it and the place is of the object's kind. Five trucks "in a car park next to
+# the Northern Bridge" mention the bridge but are a separate thing that was hit.
+OBJECT_KINDS = {"kindergarten": {"education"}}
+BRIDGE_KINDS = {"transport", "infrastructure", "other"}
+
+
+def is_object(s: dict, name: str) -> bool:
+    pat = OBJECTS_EN[name]
+    if re.search(pat, s["title"], re.I):
+        return True
+    kinds = OBJECT_KINDS.get(name, BRIDGE_KINDS)
+    return s["target"] in kinds and bool(re.search(pat, s["summary"] or "", re.I))
+
+
 PUBLIC_BAD = re.compile(r"\bc\d+\b|\bSite \d|\bclaims?\b|\baudit\w*", re.I)
 
 
@@ -55,18 +71,19 @@ def main(path: str, only: list[str]) -> int:
         by_attack[s["attack"]].append(s)
     ok = True
 
-    print("1. named objects: places per attack (public text / any source quote)")
+    print("1. named objects: places per attack (is the object / text mentions it / any source quote)")
     for a in ats:
         rows = []
         for name in OBJECTS_EN:
-            pub = [s["id"] for s in by_attack[a["id"]]
+            pub = [s["id"] for s in by_attack[a["id"]] if is_object(s, name)]
+            men = [s["id"] for s in by_attack[a["id"]]
                    if re.search(OBJECTS_EN[name], f"{s['title']} {s['summary']}", re.I)]
             quo = [s["id"] for s in by_attack[a["id"]]
                    if any(re.search(OBJECTS_UK[name], q["quote"], re.I) for q in s["sources"])]
             if pub or quo:
                 bad = len(pub) > 1
                 ok &= not bad
-                rows.append(f"{name}: {len(pub)} / {len(quo)}{'  <-- FAIL' if bad else ''}")
+                rows.append(f"{name}: {len(pub)} / {len(men)} / {len(quo)}{'  <-- FAIL' if bad else ''}")
         print(f"   {a['id']:14} {a['title']:24} {len(by_attack[a['id']]):3} places   " + ("; ".join(rows) or "none named"))
 
     # From the independent benchmark (Some_shit/kyiv_benchmark/COMPARISON.md):

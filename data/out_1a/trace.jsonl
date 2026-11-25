@@ -1,41 +1,81 @@
-{"day": "all", "step": "collect", "message": "Telegram channels up to date", "at": "2026-11-25T02:25:41"}
-{"day": "all", "step": "prefilter", "message": "25512 posts from 13 channels -> 2116 mention damage; 362 alerts -> 101 attacks; reading 9 days for 5 attacks", "at": "2026-11-25T02:25:44"}
-{"day": "2026-10-06", "step": "reader", "message": "37 posts -> 16 claims, 3 rejected (quote not in the post)", "at": "2026-11-25T02:25:44"}
-{"day": "2026-10-07", "step": "reader", "message": "91 posts -> 32 claims, 4 rejected (quote not in the post)", "at": "2026-11-25T02:25:44"}
-{"day": "2026-10-08", "step": "reader", "message": "60 posts -> 6 claims, 1 rejected (quote not in the post)", "at": "2026-11-25T02:25:44"}
-{"day": "2026-11-06", "step": "reader", "message": "44 posts -> 14 claims, 1 rejected (quote not in the post)", "at": "2026-11-25T02:25:44"}
-{"day": "2026-11-07", "step": "reader", "message": "37 posts -> 14 claims", "at": "2026-11-25T02:25:44"}
-{"day": "2026-11-16", "step": "reader", "message": "38 posts -> 25 claims, 1 rejected (quote not in the post)", "at": "2026-11-25T02:25:44"}
-{"day": "2026-11-17", "step": "reader", "message": "47 posts -> 10 claims, 2 rejected (quote not in the post)", "at": "2026-11-25T02:25:44"}
-{"day": "2026-11-19", "step": "reader", "message": "111 posts -> 63 claims, 1 rejected (quote not in the post)", "at": "2026-11-25T02:25:44"}
-{"day": "2026-11-20", "step": "reader", "message": "60 posts -> 16 claims, 4 rejected (quote not in the post)", "at": "2026-11-25T02:25:44"}
-{"day": "all", "step": "segment", "message": "196 claims -> 120 in 5 attacks; set aside: {'names another date': 2}", "at": "2026-11-25T02:25:44"}
-{"day": "2026-10-06-N", "step": "matcher", "message": "17 claims grouped into 6 sites", "at": "2026-11-25T02:25:44"}
-{"day": "2026-10-06-N", "step": "validate", "message": "0 fixed in code, 0 to redo", "at": "2026-11-25T02:25:44"}
-{"day": "2026-10-06-N", "step": "auditor", "message": "approve: no issues", "at": "2026-11-25T02:25:44"}
-{"day": "2026-10-06-N", "step": "finalize", "message": "6 sites recorded", "at": "2026-11-25T02:25:44"}
-{"day": "2026-10-07-N", "step": "matcher", "message": "25 claims grouped into 8 sites", "at": "2026-11-25T02:25:44"}
-{"day": "2026-10-07-N", "step": "validate", "message": "0 fixed in code, 0 to redo", "at": "2026-11-25T02:25:44"}
-{"day": "2026-10-07-N", "step": "auditor", "message": "approve: no issues", "at": "2026-11-25T02:25:44"}
-{"day": "2026-10-07-N", "step": "finalize", "message": "8 sites recorded", "at": "2026-11-25T02:25:44"}
-{"day": "2026-11-06-N", "step": "matcher", "message": "24 claims grouped into 10 sites", "at": "2026-11-25T02:25:44"}
-{"day": "2026-11-06-N", "step": "validate", "message": "0 fixed in code, 0 to redo", "at": "2026-11-25T02:25:44"}
-{"day": "2026-11-06-N", "step": "auditor", "message": "revise: not_kyiv_city", "at": "2026-11-25T02:25:44"}
-{"day": "2026-11-06-N", "step": "matcher", "message": "24 claims regrouped into 9 sites", "at": "2026-11-25T02:25:44"}
-{"day": "2026-11-06-N", "step": "validate", "message": "0 fixed in code, 0 to redo", "at": "2026-11-25T02:25:44"}
-{"day": "2026-11-06-N", "step": "auditor", "message": "revise: not_kyiv_city", "at": "2026-11-25T02:25:44"}
-{"day": "2026-11-06-N", "step": "finalize", "message": "8 sites recorded, 1 removed by auditor", "at": "2026-11-25T02:25:44"}
-{"day": "2026-11-16-N", "step": "matcher", "message": "25 claims grouped into 7 sites", "at": "2026-11-25T02:25:44"}
-{"day": "2026-11-16-N", "step": "validate", "message": "0 fixed in code, 0 to redo", "at": "2026-11-25T02:25:44"}
-{"day": "2026-11-16-N", "step": "auditor", "message": "approve: no issues", "at": "2026-11-25T02:25:44"}
-{"day": "2026-11-16-N", "step": "finalize", "message": "7 sites recorded", "at": "2026-11-25T02:25:44"}
-{"day": "2026-11-19-N", "step": "matcher", "message": "29 claims grouped into 10 sites", "at": "2026-11-25T02:26:01"}
-{"day": "2026-11-19-N", "step": "validate", "message": "0 fixed in code, 0 to redo", "at": "2026-11-25T02:26:01"}
-{"day": "2026-11-19-N", "step": "auditor", "message": "revise: wrong_merge", "at": "2026-11-25T02:26:14"}
-{"day": "2026-11-19-N", "step": "matcher", "message": "29 claims regrouped into 15 sites", "at": "2026-11-25T02:26:31"}
-{"day": "2026-11-19-N", "step": "validate", "message": "0 fixed in code, 1 to redo -> back to matcher", "at": "2026-11-25T02:26:31"}
-{"day": "2026-11-19-N", "step": "matcher", "message": "29 claims regrouped into 12 sites", "at": "2026-11-25T02:26:48"}
-{"day": "2026-11-19-N", "step": "validate", "message": "0 fixed in code, 0 to redo", "at": "2026-11-25T02:26:48"}
-{"day": "2026-11-19-N", "step": "auditor", "message": "approve: no issues", "at": "2026-11-25T02:26:57"}
-{"day": "2026-11-19-N", "step": "finalize", "message": "12 sites recorded", "at": "2026-11-25T02:26:57"}
-{"day": "all", "step": "geocode", "message": "37/41 sites on the map, 7 at address level", "at": "2026-11-25T02:26:57"}
+{"day": "all", "step": "collect", "message": "Telegram channels up to date", "at": "2026-11-25T10:16:53"}
+{"day": "all", "step": "prefilter", "message": "25512 posts from 13 channels -> 2327 mention damage; 362 alerts -> 101 attacks; reading 11 days for 6 attacks", "at": "2026-11-25T10:16:57"}
+{"day": "2026-10-06", "step": "reader", "message": "43 posts -> 34 claims", "at": "2026-11-25T10:16:57"}
+{"day": "2026-10-07", "step": "reader", "message": "94 posts -> 79 claims", "at": "2026-11-25T10:16:57"}
+{"day": "2026-10-08", "step": "reader", "message": "64 posts -> 29 claims", "at": "2026-11-25T10:16:57"}
+{"day": "2026-10-13", "step": "reader", "message": "117 posts -> 107 claims", "at": "2026-11-25T10:16:57"}
+{"day": "2026-10-14", "step": "reader", "message": "36 posts -> 18 claims", "at": "2026-11-25T10:16:57"}
+{"day": "2026-11-06", "step": "reader", "message": "50 posts -> 34 claims", "at": "2026-11-25T10:16:57"}
+{"day": "2026-11-07", "step": "reader", "message": "38 posts -> 21 claims, 1 rejected (quote not in the post)", "at": "2026-11-25T10:16:57"}
+{"day": "2026-11-16", "step": "reader", "message": "40 posts -> 55 claims", "at": "2026-11-25T10:16:57"}
+{"day": "2026-11-17", "step": "reader", "message": "50 posts -> 53 claims", "at": "2026-11-25T10:16:57"}
+{"day": "2026-11-19", "step": "reader", "message": "118 posts -> 165 claims, 1 rejected (quote not in the post)", "at": "2026-11-25T10:16:57"}
+{"day": "2026-11-20", "step": "reader", "message": "69 posts -> 53 claims, 2 rejected (quote not in the post)", "at": "2026-11-25T10:16:57"}
+{"day": "all", "step": "segment", "message": "648 claims -> 395 in 6 attacks; set aside: {'recap of several attacks': 3}", "at": "2026-11-25T10:16:58"}
+{"day": "2026-10-06-N", "step": "matcher", "message": "39 claims grouped into 7 sites", "at": "2026-11-25T10:17:12"}
+{"day": "2026-10-06-N", "step": "validate", "message": "0 fixed in code, 2 to redo -> back to matcher", "at": "2026-11-25T10:17:12"}
+{"day": "2026-11-16-N", "step": "matcher", "message": "82 claims grouped into 10 sites", "at": "2026-11-25T10:17:16"}
+{"day": "2026-11-16-N", "step": "validate", "message": "0 fixed in code, 3 to redo -> back to matcher", "at": "2026-11-25T10:17:16"}
+{"day": "2026-11-06-N", "step": "matcher", "message": "45 claims grouped into 11 sites", "at": "2026-11-25T10:17:17"}
+{"day": "2026-11-06-N", "step": "validate", "message": "0 fixed in code, 1 to redo -> back to matcher", "at": "2026-11-25T10:17:17"}
+{"day": "2026-10-07-N", "step": "matcher", "message": "66 claims grouped into 14 sites", "at": "2026-11-25T10:17:32"}
+{"day": "2026-10-07-N", "step": "validate", "message": "0 fixed in code, 1 to redo -> back to matcher", "at": "2026-11-25T10:17:32"}
+{"day": "2026-10-13-N", "step": "matcher", "message": "95 claims grouped into 12 sites", "at": "2026-11-25T10:17:39"}
+{"day": "2026-10-13-N", "step": "validate", "message": "1 fixed in code, 1 to redo -> back to matcher", "at": "2026-11-25T10:17:39"}
+{"day": "2026-11-19-N", "step": "matcher", "message": "68 claims grouped into 17 sites", "at": "2026-11-25T10:17:41"}
+{"day": "2026-11-19-N", "step": "validate", "message": "2 fixed in code, 1 to redo -> back to matcher", "at": "2026-11-25T10:17:41"}
+{"day": "2026-10-06-N", "step": "matcher", "message": "39 claims regrouped into 7 sites", "at": "2026-11-25T10:17:48"}
+{"day": "2026-10-06-N", "step": "validate", "message": "0 fixed in code, 0 to redo", "at": "2026-11-25T10:17:48"}
+{"day": "2026-11-06-N", "step": "matcher", "message": "45 claims regrouped into 11 sites", "at": "2026-11-25T10:18:00"}
+{"day": "2026-11-06-N", "step": "validate", "message": "0 fixed in code, 1 to redo", "at": "2026-11-25T10:18:00"}
+{"day": "2026-11-16-N", "step": "matcher", "message": "82 claims regrouped into 11 sites", "at": "2026-11-25T10:18:01"}
+{"day": "2026-11-16-N", "step": "validate", "message": "0 fixed in code, 2 to redo", "at": "2026-11-25T10:18:01"}
+{"day": "2026-10-07-N", "step": "matcher", "message": "66 claims regrouped into 13 sites", "at": "2026-11-25T10:18:08"}
+{"day": "2026-10-07-N", "step": "validate", "message": "0 fixed in code, 0 to redo", "at": "2026-11-25T10:18:08"}
+{"day": "2026-10-06-N", "step": "auditor", "message": "revise: missed_merge", "at": "2026-11-25T10:18:20"}
+{"day": "2026-10-13-N", "step": "matcher", "message": "95 claims regrouped into 12 sites", "at": "2026-11-25T10:18:22"}
+{"day": "2026-10-13-N", "step": "validate", "message": "1 fixed in code, 0 to redo", "at": "2026-11-25T10:18:22"}
+{"day": "2026-11-19-N", "step": "matcher", "message": "68 claims regrouped into 16 sites", "at": "2026-11-25T10:18:27"}
+{"day": "2026-11-19-N", "step": "validate", "message": "2 fixed in code, 0 to redo", "at": "2026-11-25T10:18:27"}
+{"day": "2026-11-16-N", "step": "auditor", "message": "revise: wrong_merge", "at": "2026-11-25T10:18:37"}
+{"day": "2026-11-06-N", "step": "auditor", "message": "revise: not_kyiv_city, wrong_merge", "at": "2026-11-25T10:18:40"}
+{"day": "2026-10-07-N", "step": "auditor", "message": "revise: missed_merge", "at": "2026-11-25T10:18:45"}
+{"day": "2026-10-06-N", "step": "matcher", "message": "39 claims regrouped into 6 sites", "at": "2026-11-25T10:18:52"}
+{"day": "2026-10-06-N", "step": "validate", "message": "0 fixed in code, 1 to redo", "at": "2026-11-25T10:18:52"}
+{"day": "2026-10-13-N", "step": "auditor", "message": "revise: missed_merge", "at": "2026-11-25T10:19:00"}
+{"day": "2026-11-19-N", "step": "auditor", "message": "revise: missed_merge, wrong_field, wrong_merge", "at": "2026-11-25T10:19:07"}
+{"day": "2026-11-16-N", "step": "matcher", "message": "82 claims regrouped into 11 sites", "at": "2026-11-25T10:19:14"}
+{"day": "2026-11-16-N", "step": "validate", "message": "0 fixed in code, 1 to redo", "at": "2026-11-25T10:19:14"}
+{"day": "2026-11-06-N", "step": "matcher", "message": "45 claims regrouped into 12 sites", "at": "2026-11-25T10:19:21"}
+{"day": "2026-11-06-N", "step": "validate", "message": "0 fixed in code, 1 to redo", "at": "2026-11-25T10:19:21"}
+{"day": "2026-10-06-N", "step": "auditor", "message": "revise: wrong_merge", "at": "2026-11-25T10:19:27"}
+{"day": "2026-10-07-N", "step": "matcher", "message": "66 claims regrouped into 12 sites", "at": "2026-11-25T10:19:27"}
+{"day": "2026-10-07-N", "step": "validate", "message": "0 fixed in code, 1 to redo", "at": "2026-11-25T10:19:27"}
+{"day": "2026-10-13-N", "step": "matcher", "message": "95 claims regrouped into 11 sites", "at": "2026-11-25T10:19:39"}
+{"day": "2026-10-13-N", "step": "validate", "message": "0 fixed in code, 1 to redo", "at": "2026-11-25T10:19:39"}
+{"day": "2026-11-16-N", "step": "auditor", "message": "revise: unsupported_summary", "at": "2026-11-25T10:19:41"}
+{"day": "2026-11-16-N", "step": "finalize", "message": "11 sites recorded", "at": "2026-11-25T10:19:42"}
+{"day": "2026-10-07-N", "step": "auditor", "message": "revise: wrong_merge", "at": "2026-11-25T10:19:53"}
+{"day": "2026-11-19-N", "step": "matcher", "message": "68 claims regrouped into 18 sites", "at": "2026-11-25T10:19:55"}
+{"day": "2026-11-19-N", "step": "validate", "message": "3 fixed in code, 0 to redo", "at": "2026-11-25T10:19:55"}
+{"day": "2026-11-06-N", "step": "auditor", "message": "revise: missed_merge, not_kyiv_city", "at": "2026-11-25T10:19:59"}
+{"day": "2026-10-06-N", "step": "matcher", "message": "39 claims regrouped into 7 sites", "at": "2026-11-25T10:20:08"}
+{"day": "2026-10-06-N", "step": "validate", "message": "0 fixed in code, 0 to redo", "at": "2026-11-25T10:20:08"}
+{"day": "2026-10-13-N", "step": "auditor", "message": "revise: wrong_merge", "at": "2026-11-25T10:20:08"}
+{"day": "2026-10-07-N", "step": "matcher", "message": "66 claims regrouped into 14 sites", "at": "2026-11-25T10:20:21"}
+{"day": "2026-10-07-N", "step": "validate", "message": "0 fixed in code, 1 to redo", "at": "2026-11-25T10:20:21"}
+{"day": "2026-11-19-N", "step": "auditor", "message": "revise: wrong_field", "at": "2026-11-25T10:20:25"}
+{"day": "2026-11-19-N", "step": "finalize", "message": "18 sites recorded", "at": "2026-11-25T10:20:25"}
+{"day": "2026-11-06-N", "step": "matcher", "message": "45 claims regrouped into 11 sites", "at": "2026-11-25T10:20:28"}
+{"day": "2026-11-06-N", "step": "validate", "message": "0 fixed in code, 1 to redo", "at": "2026-11-25T10:20:28"}
+{"day": "2026-10-06-N", "step": "auditor", "message": "approve: no issues", "at": "2026-11-25T10:20:32"}
+{"day": "2026-10-06-N", "step": "finalize", "message": "7 sites recorded", "at": "2026-11-25T10:20:32"}
+{"day": "2026-10-13-N", "step": "matcher", "message": "95 claims regrouped into 12 sites", "at": "2026-11-25T10:20:45"}
+{"day": "2026-10-13-N", "step": "validate", "message": "1 fixed in code, 2 to redo", "at": "2026-11-25T10:20:45"}
+{"day": "2026-10-07-N", "step": "auditor", "message": "revise: missed_merge", "at": "2026-11-25T10:20:49"}
+{"day": "2026-10-07-N", "step": "finalize", "message": "14 sites recorded", "at": "2026-11-25T10:20:49"}
+{"day": "2026-11-06-N", "step": "auditor", "message": "revise: not_kyiv_city, wrong_merge", "at": "2026-11-25T10:20:51"}
+{"day": "2026-11-06-N", "step": "finalize", "message": "10 sites recorded, 1 removed by auditor", "at": "2026-11-25T10:20:51"}
+{"day": "2026-10-13-N", "step": "auditor", "message": "approve: no issues", "at": "2026-11-25T10:21:01"}
+{"day": "2026-10-13-N", "step": "finalize", "message": "12 sites recorded", "at": "2026-11-25T10:21:01"}
+{"day": "all", "step": "geocode", "message": "52/72 sites on the map, 6 at address level", "at": "2026-11-25T10:21:05"}
