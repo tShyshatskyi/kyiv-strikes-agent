@@ -21,8 +21,11 @@ from pipeline.tools import DISTRICT_SHAPES
 from pipeline.schemas import DISTRICTS_EN
 
 ROOT = Path(__file__).resolve().parent.parent
-OUT = ROOT / "data" / "out"
+import os
+OUT = Path(os.environ.get("KSR_OUT") or ROOT / "data" / "out")
 SITE = ROOT / "site"
+# Where data.js goes; a test build can write it elsewhere and leave the site alone.
+DATA_JS = Path(os.environ.get("KSR_DATA_JS") or SITE / "data.js")
 MEDIA = SITE / "media"
 
 WEAPON_CLASS = {"drone": "drone", "jet_drone": "drone", "ballistic": "missile",
@@ -107,7 +110,8 @@ def pick_photos(sites: list[dict], client: httpx.Client) -> None:
     - not on data/photo_blocklist.txt (site ids rejected after a human look).
     """
     import hashlib
-    blocked = set(BLOCKLIST.read_text(encoding="utf-8").split()) if BLOCKLIST.exists() else set()
+    lines = BLOCKLIST.read_text(encoding="utf-8").splitlines() if BLOCKLIST.exists() else []
+    blocked = {x.strip() for x in lines if x.strip() and not x.lstrip().startswith("#")}
     post_sites: dict = {}
     for s in sites:
         for src in s["sources"]:
@@ -117,8 +121,11 @@ def pick_photos(sites: list[dict], client: httpx.Client) -> None:
         s["photo"] = None
         if s["id"] in blocked:
             continue
+        # The blocklist also holds post URLs: place ids change when the
+        # registry is rebuilt, the post whose photo was rejected does not.
         own = [src["url"] for src in s["sources"]
-               if src["kind"] == "official" and len(post_sites[src["url"]]) == 1]
+               if src["kind"] == "official" and len(post_sites[src["url"]]) == 1
+               and src["url"] not in blocked]
         urls = [ph for u in own for ph in POST_PHOTOS.get(u, [])]
         if not urls:
             continue
@@ -257,7 +264,7 @@ def main(argv: list[str]) -> None:
             "sites": slim, "workflow": workflow, "examples": examples[:12],
             "wiki": wiki, "districts": round_coords(districts_geojson())}
     SITE.mkdir(exist_ok=True)
-    (SITE / "data.js").write_text("window.REGISTRY = " + json.dumps(data, ensure_ascii=False) + ";\n",
+    DATA_JS.write_text("window.REGISTRY = " + json.dumps(data, ensure_ascii=False) + ";\n",
                                   encoding="utf-8")
     public = [x["summary"] for x in slim] + [u["summary"] for u in units] + [n for x in slim for n in x["flags"]]
     dirty = [t for t in public if SERVICE.search(t or "")]

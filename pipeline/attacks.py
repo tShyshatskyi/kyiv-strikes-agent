@@ -229,14 +229,14 @@ def place(claim: dict, text: str, attacks: list[dict], follow: str | None = None
     if DAY_WORDS.search(text) and today:
         return today[-1]["id"], "day words"
     # Nothing in the post decides. A post during an attack's alerts, or soon
-    # after its all-clear, is about that attack; a post later in the morning
-    # is the night's report coming in.
+    # after its all-clear, is about that attack; otherwise it is about the
+    # attack whose alert sounded most recently. (A night's morning recap that
+    # repeats its places has already been caught as a follow-up above.)
     active = [a for a in cands if any(_dt(s) <= posted <= _dt(e) + ACTIVE_AFTER for s, e in a["spans"])]
     if active:
         return active[-1]["id"], "during alert"
-    if night:
-        return night[-1]["id"], "morning after"
-    return cands[-1]["id"], "later window"
+    last_alert = lambda a: max(_dt(s) for s, _ in a["spans"] if _dt(s) <= posted)  # noqa: E731
+    return max(cands, key=last_alert)["id"], "latest alert"
 
 
 def assign(claims: list[dict], texts: dict[str, str], attacks: list[dict]) -> dict:

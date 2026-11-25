@@ -58,25 +58,25 @@ session (own system prompt, no tools/MCP/skills), cached on disk by prompt hash.
   Photos: 30 picked, 9 rejected by eye, 21 published. Redeployed.
 
 ## Resume
-Next up: **stage 1a** of `docs/review/plan.md` — `segment_attacks`, `validate`,
-auditor `public_note_en`, 2 revision rounds, then rerun ONLY the nights of
-6–7 Oct, 7–8 Oct, 6–7 Nov, 16–17 Nov, 19–20 Nov and check the pass criteria in
-the brief. Verify `claude -p` bills the second account with one cheap call
-before any big run. Stage 0 is done and deployed (docs/review/reports/stage-0.md).
-
-1. `PYTHONUTF8=1 KSR_SKIP_COLLECT=1 python -W ignore -m pipeline > data/full_run.log 2>&1`
-   (cached work is free; watch the 5-hour window, stop at 90%; October and
-   November in separate windows).
-2. If the run was stopped: publish the finished nights only:
-   `python -m pipeline $(grep finalize data/full_run.log | awk '{print $3}' | sort)`.
-3. `python -m pipeline.recompute` after any change to a confirmation or map
-   rule — re-derives levels and points with no model call.
-4. `python -m pipeline.build_site`, look at new photos in site/media, add bad
-   site ids to data/photo_blocklist.txt, rebuild. The build prints any public
-   description that still carries agent notes; that count must stay 0.
-5. `cd site && npx vercel deploy --prod --yes --scope taras-projects3`.
-6. `pytest tests/test_pipeline_rules.py` guards the rules the review caught.
-   Backup of the pre-stage-0 data: `data/out_v2_backup/` (not committed).
+Stage 1a code is in; the five known nights PASSED (data/out_1a, before the
+02:40 fixes). Next, in this order:
+1. Rerun 1a with the 02:40 fixes (wider prefilter, punctuation-tolerant quote
+   check, latest-alert rule) and the benchmark checks:
+   `KSR_SKIP_COLLECT=1 KSR_OUT=data/out_1a PYTHONUTF8=1 python -W ignore -m pipeline 2026-10-06-N 2026-10-07-N 2026-10-13-N 2026-11-06-N 2026-11-16-N 2026-11-19-N > data/run_1a.log 2>&1`
+   `python scripts/check_known_cases.py data/out_1a/registry.json` must say PASS.
+2. Deploy 886240e if still not live: `cd site && npx vercel deploy --prod --yes --scope taras-projects3`.
+3. 1b: back up data/out to data/out_stage0_backup, then
+   `KSR_SKIP_COLLECT=1 PYTHONUTF8=1 python -W ignore -m pipeline 2026-10 > data/full_run.log 2>&1`
+   (October in one 5-hour window), then `... -m pipeline 2026-10 2026-11` in
+   the next (October comes from cache). Stop at 90% of a window.
+4. Site for attacks: build_site.py already reads the attack registry; the
+   pages (common.js, index, records, patterns, wikipedia, how) still expect
+   dates and must move to `R.attacks` / `s.attack` in the same commit as the
+   new data.js. Never deploy one without the other.
+5. Tools: `scripts/segment_dry_run.py` (where claims land, no model),
+   `scripts/trace_posts.py` (follow a fact from raw post to attack),
+   `KSR_CACHE_ONLY=1` (refuse any uncached model call).
+6. `python -m pipeline.recompute` only works on the old day registry.
 
 ## Open questions
 - Recall looks low on some nights (14 Oct: 32 posts → 2 claims while Wikipedia

@@ -107,3 +107,55 @@ Confirmation levels of the 41 places: 23 official, 12 confirmed, 6 media,
   mention the object, e.g. a morning summary naming two bridges attached to
   one of them. That is a shared summary post, not a double-counted bridge.
 - Map and deploy: see the review-fix table.
+
+## Addendum, 02:40 — review note of 2026-11-25 night, benchmark cases
+
+New review notes read after the commit above. Done since:
+
+- **Deploy of `886240e`: still not done.** The deploy command is refused by
+  this session's permission check, so I cannot clear that OPEN item myself.
+  `site/` in the working tree is exactly what `886240e` built (I started the
+  attack version of the pages and reverted it, so a deploy now is safe).
+- **Time limit**: no 1b full rerun tonight, as instructed.
+- **Benchmark cases** (`kyiv_benchmark/COMPARISON.md`), traced through the
+  pipeline with `scripts/trace_posts.py` (no model calls):
+  - *Paint-storage hangar, Solomianskyi, 8 Oct (2 killed, 3 injured)* — the
+    DSNS post reached the reader and its claim was **thrown out by the quote
+    check**: the reader put a full stop where the post has a line break.
+    Fixed: the check now accepts the same words in the same order with
+    different punctuation; a reworded quote is still rejected (tests).
+  - *Borshchahivka pharma plant, 7 Oct* — **dropped by the prefilter**:
+    "вдарили по заводу" has no damage word it knew. The same gap dropped
+    "БпЛА **влучив** у 25-поверховий" (VA_Kyiv, 12 Oct) and "виникло
+    **загоряння** 9-поверхового будинку" (VA_Kyiv, 13 Oct: the list had the
+    misspelling "загоранн"). Fixed: `влуч`, `загорянн`, `удар`, `вдари`.
+    This adds 216 posts (2,144 → 2,360), among them strikes the registry never
+    had: a drone hit a school in Solomianskyi and two drones hit next to the
+    Southern Bridge (both 1 Oct). The reader must re-read the batches this
+    changes — part of 1b.
+  - *Auchan warehouse* — correctly left out: no source says it was in Kyiv
+    ("не стали розкривати, у якому регіоні").
+  - *`10-13-9`, 25-storey, 2 killed* — the Kyiv Post post (13 Oct 17:27)
+    retells the **12 Oct daytime** strike in Darnytskyi, 22 h after that
+    attack's last alert and with no date in it. No time rule can place it;
+    it is a cross-attack duplicate for `dedup_neighbours` (stage 2).
+  - *Kyivvodokanal, 2 killed / 7 injured* — the posts reached the reader, but
+    it made no claim from them: they give casualties at a named place without
+    describing damage. Fixing that is a reader-prompt change, which re-reads
+    every day (~$5 Haiku). **Decision for Taras**; I propose doing it with
+    `casualties` in stage 2.
+  - Also fixed: a post with no clue in a lull between daytime alerts (DSNS,
+    12 Oct 16:15, the daytime strike's fires) went to the night before; now
+    it goes to the attack whose alert sounded most recently.
+- The 1a rerun with these fixes, including the benchmark checks added to
+  `scripts/check_known_cases.py` (13–14 Oct Desnianskyi 9-storey and
+  19–20 Nov Kyivvodokanal must each be one record), **was stopped by Claude
+  Code because the computer ran low on memory**, after the reader had
+  re-read 11 days (cached, not lost). So `data/out_1a/registry.json` is still
+  the PASS run from *before* these fixes; the new code is covered by unit
+  tests (277 pass) but has not been rerun on the known attacks.
+
+### First thing next session
+`KSR_SKIP_COLLECT=1 KSR_OUT=data/out_1a python -m pipeline 2026-10-06-N 2026-10-07-N 2026-10-13-N 2026-11-06-N 2026-11-16-N 2026-11-19-N`
+then `python scripts/check_known_cases.py data/out_1a/registry.json`. Only if
+that passes, start 1b.

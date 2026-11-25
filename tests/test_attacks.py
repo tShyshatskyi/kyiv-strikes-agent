@@ -91,8 +91,14 @@ def test_a_post_during_a_daytime_alert_belongs_to_it():
     assert where(claim("2026-10-07 10:05"), "Падіння уламків у Голосіївському районі") == "2026-10-07-D"
 
 
-def test_a_late_morning_report_without_clues_is_the_night_s():
-    assert where(claim("2026-10-07 13:00"), "Рятувальники ліквідували пожежу") == "2026-10-06-N"
+def test_a_report_without_clues_goes_to_the_latest_alert():
+    """12 October, 16:15: the emergency service reports the fires of the
+    daytime strike, in a lull between daytime alerts. Not the night before."""
+    al = [alert("2026-10-11T21:00", "2026-10-12T05:00"), alert("2026-10-12T10:27", "2026-10-12T12:30"),
+          alert("2026-10-12T18:40", "2026-10-12T19:12")]
+    aid, why = attacks.place(claim("2026-10-12 16:15"), "Дарницький район: стались пожежі у приватних будинках",
+                             attacks.segment(al))
+    assert (aid, why) == ("2026-10-12-D", "latest alert")
 
 
 def test_a_named_date_decides():

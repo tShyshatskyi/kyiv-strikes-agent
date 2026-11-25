@@ -38,6 +38,10 @@ OBJECTS_EN = {
     "Paton Bridge": r"Paton",
     "kindergarten": r"kindergarten|nursery|preschool",
 }
+BENCHMARK_ONCE = [
+    ("2026-10-13-N", "Desnianskyi 9-storey block", r"9-storey|nine-storey|9-floor", "Деснянський"),
+    ("2026-11-19-N", "Kyivvodokanal", r"vodokanal|water utility", None),
+]
 PUBLIC_BAD = re.compile(r"\bc\d+\b|\bSite \d|\bclaims?\b|\baudit\w*", re.I)
 
 
@@ -64,6 +68,18 @@ def main(path: str, only: list[str]) -> int:
                 ok &= not bad
                 rows.append(f"{name}: {len(pub)} / {len(quo)}{'  <-- FAIL' if bad else ''}")
         print(f"   {a['id']:14} {a['title']:24} {len(by_attack[a['id']]):3} places   " + ("; ".join(rows) or "none named"))
+
+    # From the independent benchmark (Some_shit/kyiv_benchmark/COMPARISON.md):
+    # places the 09:00 registry had two or three times.
+    for aid, label, pat, district in BENCHMARK_ONCE:
+        if aid not in ids:
+            continue
+        hits = [s["id"] for s in by_attack[aid]
+                if re.search(pat, f"{s['title']} {s['summary']}", re.I)
+                and (district is None or s.get("district") == district)]
+        bad = len(hits) != 1
+        ok &= not bad
+        print(f"   benchmark {aid} {label}: {len(hits)} record(s) {hits}{'  <-- FAIL' if bad else ''}")
 
     print("2. casualty figures")
     used = defaultdict(set)

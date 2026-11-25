@@ -46,7 +46,16 @@ def check_quote(quote: str, post_text: str) -> bool:
     if q in t:
         return True
     parts = [p.strip(" .") for p in re.split(r"\.\.\.|…", q) if len(p.strip()) >= 12]
-    return len(parts) >= 2 and all(p in t for p in parts)
+    if len(parts) >= 2 and all(p in t for p in parts):
+        return True
+    # A full stop where the post has a line break, or a dropped comma, is not a
+    # paraphrase: every word must still be there, in the same order.
+    words_q, words_t = _words(q), _words(t)
+    return len(words_q) >= 3 and f" {words_q} " in f" {words_t} "
+
+
+def _words(text: str) -> str:
+    return " ".join(re.findall(r"[\w'’ʼ-]+", text))
 
 
 # --- confirmation -----------------------------------------------------------

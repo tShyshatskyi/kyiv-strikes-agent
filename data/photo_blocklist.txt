@@ -8,3 +8,20 @@
 2026-11-09-5
 2026-11-17-3
 2026-11-21-4
+# The posts behind the ids above (2026-11-25): ids change when the registry is
+# rebuilt by attack, so the rejected photos are blocked by post as well.
+https://t.me/dsns_kyiv/5562
+https://t.me/vitaliy_klitschko/7792
+https://t.me/dsns_kyiv/5163
+https://t.me/VA_Kyiv/21572
+https://t.me/vitaliy_klitschko/7818
+https://t.me/dsns_kyiv/5205
+https://t.me/dsns_kyiv/5235
+https://t.me/dsns_kyiv/5288
+https://t.me/VA_Kyiv/22026
+https://t.me/VA_Kyiv/22045
+https://t.me/dsns_kyiv/5508
+https://t.me/dsns_kyiv/5640
+https://t.me/dsns_kyiv/5726
+https://t.me/dsns_kyiv/5727
+https://t.me/KyivCityOfficial/22944

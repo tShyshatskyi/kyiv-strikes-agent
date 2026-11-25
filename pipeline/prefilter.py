@@ -22,7 +22,11 @@ ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / "data" / "raw" / "telegram"
 
 IMPACT = re.compile(
-    r"уламк|влучан|падінн|загоранн|пожеж|пошкодж|зруйн|руйнуван|постраждал|"
+    # "влуч" covers влучив/влучила as well as влучання; the city writes
+    # "загоряння", not "загорання"; "вдарили по заводу" names no damage word
+    # at all. All three let real strikes past the reader before 2026-11-25.
+    r"уламк|влуч|падінн|загоранн|загорянн|пожеж|пошкодж|зруйн|руйнуван|постраждал|"
+    r"\bудар\w*|вдари\w*|уразил|struck|"
     r"загинул|загибл|поранен|травмован|госпіталіз|вибит|приліт|"
     r"debris|\bhit\b|struck|strike|fire|damag|killed|injur|wounded|casualt",
     re.I)

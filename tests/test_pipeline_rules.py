@@ -206,3 +206,27 @@ def test_no_figure_is_kept_apart_from_a_real_match():
     out = wikipedia.crosscheck(days, sites)
     assert out["dates"]["2026-10-12"]["verdict"] == "no_figure"
     assert out["summary"]["match"] == 0
+
+
+# --- reaching the reader -------------------------------------------------------
+
+def test_a_full_stop_for_a_line_break_is_not_a_paraphrase():
+    """8 October: the emergency service's report of a paint store hit (2 killed)
+    was thrown out because the reader put '.' where the post had a line break."""
+    post = "Внаслідок чергової атаки рф у Солом’янському районі загинули 2 людини, ще 3 — постраждали\nНа місці удару сталося руйнування"
+    assert tools.check_quote("У Солом'янському районі загинули 2 людини, ще 3 — постраждали. На місці удару", post)
+
+
+def test_a_real_paraphrase_is_still_rejected():
+    post = "У Солом’янському районі загинули 2 людини, ще 3 — постраждали"
+    assert not tools.check_quote("У Солом'янському районі загинули двоє людей, троє постраждали", post)
+
+
+@pytest.mark.parametrize("text", [
+    "За попередньою інформацією, у Дарницькому районі БпЛА влучив у 25-поверховий житловий будинок.",
+    "У Деснянському районі внаслідок ворожого удару виникло загоряння 9-поверхового житлового будинку.",
+    "Російські військові вдарили по Борщагівському хіміко-фармацевтичному заводу у Києві.",
+])
+def test_posts_the_old_damage_words_missed_now_reach_the_reader(text):
+    from pipeline import prefilter
+    assert prefilter.is_candidate({"channel": "VA_Kyiv", "text": text})
