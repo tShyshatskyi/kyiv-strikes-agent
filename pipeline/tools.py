@@ -20,6 +20,7 @@ import httpx
 from shapely.geometry import Point, shape
 
 from mcp_server.geo import haversine_m, normalize_address, normalize_apostrophes
+from pipeline.schemas import DISTRICTS
 from pipeline.sources import CHANNELS, counts_as_witness
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -62,15 +63,42 @@ _COMMON = {
 }
 
 
-def _detail_tokens(text: str) -> set[str]:
+_TIME = re.compile(r"\b\d{1,2}[:.]\d{2}\b")
+
+
+def _date_numbers(posted: str | None) -> set[str]:
+    """Numbers that only say when: the post's day of month and the day before
+    (a night runs over midnight), its month and its year."""
+    if not posted:
+        return set()
+    from datetime import date, timedelta
+    try:
+        d = date.fromisoformat(posted[:10])
+    except ValueError:
+        return set()
+    prev = d - timedelta(days=1)
+    return {str(d.day), f"{d.day:02d}", str(prev.day), f"{prev.day:02d}",
+            str(d.month), f"{d.month:02d}", str(d.year), str(d.year)[2:]}
+
+
+def is_latin(text: str) -> bool:
+    """Is this quote written in English rather than Ukrainian?"""
+    latin = len(re.findall(r"[A-Za-z]", text or ""))
+    return latin > len(re.findall(r"[А-Яа-яІіЇїЄєҐґ]", text or ""))
+
+
+def _detail_tokens(text: str, posted: str | None = None, names: bool = True) -> set[str]:
     """Numbers and names a report gives: the specifics a newsroom can only have
     from its own reporter, a photo or a witness.
 
     A capitalised word at the start of a sentence is skipped — it is the
-    sentence, not a name.
+    sentence, not a name. Clock times, and numbers that are just the date the
+    post itself was written on, say nothing about the strike and are dropped.
     """
     t = normalize_apostrophes(text or "")
-    out = set(re.findall(r"\d+", t))
+    out = set(re.findall(r"\d+", _TIME.sub(" ", t))) - _date_numbers(posted)
+    if not names:
+        return out
     for m in re.finditer(r"[А-ЯІЇЄҐA-Z][а-яіїєґa-zʼ'’-]{3,}", t):
         before = t[:m.start()].rstrip(" \t")
         if before and before[-1] not in ".!?:;…«\"'([\n•-":
@@ -80,10 +108,50 @@ def _detail_tokens(text: str) -> set[str]:
     return out - _COMMON
 
 
-def media_adds_detail(quote: str, official_text: str) -> bool:
+def media_adds_detail(quote: str, official_text: str, posted: str | None = None) -> bool:
     """Does this media quote carry a figure or a name that no official post for
-    the same place had already given?"""
-    return bool(_detail_tokens(quote) - _detail_tokens(official_text))
+    the same place had already given?
+
+    An English quote cannot be compared word for word with Ukrainian briefings:
+    "Kyiv", "Mayor" or "Thursday" would all look new. Until quotes are
+    translated, only its numbers are compared.
+    """
+    official = _vocabulary(official_text)
+    new = _detail_tokens(quote, posted, names=not is_latin(quote))
+    return any(_stem(w) not in official and not _stem(w).startswith(_COMMON_STEMS) for w in new)
+
+
+def _stem(word: str) -> str:
+    """Crude Ukrainian stem: the first six letters. 'Солом'янському' and
+    'Солом'янський' are the same district in two cases."""
+    w = word.lower()
+    return w if w.isdigit() else w[:6]
+
+
+# Names that are in every report about Kyiv, so a newsroom using them adds
+# nothing. District names are here too: the official quote kept for a place
+# often leaves out the district its full post gave, and a newsroom naming the
+# district is retelling that post, not reporting from the street.
+_COMMON_STEMS = ("україн", "києв", "київ", "kyiv", "столиц",
+                 *{normalize_apostrophes(d).lower()[:6] for d in DISTRICTS})
+
+
+def _vocabulary(text: str) -> set[str]:
+    """Every word and number an official post used, in any case and any
+    position: a district named at the start of a sentence is still named."""
+    t = normalize_apostrophes(text or "")
+    return set(re.findall(r"\d+", t)) | {_stem(w) for w in re.findall(r"[^\W\d_][\wʼ'’-]{3,}", t)}
+
+
+# Auditor complaints that question whether the place, as recorded, is real:
+# two places merged into one, or a report from another attack or another town.
+# Others (a wrong weapon, two car fires that may be one) leave the strike itself
+# beyond doubt and are shown as a note, not as "disputed".
+DISPUTING = {"wrong_merge", "not_this_attack", "not_kyiv_city"}
+
+
+def is_disputed(flag_kinds: list[str]) -> bool:
+    return any(k in DISPUTING for k in flag_kinds or [])
 
 
 def confirmation(sources: list[dict], disputed: bool = False) -> dict:
@@ -108,7 +176,7 @@ def confirmation(sources: list[dict], disputed: bool = False) -> dict:
             voices.add(voice)
             official.add(voice)
             official_so_far += " " + (src.get("quote") or "")
-        elif media_adds_detail(src.get("quote") or "", official_so_far):
+        elif media_adds_detail(src.get("quote") or "", official_so_far, src.get("posted")):
             voices.add(voice)
         else:
             retold.add(voice)

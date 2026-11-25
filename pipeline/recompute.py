@@ -25,8 +25,14 @@ def main() -> None:
     before_levels = Counter(s["level"] for s in sites)
     before_precision = Counter((s.get("geo") or {}).get("precision") for s in sites)
 
+    # Older registries kept only the auditor's words; the kind of each open
+    # complaint is recovered from that day's audit record.
+    open_kind = {(d["day"], e["explanation"]): e["kind"]
+                 for d in reg["days"] for e in d.get("audit_examples", []) if not e["fixed"]}
     for s in sites:
-        s.update(tools.confirmation(s["sources"], disputed=bool(s.get("flags"))))
+        if "flag_kinds" not in s:
+            s["flag_kinds"] = [open_kind.get((s["day"], f), "unknown") for f in s.get("flags", [])]
+        s.update(tools.confirmation(s["sources"], disputed=tools.is_disputed(s["flag_kinds"])))
     place_sites(sites)
 
     REGISTRY.write_text(json.dumps(reg, ensure_ascii=False, indent=1), encoding="utf-8")

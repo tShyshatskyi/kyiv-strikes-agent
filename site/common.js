@@ -10,11 +10,11 @@ const TARGET = {residential_highrise: 'Apartment block', residential_house: 'Hou
 // only where its quote adds a figure or a name the officials had not given.
 const LEVEL = {confirmed: 'Two separate sources', official: 'Official report only',
                media: 'Media report only', aggregator_only: 'Aggregator channels only',
-               disputed: 'Disputed – the auditor still queries this record'};
+               disputed: 'Disputed – the auditor thinks this record may join two places'};
 const LEVEL_NOTE = {confirmed: 'city hall, the emergency service or a newsroom with its own detail',
                     official: 'city hall or the emergency service, no independent account',
                     media: 'no official report found', aggregator_only: 'treat with care',
-                    disputed: 'see the auditor\'s note'};
+                    disputed: 'not counted as confirmed until resolved; see the note'};
 const MONTH = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const MONTH_L = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 const DOW = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'], DOW_L = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -117,6 +117,9 @@ const LEVEL_SHORT = {confirmed: s => `${s.voices} separate sources`, official: (
                      disputed: () => 'Disputed'};
 // Service notes from the auditor, folded away: they are written for the next
 // agent, not for a reader, so they never greet one.
+// A complaint that leaves the strike itself in no doubt (a wrong weapon, two
+// car fires that may be one) keeps the evidence level and gets a small marker.
+const noteMark = s => s.flags.length && s.level !== 'disputed' ? ' <span class="nmark" title="The auditor left a note on this record">· auditor note</span>' : '';
 const auditorNote = s => s.flags.length
   ? `<details class="note"><summary>Auditor's note (${s.flags.length})</summary><p>${esc(s.flags.join(' '))}</p></details>` : '';
 const where = s => [s.district, s.address].filter(Boolean).join(', ') || 'District not stated';

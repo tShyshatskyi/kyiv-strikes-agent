@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The record – Kyiv Strike Registry</title>
-<meta name="description" content="Every place hit in Kyiv from 1 October to 23 November 2026, night by night, with the exact words of every channel that reported it.">
+<meta name="description" content="Every place hit in Kyiv from 1 October to 23 November 2026, date by date, with the exact words of every channel that reported it.">
 <meta name="theme-color" content="#F6F4EF">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
@@ -16,11 +16,11 @@
 <main>
 <section class="pagehead"><div class="wrap">
   <h1>The record</h1>
-  <p class="lede">Newest attack first. Each place shows how well it is confirmed and, under Sources, the exact words of every channel that reported it.</p>
+  <p class="lede">Newest date first. Each place shows how well it is confirmed and, under Sources, the exact words of every channel that reported it.</p>
   <div class="toolbar" id="filters"></div>
   <p class="status" id="status" aria-live="polite"></p>
   <div class="days" id="days"></div>
-  <div class="more"><button class="btn" id="more">Show earlier nights</button></div>
+  <div class="more"><button class="btn" id="more">Show earlier dates</button></div>
 </div></section>
 </main>
 
@@ -39,7 +39,7 @@ const meta = Object.fromEntries(R.days.map(d => [d.day, d]));
 
 let shown = 8;
 function siteHTML(s) {
-  const lvl = `${LEVEL_SHORT[s.level](s)}<small>${LEVEL_NOTE[s.level]}</small>`;
+  const lvl = `${LEVEL_SHORT[s.level](s)}${noteMark(s)}<small>${LEVEL_NOTE[s.level]}</small>`;
   return `<div class="site${s.photo ? ' has-photo' : ''}" id="${s.id}">` +
     (s.photo ? `<img class="ph" src="${s.photo}" alt="Photo from the official post" loading="lazy" data-cap="${esc(photoCaption(s))}">` : '') +
     `<h4><i style="background:${COLOR[s.wclass]}"></i>${esc(s.title)}</h4><div class="lvl">${lvl}</div>` +
@@ -52,7 +52,7 @@ function render() {
   syncFilters();
   const v = visible(), byDay = group(v, s => s.day), days = Object.keys(byDay).sort().reverse();
   const any = state.w !== 'all' || state.t || state.d;
-  $('#status').innerHTML = any ? `Showing ${v.length} of ${S.length} places. <button onclick="reset()">Clear filters</button>` : `All ${S.length} places over ${days.length} nights.`;
+  $('#status').innerHTML = any ? `Showing ${v.length} of ${S.length} places. <button onclick="reset()">Clear filters</button>` : `All ${S.length} places over ${days.length} dates.`;
   $('#days').innerHTML = days.slice(0, shown).map(d => {
     const m = meta[d] || {}, a = m.alerts || {};
     const bits = [`${byDay[d].length} ${pl(byDay[d].length, 'place', 'places')}`];

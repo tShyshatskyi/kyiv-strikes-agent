@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Kyiv Strike Registry – every place hit, counted once</title>
+<title>Kyiv Strike Registry – places hit in Kyiv, autumn 2026, with their sources</title>
 <meta name="description" content="Every place Russia hit in Kyiv from 1 October to 23 November 2026, read from public reports by three AI agents that group and audit each other's work. Each record links to the words of its sources.">
 <meta name="theme-color" content="#F6F4EF">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -53,7 +53,8 @@ function set(p) { Object.assign(state, p); render(); }
 const visible = skip => S.filter(s => passes(state, s, skip));
 
 // ---------- map
-const map = L.map('map', {zoomControl: false, zoomSnap: 0.25, attributionControl: false, renderer: L.canvas({tolerance: 8, padding: .4})});
+// minZoom 9: the registry is one city; no view should ever show the country.
+const map = L.map('map', {zoomControl: false, zoomSnap: 0.25, minZoom: 9, maxBounds: [[49.9, 29.6], [51.0, 31.5]], attributionControl: false, renderer: L.canvas({tolerance: 8, padding: .4})});
 if (matchMedia('(hover:hover)').matches) L.control.zoom({position: 'topright'}).addTo(map);
 L.control.attribution({position: 'topright', prefix: false}).addTo(map);
 const ESRI = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/';
@@ -87,7 +88,16 @@ function drawDots(items) {
   }
 }
 // Room the cards and filters take over the map, so fitting and panning avoid them.
-const pad = () => ({paddingTopLeft: [24, $('#filters').offsetHeight + 28], paddingBottomRight: [24, $('.deck').offsetHeight + 16]});
+// On a short window the filters and the deck can cover most of the map; if the
+// room they leave is too small (or negative), Leaflet zooms out to the whole
+// country. So the padding is shrunk until at least 40% of the map is left.
+function pad() {
+  const h = $('#map').clientHeight;
+  let top = $('#filters').offsetHeight + 28, bot = $('.deck').classList.contains('away') ? 24 : $('.deck').offsetHeight + 16;
+  const need = Math.max(150, h * 0.4);
+  if (h - top - bot < need) { const k = Math.max(0, h - need) / (top + bot); top = Math.round(top * k); bot = Math.round(bot * k); }
+  return {paddingTopLeft: [24, top], paddingBottomRight: [24, bot]};
+}
 function fit(items) {
   const b = L.latLngBounds([]);
   items.forEach(s => { if (marks[s.id]) b.extend(marks[s.id].getLatLng()); });
@@ -107,9 +117,9 @@ function overviewCard() {
     const d = DAY[state.night] || {}, c = d.city || {}, a = d.alerts || {drone: 0, missile: 0};
     const i = NIGHTS.indexOf(state.night);
     const bits = [`${v.length} ${pl(v.length, 'place', 'places')}`, a.drone + a.missile ? `${hm(a.drone + a.missile)} under alert` : ''].filter(Boolean);
-    return `<article class="card over" data-i="0"><p class="when">Attack${any ? ', filtered' : ''}</p><h2>${fmtDay(state.night, 'dowlong')}</h2>` +
-      `<p class="tot tnum">${bits.join(' · ')}</p>${d.summary ? `<p class="sum">${esc(d.summary)}</p>` : '<p class="sum mute">No place recorded this night.</p>'}` +
-      `<div class="row3"><button class="chip" data-go="${NIGHTS[i - 1] || ''}"${i ? '' : ' disabled'}>Earlier night</button><button class="chip" data-go="">All nights</button><button class="chip" data-go="${NIGHTS[i + 1] || ''}"${i < NIGHTS.length - 1 ? '' : ' disabled'}>Later night</button></div></article>`;
+    return `<article class="card over" data-i="0"><p class="when">Date${any ? ', filtered' : ''}</p><h2>${fmtDay(state.night, 'dowlong')}</h2>` +
+      `<p class="tot tnum">${bits.join(' · ')}</p>${d.summary ? `<p class="sum">${esc(d.summary)}</p>` : '<p class="sum mute">No place recorded on this date.</p>'}` +
+      `<div class="row3"><button class="chip" data-go="${NIGHTS[i - 1] || ''}"${i ? '' : ' disabled'}>Earlier date</button><button class="chip" data-go="">All dates</button><button class="chip" data-go="${NIGHTS[i + 1] || ''}"${i < NIGHTS.length - 1 ? '' : ' disabled'}>Later date</button></div></article>`;
   }
   const hit = damaged(S), nights = new Set(S.map(s => s.day)).size, addr = S.filter(exact).length;
   return `<article class="card over" data-i="0"><p class="when">1 October – 23 November 2026</p>` +
@@ -126,7 +136,7 @@ function placeCard(s, i) {
     `<p class="when">${fmtDay(s.day, 'dow')}${s.time ? ', ' + esc(s.time) : ''}</p><h3>${esc(s.title)}</h3>` +
     `<p class="meta">${esc(where(s))}${exact(s) ? '' : s.district ? ' · district only' : ' · not on the map'}</p><p class="meta">${esc(meta)}</p>` +
     (s.photo ? '' : `<p class="sum">${esc(s.summary)}</p>`) +
-    `<p class="foot"><span class="${s.level === 'confirmed' ? 'ok' : s.level === 'disputed' ? 'flag' : ''}">${LEVEL_SHORT[s.level](s)}</span><button class="link" data-open="${i}">Sources (${s.sources.length})</button></p></article>`;
+    `<p class="foot"><span class="${s.level === 'confirmed' ? 'ok' : s.level === 'disputed' ? 'flag' : ''}">${LEVEL_SHORT[s.level](s)}${noteMark(s)}</span><button class="link" data-open="${i}">Sources (${s.sources.length})</button></p></article>`;
 }
 function drawCards() {
   $('#cards').innerHTML = overviewCard() + list.map((s, i) => placeCard(s, i + 1)).join('');
@@ -220,10 +230,20 @@ window.reset = () => set({night: null, w: 'all', t: '', d: ''});
   const h = new URLSearchParams(location.hash.slice(1));
   const s = h.get('site') && S.find(x => x.id === h.get('site'));
   if (s) state.night = s.day; else if (NIGHTS.includes(h.get('night'))) state.night = h.get('night');
-  map.fitBounds(districtLayer.getBounds(), pad());
+  map.setView([50.45, 30.52], 10);                   // Kyiv, whatever the layout does next
+  map.invalidateSize();
   render(); ready = true;
   if (s) setTimeout(() => goTo(list.indexOf(s) + 1, {fly: true}), 300);
+  // Fonts and the card deck settle after this script runs and change how much
+  // of the map is free, so the first view is fitted again once they have.
+  else addEventListener('load', () => { map.invalidateSize(); if (active <= 0 && !playing) map.fitBounds(firstBounds(), {...pad(), maxZoom: 14}); });
 })();
+function firstBounds() {
+  const b = L.latLngBounds([]);
+  list.forEach(s => { if (marks[s.id]) b.extend(marks[s.id].getLatLng()); });
+  Object.keys(shade).forEach(d => { if (DPOLY[d]) b.extend(DPOLY[d].getBounds()); });
+  return b.isValid() ? b.extend(districtLayer.getBounds()) : districtLayer.getBounds();
+}
 
 // ---------- replay: the autumn night by night
 let playing = null;
@@ -234,7 +254,7 @@ $('#replay').onclick = () => {
   const base = visible('night'); let i = 0;
   $('#replay').textContent = 'Stop'; $('.deck').classList.add('away'); $('#badge').hidden = false;
   clearTimeout(settleT);
-  map.fitBounds(districtLayer.getBounds(), {paddingTopLeft: [24, $('#filters').offsetHeight + 28], paddingBottomRight: [24, 110]});
+  map.fitBounds(districtLayer.getBounds(), pad());
   playing = setInterval(() => {
     const upto = NIGHTS[i], sofar = base.filter(s => s.day <= upto), tonight = base.filter(s => s.day === upto);
     drawDots(sofar);

@@ -4665,7 +4665,8 @@
    },
    "retold_voices": [
     "hromadske"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-01-2",
@@ -4681,10 +4682,9 @@
    "first_report": "2026-10-01 09:17",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city",
-    "hromadske"
+    "city"
    ],
    "official_voices": [
     "city"
@@ -4731,7 +4731,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "hromadske"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-01-4",
@@ -4748,9 +4751,7 @@
    "killed": null,
    "injured": null,
    "level": "media",
-   "voices": [
-    "kyiv_post"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "kyivpost_official"
@@ -4776,7 +4777,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "kyiv_post"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-01-3",
@@ -4823,7 +4827,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-01-5",
@@ -4840,9 +4845,7 @@
    "killed": null,
    "injured": null,
    "level": "media",
-   "voices": [
-    "kyiv_post"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "kyivpost_official"
@@ -4870,7 +4873,10 @@
     "precision": "street",
     "matched": "Південний міст, Теличка, Голосіївський район, Київ, 01013, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [
+    "kyiv_post"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-01-6",
@@ -4917,7 +4923,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-01-7",
@@ -4970,7 +4977,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-01-8",
@@ -5017,7 +5025,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-01-9",
@@ -5034,9 +5043,7 @@
    "killed": null,
    "injured": 1,
    "level": "media",
-   "voices": [
-    "suspilne"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "suspilnenews"
@@ -5062,7 +5069,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "suspilne"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-01-10",
@@ -5120,7 +5130,8 @@
    },
    "retold_voices": [
     "hromadske"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-01-11",
@@ -5169,7 +5180,8 @@
     "precision": "street",
     "matched": "Південний міст, Теличка, Голосіївський район, Київ, 01013, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-01-12",
@@ -5261,7 +5273,8 @@
    },
    "retold_voices": [
     "suspilne"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-02-2",
@@ -5277,11 +5290,9 @@
    "first_report": "2026-10-02 09:02",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city",
-    "kyiv_independent",
-    "kyiv_post"
+    "city"
    ],
    "official_voices": [
     "city"
@@ -5332,7 +5343,11 @@
     "precision": "street",
     "matched": "Південний міст, Теличка, Голосіївський район, Київ, 01013, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [
+    "kyiv_independent",
+    "kyiv_post"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-02-1",
@@ -5349,9 +5364,7 @@
    "killed": 1,
    "injured": null,
    "level": "media",
-   "voices": [
-    "hromadske"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "hromadske_ua"
@@ -5377,7 +5390,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "hromadske"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-02-3",
@@ -5429,6 +5445,10 @@
    },
    "retold_voices": [
     "suspilne"
+   ],
+   "flag_kinds": [
+    "wrong_merge",
+    "wrong_field"
    ]
   },
   {
@@ -5485,7 +5505,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-02-5",
@@ -5545,7 +5566,8 @@
    },
    "retold_voices": [
     "pravda"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-03-1",
@@ -5562,9 +5584,7 @@
    "killed": null,
    "injured": 2,
    "level": "media",
-   "voices": [
-    "kyiv_post"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "kyivpost_official",
@@ -5604,8 +5624,10 @@
     "matched": "Північний міст, Деснянський район, Київ, 04176, Україна"
    },
    "retold_voices": [
+    "kyiv_post",
     "suspilne"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-03-2",
@@ -5652,7 +5674,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-03-3",
@@ -5699,7 +5722,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-03-4",
@@ -5746,7 +5770,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-03-5",
@@ -5793,7 +5818,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-03-6",
@@ -5840,7 +5866,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-04-3",
@@ -5893,7 +5920,8 @@
     "precision": "street",
     "matched": "Градинська вулиця, 27-й мікрорайон Вигурівщини-Троєщини, Вигурівщина-Троєщина, Деснянський район, Київ, 02034, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-04-1",
@@ -5938,7 +5966,8 @@
    },
    "retold_voices": [
     "suspilne"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-04-2",
@@ -5983,7 +6012,8 @@
    },
    "retold_voices": [
     "suspilne"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-04-4",
@@ -6041,7 +6071,8 @@
    },
    "retold_voices": [
     "pravda"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-04-5",
@@ -6057,10 +6088,9 @@
    "first_report": "2026-10-04 12:38",
    "killed": null,
    "injured": 2,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city",
-    "kyiv_post"
+    "city"
    ],
    "official_voices": [
     "city"
@@ -6103,7 +6133,10 @@
     "precision": "street",
     "matched": "Північний міст, Деснянський район, Київ, 04176, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [
+    "kyiv_post"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-05-1",
@@ -6150,7 +6183,8 @@
    },
    "retold_voices": [
     "kyiv_post"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-05-2",
@@ -6201,7 +6235,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-05-3",
@@ -6252,7 +6287,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-06-1",
@@ -6268,10 +6304,9 @@
    "first_report": "2026-10-07 03:35",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city",
-    "pravda"
+    "city"
    ],
    "official_voices": [
     "city"
@@ -6313,7 +6348,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "pravda"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-06-2",
@@ -6384,7 +6422,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-06-3",
@@ -6440,7 +6479,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-06-5",
@@ -6456,10 +6496,9 @@
    "first_report": "2026-10-07 03:53",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city",
-    "pravda"
+    "city"
    ],
    "official_voices": [
     "city"
@@ -6501,7 +6540,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "pravda"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-06-4",
@@ -6517,10 +6559,9 @@
    "first_report": "2026-10-07 08:02",
    "killed": 2,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city",
-    "hromadske"
+    "city"
    ],
    "official_voices": [
     "city"
@@ -6562,7 +6603,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "hromadske"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-07-1",
@@ -6607,7 +6651,8 @@
     "precision": null,
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-07-2",
@@ -6624,9 +6669,7 @@
    "killed": null,
    "injured": null,
    "level": "media",
-   "voices": [
-    "suspilne"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "suspilnenews"
@@ -6656,7 +6699,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "suspilne"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-07-3",
@@ -6673,9 +6719,7 @@
    "killed": null,
    "injured": null,
    "level": "media",
-   "voices": [
-    "suspilne"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "suspilne_kyiv",
@@ -6716,7 +6760,8 @@
    },
    "retold_voices": [
     "suspilne"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-07-4",
@@ -6765,7 +6810,8 @@
    },
    "retold_voices": [
     "suspilne"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-07-5",
@@ -6782,9 +6828,7 @@
    "killed": null,
    "injured": null,
    "level": "media",
-   "voices": [
-    "suspilne"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "suspilnenews"
@@ -6814,7 +6858,10 @@
     "precision": "street",
     "matched": "Кіностудія ім. Олександра Довженка, 44, Лукʼянівка, Шевченківський район, Київ, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [
+    "suspilne"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-07-6",
@@ -6863,7 +6910,8 @@
    },
    "retold_voices": [
     "suspilne"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-07-7",
@@ -6950,7 +6998,8 @@
    "retold_voices": [
     "pravda",
     "suspilne"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-07-8",
@@ -6966,10 +7015,9 @@
    "first_report": "2026-10-07 17:07",
    "killed": null,
    "injured": 1,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city",
-    "suspilne"
+    "city"
    ],
    "official_voices": [
     "city"
@@ -7017,7 +7065,8 @@
    },
    "retold_voices": [
     "suspilne"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-07-9",
@@ -7074,7 +7123,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-07-10",
@@ -7130,7 +7180,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-07-11",
@@ -7209,7 +7260,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-07-12",
@@ -7294,7 +7346,8 @@
    },
    "retold_voices": [
     "pravda"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-07-13",
@@ -7341,7 +7394,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-07-14",
@@ -7412,7 +7466,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-08-1",
@@ -7459,7 +7514,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-08-2",
@@ -7526,7 +7582,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-08-3",
@@ -7584,7 +7641,8 @@
    },
    "retold_voices": [
     "suspilne"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-09-1",
@@ -7631,7 +7689,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-09-2",
@@ -7678,7 +7737,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-09-3",
@@ -7725,7 +7785,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-09-4",
@@ -7772,7 +7833,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-09-5",
@@ -7819,7 +7881,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-09-6",
@@ -7881,7 +7944,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-10-1",
@@ -7928,7 +7992,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-10-2",
@@ -7945,9 +8010,7 @@
    "killed": 0,
    "injured": 0,
    "level": "media",
-   "voices": [
-    "suspilne"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "suspilne_kyiv"
@@ -7977,7 +8040,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "suspilne"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-10-3",
@@ -7993,10 +8059,9 @@
    "first_report": "2026-10-10 12:48",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city",
-    "kyiv_post"
+    "city"
    ],
    "official_voices": [
     "city"
@@ -8037,7 +8102,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "kyiv_post"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-10-4",
@@ -8084,7 +8152,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-10-5",
@@ -8152,7 +8221,8 @@
    },
    "retold_voices": [
     "hromadske"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-10-6",
@@ -8168,7 +8238,7 @@
    "first_report": "2026-10-10 14:19",
    "killed": null,
    "injured": null,
-   "level": "disputed",
+   "level": "confirmed",
    "voices": [
     "city",
     "emergency"
@@ -8227,6 +8297,9 @@
    },
    "retold_voices": [
     "hromadske"
+   ],
+   "flag_kinds": [
+    "unsupported_summary"
    ]
   },
   {
@@ -8278,7 +8351,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-10-8",
@@ -8294,7 +8368,7 @@
    "first_report": "2026-10-10 18:48",
    "killed": null,
    "injured": null,
-   "level": "disputed",
+   "level": "official",
    "voices": [
     "city"
    ],
@@ -8337,7 +8411,11 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": [
+    "wrong_field",
+    "unsupported_summary"
+   ]
   },
   {
    "id": "2026-10-10-9",
@@ -8384,7 +8462,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-10-10",
@@ -8437,7 +8516,8 @@
     "precision": "street",
     "matched": "вулиця Архітектора Вербицького, Червоний Хутір, Дарницький район, Київ, 02121, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-10-11",
@@ -8484,7 +8564,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-11-1",
@@ -8531,7 +8612,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-11-2",
@@ -8578,7 +8660,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-12-1",
@@ -8634,7 +8717,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-12-3",
@@ -8696,7 +8780,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-12-4",
@@ -8743,7 +8828,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-12-5",
@@ -8790,7 +8876,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-12-2",
@@ -8841,7 +8928,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-12-6",
@@ -8888,7 +8976,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-12-7",
@@ -8946,7 +9035,8 @@
    },
    "retold_voices": [
     "suspilne"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-12-8",
@@ -8993,7 +9083,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-12-9",
@@ -9049,7 +9140,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-13-1",
@@ -9107,7 +9199,8 @@
    },
    "retold_voices": [
     "suspilne"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-13-2",
@@ -9124,9 +9217,7 @@
    "killed": null,
    "injured": null,
    "level": "media",
-   "voices": [
-    "kyiv_post"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "kyivpost_official"
@@ -9154,7 +9245,10 @@
     "precision": null,
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "kyiv_post"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-13-3",
@@ -9201,7 +9295,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-13-4",
@@ -9217,7 +9312,7 @@
    "first_report": "2026-10-13 10:14",
    "killed": null,
    "injured": null,
-   "level": "disputed",
+   "level": "official",
    "voices": [
     "emergency"
    ],
@@ -9254,7 +9349,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": [
+    "wrong_field"
+   ]
   },
   {
    "id": "2026-10-13-5",
@@ -9315,7 +9413,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-13-6",
@@ -9331,7 +9430,7 @@
    "first_report": "2026-10-13 12:20",
    "killed": null,
    "injured": 2,
-   "level": "disputed",
+   "level": "official",
    "voices": [
     "city"
    ],
@@ -9373,7 +9472,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": [
+    "missed_merge"
+   ]
   },
   {
    "id": "2026-10-13-7",
@@ -9389,7 +9491,7 @@
    "first_report": "2026-10-13 13:44",
    "killed": null,
    "injured": 2,
-   "level": "disputed",
+   "level": "media",
    "voices": [
     "suspilne"
    ],
@@ -9424,7 +9526,10 @@
     "precision": "street",
     "matched": "Орлятко, 9-В, Солом’янський район, Київ, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": [
+    "missed_merge"
+   ]
   },
   {
    "id": "2026-10-13-8",
@@ -9440,10 +9545,9 @@
    "first_report": "2026-10-13 17:22",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city",
-    "kyiv_post"
+    "city"
    ],
    "official_voices": [
     "city"
@@ -9481,7 +9585,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "kyiv_post"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-13-9",
@@ -9526,7 +9633,8 @@
     "precision": null,
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-13-10",
@@ -9588,7 +9696,8 @@
    },
    "retold_voices": [
     "suspilne"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-13-11",
@@ -9604,7 +9713,7 @@
    "first_report": "2026-10-13 22:42",
    "killed": 2,
    "injured": 21,
-   "level": "disputed",
+   "level": "confirmed",
    "voices": [
     "emergency",
     "suspilne"
@@ -9662,6 +9771,9 @@
    },
    "retold_voices": [
     "hromadske"
+   ],
+   "flag_kinds": [
+    "missed_merge"
    ]
   },
   {
@@ -9713,7 +9825,8 @@
     "precision": "building",
     "matched": "ТЕЦ-4 (Дарницька ТЕЦ), Дарницький масив, Дніпровський район, Київ, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-13-13",
@@ -9762,7 +9875,8 @@
     "precision": null,
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-13-14",
@@ -9834,7 +9948,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-13-15",
@@ -9885,7 +10000,8 @@
     "precision": null,
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-13-16",
@@ -9932,7 +10048,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-13-17",
@@ -9994,7 +10111,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-13-18",
@@ -10010,7 +10128,7 @@
    "first_report": "2026-10-14 07:32",
    "killed": 2,
    "injured": 21,
-   "level": "disputed",
+   "level": "official",
    "voices": [
     "emergency"
    ],
@@ -10047,7 +10165,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": [
+    "missed_merge"
+   ]
   },
   {
    "id": "2026-10-13-19",
@@ -10098,7 +10219,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-13-20",
@@ -10149,7 +10271,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-14-1",
@@ -10166,9 +10289,7 @@
    "killed": 3,
    "injured": 25,
    "level": "media",
-   "voices": [
-    "suspilne"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "suspilne_kyiv"
@@ -10198,7 +10319,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "suspilne"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-14-2",
@@ -10215,9 +10339,7 @@
    "killed": null,
    "injured": 1,
    "level": "media",
-   "voices": [
-    "suspilne"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "suspilne_kyiv"
@@ -10245,7 +10367,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "suspilne"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-15-1",
@@ -10316,7 +10441,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-15-2",
@@ -10363,7 +10489,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-15-3",
@@ -10410,7 +10537,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-15-4",
@@ -10427,9 +10555,7 @@
    "killed": null,
    "injured": 6,
    "level": "media",
-   "voices": [
-    "kyiv_post"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "kyivpost_official"
@@ -10457,7 +10583,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "kyiv_post"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-15-5",
@@ -10504,7 +10633,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-15-6",
@@ -10551,7 +10681,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-15-7",
@@ -10598,7 +10729,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-15-8",
@@ -10649,7 +10781,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-15-9",
@@ -10700,7 +10833,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-16-1",
@@ -10717,9 +10851,7 @@
    "killed": null,
    "injured": null,
    "level": "media",
-   "voices": [
-    "suspilne"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "suspilne_kyiv"
@@ -10749,7 +10881,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "suspilne"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-16-2",
@@ -10766,9 +10901,7 @@
    "killed": null,
    "injured": null,
    "level": "media",
-   "voices": [
-    "suspilne"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "suspilne_kyiv"
@@ -10798,7 +10931,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "suspilne"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-18-1",
@@ -10845,7 +10981,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-18-2",
@@ -10892,7 +11029,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-18-3",
@@ -10964,7 +11102,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": [
+    "wrong_merge"
+   ]
   },
   {
    "id": "2026-10-18-5",
@@ -10980,7 +11121,7 @@
    "first_report": "2026-10-19 03:30",
    "killed": null,
    "injured": 3,
-   "level": "disputed",
+   "level": "confirmed",
    "voices": [
     "city",
     "emergency"
@@ -11054,7 +11195,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": [
+    "unsupported_summary"
+   ]
   },
   {
    "id": "2026-10-18-6",
@@ -11070,7 +11214,7 @@
    "first_report": "2026-10-19 03:30",
    "killed": null,
    "injured": null,
-   "level": "disputed",
+   "level": "official",
    "voices": [
     "city"
    ],
@@ -11133,7 +11277,10 @@
     "precision": "street",
     "matched": "ТРЦ, Караваєві Дачі, Солом’янський район, Київ, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": [
+    "wrong_field"
+   ]
   },
   {
    "id": "2026-10-18-4",
@@ -11180,7 +11327,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-18-7",
@@ -11227,7 +11375,8 @@
     "precision": null,
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-18-8",
@@ -11278,7 +11427,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-19-1",
@@ -11329,7 +11479,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-19-2",
@@ -11403,7 +11554,8 @@
    "retold_voices": [
     "hromadske",
     "suspilne"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-19-4",
@@ -11448,7 +11600,8 @@
    },
    "retold_voices": [
     "hromadske"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-19-5",
@@ -11465,9 +11618,7 @@
    "killed": null,
    "injured": null,
    "level": "media",
-   "voices": [
-    "kyiv_post"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "kyivpost_official"
@@ -11499,7 +11650,10 @@
     "precision": "street",
     "matched": "ТРЦ Космо Мультімол, 6, вулиця Вадима Гетьмана, Шулявка, Солом’янський район, Київ, 03168, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [
+    "kyiv_post"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-19-3",
@@ -11516,9 +11670,7 @@
    "killed": null,
    "injured": null,
    "level": "media",
-   "voices": [
-    "suspilne"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "suspilne_kyiv",
@@ -11555,7 +11707,10 @@
     "precision": "street",
     "matched": "Льодова арена, 6, вулиця Міста Шалетт, Семихатки, Північно-Броварський масив, Дніпровський район, Київ, 02192, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [
+    "suspilne"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-19-6",
@@ -11600,7 +11755,8 @@
    },
    "retold_voices": [
     "suspilne"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-20-1",
@@ -11647,7 +11803,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-20-2",
@@ -11667,7 +11824,6 @@
    "voices": [
     "city",
     "emergency",
-    "kyiv_post",
     "suspilne"
    ],
    "official_voices": [
@@ -11740,7 +11896,10 @@
     "precision": "street",
     "matched": "Інститут кардіології імені академіка М.Д. Стражеска, Зеленогірська вулиця, Турецьке містечко, Солом’янський район, Київ, 03152, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [
+    "kyiv_post"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-20-3",
@@ -11787,7 +11946,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-20-4",
@@ -11834,7 +11994,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-20-5",
@@ -11890,7 +12051,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-20-6",
@@ -11906,7 +12068,7 @@
    "first_report": "2026-10-20 16:04",
    "killed": null,
    "injured": null,
-   "level": "disputed",
+   "level": "official",
    "voices": [
     "city"
    ],
@@ -11939,7 +12101,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": [
+    "missed_merge"
+   ]
   },
   {
    "id": "2026-10-20-7",
@@ -11955,7 +12120,7 @@
    "first_report": "2026-10-20 16:21",
    "killed": null,
    "injured": null,
-   "level": "disputed",
+   "level": "official",
    "voices": [
     "city"
    ],
@@ -11988,7 +12153,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": [
+    "missed_merge"
+   ]
   },
   {
    "id": "2026-10-20-8",
@@ -12035,7 +12203,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-20-9",
@@ -12097,7 +12266,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-20-10",
@@ -12154,7 +12324,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "suspilne"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-20-11",
@@ -12205,7 +12378,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-20-12",
@@ -12264,7 +12438,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-20-13",
@@ -12311,7 +12486,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-20-14",
@@ -12373,7 +12549,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-20-15",
@@ -12420,7 +12597,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-20-16",
@@ -12467,7 +12645,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-20-17",
@@ -12540,7 +12719,8 @@
    },
    "retold_voices": [
     "hromadske"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-20-18",
@@ -12613,7 +12793,8 @@
    },
    "retold_voices": [
     "hromadske"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-20-19",
@@ -12660,7 +12841,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-20-20",
@@ -12733,7 +12915,8 @@
    },
    "retold_voices": [
     "hromadske"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-21-1",
@@ -12749,9 +12932,8 @@
    "first_report": "2026-10-21 09:05",
    "killed": 2,
    "injured": 1,
-   "level": "confirmed",
+   "level": "media",
    "voices": [
-    "bbc",
     "suspilne"
    ],
    "official_voices": [],
@@ -12810,8 +12992,10 @@
     "matched": null
    },
    "retold_voices": [
+    "bbc",
     "suspilne"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-21-4",
@@ -12893,7 +13077,8 @@
    },
    "retold_voices": [
     "hromadske"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-21-2",
@@ -12962,7 +13147,8 @@
    },
    "retold_voices": [
     "hromadske"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-21-3",
@@ -13022,7 +13208,8 @@
    },
    "retold_voices": [
     "hromadske"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-21-5",
@@ -13082,7 +13269,8 @@
    },
    "retold_voices": [
     "hromadske"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-21-6",
@@ -13165,7 +13353,8 @@
    },
    "retold_voices": [
     "pravda"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-21-7",
@@ -13181,7 +13370,7 @@
    "first_report": "2026-10-22 03:55",
    "killed": null,
    "injured": 8,
-   "level": "disputed",
+   "level": "confirmed",
    "voices": [
     "city",
     "emergency"
@@ -13251,6 +13440,10 @@
    "retold_voices": [
     "hromadske",
     "suspilne"
+   ],
+   "flag_kinds": [
+    "wrong_field",
+    "unsupported_summary"
    ]
   },
   {
@@ -13267,10 +13460,9 @@
    "first_report": "2026-10-22 06:07",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "emergency",
-    "hromadske"
+    "emergency"
    ],
    "official_voices": [
     "emergency"
@@ -13312,7 +13504,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "hromadske"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-21-8",
@@ -13357,7 +13552,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-21-9",
@@ -13404,7 +13600,8 @@
     "precision": "street",
     "matched": "Свято-Введенський чоловічий монастир, 42/2, Рибальська вулиця, Печерськ, Печерський район, Київ, 01016, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-21-11",
@@ -13455,7 +13652,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-21-12",
@@ -13506,7 +13704,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-22-1",
@@ -13556,7 +13755,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-22-2",
@@ -13605,7 +13805,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-22-3",
@@ -13654,7 +13855,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-22-4",
@@ -13703,7 +13905,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-22-5",
@@ -13722,8 +13925,7 @@
    "level": "confirmed",
    "voices": [
     "city",
-    "kyiv_post",
-    "suspilne"
+    "kyiv_post"
    ],
    "official_voices": [
     "city"
@@ -13792,7 +13994,8 @@
    },
    "retold_voices": [
     "suspilne"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-22-7",
@@ -13841,7 +14044,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-22-8",
@@ -13857,7 +14061,7 @@
    "first_report": "2026-10-22 09:21",
    "killed": null,
    "injured": 2,
-   "level": "disputed",
+   "level": "official",
    "voices": [
     "city"
    ],
@@ -13913,6 +14117,9 @@
    },
    "retold_voices": [
     "suspilne"
+   ],
+   "flag_kinds": [
+    "wrong_field"
    ]
   },
   {
@@ -13960,7 +14167,8 @@
     "precision": "street",
     "matched": "Південний міст, Теличка, Голосіївський район, Київ, 01013, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-22-9",
@@ -14011,7 +14219,8 @@
     "precision": null,
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-23-1",
@@ -14058,7 +14267,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-24-1",
@@ -14109,7 +14319,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-24-2",
@@ -14125,7 +14336,7 @@
    "first_report": "2026-10-24 22:01",
    "killed": null,
    "injured": 1,
-   "level": "disputed",
+   "level": "official",
    "voices": [
     "city"
    ],
@@ -14158,7 +14369,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": [
+    "unsupported_summary"
+   ]
   },
   {
    "id": "2026-10-24-3",
@@ -14205,7 +14419,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-25-1",
@@ -14252,7 +14467,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-25-2",
@@ -14319,7 +14535,8 @@
    },
    "retold_voices": [
     "suspilne"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-25-3",
@@ -14336,9 +14553,7 @@
    "killed": null,
    "injured": null,
    "level": "media",
-   "voices": [
-    "suspilne"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "suspilne_kyiv"
@@ -14364,7 +14579,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "suspilne"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-26-1",
@@ -14524,7 +14742,8 @@
    "retold_voices": [
     "hromadske",
     "suspilne"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-26-2",
@@ -14571,7 +14790,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-26-3",
@@ -14587,7 +14807,7 @@
    "first_report": "2026-10-26 22:29",
    "killed": 1,
    "injured": null,
-   "level": "disputed",
+   "level": "confirmed",
    "voices": [
     "city",
     "emergency"
@@ -14635,7 +14855,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": [
+    "wrong_field"
+   ]
   },
   {
    "id": "2026-10-26-4",
@@ -14682,7 +14905,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-26-5",
@@ -14731,7 +14955,8 @@
     "precision": "street",
     "matched": "Південний міст, Теличка, Голосіївський район, Київ, 01013, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-26-6",
@@ -14782,7 +15007,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-26-7",
@@ -14833,7 +15059,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-26-8",
@@ -14882,7 +15109,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-27-1",
@@ -14949,7 +15177,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "suspilne"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-27-2",
@@ -14998,7 +15229,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-27-3",
@@ -15016,7 +15248,6 @@
    "injured": null,
    "level": "disputed",
    "voices": [
-    "hromadske",
     "suspilne"
    ],
    "official_voices": [],
@@ -15059,7 +15290,12 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "hromadske"
+   ],
+   "flag_kinds": [
+    "wrong_merge"
+   ]
   },
   {
    "id": "2026-10-27-4",
@@ -15075,10 +15311,9 @@
    "first_report": "2026-10-27 09:47",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "emergency",
-    "kyiv_post"
+    "emergency"
    ],
    "official_voices": [
     "emergency"
@@ -15130,7 +15365,10 @@
     "precision": "street",
     "matched": "Південний міст, Теличка, Голосіївський район, Київ, 01013, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [
+    "kyiv_post"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-27-5",
@@ -15147,9 +15385,7 @@
    "killed": null,
    "injured": null,
    "level": "media",
-   "voices": [
-    "suspilne"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "suspilne_kyiv"
@@ -15179,7 +15415,10 @@
     "precision": null,
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "suspilne"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-28-1",
@@ -15232,7 +15471,8 @@
     "precision": "street",
     "matched": "вулиця Миколи Василенка, Грушки, Солом’янський район, Київ, 03113, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-29-1",
@@ -15281,7 +15521,8 @@
     "precision": "street",
     "matched": "Вулиця Голосіївська, Голосіївська вулиця, Деміївка, Голосіївський район, Київ, 03039, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-29-2",
@@ -15339,7 +15580,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-29-3",
@@ -15395,7 +15637,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-29-4",
@@ -15442,7 +15685,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-29-5",
@@ -15458,7 +15702,7 @@
    "first_report": "2026-10-29 23:21",
    "killed": null,
    "injured": null,
-   "level": "disputed",
+   "level": "official",
    "voices": [
     "city"
    ],
@@ -15491,7 +15735,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": [
+    "missed_merge"
+   ]
   },
   {
    "id": "2026-10-29-6",
@@ -15507,7 +15754,7 @@
    "first_report": "2026-10-29 23:29",
    "killed": null,
    "injured": null,
-   "level": "disputed",
+   "level": "official",
    "voices": [
     "city"
    ],
@@ -15541,7 +15788,11 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": [
+    "missed_merge",
+    "unsupported_summary"
+   ]
   },
   {
    "id": "2026-10-29-7",
@@ -15557,7 +15808,7 @@
    "first_report": "2026-10-29 23:40",
    "killed": null,
    "injured": null,
-   "level": "disputed",
+   "level": "official",
    "voices": [
     "city"
    ],
@@ -15601,7 +15852,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": [
+    "wrong_field"
+   ]
   },
   {
    "id": "2026-10-29-8",
@@ -15648,7 +15902,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-29-9",
@@ -15699,7 +15954,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-29-10",
@@ -15715,7 +15971,7 @@
    "first_report": "2026-10-30 07:16",
    "killed": null,
    "injured": null,
-   "level": "disputed",
+   "level": "official",
    "voices": [
     "emergency"
    ],
@@ -15752,7 +16008,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": [
+    "unsupported_summary"
+   ]
   },
   {
    "id": "2026-10-29-11",
@@ -15801,7 +16060,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-30-1",
@@ -15818,9 +16078,7 @@
    "killed": null,
    "injured": null,
    "level": "media",
-   "voices": [
-    "suspilne"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "suspilne_kyiv",
@@ -15859,7 +16117,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "suspilne"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-30-2",
@@ -15876,9 +16137,7 @@
    "killed": 1,
    "injured": null,
    "level": "media",
-   "voices": [
-    "suspilne"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "suspilnenews"
@@ -15904,7 +16163,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "suspilne"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-30-4",
@@ -15953,7 +16215,8 @@
     "precision": null,
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-30-3",
@@ -16006,7 +16269,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-30-5",
@@ -16022,10 +16286,9 @@
    "first_report": "2026-10-30 22:00",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city",
-    "suspilne"
+    "city"
    ],
    "official_voices": [
     "city"
@@ -16073,8 +16336,10 @@
     "matched": null
    },
    "retold_voices": [
-    "hromadske"
-   ]
+    "hromadske",
+    "suspilne"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-30-6",
@@ -16091,9 +16356,7 @@
    "killed": null,
    "injured": null,
    "level": "media",
-   "voices": [
-    "suspilne"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "suspilne_kyiv"
@@ -16119,7 +16382,10 @@
     "precision": null,
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "suspilne"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-31-1",
@@ -16166,7 +16432,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-31-2",
@@ -16213,7 +16480,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-10-31-3",
@@ -16264,7 +16532,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-02-1",
@@ -16317,7 +16586,8 @@
     "precision": "street",
     "matched": "Введенська вулиця, Плоске, Подільський район, Київ, 04071, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-02-2",
@@ -16370,7 +16640,8 @@
     "precision": "street",
     "matched": "вулиця Івана Виговського, Варшавський масив, Виноградар, Подільський район, Київ, 04208, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-02-3",
@@ -16417,7 +16688,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-03-1",
@@ -16464,7 +16736,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-04-1",
@@ -16511,7 +16784,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-04-2",
@@ -16567,7 +16841,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-04-3",
@@ -16584,9 +16859,7 @@
    "killed": null,
    "injured": null,
    "level": "media",
-   "voices": [
-    "suspilne"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "suspilne_kyiv"
@@ -16612,7 +16885,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "suspilne"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-05-1",
@@ -16659,7 +16935,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-06-1",
@@ -16675,7 +16952,7 @@
    "first_report": "2026-11-07 01:32",
    "killed": null,
    "injured": null,
-   "level": "disputed",
+   "level": "official",
    "voices": [
     "city"
    ],
@@ -16717,7 +16994,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": [
+    "missed_merge"
+   ]
   },
   {
    "id": "2026-11-06-2",
@@ -16733,7 +17013,7 @@
    "first_report": "2026-11-07 01:41",
    "killed": null,
    "injured": null,
-   "level": "disputed",
+   "level": "official",
    "voices": [
     "city"
    ],
@@ -16766,7 +17046,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": [
+    "missed_merge"
+   ]
   },
   {
    "id": "2026-11-06-5",
@@ -16828,7 +17111,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-06-3",
@@ -16844,7 +17128,7 @@
    "first_report": "2026-11-07 05:39",
    "killed": null,
    "injured": null,
-   "level": "disputed",
+   "level": "official",
    "voices": [
     "emergency"
    ],
@@ -16881,7 +17165,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": [
+    "missed_merge"
+   ]
   },
   {
    "id": "2026-11-06-4",
@@ -16897,7 +17184,7 @@
    "first_report": "2026-11-07 05:39",
    "killed": null,
    "injured": 1,
-   "level": "disputed",
+   "level": "official",
    "voices": [
     "emergency"
    ],
@@ -16934,7 +17221,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": [
+    "missed_merge"
+   ]
   },
   {
    "id": "2026-11-06-6",
@@ -16985,7 +17275,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-06-8",
@@ -17049,7 +17340,8 @@
    },
    "retold_voices": [
     "hromadske"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-06-9",
@@ -17096,7 +17388,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-06-10",
@@ -17143,7 +17436,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-06-7",
@@ -17159,10 +17453,8 @@
    "first_report": "2026-11-07 08:47",
    "killed": null,
    "injured": 5,
-   "level": "disputed",
-   "voices": [
-    "pravda"
-   ],
+   "level": "media",
+   "voices": [],
    "official_voices": [],
    "channels": [
     "ukrpravda_news"
@@ -17194,7 +17486,12 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "pravda"
+   ],
+   "flag_kinds": [
+    "wrong_field"
+   ]
   },
   {
    "id": "2026-11-07-1",
@@ -17210,10 +17507,9 @@
    "first_report": "2026-11-07 09:01",
    "killed": null,
    "injured": 5,
-   "level": "confirmed",
+   "level": "media",
    "voices": [
-    "hromadske",
-    "kyiv_post"
+    "hromadske"
    ],
    "official_voices": [],
    "channels": [
@@ -17253,7 +17549,10 @@
     "precision": "street",
     "matched": "Північний міст, проспект Степана Бандери, Оболонський район, Київ, 04176, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [
+    "kyiv_post"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-07-2",
@@ -17301,7 +17600,8 @@
    },
    "retold_voices": [
     "kyiv_post"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-07-3",
@@ -17352,7 +17652,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-07-4",
@@ -17403,7 +17704,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-07-5",
@@ -17454,7 +17756,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-07-6",
@@ -17501,7 +17804,8 @@
     "precision": null,
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-07-7",
@@ -17572,7 +17876,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-07-8",
@@ -17625,7 +17930,8 @@
     "precision": "street",
     "matched": "вулиця Марка Вовчка, Пріорка, Оболонський район, Київ, 04120, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-08-1",
@@ -17674,7 +17980,8 @@
     "precision": "street",
     "matched": "Північний міст, проспект Степана Бандери, Оболонський район, Київ, 04176, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-09-1",
@@ -17732,7 +18039,8 @@
    },
    "retold_voices": [
     "suspilne"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-09-2",
@@ -17749,9 +18057,7 @@
    "killed": null,
    "injured": null,
    "level": "media",
-   "voices": [
-    "suspilne"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "suspilne_kyiv"
@@ -17777,7 +18083,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "suspilne"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-09-4",
@@ -17794,9 +18103,7 @@
    "killed": null,
    "injured": null,
    "level": "media",
-   "voices": [
-    "suspilne"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "suspilnenews"
@@ -17822,7 +18129,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "suspilne"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-09-3",
@@ -17869,7 +18179,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-09-5",
@@ -17920,7 +18231,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-10-1",
@@ -17967,7 +18279,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-11-1",
@@ -18014,7 +18327,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-11-2",
@@ -18030,7 +18344,7 @@
    "first_report": "2026-11-11 10:55",
    "killed": null,
    "injured": 1,
-   "level": "disputed",
+   "level": "official",
    "voices": [
     "city"
    ],
@@ -18071,7 +18385,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": [
+    "unsupported_summary"
+   ]
   },
   {
    "id": "2026-11-11-3",
@@ -18088,9 +18405,7 @@
    "killed": null,
    "injured": null,
    "level": "media",
-   "voices": [
-    "suspilne"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "suspilne_kyiv"
@@ -18116,7 +18431,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "suspilne"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-11-4",
@@ -18163,7 +18481,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-11-5",
@@ -18180,9 +18499,7 @@
    "killed": null,
    "injured": 1,
    "level": "media",
-   "voices": [
-    "suspilne"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "suspilnenews"
@@ -18208,7 +18525,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "suspilne"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-11-6",
@@ -18225,9 +18545,7 @@
    "killed": null,
    "injured": null,
    "level": "media",
-   "voices": [
-    "pravda"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "ukrpravda_news"
@@ -18253,7 +18571,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "pravda"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-11-7",
@@ -18300,7 +18621,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-12-1",
@@ -18347,7 +18669,8 @@
     "precision": null,
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-12-2",
@@ -18403,7 +18726,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-12-3",
@@ -18452,7 +18776,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-12-4",
@@ -18499,7 +18824,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-13-1",
@@ -18516,9 +18842,7 @@
    "killed": null,
    "injured": 1,
    "level": "media",
-   "voices": [
-    "suspilne"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "suspilnenews"
@@ -18546,7 +18870,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "suspilne"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-13-2",
@@ -18595,7 +18922,8 @@
     "precision": null,
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-13-3",
@@ -18658,7 +18986,8 @@
     "precision": "street",
     "matched": "Інститут травматології та ортопедії, Бульварно-Кудрявська вулиця, Святославський яр, Афанасівський яр, Шевченківський район, Київ, 04053, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-13-4",
@@ -18705,7 +19034,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-13-5",
@@ -18752,7 +19082,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-14-1",
@@ -18799,7 +19130,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-14-2",
@@ -18846,7 +19178,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-14-3",
@@ -18893,7 +19226,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-15-1",
@@ -18946,7 +19280,8 @@
     "precision": "street",
     "matched": "Столичне шосе, Конча-Заспа, Голосіївський район, Київ, 03084, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-15-2",
@@ -18999,7 +19334,8 @@
     "precision": "street",
     "matched": "вулиця Горіхуватський Шлях, Добрий Шлях, Голосіївський район, Київ, 03040, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-16-1",
@@ -19018,8 +19354,7 @@
    "level": "confirmed",
    "voices": [
     "city",
-    "emergency",
-    "suspilne"
+    "emergency"
    ],
    "official_voices": [
     "city",
@@ -19108,7 +19443,8 @@
    },
    "retold_voices": [
     "suspilne"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-16-2",
@@ -19124,11 +19460,9 @@
    "first_report": "2026-11-16 23:45",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city",
-    "kyiv_independent",
-    "suspilne"
+    "city"
    ],
    "official_voices": [
     "city"
@@ -19204,8 +19538,11 @@
     "matched": "Північний міст, Деснянський район, Київ, 04176, Україна"
    },
    "retold_voices": [
-    "pravda"
-   ]
+    "kyiv_independent",
+    "pravda",
+    "suspilne"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-16-3",
@@ -19221,10 +19558,9 @@
    "first_report": "2026-11-16 23:45",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city",
-    "kyiv_independent"
+    "city"
    ],
    "official_voices": [
     "city"
@@ -19300,9 +19636,11 @@
     "matched": "Південний міст, Теличка, Голосіївський район, Київ, 01013, Україна"
    },
    "retold_voices": [
+    "kyiv_independent",
     "pravda",
     "suspilne"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-16-4",
@@ -19349,7 +19687,8 @@
     "precision": null,
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-16-5",
@@ -19396,7 +19735,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-16-6",
@@ -19454,7 +19794,8 @@
    },
    "retold_voices": [
     "suspilne"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-16-7",
@@ -19512,7 +19853,8 @@
    },
    "retold_voices": [
     "suspilne"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-17-1",
@@ -19568,7 +19910,8 @@
     "precision": "street",
     "matched": "Південний міст, Теличка, Голосіївський район, Київ, 01013, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-17-2",
@@ -19584,9 +19927,8 @@
    "first_report": "2026-11-17 09:11",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "media",
    "voices": [
-    "kyiv_post",
     "suspilne"
    ],
    "official_voices": [],
@@ -19637,7 +19979,10 @@
     "precision": "street",
     "matched": "Північний міст, Деснянський район, Київ, 04176, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [
+    "kyiv_post"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-17-3",
@@ -19696,7 +20041,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-17-4",
@@ -19745,7 +20091,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-17-5",
@@ -19801,7 +20148,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-18-1",
@@ -19863,7 +20211,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-18-2",
@@ -19931,6 +20280,9 @@
    },
    "retold_voices": [
     "kyiv_independent"
+   ],
+   "flag_kinds": [
+    "wrong_merge"
    ]
   },
   {
@@ -19947,7 +20299,7 @@
    "first_report": "2026-11-18 18:00",
    "killed": null,
    "injured": 1,
-   "level": "disputed",
+   "level": "confirmed",
    "voices": [
     "emergency",
     "suspilne"
@@ -19995,7 +20347,11 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": [
+    "wrong_field",
+    "unsupported_summary"
+   ]
   },
   {
    "id": "2026-11-19-1",
@@ -20042,7 +20398,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-19-2",
@@ -20104,7 +20461,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-19-3",
@@ -20166,7 +20524,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-19-4",
@@ -20217,7 +20576,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-19-5",
@@ -20264,7 +20624,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-19-6",
@@ -20280,7 +20641,7 @@
    "first_report": "2026-11-19 15:13",
    "killed": null,
    "injured": 1,
-   "level": "disputed",
+   "level": "confirmed",
    "voices": [
     "city",
     "emergency"
@@ -20348,6 +20709,9 @@
    },
    "retold_voices": [
     "suspilne"
+   ],
+   "flag_kinds": [
+    "wrong_field"
    ]
   },
   {
@@ -20406,7 +20770,8 @@
    },
    "retold_voices": [
     "suspilne"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-19-8",
@@ -20453,7 +20818,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-19-9",
@@ -20511,7 +20877,8 @@
    },
    "retold_voices": [
     "suspilne"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-19-10",
@@ -20558,7 +20925,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-19-13",
@@ -20577,7 +20945,6 @@
    "level": "confirmed",
    "voices": [
     "hromadske",
-    "kyiv_post",
     "pravda"
    ],
    "official_voices": [],
@@ -20636,8 +21003,10 @@
     "matched": null
    },
    "retold_voices": [
+    "kyiv_post",
     "pravda"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-19-11",
@@ -20684,7 +21053,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-19-12",
@@ -20731,7 +21101,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-19-14",
@@ -20747,11 +21118,8 @@
    "first_report": "2026-11-19 17:00",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
-   "voices": [
-    "bbc",
-    "hromadske"
-   ],
+   "level": "media",
+   "voices": [],
    "official_voices": [],
    "channels": [
     "bbcukrainian",
@@ -20790,7 +21158,11 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "bbc",
+    "hromadske"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-19-15",
@@ -20806,10 +21178,9 @@
    "first_report": "2026-11-19 17:06",
    "killed": null,
    "injured": null,
-   "level": "disputed",
+   "level": "official",
    "voices": [
-    "city",
-    "kyiv_post"
+    "city"
    ],
    "official_voices": [
     "city"
@@ -20853,7 +21224,12 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "kyiv_post"
+   ],
+   "flag_kinds": [
+    "missed_merge"
+   ]
   },
   {
    "id": "2026-11-19-16",
@@ -20869,12 +21245,10 @@
    "first_report": "2026-11-19 17:06",
    "killed": null,
    "injured": null,
-   "level": "disputed",
+   "level": "confirmed",
    "voices": [
     "city",
-    "emergency",
-    "hromadske",
-    "suspilne"
+    "emergency"
    ],
    "official_voices": [
     "city",
@@ -20939,7 +21313,13 @@
     "precision": "street",
     "matched": "Володимирський собор, 20, бульвар Тараса Шевченка, Центр, Шевченківський район, Київ, 01046, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [
+    "hromadske",
+    "suspilne"
+   ],
+   "flag_kinds": [
+    "missed_merge"
+   ]
   },
   {
    "id": "2026-11-19-17",
@@ -20955,7 +21335,7 @@
    "first_report": "2026-11-19 17:06",
    "killed": null,
    "injured": null,
-   "level": "disputed",
+   "level": "official",
    "voices": [
     "city"
    ],
@@ -20988,7 +21368,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": [
+    "missed_merge"
+   ]
   },
   {
    "id": "2026-11-19-18",
@@ -21037,7 +21420,8 @@
     "precision": "street",
     "matched": "Готельно-адміністративний центр «Торонто-Київ», 100, Велика Васильківська вулиця, Черепанова гора, Голосіївський район, Київ, 03150, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-19-19",
@@ -21099,7 +21483,8 @@
    },
    "retold_voices": [
     "suspilne"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-19-20",
@@ -21161,7 +21546,8 @@
    },
    "retold_voices": [
     "suspilne"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-19-21",
@@ -21223,7 +21609,8 @@
    },
    "retold_voices": [
     "suspilne"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-19-22",
@@ -21285,7 +21672,8 @@
    },
    "retold_voices": [
     "suspilne"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-19-23",
@@ -21346,7 +21734,8 @@
     "precision": "street",
     "matched": "Посольство Австрії, 33, вулиця Івана Франка, Святославський яр, Афанасівський яр, Шевченківський район, Київ, 01030, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-19-24",
@@ -21405,7 +21794,8 @@
     "precision": null,
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-19-25",
@@ -21461,7 +21851,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-19-26",
@@ -21517,7 +21908,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-19-27",
@@ -21573,7 +21965,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-19-28",
@@ -21629,7 +22022,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-19-29",
@@ -21699,7 +22093,8 @@
     "precision": "street",
     "matched": "Подільський мостовий перехід, Рибальський острів, Подільський район, Київ, 04176, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-19-30",
@@ -21769,7 +22164,8 @@
     "precision": "street",
     "matched": "Дарницький залізнично-автомобільний міст, Теличка, Голосіївський район, Київ, 01113, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-19-31",
@@ -21818,7 +22214,8 @@
     "precision": "street",
     "matched": "Південний міст, Теличка, Голосіївський район, Київ, 01013, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-19-32",
@@ -21865,7 +22262,8 @@
     "precision": null,
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-19-33",
@@ -21917,7 +22315,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": [
+    "wrong_merge"
+   ]
   },
   {
    "id": "2026-11-20-1",
@@ -21934,9 +22335,7 @@
    "killed": null,
    "injured": null,
    "level": "media",
-   "voices": [
-    "kyiv_post"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "kyivpost_official"
@@ -21966,7 +22365,10 @@
     "precision": null,
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "kyiv_post"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-20-2",
@@ -21982,10 +22384,9 @@
    "first_report": "2026-11-20 09:01",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city",
-    "kyiv_post"
+    "city"
    ],
    "official_voices": [
     "city"
@@ -22027,7 +22428,10 @@
     "precision": "street",
     "matched": "Дарницький залізничний міст, Дарницький залізнично-автомобільний міст, Теличка, Голосіївський район, Київ, 01113, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [
+    "kyiv_post"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-20-3",
@@ -22043,10 +22447,9 @@
    "first_report": "2026-11-20 09:01",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city",
-    "kyiv_post"
+    "city"
    ],
    "official_voices": [
     "city"
@@ -22088,7 +22491,10 @@
     "precision": "street",
     "matched": "Південний міст, Теличка, Голосіївський район, Київ, 01013, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [
+    "kyiv_post"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-20-4",
@@ -22141,7 +22547,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": [
+    "wrong_merge"
+   ]
   },
   {
    "id": "2026-11-20-5",
@@ -22192,7 +22601,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-20-6",
@@ -22243,7 +22653,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-20-7",
@@ -22294,7 +22705,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-20-8",
@@ -22311,9 +22723,7 @@
    "killed": null,
    "injured": null,
    "level": "media",
-   "voices": [
-    "suspilne"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "suspilne_kyiv"
@@ -22339,7 +22749,10 @@
     "precision": null,
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "suspilne"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-20-9",
@@ -22401,7 +22814,8 @@
    },
    "retold_voices": [
     "suspilne"
-   ]
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-20-10",
@@ -22452,7 +22866,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-21-1",
@@ -22469,9 +22884,7 @@
    "killed": null,
    "injured": null,
    "level": "media",
-   "voices": [
-    "kyiv_post"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "kyivpost_official"
@@ -22499,7 +22912,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "kyiv_post"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-21-3",
@@ -22516,9 +22932,7 @@
    "killed": null,
    "injured": null,
    "level": "media",
-   "voices": [
-    "suspilne"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "suspilnenews"
@@ -22546,7 +22960,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "suspilne"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-21-2",
@@ -22563,9 +22980,7 @@
    "killed": null,
    "injured": null,
    "level": "media",
-   "voices": [
-    "kyiv_post"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "kyivpost_official"
@@ -22593,7 +23008,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "kyiv_post"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-21-4",
@@ -22644,7 +23062,8 @@
     "precision": "street",
     "matched": "Південний міст, Теличка, Голосіївський район, Київ, 01013, Україна"
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-22-5",
@@ -22689,7 +23108,8 @@
     "precision": null,
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-22-1",
@@ -22742,7 +23162,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-22-2",
@@ -22758,10 +23179,9 @@
    "first_report": "2026-11-23 07:15",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city",
-    "suspilne"
+    "city"
    ],
    "official_voices": [
     "city"
@@ -22799,7 +23219,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "suspilne"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-22-3",
@@ -22815,10 +23238,9 @@
    "first_report": "2026-11-23 07:15",
    "killed": null,
    "injured": null,
-   "level": "confirmed",
+   "level": "official",
    "voices": [
-    "city",
-    "suspilne"
+    "city"
    ],
    "official_voices": [
     "city"
@@ -22865,7 +23287,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "suspilne"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-22-4",
@@ -22912,7 +23337,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-23-1",
@@ -22928,7 +23354,7 @@
    "first_report": "2026-11-23 15:20",
    "killed": null,
    "injured": 1,
-   "level": "disputed",
+   "level": "official",
    "voices": [
     "city"
    ],
@@ -22996,6 +23422,9 @@
     "hromadske",
     "pravda",
     "suspilne"
+   ],
+   "flag_kinds": [
+    "missed_merge"
    ]
   },
   {
@@ -23012,7 +23441,7 @@
    "first_report": "2026-11-23 15:22",
    "killed": null,
    "injured": null,
-   "level": "disputed",
+   "level": "official",
    "voices": [
     "city"
    ],
@@ -23045,7 +23474,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": [
+    "missed_merge"
+   ]
   },
   {
    "id": "2026-11-23-4",
@@ -23061,7 +23493,7 @@
    "first_report": "2026-11-23 15:30",
    "killed": null,
    "injured": null,
-   "level": "disputed",
+   "level": "official",
    "voices": [
     "city"
    ],
@@ -23094,7 +23526,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": [
+    "missed_merge"
+   ]
   },
   {
    "id": "2026-11-23-5",
@@ -23110,10 +23545,9 @@
    "first_report": "2026-11-23 15:53",
    "killed": null,
    "injured": 3,
-   "level": "disputed",
+   "level": "confirmed",
    "voices": [
     "city",
-    "kyiv_independent",
     "pravda"
    ],
    "official_voices": [
@@ -23187,7 +23621,11 @@
    },
    "retold_voices": [
     "hromadske",
+    "kyiv_independent",
     "suspilne"
+   ],
+   "flag_kinds": [
+    "missed_merge"
    ]
   },
   {
@@ -23204,7 +23642,7 @@
    "first_report": "2026-11-23 16:33",
    "killed": null,
    "injured": null,
-   "level": "disputed",
+   "level": "official",
    "voices": [
     "city"
    ],
@@ -23248,6 +23686,9 @@
    },
    "retold_voices": [
     "hromadske"
+   ],
+   "flag_kinds": [
+    "wrong_field"
    ]
   },
   {
@@ -23293,7 +23734,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-23-9",
@@ -23309,10 +23751,9 @@
    "first_report": "2026-11-23 18:02",
    "killed": null,
    "injured": 4,
-   "level": "disputed",
+   "level": "official",
    "voices": [
-    "emergency",
-    "suspilne"
+    "emergency"
    ],
    "official_voices": [
     "emergency"
@@ -23356,7 +23797,12 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "suspilne"
+   ],
+   "flag_kinds": [
+    "missed_merge"
+   ]
   },
   {
    "id": "2026-11-23-10",
@@ -23373,9 +23819,7 @@
    "killed": null,
    "injured": null,
    "level": "media",
-   "voices": [
-    "suspilne"
-   ],
+   "voices": [],
    "official_voices": [],
    "channels": [
     "suspilne_kyiv"
@@ -23405,7 +23849,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [
+    "suspilne"
+   ],
+   "flag_kinds": []
   },
   {
    "id": "2026-11-23-2",
@@ -23421,7 +23868,7 @@
    "first_report": "2026-11-23 18:45",
    "killed": null,
    "injured": 1,
-   "level": "disputed",
+   "level": "official",
    "voices": [
     "emergency"
    ],
@@ -23458,7 +23905,10 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": [
+    "missed_merge"
+   ]
   },
   {
    "id": "2026-11-23-8",
@@ -23509,7 +23959,8 @@
     "precision": "district",
     "matched": null
    },
-   "retold_voices": []
+   "retold_voices": [],
+   "flag_kinds": []
   }
  ],
  "llm": {

@@ -126,7 +126,12 @@ select.chip{appearance:none;padding-right:28px;background:url("data:image/svg+xm
 .site h4 i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px;vertical-align:1px}
 .site .meta{font-size:var(--t-s);color:var(--mute)}
 .site .sum{font-size:var(--t-s);max-width:44rem}
-.site .lvl{font-size:var(--t-s);text-align:right;white-space:nowrap}
+.site .lvl{font-size:var(--t-s);text-align:right;white-space:nowrap;grid-column:-2;grid-row:1}
+/* Everything but the level sits in the text column; without this, auto
+   placement put a short summary into the level's column, flush right. */
+.site > h4,.site > .meta,.site > .sum{grid-column:1;text-align:left}
+.site.has-photo > h4,.site.has-photo > .meta,.site.has-photo > .sum{grid-column:2}
+.nmark{color:var(--mute);font-weight:400}
 .site .lvl small{display:block;color:var(--mute)}
 .site details{grid-column:1/-1;font-size:var(--t-s)}
 .site.has-photo details{grid-column:2/-1}
@@ -141,7 +146,8 @@ select.chip{appearance:none;padding-right:28px;background:url("data:image/svg+xm
 @media (max-width:640px){
   .site,.site.has-photo{grid-template-columns:minmax(0,1fr)}
   .site .ph{grid-row:auto;width:100%;height:180px}
-  .site .lvl{text-align:left}
+  .site .lvl{text-align:left;grid-column:1;grid-row:auto}
+  .site.has-photo > h4,.site.has-photo > .meta,.site.has-photo > .sum{grid-column:1}
   .site.has-photo details{grid-column:1}
 }
 .more{margin-top:24px}

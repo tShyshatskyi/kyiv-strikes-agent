@@ -118,3 +118,21 @@ cannot support, though the duplicates themselves are still there.
   data-as-of line with a warning that Telegram posts can be edited.
 - `tests/test_pipeline_rules.py`: 18 tests pinning each of these rules. Every
   page is also executed against a stubbed DOM and Leaflet before deploy.
+
+## 2026-11-25 – review notes on stage 0 (five OPEN items)
+- English-language media no longer "adds detail" by being in English: an
+  English quote counts only its numbers until `translate` exists; clock times
+  and the post's own date numbers never count; Ukrainian words are compared by
+  stem against every word of the official quotes, and district names are
+  treated as common. Confirmed 56 → 43; 16 of the 43 rest on a media voice,
+  each with a real detail (a named institute, an embassy, "built in 1798").
+- "Disputed" now means only `wrong_merge` / `not_this_attack` / `not_kyiv_city`
+  (`tools.DISPUTING`); other open flags keep the evidence level plus a small
+  "auditor note" marker. Flag kinds are kept in `flag_kinds` from now on and
+  recovered from `audit_examples` for the old registry. Disputed 43 → 6.
+- Levels now: 43 confirmed / 226 official / 66 media / 6 disputed.
+- Map: padding clamped so 40% of the map stays free, `minZoom` 9, an initial
+  Kyiv view, refit after `load`. Could NOT check it in a real browser this
+  time (headless Chrome was not allowed in this session) – needs a look.
+- Leftover "counted once" / "nights" wording fixed; records summaries no
+  longer auto-placed into the right-hand column.

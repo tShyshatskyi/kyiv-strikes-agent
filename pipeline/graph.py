@@ -135,8 +135,10 @@ def finalize_node(s: DayState) -> dict:
             seen.add(c["url"])
             sources.append({"channel": c["channel"], "name": c["channel_name"], "kind": c["kind"],
                             "url": c["url"], "posted": c["post_time"], "quote": c["quote"]})
-        flags = [i["explanation"] for i in open_issues if n in i["sites"]]
-        conf = tools.confirmation(sources, disputed=bool(flags))
+        mine_issues = [i for i in open_issues if n in i["sites"]]
+        flags = [i["explanation"] for i in mine_issues]
+        flag_kinds = [i["kind"] for i in mine_issues]
+        conf = tools.confirmation(sources, disputed=tools.is_disputed(flag_kinds))
         sites.append({
             "id": f"{day}-{len(sites) + 1}", "day": day,
             "title": p["title_en"], "summary": p["summary_en"],
@@ -144,7 +146,7 @@ def finalize_node(s: DayState) -> dict:
             "address": p["address"], "target": p["target"], "weapon": p["weapon"],
             "time": p["time"], "first_report": sources[0]["posted"],
             **tools.site_figures(mine), **conf,
-            "sources": sources, "photos": photos, "flags": flags,
+            "sources": sources, "photos": photos, "flags": flags, "flag_kinds": flag_kinds,
             "addresses": list(dict.fromkeys(a for a in [p["address"]] + [c["address"] for c in mine] if a)),
             "claims": len(mine),
         })

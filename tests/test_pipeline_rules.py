@@ -87,6 +87,69 @@ def test_an_open_auditor_complaint_makes_a_place_disputed():
     assert conf["level"] == "disputed"
 
 
+def test_english_quote_does_not_add_detail_by_being_in_english():
+    """'Kyiv', 'Mayor', 'Klitschko' are new only because the briefing is in
+    Ukrainian. Until quotes are translated, an English quote counts only its numbers."""
+    conf = tools.confirmation([
+        src("vitaliy_klitschko", "2026-10-13 07:10", "У Солом'янському районі пошкоджено міст"),
+        src("kyivpost_official", "2026-10-13 09:00",
+            "Kyiv Mayor Vitali Klitschko said a Russian strike damaged a bridge in Solomianskyi district"),
+    ])
+    assert conf["level"] == "official"
+
+
+def test_english_quote_with_its_own_figure_still_counts():
+    conf = tools.confirmation([
+        src("VA_Kyiv", "2026-10-13 07:10", "У Солом'янському районі пошкоджено будинок"),
+        src("kyivindependent_official", "2026-10-13 09:00",
+            "A Russian strike damaged a building, injuring 7 people"),
+    ])
+    assert conf["level"] == "confirmed"
+
+
+@pytest.mark.parametrize("quote", [
+    "On Thursday, October 8, Russia attacked Kyiv",     # day of month
+    "Explosions were heard in Kyiv at 03:40",            # clock time
+    "Kyiv came under attack overnight on Oct. 7",       # the night before
+    "Russia struck Kyiv in 2026 again",                  # year
+])
+def test_date_and_time_numbers_are_not_detail(quote):
+    conf = tools.confirmation([
+        src("VA_Kyiv", "2026-10-08 07:10", "У Дніпровському районі пошкоджено будинок"),
+        src("kyivpost_official", "2026-10-08 09:00", quote),
+    ])
+    assert conf["level"] == "official"
+
+
+def test_a_district_in_another_case_is_not_new():
+    """The official said 'Солом'янський' at the start of a sentence; the
+    newsroom says 'у Солом'янському районі'. Same district, nothing new."""
+    conf = tools.confirmation([
+        src("VA_Kyiv", "2026-10-07 07:10", "Солом'янський район: пошкоджено будинок"),
+        src("suspilnenews", "2026-10-07 09:00", "У Солом'янському районі пошкоджено будинок"),
+    ])
+    assert conf["level"] == "official"
+
+
+def test_ukrainian_media_with_a_date_only_does_not_confirm():
+    conf = tools.confirmation([
+        src("VA_Kyiv", "2026-10-21 07:10", "У Дніпровському районі пошкоджено будинок"),
+        src("suspilne_kyiv", "2026-10-21 09:00", "У ніч на 21 жовтня пошкоджено будинок"),
+    ])
+    assert conf["level"] == "official"
+
+
+@pytest.mark.parametrize("kinds, disputed", [
+    (["wrong_merge"], True), (["not_this_attack"], True), (["not_kyiv_city"], True),
+    (["missed_merge"], False), (["wrong_field"], False), (["unsupported_summary"], False),
+    ([], False),
+])
+def test_only_complaints_about_the_place_itself_make_it_disputed(kinds, disputed):
+    """A wrong weapon or two car fires that may be one leave no doubt that the
+    strike happened, so they must not read as 'disputed'."""
+    assert tools.is_disputed(kinds) is disputed
+
+
 # --- the map -----------------------------------------------------------------
 
 def test_district_only_reports_all_land_on_one_point():
