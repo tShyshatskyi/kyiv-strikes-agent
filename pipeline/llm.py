@@ -119,6 +119,8 @@ def ask(role: str, prompt: str, schema: dict, timeout: int = 600) -> dict:
     path = CACHE / f"{role}-{_key(model, prompt, schema)}.json"
     if path.exists():
         return json.loads(path.read_text(encoding="utf-8"))["data"]
+    if os.environ.get("KSR_CACHE_ONLY") == "1":
+        raise LLMError(f"{role}: not in the cache and KSR_CACHE_ONLY=1")
 
     backend = _openai if os.environ.get("LLM_BACKEND") == "openai" else _claude
     last = None

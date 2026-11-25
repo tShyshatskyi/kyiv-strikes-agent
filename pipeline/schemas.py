@@ -59,7 +59,7 @@ MATCHER = {
             "type": "object",
             "properties": {
                 "claims": {"type": "array", "items": {"type": "string"}},
-                "title_en": {"type": "string"},
+                "object_en": {"type": "string"},
                 "summary_en": {"type": "string"},
                 "district": {"type": ["string", "null"], "enum": DISTRICTS + [None]},
                 "address": {"type": ["string", "null"]},
@@ -67,12 +67,12 @@ MATCHER = {
                 "weapon": {"type": "string", "enum": WEAPONS},
                 "time": {"type": ["string", "null"]},
             },
-            "required": ["claims", "title_en", "summary_en", "district", "address",
+            "required": ["claims", "object_en", "summary_en", "district", "address",
                          "target", "weapon", "time"],
         }},
-        "night_summary_en": {"type": "string"},
+        "attack_summary_en": {"type": "string"},
     },
-    "required": ["sites", "night_summary_en"],
+    "required": ["sites", "attack_summary_en"],
 }
 
 AUDITOR = {
@@ -88,8 +88,9 @@ AUDITOR = {
                 "sites": {"type": "array", "items": {"type": "integer"}},
                 "claims": {"type": "array", "items": {"type": "string"}},
                 "explanation": {"type": "string"},
+                "public_note_en": {"type": "string", "maxLength": 140},
             },
-            "required": ["kind", "sites", "claims", "explanation"],
+            "required": ["kind", "sites", "claims", "explanation", "public_note_en"],
         }},
     },
     "required": ["verdict", "issues"],

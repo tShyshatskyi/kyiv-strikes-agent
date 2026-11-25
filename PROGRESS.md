@@ -136,3 +136,18 @@ cannot support, though the duplicates themselves are still there.
   time (headless Chrome was not allowed in this session) – needs a look.
 - Leftover "counted once" / "nights" wording fixed; records summaries no
   longer auto-placed into the right-hand column.
+- Deploy refused by this session's permission check; site built, not live.
+
+## 2026-11-25 – stage 1a: attacks (report: docs/review/reports/stage-1a.md)
+- Billing checked: child `claude -p` inherits CLAUDE_CONFIG_DIR=…\.claude-acc2
+  (second account); one $0.0007 test call.
+- `pipeline/attacks.py`: 362 alerts → 101 attacks (52 nights, 49 daytime).
+  The plan's literal rule rebuilt the 09:00 problem in simulation, so nights
+  are one attack each and overlapping windows are resolved by what the post
+  says (named night, impact time, follow-up, night/day words, alert timing).
+- `pipeline/validate.py`, auditor `public_note_en`, two revision rounds.
+- Five known nights rerun into data/out_1a: 41 places (was 109 over the ten
+  09:00 dates), every bridge and the kindergarten once per attack, no casualty
+  report under two attacks, titles from code, no service text. PASS.
+- Reading by hand found two bugs the criteria missed (validate's district
+  fix, a "сьогодні" post in the night); both fixed and tested.

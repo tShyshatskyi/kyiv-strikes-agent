@@ -65,23 +65,27 @@ def _claims_listing(claims: list[dict]) -> str:
     return "\n".join(rows)
 
 
-def match(day: str, claims: list[dict], feedback: list[dict] | None = None) -> dict:
+def _window(attack: dict) -> str:
+    return f"{attack['start'].replace('T', ' ')} to {attack['end'].replace('T', ' ')}"
+
+
+def match(attack: dict, claims: list[dict], feedback: list[dict] | None = None) -> dict:
     note = ""
     if feedback:
-        note = ("## The auditor rejected your previous grouping\n\n"
+        note = ("## Your previous grouping was sent back\n\n"
                 "Fix every issue below. Where you disagree with one, keep your grouping "
-                "but make sure the summary explains why.\n\n" +
+                "but make sure the summary explains, in words for a reader, why the places differ.\n\n" +
                 "\n".join(f"- {i['kind']} (sites {i['sites']}, claims {i['claims']}): "
                           f"{i['explanation']}" for i in feedback))
-    prompt = (_prompt("matcher").replace("{feedback}", note).replace("{day}", day)
-              .replace("{claims}", _claims_listing(claims)))
+    prompt = (_prompt("matcher").replace("{feedback}", note).replace("{attack}", attack["title"])
+              .replace("{window}", _window(attack)).replace("{claims}", _claims_listing(claims)))
     return llm.ask("matcher", prompt, schemas.MATCHER)
 
 
-def audit(day: str, claims: list[dict], sites: list[dict]) -> dict:
+def audit(attack: dict, claims: list[dict], sites: list[dict]) -> dict:
     listing = "\n".join(
-        f"Site {i}: {json.dumps({k: s[k] for k in ('title_en', 'summary_en', 'district', 'address', 'target', 'weapon', 'claims')}, ensure_ascii=False)}"
+        f"Site {i}: {json.dumps({k: s.get(k) for k in ('title', 'summary_en', 'district', 'address', 'target', 'weapon', 'claims')}, ensure_ascii=False)}"
         for i, s in enumerate(sites, 1))
-    prompt = (_prompt("auditor").replace("{claims}", _claims_listing(claims))
-              .replace("{sites}", listing))
+    prompt = (_prompt("auditor").replace("{attack}", attack["title"])
+              .replace("{claims}", _claims_listing(claims)).replace("{sites}", listing))
     return llm.ask("auditor", prompt, schemas.AUDITOR)

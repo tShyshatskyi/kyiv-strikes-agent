@@ -146,80 +146,98 @@ def pick_photos(sites: list[dict], client: httpx.Client) -> None:
         s["photo"] = f"media/{target.name}"
 
 
+def short_label(a: dict) -> str:
+    """'6–7 Oct' for a night, '19 Oct, day' for a daytime attack."""
+    from datetime import date as _d
+    d = _d.fromisoformat(a["date"])
+    mon = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    if a["kind"] == "day":
+        return f"{d.day} {mon[d.month]}, day"
+    n = d + timedelta(days=1)
+    return f"{d.day}–{n.day} {mon[n.month]}" if n.month == d.month else f"{d.day} {mon[d.month]} – {n.day} {mon[n.month]}"
+
+
 def main(argv: list[str]) -> None:
+    from pipeline import attacks as attack_rules
+    from pipeline.wikipedia import crosscheck_attacks
+
     reg = json.loads((OUT / "registry.json").read_text(encoding="utf-8"))
-    trace = [json.loads(l) for l in (OUT / "trace.jsonl").read_text(encoding="utf-8").splitlines() if l]
+    if reg.get("unit") != "attack":
+        raise SystemExit("data/out/registry.json is from the old day-based pipeline; rerun the pipeline")
     sites = reg["sites"]
 
-    with httpx.Client(follow_redirects=True, headers={"User-Agent": "Mozilla/5.0"}) as client:
-        pick_photos(sites, client)
+    if "--no-photos" in argv:
+        for s in sites:
+            target = MEDIA / f"{s['id']}.jpg"
+            s["photo"] = f"media/{target.name}" if target.exists() else None
+    else:
+        with httpx.Client(follow_redirects=True, headers={"User-Agent": "Mozilla/5.0"}) as client:
+            pick_photos(sites, client)
 
-    # Alerts per attack day, split by kind.
-    alerts_by_day: dict = {}
-    for a in reg["alerts"]:
-        start = datetime.fromisoformat(a["start"])
-        day = (start - timedelta(hours=9)).date().isoformat()
-        d = alerts_by_day.setdefault(day, {"drone": 0, "missile": 0, "count": 0})
-        d[a["kind"]] += a["minutes"]
-        d["count"] += 1
-
-    days = []
-    for d in reg["days"]:
-        days.append({"day": d["day"], "summary": strip_service_text(d["summary"]), "city": d["city_totals"],
-                     "alerts": alerts_by_day.get(d["day"], {"drone": 0, "missile": 0, "count": 0}),
-                     "stats": d["stats"]})
-    known = {d["day"] for d in days}
-    for day, a in alerts_by_day.items():
-        if "2026-10-01" <= day <= "2026-11-23" and day not in known:
-            days.append({"day": day, "summary": "", "city": {"killed": None, "injured": None},
-                         "alerts": a, "stats": {}})
-    days.sort(key=lambda d: d["day"])
-
-    # Collection runs a few hours either side of the period so a night that
-    # crosses midnight is complete; the headline alert figure must not.
     first = PERIOD_START.date().isoformat()
     last = (PERIOD_END - timedelta(days=1)).date().isoformat()
-    in_period = [a for a in reg["alerts"] if first <= a["start"][:10] <= last]
 
-    # Workflow numbers, all computed from what the agents actually did.
-    st = [d["stats"] for d in reg["days"]]
+    # Every attack the alerts show, including quiet ones the agents found no
+    # damage for: the timeline shows alert hours for all of them.
+    done = {a["id"]: a for a in reg["attacks"]}
+    units = []
+    for a in attack_rules.segment(reg["alerts"]):
+        if not (first <= a["date"] <= last):
+            continue
+        r = done.get(a["id"], {})
+        city = r.get("city_totals") or {}
+        units.append({
+            "id": a["id"], "title": a["title"], "short": short_label(a), "kind": a["kind"],
+            "date": a["date"], "start": a["start"], "end": a["end"],
+            "alerts": {"drone": a["alert_minutes"].get("drone", 0),
+                       "missile": a["alert_minutes"].get("missile", 0), "count": a["alerts"]},
+            "summary": strip_service_text(r.get("summary") or ""),
+            "city": {"killed": city.get("killed"), "injured": city.get("injured")},
+            "stats": r.get("stats") or {},
+        })
+
+    in_period = [a for a in reg["alerts"] if first <= a["start"][:10] <= last]
+    st = [a.get("stats") or {} for a in reg["attacks"]]
     issues = Counter(k for s in st for k in s.get("issues_found", []))
     levels = Counter(s["level"] for s in sites)
     precision = Counter((s.get("geo") or {}).get("precision") for s in sites)
-    auditor_notes = [t for t in trace if t["step"] == "auditor" and t["message"].startswith("revise")]
+    reading = reg.get("reading") or {}
     workflow = {
         "collected": reg["collection"]["posts_read"],
         "channels": reg["collection"]["channels"],
         "per_channel": {CHANNELS[h][0]: n for h, n in reg["collection"]["posts_per_channel"].items()},
         "candidates": reg["collection"]["candidates"],
-        "claims": sum(s.get("claims", 0) for s in st) + sum(s.get("rejected_quotes", 0) for s in st),
-        "rejected_quotes": sum(s.get("rejected_quotes", 0) for s in st),
+        "claims": reading.get("claims", 0),
+        "rejected_quotes": reading.get("rejected_quotes", 0),
         "kept_claims": sum(s.get("claims", 0) for s in st),
+        "set_aside": (reg.get("set_aside") or {}).get("claims", {}),
         "sites": len(sites),
+        "attacks": len({s["attack"] for s in sites}),
+        "attacks_night": len({s["attack"] for s in sites if s["attack"].endswith("-N")}),
         "audits": sum(s.get("audit_rounds", 0) for s in st),
         "sent_back": sum(s.get("revisions", 0) for s in st),
+        "sent_back_attacks": sum(1 for s in st if s.get("revisions")),
+        "validate_sent_back": sum(s.get("validate_sent_back", 0) for s in st),
+        "validate_fixes": sum(len(a.get("validate_fixes") or []) for a in reg["attacks"]),
         "issues": dict(issues),
         "removed_by_auditor": sum(s.get("dropped", 0) for s in st),
-        "open_flags": sum(1 for s in sites if s.get("flags")),
+        "open_flags": sum(1 for s in sites if s.get("notes")),
         "levels": dict(levels),
         "precision": {str(k): v for k, v in precision.items()},
         "llm": reg.get("llm", {}),
         "alerts": len(in_period),
         "alert_hours": round(sum(a["minutes"] for a in in_period) / 60),
-        "revise_days": len(auditor_notes),
     }
 
-    # Real examples of the auditor catching something, for the workflow section.
-    examples = []
-    for d in reg["days"]:
-        for item in d.get("audit_examples", []):
-            examples.append({"day": d["day"], **item})
+    titles = {u["id"]: u["title"] for u in units}
+    examples = [{"attack": a["id"], "title": titles.get(a["id"], a["title"]), **item}
+                for a in reg["attacks"] for item in a.get("audit_examples", [])]
 
     slim = []
     for s in sites:
         g = s.get("geo") or {}
         slim.append({
-            "id": s["id"], "day": s["day"], "title": s["title"],
+            "id": s["id"], "attack": s["attack"], "day": s["day"], "title": s["title"],
             "summary": strip_service_text(s["summary"]),
             "district": s.get("district_en"), "address": s.get("address"),
             "target": s["target"], "weapon": s["weapon"], "wclass": WEAPON_CLASS.get(s["weapon"], "unknown"),
@@ -228,25 +246,23 @@ def main(argv: list[str]) -> None:
             "lat": g.get("lat"), "lon": g.get("lon"), "precision": g.get("precision"),
             "sources": [{"name": x["name"], "kind": x["kind"], "url": x["url"],
                          "posted": x["posted"], "quote": x["quote"]} for x in s["sources"]],
-            "flags": s.get("flags", []), "photo": s.get("photo"),
+            # Only the auditor's note for readers; its working notes stay in the trace.
+            "flags": s.get("notes", []), "photo": s.get("photo"),
         })
 
-    from pipeline.wikipedia import crosscheck
-    wiki = crosscheck(days, slim)
+    wiki = crosscheck_attacks(units, slim)
     workflow["wikipedia"] = wiki["summary"]
 
-    period = [first, last]
-    days = [d for d in days if first <= d["day"] <= last]
-    data = {"generated": reg["generated"], "period": period, "days": days,
+    data = {"generated": reg["generated"], "period": [first, last], "attacks": units,
             "sites": slim, "workflow": workflow, "examples": examples[:12],
             "wiki": wiki, "districts": round_coords(districts_geojson())}
     SITE.mkdir(exist_ok=True)
     (SITE / "data.js").write_text("window.REGISTRY = " + json.dumps(data, ensure_ascii=False) + ";\n",
                                   encoding="utf-8")
-    public = [x["summary"] for x in slim] + [d["summary"] for d in days]
+    public = [x["summary"] for x in slim] + [u["summary"] for u in units] + [n for x in slim for n in x["flags"]]
     dirty = [t for t in public if SERVICE.search(t or "")]
-    print(f"site/data.js: {len(slim)} sites, {len(days)} days, "
-          f"{sum(1 for s in slim if s['photo'])} photos")
+    print(f"site/data.js: {len(slim)} sites, {len(units)} attacks "
+          f"({workflow['attacks']} with places), {sum(1 for s in slim if s['photo'])} photos")
     print(f"public text: {len(dirty)} descriptions still carry agent notes")
     for t in dirty:
         print("  !", t[:160])

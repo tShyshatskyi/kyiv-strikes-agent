@@ -286,6 +286,72 @@ def crosscheck(days: list[dict], sites: list[dict]) -> dict:
                         "pending": counts["pending"]}}
 
 
+def report_date(attack: dict) -> str:
+    """The date the news carries for an attack, which is how Wikipedia dates it:
+    a night is reported the next morning, a daytime attack the same day."""
+    d = date.fromisoformat(attack["date"])
+    return (d + timedelta(days=1)).isoformat() if attack["kind"] == "night" else attack["date"]
+
+
+def crosscheck_attacks(atts: list[dict], sites: list[dict]) -> dict:
+    """The same four verdicts as `crosscheck`, with attacks instead of 09:00 days.
+
+    A Wikipedia entry for date `d` is compared with the attacks reported on `d`
+    (the night that ended that morning and that day's daytime attack), fixed by
+    `report_date` alone. There is no window to widen, so `missing` can now
+    happen: an entry for a date on which the registry has no place at all.
+    """
+    snap = json.loads(SNAPSHOT.read_text(encoding="utf-8"))
+    by_attack: dict = {}
+    for s in sites:
+        by_attack.setdefault(s["attack"], []).append(s)
+    on_date: dict = {}
+    for a in atts:
+        on_date.setdefault(report_date(a), []).append(a)
+
+    by_date: dict = {}
+    for rec in snap["records"]:
+        k, i = figures(rec["text"])
+        by_date.setdefault(rec["date"], []).append(
+            {**rec, "killed": k, "injured": i, "names": named_objects(rec["text"])})
+
+    out = {}
+    for d, recs in sorted(by_date.items()):
+        mine = on_date.get(d, [])
+        places = [p for a in mine for p in by_attack.get(a["id"], [])]
+        theirs = [r["killed"] for r in recs if r["killed"] is not None]
+        wiki_killed = max(theirs) if theirs else None
+        said = [a["city"]["killed"] for a in mine if (a.get("city") or {}).get("killed") is not None]
+        ours_killed = sum(said) if said else None
+        named = sorted({n for r in recs for n in r["names"]})
+        absent = [n for n in named if not has_object(n, places)]
+        if not places:
+            verdict, detail = "missing", "no place in the registry for the attacks reported that day"
+        elif absent:
+            verdict, detail = "differs", f"Wikipedia names {', '.join(absent)}; the registry has none for this attack"
+        elif wiki_killed is not None and ours_killed is not None and wiki_killed != ours_killed:
+            verdict, detail = "differs", f"Wikipedia {wiki_killed} killed, the registry {ours_killed}"
+        elif wiki_killed is None and ours_killed is None:
+            verdict, detail = "no_figure", f"neither side gives a death toll; {len(places)} places line up"
+        elif wiki_killed is None:
+            verdict, detail = "no_figure", f"Wikipedia gives no death toll; the registry has {ours_killed}"
+        elif ours_killed is None:
+            verdict, detail = "no_figure", f"Wikipedia gives {wiki_killed} killed; the registry has no figure"
+        else:
+            verdict, detail = "match", f"{wiki_killed} killed on both sides; {len(places)} places line up"
+        out[d] = {"records": recs, "verdict": verdict, "detail": detail,
+                  "attacks": [a["id"] for a in mine], "wiki_killed": wiki_killed,
+                  "ours_killed": ours_killed, "places": len(places), "named": named, "absent": absent}
+
+    counts = Counter(v["verdict"] for v in out.values())
+    return {"taken": snap["taken"], "articles": snap["articles"], "dates": out,
+            "window_note": "A Wikipedia entry for a date is compared with the attacks reported on that "
+                           "date: the night that ended that morning and that day's daytime attack.",
+            "summary": {"records": len(snap["records"]), "dates": len(out),
+                        "match": counts["match"], "differs": counts["differs"],
+                        "no_figure": counts["no_figure"], "missing": counts["missing"], "pending": 0}}
+
+
 if __name__ == "__main__":
     s = collect()
     print(f"{len(s['records'])} records from {len(s['articles'])} articles")
